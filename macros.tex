@@ -1,0 +1,211 @@
+% !TEX root = WendtPhDThesis.tex
+% Common textual macros
+\newcommand{\qt}[1]{{\lq\lq}#1{\rq\rq}} % double quotes around text
+
+
+% Common Mathematical Operations
+\newcommand{\Hdiag}{\ensuremath{H_{d}}}  % or {\rm d}
+\newcommand{\LamEFT}{\Lambda_{\rm EFT}}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\lam}{\lambda}
+\newcommand{\PWA}[3]{{\ensuremath{^{#1}\mbox{#2}_{#3}}}} % partial waves \PWA{1}{S}{0} = ^1S_0
+
+% Interactions
+\newcommand{\Elab}{E_{\text{Lab}}}
+\newcommand{\vlowk}{\ensuremath{V_{{\rm low}\,k}}}
+\newcommand{\vsrg}{\ensuremath{V_{\lambda}}}
+\newcommand{\vbare}{\ensuremath{V_{\rm NN}}}
+\newcommand{\vcut}{\ensuremath{V_{\flow,\Lambda}}}
+\newcommand{\vnn}{\ensuremath{V_{\rm NN}}}
+\newcommand{\LambdaEFT}{\Lambda_{\rm EFT}}
+\newcommand{\LamUV}{\Lambda_{\text{UV}}}
+\newcommand{\LamIR}{\Lambda_{\text{IR}}}
+\newcommand{\lamSRG}{\lambda_{\text{SRG}}}
+\newcommand{\AV}{Argonne $v_{18}$~}
+\newcommand{\AVn}{Argonne $v_{18}$}
+\newcommand{\NNNLO}{\ensuremath{\mbox{N}^3\mbox{LO}}}
+\newcommand{\NNLO}{\ensuremath{\mbox{N}^2\mbox{LO}}}
+\newcommand{\NLO}{\ensuremath{\mbox{NLO}~}}
+
+
+% Short hand for common enviroments
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\ben}{\begin{equation*}}
+\newcommand{\een}{\end{equation*}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+% Clean coordinate representation
+
+\newcommand{\rc}{r}
+\newcommand{\rp}{\rc^{\prime}}
+\newcommand{\rpp}{\rc^{\prime\prime}}
+\newcommand{\rv}{\mathbf{\rc}}
+\newcommand{\rvp}{\mathbf{\rc}^{\prime}}
+\newcommand{\rvpp}{\mathbf{\rc}^{\prime\prime}}
+\newcommand{\rvppp}{\mathbf{\rc}^{\prime\prime\prime}}
+
+\newcommand{\rvh}{\Omega_{\rv}}
+\newcommand{\rvph}{\Omega_{\rvp}}
+
+\newcommand{\kc}{k}
+\newcommand{\kp}{{\kc^{\prime}}}
+\newcommand{\kpp}{{\kc^{\prime\prime}}}
+\newcommand{\kv}{\mathbf{\kc}}
+\newcommand{\kvn}{\mathbf{\kc}}
+\newcommand{\kvp}{\mathbf{\kc}^{\prime}}
+\newcommand{\kvpp}{\mathbf{\kc}^{\prime\prime}}
+
+% indices with primes
+\newcommand{\il}{{l}}
+\newcommand{\ilp}{{l^{{\prime}}}}
+\newcommand{\lp}{{l^{{\prime}}}}
+\newcommand{\im}{{m}}
+\newcommand{\imp}{{m^{\prime}}}
+
+
+
+% Reference Shortcuts
+\newcommand{\fref}[1]{\ref{fig:#1}}
+
+
+
+
+
+
+\renewcommand{\sp}[1]{\overline{#1}}
+\newcommand{\dprojPM}[1]{\widetilde{#1}^{(\pm)}}
+\newcommand{\dprojP}[1]{\widetilde{#1}^{(+)}}
+\newcommand{\dprojM}[1]{\widetilde{#1}^{(-)}}
+\newcommand{\dproj}[1]{\widetilde{#1}}
+
+%\newcommand{\Ylm}[2]{\ensuremath{Y^{\phantom{*}}_{#1}(\Omega_{#2})}}
+%\newcommand{\Ylmp}[2]{\ensuremath{Y^{*}_{#1}(\Omega_{#2})}}
+\newcommand{\Ylm}[2]{\ensuremath{Y_{#1}(#2)}}
+\newcommand{\Ylmp}[2]{\ensuremath{Y^{*}_{#1}(#2)}}
+
+\newcommand{\Olm}[3]{\ensuremath{{#1}^{#2}_{#3}}}
+\newcommand{\dqt}[1]{\lq{}\lq{}#1\rq{}\rq{}}
+
+% \newcommand{\p}{p}
+% \newcommand{\q}{q}
+\newcommand{\qp}{q^{\prime}}
+\newcommand{\pv}{\mathbf{p}}
+\newcommand{\qv}{\mathbf{q}}
+
+\newcommand{\lpf}[1]{{\rm L}[#1]}
+\newcommand{\fig}[1]{\ref{#1}}
+
+\newcommand{\Vlowk}{\ensuremath{V_{\text{low}\,k}}}
+
+\newcommand{\Vb}{\overline{V}}
+
+\newcommand{\intR}{\ensuremath{{\int_0^\infty\!\!}}}
+
+
+\newcommand{\pprime}{{\phantom{\prime}}}
+
+\newcommand{\Hs}{{\bm{H}_s}}
+\newcommand{\Trel}{{\hat{T}_{\text{rel}}}}
+\newcommand{\Trelt}{{\hat{T}^{(2)}_{\text{rel}}}}
+\newcommand{\TrelT}{{\hat{T}^{(3)}_{\text{rel}}}}
+\newcommand{\Vs}{{\bm{V}_s}}
+\newcommand{\Hz}{{\bm{H}_{s=0}}}
+\newcommand{\Us}{{\bm{U}_s}}
+\newcommand{\Uds}{{\bm{U}^\dagger_s}}
+\newcommand{\etas}{{\bm{\eta}_s}}
+
+
+\newcommand{\SRG}{SRG}
+\newcommand{\TSRG}{\ensuremath{\Trel\mbox{-SRG}}}
+
+\newcommand{\comm}[2]{\left[#1,#2\right]}
+
+\newcommand{\Nmax}{\ensuremath{N_{\mbox{max}}}}
+\newcommand{\Gmax}{\ensuremath{G_{\mbox{max}}}}
+
+\newcommand{\bra}[1]{\ensuremath{{\langle#1|}}}
+\newcommand{\ket}[1]{\ensuremath{{|#1\rangle}}}
+\newcommand{\Bra}[1]{\ensuremath{{\left<#1\right|}}}
+\newcommand{\Ket}[1]{\ensuremath{{\left|#1\right>}}}
+\newcommand{\braket}[2]{\ensuremath{{\langle#1|#2\rangle}}}
+\newcommand{\braketOne}[1]{\ensuremath{{\langle#1\rangle}}}
+\newcommand{\Braket}[2]{\ensuremath{{\left<#1\middle|#2\right>}}}
+
+
+
+\newcommand{\psqrt}[1]{\ensuremath{\left(\sqrt{#1}\right)}}
+\newcommand{\pfrac}[2]{\ensuremath{\left(\frac{#1}{#2}\right)}}
+\newcommand{\sqfr}[2]{\ensuremath{\sqrt{\frac{#1}{#2}}}}
+\newcommand{\jo}{j_1^{\phantom{\prime}}}
+\newcommand{\jop}{j_1^{\prime}}
+\newcommand{\jt}{j_2^{\phantom{\prime}}}
+\newcommand{\jtp}{j_2^{\prime}}
+\newcommand{\lo}{l_1^{\phantom{\prime}}}
+\newcommand{\lop}{l_1^{\prime}}
+\newcommand{\lt}{l_2^{\phantom{\prime}}}
+\newcommand{\ltp}{l_2^{\prime}}
+\newcommand{\so}{s_1^{\phantom{\prime}}}
+\newcommand{\sop}{s_1^{\prime}}
+\newcommand{\iso}{t_1^{\phantom{\prime}}}
+\newcommand{\isoz}{{{t_1}_z}^{\phantom{\prime}}}
+\newcommand{\isop}{t_1^{\prime}}
+\newcommand{\isopz}{{{t_1}_z}^{\prime}}
+\newcommand{\n}{n^{\phantom{\prime}}}
+\newcommand{\np}{n^{\prime}}
+\newcommand{\ca}{\cos\alpha}
+\newcommand{\sa}{\sin\alpha}
+\newcommand{\caP}{\cos\alpha^\prime}
+\newcommand{\saP}{\sin\alpha^\prime}
+\newcommand{\cta}{\cos(2\alpha)}
+\newcommand{\ctaP}{\cos(2\alpha^\prime)}
+\newcommand{\rrp}{{\frac{\hK}{\hKp}}}
+\newcommand{\rrps}{{\left(\frac{\hK}{\hKp}\right)^2}}
+\newcommand{\hK}{Q}
+\newcommand{\hKp}{{Q^\prime}}
+\newcommand{\oh}{\ensuremath{\tfrac{1}{2}}}
+
+\newcommand{\titj}{\bm{\tau}_i\cdot\bm{\tau}_j}
+\newcommand{\sisj}{\bm{\sigma}_i\cdot\bm{\sigma}_j}
+\newcommand{\Tij}{T_{ij}}
+\newcommand{\Sij}{S_{ij}}
+\newcommand{\LdS}{\bm{L}\cdot\bm{S}}
+\newcommand{\nuc}[2]{\ensuremath{^{#1}\mbox{#2}}}
+% \newcommand{\Tcite}[1]{\textbf{\textbackslash cite\{#1\}}}
+
+\newcommand{\Schrod}{Schr\"{o}dinger}
+\newcommand{\dtau}{\ensuremath{\delta\tau}}
+
+\DeclareMathOperator{\LP}{LP}
+\newcommand{\tLP}{local projection}
+\newcommand{\tLPs}{local projections}
+
+\newcommand{\ie}{\ensuremath{i\epsilon}}
+
+\newcommand{\hw}{\ensuremath{\hbar\omega}}
+
+
+\newcommand{\Anti}{\ensuremath{\hat{\mathcal{A}}}}
+
+\newcommand{\CB}[2]{\left(#1\middle|#2\right)}
+\newcommand{\threej}[6]{ 
+\begin{pmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 
+\end{pmatrix}}
+\newcommand{\sixj}[6]{ 
+\begin{Bmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 
+\end{Bmatrix}}
+\newcommand{\ninej}[9]{ 
+\begin{Bmatrix}
+  #1 & #2 & #3 \\
+  #4 & #5 & #6 \\ 
+  #7 & #8 & #9 
+\end{Bmatrix}}
+
+\renewcommand{\imath}{\ensuremath{i}}
