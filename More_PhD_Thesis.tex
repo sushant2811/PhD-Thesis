@@ -2,12 +2,12 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX spellcheck = en_US
 
-\documentclass[11pt, phd]{osudissert96} 
-% \documentclass[phd]{osudiss-2} 
-% \documentclass[12pt, double, phd]{osudiss-2} 
+\documentclass[11pt, phd]{osudissert96}
+% \documentclass[phd]{osudiss-2}
+% \documentclass[12pt, double, phd]{osudiss-2}
 
 \usepackage{amsmath, amssymb, amsthm,mathtools}
-\usepackage{graphicx} 
+\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{rotating} % for rotating figures/tables
@@ -16,7 +16,8 @@
 
 \usepackage{multirow} % for multirow figures
 % \usepackage{lscape} % Supports landscape pages
-%\usepackage{subfig} % required to have latex automatically generate subfigures (i.e. (a), (b) etc)
+%\usepackage{subfig} % required to have latex automatically generate subfigures
+  %(i.e. (a), (b) etc)
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{bm,bbm} % for bold math---useful
@@ -32,11 +33,15 @@
 %%%%% For bibliography and references
 %hyperref packages and options
 \usepackage{bookmark} % bookmarks in pdf file
-%hypersetup option 'breaklinks' is reguired for line wrapping in the table of contents during latex compilation, and can be removed if you use pdflatex
-%\hypersetup{colorlinks=true,linkcolor=blue, breaklinks} %internal links in blue, citations in green
-\hypersetup{colorlinks=true,linkcolor=blue} 
-% \RequirePackage[hyperpageref]{backref} %include backreferencing in bibliography to see pages cited on.
-%    \renewcommand*{\backref}[1]{}  
+%hypersetup option 'breaklinks' is reguired for line wrapping in the
+  %table of contents during latex compilation, and can be removed if you use
+  %pdflatex
+%\hypersetup{colorlinks=true,linkcolor=blue, breaklinks} %internal links in blue,
+  %citations in green
+\hypersetup{colorlinks=true,linkcolor=blue}
+% \RequirePackage[hyperpageref]{backref} %include backreferencing in
+   %bibliography to see pages cited on.
+%    \renewcommand*{\backref}[1]{}
 %    \renewcommand*{\backrefalt}[4]{
 %       \ifcase #1
 %          Not cited.
@@ -48,13 +53,18 @@
 % \usepackage[all]{hypcap}
 
 % \usepackage{opcit} % for chicago style footnote citations
-%Use of natbib is STRONGLY recommended to sort and compress your references within each citation - Avery
+%Use of natbib is STRONGLY recommended to sort and compress your references
+  %within each citation - Avery
 %With these options, natbib will convert i.e. [5,3,9,4] to [3-5,9]
 %\usepackage[numbers, sort&compress]{natbib}
-% To prevent "! Package natbib Error: Bibliography not compatible with author-year citations."
-% it is necessary to explicity include "numbers" in the natbib declaration.
-\usepackage{cite} % for backreferenced citations - supercedes \usepackage[numbers, sort&compress]{natbib} 
- % Without backref, \usepackage{cite} appears identical to \usepackage[numbers, sort&compress]{natbib} in body, bibliography slightly more compressed (in a good way)
+% To prevent "! Package natbib Error:
+  % Bibliography not compatible with author-year citations."
+% it is necessary to explicitly include "numbers" in the natbib declaration.
+\usepackage{cite} % for backreferenced citations - supercedes
+  %\usepackage[numbers, sort&compress]{natbib}
+ % Without backref, \usepackage{cite} appears identical to
+ %\usepackage[numbers, sort&compress]{natbib} in body,
+ %bibliography slightly more compressed (in a good way)
 
 %load glossaries packages
 %\usepackage[acronym]{glossaries}
@@ -66,11 +76,13 @@
 
 
 %The following commands can be used to help deal with "overfull hbox" issues
-%See, for example, http://www.tex.ac.uk/cgi-bin/texfaq2html?label=overfull for details
-%\pretolerance 1000 
+%See, for example, http://www.tex.ac.uk/cgi-bin/texfaq2html?label=overfull for
+  %details
+%\pretolerance 1000
 \setlength{\emergencystretch}{3em}
 %\tolerance 1000
-\predisplaypenalty=100 % used to allow a page break before an equation, otherwise the last text line gets moved to the next page
+\predisplaypenalty=100 % used to allow a page break before an equation,
+  %otherwise the last text line gets moved to the next page
 
 
 
@@ -81,7 +93,8 @@
 % \vskip 0.84in  %Cheat for now
 % \begin{center}\protect {\typesetLevelTwo{#1}}\end{center}  %Cheat for now
 % \vskip 0.55in    %Cheat for now
-% \printglossary[type=\acronymtype,title={\protect {\typesetLevelTwo{#1}}}]  %not working right, cheat for now . . . manually fix extra in .gls
+% \printglossary[type=\acronymtype,title={\protect {\typesetLevelTwo{#1}}}]
+  %not working right, cheat for now . . . manually fix extra in .gls
 % }
 
 
@@ -106,7 +119,7 @@
 
 % Add words that TeX may not know how to hyphenate below. This can
 % help prevent overfull hboxes. For example,
-\hyphenation{eigen-state} 
+\hyphenation{eigen-state}
 
 %%%%%%%%%%%%%%%%%%%%%%%%% Document Metadata %%%%%%%%%%%%%%%%%%%%%%%%%
 % \renewcommand{\titleFont}{\normalfont\LARGE\sc}
@@ -114,10 +127,10 @@
 %\setlength{\titleskip}{0ex}
 \title{
 	\texorpdfstring{
-		Improving nuclear predictions with reliable extrapolation schemes \&
+		Improving nuclear predictions with reliable extrapolation schemes and
 		better understanding of factorization
 	}{
-		Improving nuclear predictions with reliable extrapolation schemes \&
+		Improving nuclear predictions with reliable extrapolation schemes and
 		better understanding of factorization
 	}
 }
@@ -135,16 +148,6 @@
 
 
 
-% \includeonly{Chapter_Intro}
-% \includeonly{Chapter_DeepBS}
-% \includeonly{Chapter_LP} 
-% \includeonly{Chapter_HHSRG} 
-% \includeonly{Appendix_HHSRG}
-%\includeonly{Appendix_Conventions}
-% \includeonly{Appendix_Conventions,Appendix_Scattering,Appendix_TwoPotential}
-
-
-
 
 \begin{document}
 
@@ -156,29 +159,32 @@
 % \clearpage
 
 \include{More_Abs}
-\dedication{To the memory of my late grandparents, who valued integrity and 
+\dedication{To the memory of my late grandparents, who valued integrity and
  education above everything else.}
 \include{More_Ack}
 \include{More_Vita}
 
-\tableofcontents 
+\tableofcontents
 
 % list of figures (comment out if you don't have any figures)
 \clearpage
-%\listoffigures 
+\listoffigures
 
 % list of tables (comment out if you don't have any tables)
 \clearpage
-%\listoftables 
+%\listoftables
 
 % \clearpage
 %\PrintListofAbbreviations{List of Abbreviations}
 % \phantomsection
 % \printglossary[type=\acronymtype,style=long]
 
-%print glossary - comment out if you don't want this. Make sure you also add \glsdisablehyper if you don't want to print a glossary, but do use the glossaries package to keep track of acronyms
+%print glossary - comment out if you don't want this. Make sure you also add
+%\glsdisablehyper if you don't want to print a glossary, but do use the glossaries
+%package to keep track of acronyms
 %\clearpage %remove if you don't want a page break before list of abbreviations
-%\PrintListofAbbreviations{List of Abbreviations} %Title is in { } - change if desired
+%\PrintListofAbbreviations{List of Abbreviations}
+  %Title is in { } - change if desired
 
 % \mainmatter
 \startdoublespace
@@ -186,7 +192,7 @@
 
 \include{Chapter_Introduction}
 \include{Chapter_Extrapolation}
-\include{Chapter_Factorization} 
+\include{Chapter_Factorization}
 \include{Chapter_Conclusion}
 
 % \backmatter
@@ -194,13 +200,16 @@
 % \bibliographystyle{natureURL} % use your favorite BIBTeX style
  \bibliographystyle{unsrt} % use your favorite BIBTeX style
 %\bibliographystyle{opcit} % use your favorite BIBTeX style
-%\renewcommand\bibname{Master list of references} % rename bibliography 
-% "You may decide how this section should be titled. The terms References or Bibliography are the most commonly chosen titles."
+%\renewcommand\bibname{Master list of references} % rename bibliography
+% "You may decide how this section should be titled.
+  %The terms References or Bibliography are the most commonly chosen titles."
 %\nocite{*} % To display all refs, even uncited refs (useful when editting)
-\bibliography{library}
-% can use multiple .bib files, but no white space allowed for multiple included references, and ".bib" cannot be included
+\bibliography{thesis_references}
+% can use multiple .bib files, but no white space allowed for multiple
+  %included references, and ".bib" cannot be included
 
-% If for some reason you are anti-BIBTeX, then you would use the% following instead of the above:
+% If for some reason you are anti-BIBTeX, then you would use the
+% following instead of the above:
 %\begin{thebibliography}{99}
 % ...
 %\end{thebibliography}
