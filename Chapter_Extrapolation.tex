@@ -2,8 +2,119 @@
 \cleardoublepage
 \chapter{Extrapolation}
 
-	\section{Infrared story}
+	As we have seen in the introduction, the Harmonic Oscillator (HO) basis is
+	routinely used in Low-energy Nuclear Physics (LENP) calculations.  We also saw
+	that
+	the size of Hamiltonian matrix that we need to diagonalize grows factorially
+	with the number of nucleons, severely restricting the number of terms that
+	can be kept in the basis expansion.  The maximum number of terms in the basis
+	expansion is often denoted by $\Nmax$, so the single particle nuclear wave
+	function is given by
+  \beq
+	  \psi_{N_{\rm max}}^{\Omega}(r) = \sum_{\alpha = 0}^{N_{\rm max}} c_{\alpha}
+	  \phi_{\alpha}^{\Omega}(r) \;.
+	\label{eq:single_particle_truncation}
+	\eeq
+	$\phi_{\alpha}^{\Omega}(r)$ in Eq.~\eqref{eq:single_particle_truncation} are
+	the HO wave functions; $\Omega$ is the frequency of the HO \footnote{
+  In LENP, the oscillator frequency is denoted by $\Omega$ rather than $\omega$.
+	}.
+	Thus the energy obtained in the HO basis -- $E(\Nmax, \Omega)$ -- is a
+	function of $\Nmax$ and $\Omega$.  This is illustrated in
+	Fig.~\ref{fig:H6_function_Omega}.
+	%
+	\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.5\textwidth]
+			{Extrapolation/He6_Eb_vs_hw_kvnn10_srg_lam2p0_combined_Nmax6_Kval1_L1_0b.pdf}
+			\caption{Ground state energy for $^6$He as a function of $\Nmax$ and
+			  $\Omega$.  Figure taken from \cite{Furnstahl2012}. }
+			\label{fig:H6_function_Omega}
+	\end{figure}
+	%
+  We see that as we go to higher $\Nmax$, the curves get flatter with respect
+	to $\Omega$, or in other words the dependence on $\Omega$ drops out.
+
+	The goal is to extrapolate to $\Nmax = \infty$ from a finite $\Nmax$.
+	The most widely used extrapolation scheme employs an exponential in $\Nmax$
+	form
+	\beq
+	  E(\Nmax) = \Einf + a e^{-c \Nmax}\;,
+		\label{eq:exp_Nmax_extrapolation}
+	\eeq
+	where $a$ and $c$ are determined separately for each $\hw$ (with the
+	option of constraining the fit to get the same asymptotic $\Einf$ value).
+	Figure~\ref{fig:exp_Nmax_extrapolation_6He} shows estimate for the ground
+	state energy for $^6$He obtained using the extrapolation form of
+	Eq.~\eqref{eq:exp_Nmax_extrapolation}.
+	%
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]
+		{Extrapolation/6He_gs_range2_142.pdf}
+		\caption{The estimate for exact $^6$He ground state energy using
+		  Eq.~\eqref{eq:exp_Nmax_extrapolation}.  Extrapolated answer from the
+			constrained fit and the experimental binding energy are indicated by
+			horizontal lines.  Figure from \cite{Maris2009}.}
+		\label{fig:exp_Nmax_extrapolation_6He}
+	\end{figure}
+  %
+
+	The exponential in $\Nmax$ extrapolation is widely used in literature and
+	seems to work quite well
+	\cite{Hagen:2007hi,Bogner:2007rx,Forssen:2008qp,Maris:2008ax,Roth:2009cw}.
+	There are however many open questions about this extrapolation scheme such as
+	the answer for $\Einf$ depends on the oscillator frequency $\Omega$ and it is
+	not clear which the best choice for $\Omega$.  The terms $a$ and $c$ in
+	Eq.~\eqref{eq:exp_Nmax_extrapolation} are fit to data.  There is no way to
+	extract these terms for one nucleus and use it to predict something else.
+	Moreover, the physical motivation for exponential in $\Nmax$ extrapolation is
+	slim at best.  It has been claimed that for larger nuclei $\Nmax$ is a
+	logarithmic measure of the number of states \cite{Bogner:2007rx}.
+
+	An alternative approach to extrapolations is motivated by effective field
+	theory (EFT) and based instead on explicitly considering the infrared (IR)
+	and ultraviolet (UV) cutoffs imposed by a finite oscillator
+	basis~\cite{Coon:2012ab}.  The truncation in the oscillator basis introduces
+	a maximum length scale (or an IR cutoff) and also a maximum momentum scale
+	(or an UV cutoff).  These length and momentum scales can be motivated by
+	the classical turning points denoted by $L_0$ and $\Lambda_0$ respectively.
+	We have
+	\begin{align}
+		L_0 = \sqrt{2 (\Nmax + 3/2)} b \;, \nonumber \\
+		\Lambda_0 = \sqrt{2 (\Nmax + 3/2)} \hbar/b \;.
+		\label{eq: L0_Lam0_cutoff}
+	\end{align}
+	$b$ is the oscillator length given by
+	$\displaystyle b = \sqrt{\hbar/ m \Omega}$.
+	%
+	The errors due the finite IR (UV) cutoff are called the IR (UV) errors.
+	To draw a lattice analogy, IR errors stem from the finite box size,
+	and the UV errors are a result of the finite lattice spacing (or the
+	graininess of the lattice).
+
+	This approach of thinking of the HO truncation in terms of IR and UV cutoffs
+	has led to lot of development in past three years.
+  We can choose the oscillator parameters such that one of the cutoffs in
+	Eqs.~\eqref{eq: L0_Lam0_cutoff} is large, making the errors due to that cutoff
+	small and focus on the errors due to the other cutoff.
+	The first attempt and
+	test for a theoretically motivated IR correction was made in
+	\cite{Furnstahl2012}.  These corrections were made theoretically sound
+	in \cite{More:2013rma, Furnstahl:2013vda}.  In \cite{Konig:2014hma} we looked
+	at the UV correction for the deuteron.
+	Our papers \cite{More:2013rma, Furnstahl:2013vda, Konig:2014hma} have led to
+	physically motivated extrapolation schemes and will form the basis of the next
+	two sections.  Insights from our work has also led to development of
+	extrapolation schemes (both in IR and UV) for the many-body case by other
+	groups.  We will touch upon these developments in
+	Sec.~\ref{sec:related_development_IR}.
+
+	\section[Infrared story]{Infrared story
+		\footnote{Based on \cite{More:2013rma} and \cite{Furnstahl:2013vda}}}
 
 	\section{Ultraviolet story}
 
 	\section{Related development and Moving forward}
+
+	\label{sec:related_development_IR}
