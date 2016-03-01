@@ -10,37 +10,37 @@
 	can be kept in the basis expansion.  The maximum number of terms in the basis
 	expansion is often denoted by $\Nmax$, so the single particle nuclear wave
 	function is given by
-  \beq
-	  \psi_{N_{\rm max}}^{\Omega}(r) = \sum_{\alpha = 0}^{N_{\rm max}} c_{\alpha}
-	  \phi_{\alpha}^{\Omega}(r) \;.
+	\beq
+	\psi_{N_{\rm max}}^{\Omega}(r) = \sum_{\alpha = 0}^{N_{\rm max}} c_{\alpha}
+	\phi_{\alpha}^{\Omega}(r) \;.
 	\label{eq:single_particle_truncation}
 	\eeq
 	$\phi_{\alpha}^{\Omega}(r)$ in Eq.~\eqref{eq:single_particle_truncation} are
 	the HO wave functions; $\Omega$ is the frequency of the HO \footnote{
-  In LENP, the oscillator frequency is denoted by $\Omega$ rather than $\omega$.
+	In LENP, the oscillator frequency is denoted by $\Omega$ rather than $\omega$.
 	}.
 	Thus the energy obtained in the HO basis -- $E(\Nmax, \Omega)$ -- is a
 	function of $\Nmax$ and $\Omega$.  This is illustrated in
 	Fig.~\ref{fig:H6_function_Omega}.
 	%
 	\begin{figure}[h]
-			\centering
-			\includegraphics[width=0.5\textwidth]
-			{Extrapolation/He6_Eb_vs_hw_kvnn10_srg_lam2p0_combined_Nmax6_Kval1_L1_0b.pdf}
-			\caption{Ground state energy for $^6$He as a function of $\Nmax$ and
-			  $\Omega$.  Figure taken from \cite{Furnstahl2012}. }
-			\label{fig:H6_function_Omega}
+		\centering
+		\includegraphics[width=0.5\textwidth]
+		{Extrapolation/He6_Eb_vs_hw_kvnn10_srg_lam2p0_combined_Nmax6_Kval1_L1_0b.pdf}
+		\caption{Ground state energy for $^6$He as a function of $\Nmax$ and
+		  $\Omega$.  Figure taken from \cite{Furnstahl2012}. }
+		\label{fig:H6_function_Omega}
 	\end{figure}
 	%
-  We see that as we go to higher $\Nmax$, the curves get flatter with respect
+	We see that as we go to higher $\Nmax$, the curves get flatter with respect
 	to $\Omega$, or in other words the dependence on $\Omega$ drops out.
 
 	The goal is to extrapolate to $\Nmax = \infty$ from a finite $\Nmax$.
 	The most widely used extrapolation scheme employs an exponential in $\Nmax$
 	form
 	\beq
-	  E(\Nmax) = \Einf + a e^{-c \Nmax}\;,
-		\label{eq:exp_Nmax_extrapolation}
+	E(\Nmax) = \Einf + a e^{-c \Nmax}\;,
+	\label{eq:exp_Nmax_extrapolation}
 	\eeq
 	where $a$ and $c$ are determined separately for each $\hw$ (with the
 	option of constraining the fit to get the same asymptotic $\Einf$ value).
@@ -49,16 +49,16 @@
 	Eq.~\eqref{eq:exp_Nmax_extrapolation}.
 	%
 	\begin{figure}[h]
-		\centering
-		\includegraphics[width=0.5\textwidth]
-		{Extrapolation/6He_gs_range2_142.pdf}
-		\caption{The estimate for exact $^6$He ground state energy using
-		  Eq.~\eqref{eq:exp_Nmax_extrapolation}.  Extrapolated answer from the
-			constrained fit and the experimental binding energy are indicated by
-			horizontal lines.  Figure from \cite{Maris2009}.}
-		\label{fig:exp_Nmax_extrapolation_6He}
+	\centering
+	\includegraphics[width=0.5\textwidth]
+	{Extrapolation/6He_gs_range2_142.pdf}
+	\caption{The estimate for exact $^6$He ground state energy using
+	  Eq.~\eqref{eq:exp_Nmax_extrapolation}.  Extrapolated answer from the
+		constrained fit and the experimental binding energy are indicated by
+		horizontal lines.  Figure from \cite{Maris2009}.}
+	\label{fig:exp_Nmax_extrapolation_6He}
 	\end{figure}
-  %
+	%
 
 	The exponential in $\Nmax$ extrapolation is widely used in literature and
 	seems to work quite well
@@ -81,9 +81,9 @@
 	the classical turning points denoted by $L_0$ and $\Lambda_0$ respectively.
 	We have
 	\begin{align}
-		L_0 = \sqrt{2 (\Nmax + 3/2)} b \;, \nonumber \\
-		\Lambda_0 = \sqrt{2 (\Nmax + 3/2)} \hbar/b \;.
-		\label{eq: L0_Lam0_cutoff}
+	L_0 = \sqrt{2 (\Nmax + 3/2)} b \;, \nonumber \\
+	\Lambda_0 = \sqrt{2 (\Nmax + 3/2)} \hbar/b \;.
+	\label{eq: L0_Lam0_cutoff}
 	\end{align}
 	$b$ is the oscillator length given by
 	$\displaystyle b = \sqrt{\hbar/ m \Omega}$.
@@ -91,11 +91,14 @@
 	The errors due the finite IR (UV) cutoff are called the IR (UV) errors.
 	To draw a lattice analogy, IR errors stem from the finite box size,
 	and the UV errors are a result of the finite lattice spacing (or the
-	graininess of the lattice).
+	graininess of the lattice).  Ideally, we would like the box size to be as
+	large as possible and the lattice spacing to be as small as possible.
+	Because of finite computational power, this is not always possible though
+	and therefore we need reliable extrapolation schemes in both IR as well as UV.
 
 	This approach of thinking of the HO truncation in terms of IR and UV cutoffs
 	has led to lot of development in past three years.
-  We can choose the oscillator parameters such that one of the cutoffs in
+	We can choose the oscillator parameters such that one of the cutoffs in
 	Eqs.~\eqref{eq: L0_Lam0_cutoff} is large, making the errors due to that cutoff
 	small and focus on the errors due to the other cutoff.
 	The first attempt and
@@ -111,9 +114,450 @@
 	Sec.~\ref{sec:related_development_IR}.
 
 	\section[Infrared story]{Infrared story
-		\footnote{Based on \cite{More:2013rma} and \cite{Furnstahl:2013vda}}}
+	\footnote{Based on \cite{More:2013rma} and \cite{Furnstahl:2013vda}}}
+
+	As mentioned in the introduction, there was a lack of well motivated
+	extrapolation schemes in LENP and this is where our work comes in.
+	We started with the two-body case because it is more tractable
+	mathematically.  Note that extrapolation is usually not necessary for the
+	two-body problem, because the convergence is reached before we run out of
+	computational power.  This allows us to test our extrapolation formulas.
+	Once we establish that the approach works for the two-body case, we can hope
+	to extend the approach to few- and many-body case.
+
+	As mentioned earlier, IR cutoff effectively puts system in a finite box.
+	We need to find appropriate box length such that
+	\beq
+	E(\Nmax) = E(L_{\rm box})\;.
+	\label{eq:Nmax_Lbox_correspondence}
+	\eeq
+	Note that our original problem was to find $\Einf \equiv E(\Nmax = \infty)$
+	given $E$ at a finite $\Nmax$.  Once we make the correspondence in
+	Eq.~\eqref{eq:Nmax_Lbox_correspondence} and express energy as a function of
+	box length, we can use various techniques (discussed later) to estimate
+	$E (L_{\rm box} = \infty)$ which equals $E(\Nmax = \infty)$.
+
+	\subsection{Tale of tails}
+
+	The box size is usually bigger than the range of the potential.  Thus
+	imposing the IR cutoff modifies the asymptotic part (or tail) of the
+	bound-state wave function.  Our early work focused on trying to estimate the
+	appropriate box size by matching the tails of wave functions in the truncated
+	HO basis to the tails of wave functions in boxes of different lengths.
+
+	Our strategy was to use a range of model potentials for which the
+	Schr\"odinger equation can be solved
+	analytically or to any desired precision numerically to broadly test
+	and illustrate various features, and then turn to the deuteron for a
+	real-world example.  In particular we considered:
+	%
+	\bea
+	V_{\rm sw}(r) &=& -V_0\, \theta(R-r)   \qquad \mbox{[square well]}
+	\;,
+	\label{eq:Vsw}
+	\\
+	V_{\rm exp}(r) &=& -V_0\, e^{-(r/R)}  \qquad\ \ \mbox{[exponential]}
+	\;,
+	\\
+	V_{\rm g}(r) &=& -V_0\, e^{-(r/R)^2}  \qquad\ \mbox{[Gaussian]}
+	\;,
+	\label{eq:Vg}
+	\\
+	V_{\rm q}(r) &=& -V_0\, e^{-(r/R)^4} \qquad\ \mbox{[quartic]}
+	\;,
+	\label{eq:Vq}
+	\eea
+  %
+	where for each of the models we work in units with $\hbar = 1$, reduced mass
+	$\mu=1$, and $R=1$, but consider different values for $V_0$.  For the
+	realistic potential we use the Entem-Machleidt 500\,MeV chiral EFT
+	N$^3$LO potential~\cite{Entem:2003ft} and unitarily evolve it with the
+	similarity renormalization group (SRG).  These potentials provide a
+	diverse set of tests for universal properties.  Because we can go to
+	very high \hw\ and $\Nmax$ for the two-particle bound states (and
+	therefore large $\LamUV$), it is possible to always ensure that UV
+	corrections are negligible.
+
+	We start with empirical considerations before presenting an
+  analytical understanding.  An example of how this correspondence between
+	the HO truncation and a hard wall at specific length plays out is
+	presented in Fig.~\ref{fig:sq_well_tail_matching}.
+	%
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6 \textwidth]
+		{Extrapolation/sqwell_V4_Nmax4_hw6L0b.pdf}
+		\caption{(a) The exact radial wave
+    function (dashed) for a square well Eq.~\eqref{eq:Vsw} with depth
+	  $V_0=4$ (and $\hbar = \mu = R = 1$) is compared to the wave function
+		obtained from an HO basis truncated at $\Nmax = 4$ with $\hw=6$ (solid).
+		The spatial extent of the wave function obtained from the HO basis
+		truncation is dictated by the square of HO wave function for the highest
+		radial quantum number (dot-dashed).
+		(b) The wave functions obtained from imposing a Dirichlet
+	  boundary condition at $L_0$, $\LA$ and $L_2$ are compared to the wave
+		function in truncated HO basis. }
+		\label{fig:sq_well_tail_matching}
+	\end{figure}
+  %
+	In the top panel, the exact
+	ground-state radial wave function (dashed) for the square well in
+	Eq.~\eqref{eq:Vsw} is compared to the solution in an oscillator basis
+	truncated at $\Nmax = 4$ determined by
+	diagonalization (solid).  The truncated basis cuts off the tail of the
+	exact wave function because the individual basis wave functions have a
+	radial extent that depends on \hw\ (from the Gaussian part) and on the
+	largest power of $r$ (from the polynomial part).  The latter is given
+	by $\Nmax = 2n + l$.  With $\Nmax = 4$ and $l=0$, this means that $n=2$ gives
+	the largest power.
+
+	The cutoff will then be determined by the $n=2$ oscillator wave
+	function, $u_{n=2}^{\rm HO}(r)$, whose square (which is the relevant
+	quantity) is also plotted in the top panel (dot-dashed).  It is
+	evident that the tail of the wave function in the truncated basis is
+	fixed by this squared wave function.  Our premise is that the HO truncation
+	is well modeled by a hard-wall (Dirichlet) boundary condition at $r=L$.
+	If so, the question remains how best to \emph{quantitatively} determine $L$
+	given	$\Nmax$ and $\hw$.  In the bottom panel of
+	Fig.~\ref{fig:sq_well_tail_matching} we show the wave functions	for several
+	possible choices for $L$.
+	$L_0$ corresponds to choosing the classical
+	turning point (i.e. the half-height point of the tail of
+	$[u^{HO}_{n=2}(r)]^2$); it is manifestly too small.  The authors of
+	\cite{Furnstahl2012} advocated an improved choice for $L$ given by
+	\beq
+	\LA = L_0 + 0.54437\, b\, (L_0/b)^{-1/3} \;.
+  \label{eq:LA}
+	\eeq
+	%
+	The length $\LA$ in Eq.~\eqref{eq:LA} is obtained by linear extrapolation
+	from the slope at the half-height point.
+	However, choosing
+	\beq
+	L = L_2 \equiv \sqrt{2 (\Nmax + 3/2 + 2)}b
+	\eeq
+	was found to work the best in almost all examples.
+
+	The most direct illustration of this conclusion comes from the
+	bound-state energies.  In the example in Fig.~\ref{fig:sq_well_tail_matching},
+	the exact energy (in dimensionless units) is $-1.51$ while the
+	result for the basis truncated at $\Nmax=4$ is $-1.33$, which is therefore
+	what we	hope to reproduce.  With $L_0$, the energy is $-0.97$, with $\LA$ it
+	is $-1.21$, and with $L_2$ it is $-1.29$.  While this is only one
+	example of a model problem, we have found that $L_2$ always gives a
+	better energy estimate than $\LA$ (and something like
+	$L_3 \equiv \sqrt{2 (\Nmax + 3/2 + 3)}b$ is almost always worse).
+
+	Another signature that demonstrates the suitability of $L_2$ is that
+	points from many different $\hw$ and $\Nmax$ values all lie on the same
+	curve.  Figures.~\ref{fig:spatial_cutoff_vs_HO_gauss} and
+	\ref{fig:spatial_cutoff_vs_HO_square_well} show the energies from a
+	wide range of HO truncations for $L_0$, $\LA$ and $L_2$ for the
+	Gaussian well and the square well potential, respectively.  The
+	energies for different $\hbar\Omega$ and $\Nmax$ lie on the same smooth
+	and unbroken curve if we use $L_2$ but not with the other choices.  For
+	$L=L_0$ and $L=\LA$, one finds that sets of points with different
+	$\hbar\Omega$ but same $\Nmax$ fall on smooth, $\Nmax$-dependent curves.  For
+	the square well, there are small discontinuities visible even for
+	$L=L_2$.  At the square well radius, the wave function's second
+	derivative is not smooth, and this is difficult to approximate with a
+	finite set of oscillator functions.  This lack of UV convergence is
+	likely the origin of the very small discontinuities.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	  {Extrapolation/spatialcutoffgaussV5b}
+	\caption{Ground-state energies versus $L_0$ (top),
+		$\LA$ (middle), and $L_2$ (bottom) for a Gaussian potential well
+		Eq.~\eqref{eq:Vg} with $V_0=5$ and $R=1$.
+		The crosses are the
+		energies from HO basis truncation.
+		The energies obtained by
+		numerically solving the Schr{\"o}dinger equation with a Dirichlet
+		boundary condition at $L$ lie on the solid line.
+		The horizontal dotted lines mark
+		the exact energy $\Einf=-1.27$.}
+  \label{fig:spatial_cutoff_vs_HO_gauss}
+  \end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	  {Extrapolation/spatialcutoffsqwellV4b}
+	\caption{Ground-state energies versus $L_0$ (top),
+	  $\LA$ (middle), and $L_2$ (bottom) for a square well potential well
+	  Eq.~\eqref{eq:Vsw} with $V_0=4$ and $R=1$.
+	  The crosses are the
+	  energies from HO basis truncation.
+	  The energies obtained by
+	  numerically solving the Schr{\"o}dinger equation with a Dirichlet
+	  boundary condition at $L$ lie on the solid line.
+	  The horizontal dotted lines mark
+	  the exact energy $\Einf=-1.51$.}
+  \label{fig:spatial_cutoff_vs_HO_square_well}
+  \end{figure}
+	%
+	As a further test, we solve the Schr{\"o}dinger equation with a
+	vanishing Dirichlet boundary condition (solid lines in
+	Figs.~\ref{fig:spatial_cutoff_vs_HO_gauss} and
+	\ref{fig:spatial_cutoff_vs_HO_square_well}), and compare to the
+	energies obtained from the HO truncations (crosses).  The finite
+	oscillator basis energies are well approximated by a Dirichlet
+	boundary condition with a mapping from the oscillator $\hbar\Omega$
+	and $\Nmax$ to an equivalent length given by $L_2$.  Note that for large
+	$\Nmax$, the differences between $L_0$, $\LA$ and $L_2$ may be smaller
+	than other uncertainties involved in nuclear calculations, but for
+	practical calculations one will want to use small $\Nmax$ results, where
+	these considerations are very relevant.
+
+	These results from model calculations are consistent with those from
+	realistic potentials applied to the deuteron.  To illustrate this, we
+	use the N$^3$LO 500\,MeV potential of Entem and
+	Machleidt~\cite{Entem:2003ft}.  We generate results in an HO basis
+	with \hw\ ranging from $1$ to $100\,\mbox{MeV}$ and $\Nmax$ from $4$ to
+	$100$ (in steps of 4 to avoid HO artifacts for the
+	deuteron~\cite{Bogner:2007rx}).  We then restrict the data to where UV
+	corrections are negligible (see Section~\ref{Sec:UV_story}).
+	%
+	\begin{figure}[h]
+	\centering
+  \includegraphics[width=0.6\textwidth]
+	{Extrapolation/spatialcutoffdeutrn}
+  \caption{Ground-state energies versus $L_0$ (top),
+  	$\LA$ (middle), and $L_2$ (bottom) for the Entem-Machleidt 500\,MeV
+  	N$^3$LO potential~\cite{Entem:2003ft}.  The horizontal dotted lines
+  	mark the exact energy $\Einf = -2.2246\,\mbox{MeV}$. }
+  \label{fig:spatial_cutoff_vs_HO_deuteron}
+  \end{figure}
+	%
+	Figure~\ref{fig:spatial_cutoff_vs_HO_deuteron} shows that the
+	criterion of a continuous curve with the smallest spread of points
+	clearly favors $L_2$.
+
+
+
+	\subsubsection{Analytical derivation of $L_2$}
+
+	In the asymptotic region (this is the region where IR cutoff is imposed), the
+	potential is negligible and the only relevant
+	part of the Hamiltonian is the kinetic energy or the $p^2$ operator.
+	In what follows, we analytically compute the smallest eigenvalue
+	$\kappa^2_{\rm min}$ of $p^2$ in a finite oscillator basis and will
+	see that $\kappa_{\rm min} = \pi/L_2$. In the remainder of this
+	Subsection, we set the oscillator length to one. We focus on $s$-waves
+	and thus consider wave functions that are regular at the origin, i.e.
+	the radial wave functions are identical to the odd wave functions of
+	the one-dimensional harmonic oscillator.
+
+	The localized eigenfunction of the operator $p^2$ with smallest
+	eigenvalue $\kappa^2$ is
+	%
+	\bea
+	\label{eigen}
+	\psi_{\kappa}(r) = \left\{\begin{array}{ll}
+	\sin{\kappa r}\ , & 0 \le r \le {\pi\over\kappa}\\
+	0 \ , & r > {\pi\over\kappa}
+	\end{array}\right. \; .
+	\eea
+	%
+	We employ the $s$-wave oscillator functions
+	%
+	\bea
+	\varphi_{2n+1}(r) &=&(-1)^n \sqrt{2 n!\over\Gamma(n+3/2)} r
+	L^{1\over 2}_n\left(r^2\right)
+	e^{-{r^2\over 2}} \nonumber\\
+	&=&\left(\pi^{1\over 2} 2^{2n} (2n+1)!\right)^{-1/2}H_{2n+1}(r)
+	e^{-{r^2\over 2}} \; , \nonumber
+	\eea
+	%
+	with energy $E=(2n +3/2)\hbar\Omega$. Here, $L_n^{1/2}$ denotes the
+	Laguerre polynomial, and it is convenient to rewrite this function in
+	terms of the Hermite polynomial $H_n$. We expand the
+	eigenfunction~(\ref{eigen}) as
+	%
+	\beq
+	\label{expand}
+	\psi_{\kappa}(r) = \sum_{n=0}^\infty c_{2n+1}(\kappa)\varphi_{2n+1}(r) \; .
+	\eeq
+	%
+	Before we turn to the computation of the expansion coefficients
+	$c_{2n+1}(\kappa)$, we consider the eigenvalue problem for the
+	operator $p^2$.  We have
+	%
+	\beq
+	p^2 = a^\dagger a +{1\over 2} -{1\over 2}
+	\left(a^2 +\left(a^\dagger\right)^2\right) \;,
+	\eeq
+	%
+	where $a$ and $a^\dagger$ denote the annihilation and creation
+	operator for the one-dimensional harmonic oscillator, respectively.
+	The matrix of $p^2$ is tridiagonal in the oscillator basis.
+	For the matrix representation, we order the basis states as
+	$(\varphi_1, \varphi_3, \varphi_5, \ldots)$. Thus, the eigenvalue
+	problem $p^2-\kappa^2=0$ becomes a set of rows of coupled linear
+	equations. In an infinite basis, the eigenvector $(c_1(\kappa),
+	c_3(\kappa), c_5(\kappa), \ldots )$ identically satisfies every row of
+	the eigenvalue problem for any value of $\kappa$. In a finite basis
+	$(\varphi_1, \varphi_3, \varphi_5,\ldots \varphi_{2n+1})$, however,
+	the last row of the eigenvalue problem
+	%
+	%\bea
+	%\label{quant}
+	%\lefteqn{\left(2n+3/2 -\kappa^2\right) c_{2n+1}(\kappa) =}\nonumber\\
+	% &&{1\over
+	%  2}\sqrt{2n}\sqrt{2 n+1}c_{2n-1}(\kappa) \ ,
+	%\eea
+	%
+	\beq
+	\label{quant}
+	\left(2n+3/2 -\kappa^2\right) c_{2n+1}(\kappa) =
+	 {1\over
+	  2}\sqrt{2n}\sqrt{2 n+1} \, c_{2n-1}(\kappa) \; ,
+	\eeq
+	%
+	can only be fulfilled for certain values of $\kappa$, and this is the
+	quantization condition. To solve this eigenvalue problem we need
+	expressions for the expansion coefficients $c_{2n+1}(\kappa)$
+	for $n\gg 1$. Those can be derived analytically as follows.
+
+
+	We rewrite the eigenfunction~(\ref{eigen}) as a Fourier transform
+	%
+	\beq
+	\psi_{\kappa} (r) = \sqrt{2\over \pi} \int\limits_0^\infty dk
+	\tilde{\psi}_{\kappa}(k) \sin kr \; ,
+	\eeq
+	%
+	and expand the sine function in terms of oscillator functions as
+	%
+	\beq
+	\sin kr = \sqrt{\pi\over 2} \sum_{n=0}^\infty (-1)^n \varphi_{2n+1}(r)
+	\varphi_{2n+1}(k) \; .
+	\eeq
+	%
+	Thus, the expansion coefficients in Eq.~(\ref{expand}) are given in
+	terms of the Fourier transform $\tilde{\psi}_\kappa(k)$ as
+	%
+	\beq
+	\label{integ}
+	c_{2n+1}(\kappa) = (-1)^n\int\limits_0^\infty dk\, \tilde{\psi}_{\kappa}(k)
+	\varphi_{2n+1}(k) \; .
+	\eeq
+	%
+	So far, all manipulations have been exact.  We need an expression for
+	$c_{2n+1}(\kappa)$ for $n\gg 1$ and use the asymptotic expansion
+	%
+	\beq
+	\label{approxwf}
+	\varphi_{2n+1}(k) \approx {(-1)^n\sqrt{2}\over \pi^{1/4}}
+	{(2n-1)!!\over \sqrt{(2n)!}}
+	\sin (\sqrt{4n+3}k) \; ,
+	\eeq
+	%
+	which is valid for $|k|\ll \sqrt{2n}$, see~\cite{gradshteyn}.
+	%
+	Using this approximation, one finds (making use of Fourier transforms)
+	%
+	\bea
+	\label{phi}
+	c_{2n+1}(\kappa) &\approx& \pi^{1/4} {(2n-1)!!\over \sqrt{(2n)!}}
+	\psi_{\kappa}(\sqrt{4n+3}) \nonumber\\
+	&=&\pi^{1/4}{(2n-1)!!\over \sqrt{(2n)!}}
+	\sin (\sqrt{4n+3}\kappa) \; ,
+	\eea
+	%
+	with $\kappa \le \pi/\sqrt{4n+3}$ due to Eq.~(\ref{eigen}).
+
+	Let us return to the solution of the quantization
+	condition~(\ref{quant}).  We make the ansatz
+	%
+	\beq
+	\kappa = {\pi\over\sqrt{4n+3+2\Delta}} \; ,
+	\eeq
+	%
+	and must assume that $\Delta > 0$.  This ansatz is well motivated, since the
+	naive semiclassical estimate $\kappa = \pi/L_0$ yields $\Delta=0$. We
+	insert the expansion coefficients~(\ref{phi}) into the quantization
+	condition~(\ref{quant}) and consider its leading-order approximation
+	for $n\gg 1$ and $n\gg \Delta$. This yields
+	%
+	\beq
+	\Delta = 2
+	\eeq
+	%
+	as the solution. Recalling that a truncation of the basis at
+	$\varphi_{2n+1}$ corresponds to the maximum energy
+	$E=(2n+3/2)\hbar\Omega$, we see that we must identify $N=2n$. Thus,
+	$\kappa_{\rm min} = \pi/L_2$ is the lowest momentum in a finite
+	oscillator basis with $n \gg 1$ basis states. It is clear from its
+	very definition that $\pi/L_2$ is also the infrared cutoff in a finite
+	oscillator basis. This clarifies misconceptions found in the recent
+	literature~\cite{Stetcu:2006ey,Stetcu:2007ms,Coon:2012ab}.
+
+	The derivation of our key result $\kappa_{\rm min}=\pi/L_2$ is based
+	on the assumption that the number of shells $N$ fulfills $N\gg 1$.
+	Table~\ref{tab1} shows a comparison of numerical results for
+	$\kappa_{\rm min}$ in different model spaces. We see that
+	$\pi/L_2$ is a very good approximation already for $N=2$, with a
+	deviation of about 1\%.
+
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}\hline
+	$N$ & $\kappa_{\rm min}$ & $\pi/L_2$ & $\pi/L_0$ \\\hline
+	   0 & 1.2247 & 1.1874 & 1.8138\\
+	   2 & 0.9586 & 0.9472 & 1.1874\\
+	   4 & 0.8163 & 0.8112 & 0.9472\\
+	   6 & 0.7236 & 0.7207 & 0.8112\\
+	   8 & 0.6568 & 0.6551 & 0.7207\\
+	  10 & 0.6058 & 0.6046 & 0.6551\\
+	  12 & 0.5651 & 0.5642 & 0.6046\\
+	  14 & 0.5316 & 0.5310 & 0.5642\\
+	  16 & 0.5035 & 0.5031 & 0.5310\\
+	  18 & 0.4795 & 0.4791 & 0.5031\\
+	  20 & 0.4585 & 0.4582 & 0.4791\\\hline
+	\end{tabular}
+	\caption{Comparison between the lowest momentum $\kappa_{\rm min}$, $\pi/L_2$,
+	 and $\pi/L_0$ for model spaces with up to $N$ oscillator quanta.}
+	\label{tab1}
+	\end{table}
+
+	Note that this approach can be generalized to other localized
+	bases.  The (numerical) computation of the lowest eigenvalue of the momentum
+	operator $p^2$ yields the box size $L$ corresponding to the employed Hilbert
+	space.
+
+	\subsubsection{EFT-like approach}
+
+
+
+	\subsection{The $S$-matrix way}
+
+	\subsection{Radii and phase shifts}
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/Deuteron_radii_n3lo500_inset_v4}
+	\caption{(color online) Deuteron radius squared versus $L_0$ (top) and
+  	$L_2$ (bottom) for the Entem-Machleidt 500\,MeV N$^3$LO
+  	potential~\cite{Entem:2003ft}.  The horizontal dotted lines mark the
+  	exact radius squared $r^2_{\infty} = 3.9006~{\rm fm}^2$. The insets
+  	show a magnification of data at smaller lengths $L_n$.}
+	\label{fig:deuteron_radii}
+	\end{figure}
+  %
+	Similar comments apply to the computation
+	of the radius. Figure~\ref{fig:deuteron_radii} shows that the
+	numerical results for the squared radius, when plotted as a function
+	of $L_2$ (but not as a function of $L_0$), fall on a continuous curve
+	with minimal spread.
+
+	\subsection{Higher angular momenta}
 
 	\section{Ultraviolet story}
+	\label{Sec:UV_story}
 
 	\section{Related development and Moving forward}
 
