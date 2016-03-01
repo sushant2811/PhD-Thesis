@@ -488,12 +488,16 @@
 	%
 	as the solution. Recalling that a truncation of the basis at
 	$\varphi_{2n+1}$ corresponds to the maximum energy
-	$E=(2n+3/2)\hbar\Omega$, we see that we must identify $N=2n$. Thus,
+	$E=(2n+3/2)\hbar\Omega$, we see that we must identify
+	$\Nmax \equiv N = 2n$. Thus,
 	$\kappa_{\rm min} = \pi/L_2$ is the lowest momentum in a finite
-	oscillator basis with $n \gg 1$ basis states. It is clear from its
-	very definition that $\pi/L_2$ is also the infrared cutoff in a finite
-	oscillator basis. This clarifies misconceptions found in the recent
-	literature~\cite{Stetcu:2006ey,Stetcu:2007ms,Coon:2012ab}.
+	oscillator basis with $n \gg 1$ basis states (and not $1/b$ as stated in
+	Ref.~\cite{Coon:2012ab}).  It is clear from its
+	very definition that $\pi/L_2$ is also (a very precise approximation of)
+	infrared cutoff in a finite	oscillator basis, and that $L_2$ (and not $b$
+	as stated in Refs.~\cite{Stetcu:2006ey,Stetcu:2007ms}) is the radial extent
+	of the oscillator basis and the analog to the extent of the lattice in the
+	lattice computations \cite{Luscher:1985dn}. 
 
 	The derivation of our key result $\kappa_{\rm min}=\pi/L_2$ is based
 	on the assumption that the number of shells $N$ fulfills $N\gg 1$.
@@ -530,7 +534,31 @@
 
 	\subsubsection{EFT-like approach}
 
+	We mentioned that the relevant operator for IR truncation is $p^2$.  To
+	get a better understanding of the correspondence between the HO truncation
+	and a hard wall at $L_2$, let's compare the spectrum of $p^2$ in the two
+	cases.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/momentum_eigenfunctions1.pdf}
+	\caption{Eigenfunctions of $p^2$ in the truncated HO basis compared to those
+	  in a box of size $L_2$. }
+	\label{fig:mom_eigen_fns}
+	\end{figure}
+	%
+	In Fig.~\ref{fig:mom_eigen_fns}, we compare the low-lying eigenfunctions of
+	$p^2$ in the truncated HO basis to the eigenfunctions in a box of size $L_2$.
+	As we will see later, the asymptotic or near the wall difference between the
+	two eigenfunctions are high-momentum effects irrelevant for the
+	long-wavelength physics of the bound states.
 
+	Another way to look at this is to compute the number $M(k)$ of ($s$-wave)
+	states up to a momentum $k$.  We find
+
+
+	Sq well FT example
 
 	\subsection{The $S$-matrix way}
 
@@ -540,7 +568,7 @@
 	\centering
 	\includegraphics[width=0.6\textwidth]
 	{Extrapolation/Deuteron_radii_n3lo500_inset_v4}
-	\caption{(color online) Deuteron radius squared versus $L_0$ (top) and
+	\caption{Deuteron radius squared versus $L_0$ (top) and
   	$L_2$ (bottom) for the Entem-Machleidt 500\,MeV N$^3$LO
   	potential~\cite{Entem:2003ft}.  The horizontal dotted lines mark the
   	exact radius squared $r^2_{\infty} = 3.9006~{\rm fm}^2$. The insets
