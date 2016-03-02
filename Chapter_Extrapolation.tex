@@ -235,6 +235,7 @@
 	However, choosing
 	\beq
 	L = L_2 \equiv \sqrt{2 (\Nmax + 3/2 + 2)}b
+	\label{eq:L2_def}
 	\eeq
 	was found to work the best in almost all examples.
 
@@ -497,7 +498,7 @@
 	infrared cutoff in a finite	oscillator basis, and that $L_2$ (and not $b$
 	as stated in Refs.~\cite{Stetcu:2006ey,Stetcu:2007ms}) is the radial extent
 	of the oscillator basis and the analog to the extent of the lattice in the
-	lattice computations \cite{Luscher:1985dn}. 
+	lattice computations \cite{Luscher:1985dn}.
 
 	The derivation of our key result $\kappa_{\rm min}=\pi/L_2$ is based
 	on the assumption that the number of shells $N$ fulfills $N\gg 1$.
@@ -556,9 +557,81 @@
 
 	Another way to look at this is to compute the number $M(k)$ of ($s$-wave)
 	states up to a momentum $k$.  We find
+	\bea
+	  M(k)&=& {\rm Tr} \left[\Theta\left(\hbar^2k^2-p^2\right)
+	   \Theta\left(E-{p^2\over 2m}-{m\over 2}\Omega^2 r^2\right) \right]
+	  \nonumber\\
+	  &\approx&{1\over 2\pi\hbar} \int\limits_{-\hbar k}^{\hbar k}\! dp
+	  \int\limits_0^\infty\! dr \,
+	   \Theta\left(\hbar^2k^2-p^2\right)
+	   \Theta\left(E-{p^2\over 2m}-{m\over 2}\Omega^2 r^2\right)
+	   \; .
+	\eea
+	%
+	Here, we apply the semiclassical approximation and write the trace
+	as a phase-space integral.  We assume $\hbar^2k^2/(2m)\le
+	E$, perform the integrations and use $E/(\hbar\Omega)= N+3/2$
+	\footnote{For the sake of brevity we replace $\Nmax$ by $N$}. This
+	yields
+	%
+	\bea
+	  M(k) = {bk\over 2\pi}\sqrt{2N+3-b^2k^2}
+	   +{N+3/2\over \pi}\arcsin{bk\over\sqrt{2N+3}}
+	  \;,
+	  \label{Mstair}
+	\eea
+	%
+	where $b$ is the oscillator length.
+	Figure~\ref{fig:staircase} shows a comparison between the quantum
+	mechanical staircase function and the semiclassical
+	estimate~(\ref{Mstair}) for $N=32$.  For sufficiently small values of
+	$kb\ll\sqrt{2N}$, the number of $s$-wave momentum eigenstates grows
+	linearly, and inspection of Eq.~(\ref{Mstair}) shows that the slope at
+	the origin is $L_0/\pi$ semiclassically.  The linear growth of the
+	number of eigenstates of $p^2$ with $k$ clearly demonstrate that --- at
+	not too large values of $kb$ --- the spectrum of $p^2$ in the oscillator
+	basis is similar to the spectrum of $p^2$ in a spherical
+	box.
+  %
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Extrapolation/staircase_N32_v2}
+	\caption{The staircase function of the $s$ states of
+	  the operator $p^2$ in a finite oscillator basis with $N=32$ (black)
+	  compared to its semiclassical estimate (smooth red curve). $M(k)$
+	  denotes the number of states of the operator $p^2$ with eigenvalues
+	  $p^2\le\hbar^2 k^2$.}
+	\label{fig:staircase}
+	\end{figure}
 
+	As a final example of the correspondence between the HO truncation and the
+	hard wall at $L_2$, we look at the ground state wave functions of a square
+	well in the two bases in Fig.~\ref{fig:HO_q_and_rspace_sqwell}.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]
+	{Extrapolation/HO_q_and_rspace_sqwell_V0_4p0_Nmax8_hw18_v2}
+	\caption{Ground-state wave functions for a square well potential of depth
+	  $V_0=4$ (see Eq.~\eqref{eq:Vsw}; lengths are in units of $R$ and energies
+		in units of $1/R^2$ with $\hbar^2/\mu = 1$) from solving the Schr\"odinger
+	  equation with a truncated harmonic oscillator basis with $\hbar\Omega = 18$
+	  and $N = 8$ (dashed) and with a
+	  Dirichlet boundary condition at $r=L_2$ given from Eq.~\eqref{eq:L2_def}
+		(solid).  The coordinate-space radial wave functions in a) exhibit a
+		difference at $r$ near 1.5, but the Fourier-transformed wave functions in
+		b) are in close agreement at low $k$, showing that the differences are
+		high-momentum modes.}
+	\label{fig:HO_q_and_rspace_sqwell}
+	\end{figure}
+	%
+	The binding momentum in this case is $1.7$ (in units of $1/R$).  The
+	Fourier-transformed wave functions differ at much larger momentum and this
+	difference is irrelevant for the long-wavelength physics of bound states.
+	Thus the use of Dirichlet boundary condition to take into account the HO
+	truncation is similar in spirit to the use of contact interactions to
+	describe the effect of unknown short-ranged forces on long-wavelength probes.
 
-	Sq well FT example
 
 	\subsection{The $S$-matrix way}
 
