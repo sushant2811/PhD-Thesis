@@ -635,6 +635,504 @@
 
 	\subsection{Cashing in on the hard wall correspondence}
 
+	We have so far focused on establishing how HO truncation is analogous to
+	putting the system in a spherical box of a specified radius.  Now let's see
+	how this correspondence helps us in getting the exact energy $\Einf$.
+
+	\subsubsection{Linear energy method}
+
+	Our first approximation to the IR correction
+	is based on what is known in quantum chemistry
+	as the linear energy method~\cite{Djajaputra:2000aa}.  Given a
+	hard-wall boundary condition at $r=L$ beyond the range of the
+	potential, we write the energy compared to that for $L=\infty$ as
+	%
+	\beq
+	 E_L = E_{\infty}+\Delta E_L
+	 \;.
+	\eeq
+	%
+	We seek an estimate for $\Delta E_L$, which is assumed to be small,
+	based on an expansion of the wave function in $\Delta E_L$.  Let
+	$u_E(r)$ be a radial solution with regular boundary condition at the
+	origin and energy $E$.  For convenience in using standard quantum
+	scattering formalism below, we choose the normalization corresponding
+	to what is called the ``regular solution'' in
+	Ref.~\cite{taylor2006scattering}, which means that $u_E(0) = 0$ and
+	the slope at the origin is unity for all $E$.  We denote the
+	particular solutions $u_{E_L}(r)\equiv u_L(r)$ and $u_{\Einf}(r)
+	\equiv u_\infty (r)$. Then there is a smooth expansion of $u_E$ about
+	$E=\Einf$ at fixed $r$, so we approximate~\cite{Djajaputra:2000aa}
+	%
+	\beq
+	  u_L(r)\approx u_\infty (r) + \Delta E_L
+	  \left.\frac{du_E(r)}{dE}\right|_{E_{\infty}}
+	  + \mathcal{O}(\Delta E_L^2) \;,
+	  \label{eq:linear_energy_approx}
+	\eeq
+	%
+	for $r\leq L$.
+	%
+	By evaluating Eq.~\eqref{eq:linear_energy_approx} at $r=L$ with the
+	boundary condition $u_L(L)=0$, we find
+	%
+	\beq
+	  \Delta E_L \approx -u_\infty(L) \left(\left.\frac{d u_E(L)}
+	  {dE}\right|_{\Einf}\right)^{-1}
+	  \;,
+	  \label{eq:Delta_EL}
+	\eeq
+	%
+	which is the estimate for the IR correction.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Extrapolation/linear_approx_v2}
+	\caption{Testing the linear energy approximation
+	  Eq.~\eqref{eq:linear_energy_approx} for (a) deep ($V_0=10$) and (b)
+	  shallow ($V_0=2$) Gaussian potential well Eq.~\eqref{eq:Vg}
+		($\hbar = \mu = R=1$).
+	  The solid lines are the exact solutions $u_L(r)$ for energies $-3.5$
+	  and $-0.020$, respectively, whose zero crossings determine the
+	  corresponding values for $L$.}
+	\label{fig:linear_energy_approx}
+	\end{figure}
+
+	We can check the accuracy of the linear energy
+	approximation~(\ref{eq:linear_energy_approx}) by numerically solving
+	the Schr\"odinger equation with a specified energy.  This determines
+	$L$ as the radius at which the resulting wave function vanishes. Then
+	we compare this wave function for $r \leq L$ to the right side of
+	Eq.~(\ref{eq:linear_energy_approx}), with the derivative calculated
+	numerically.  Figure~\ref{fig:linear_energy_approx} shows
+	representative examples for a deep and shallow Gaussian potential.  In
+	these examples and other cases, the approximation to the wave function
+	is good, particularly in the interior.  The estimates for $\Delta E_L$
+	using the right side of Eq.~\eqref{eq:Delta_EL} are within a few to
+	ten percent: 0.68 versus 0.70 and 0.050 versus 0.055 for the two
+	cases.
+
+	The good approximation to the wave function suggests that for the
+	calculation of other observables the linear energy approximation will
+	be useful.  For observables most sensitive to the long distance
+	(outer) part of the wave function, such as the radius, this has
+	already been shown to be true~\cite{Furnstahl:2012qg}. But the good
+	approximation to the wave function at small $r$ means that corrections
+	for short-range observables should also be controlled, with the
+	dominant contribution in an extrapolation formula coming from the
+	normalization.
+
+	Next we derive an expression for the derivative in
+	Eq.~\eqref{eq:Delta_EL}.  To start with we assume we have a single
+	partial-wave channel.  For general $E < 0$, the asymptotic form of the
+	radial wave function for $r$ greater than the range of the potential is
+	%
+	\beq
+	  u_E(r)\overset{r \gg R}\longrightarrow A_E(e^{-k_E r}+\alpha_E e^{+k_E r})
+	  \;,
+	  \label{eq:asymptotic_form_uE}
+	\eeq
+	%
+	with $u_\infty(r)\overset{r \gg R}\longrightarrow \Ainf e^{-\kinf r}$
+	for $E=\Einf$.  We take the derivative of
+	Eq.~\eqref{eq:asymptotic_form_uE} with respect to energy, evaluate at
+	$E=\Einf$ using $\alpha_{\Einf}=0$ and $dk_E/dE = -\mu/(\hbar^2 k_E)$,
+	to find
+	%
+	\bea
+	    \left.\frac{d u_E(r)}{d E}\right|_{\Einf} &=&
+	    \Ainf \left.\frac{d \alpha_E}{d E}\right|_{\Einf} e^{+\kinf r}
+	    +
+	    \Ainf \frac{\mu}{\hbar^2}\frac{r}{\kinf} e^{-\kinf r}
+	    +
+	    \left.\frac{d A_E}{d E}\right|_{\Einf} e^{-\kinf r}
+	    \;.
+	  \label{eq:entire_correction}
+	\eea
+	%
+	We now evaluate at $r=L$ and anticipate that the $e^{+\kinf L}$ term
+	dominates:
+	%
+	\beq
+	  \left.\frac{d u_E(L)}{d E}\right|_{\Einf}
+	  \approx \Ainf \left.\frac{d\alpha_E}{d E}\right|_{\Einf} e^{+\kinf L}
+	   + \mathcal{O}(e^{-\kinf L})
+	   \;.
+	  \label{eq:substitute_this}
+	\eeq
+	%
+	Substituting Eq.~\eqref{eq:substitute_this} into
+	Eq.~\eqref{eq:Delta_EL}, we obtain
+	%
+	\beq \Delta E_L \approx -\left[ \left.\frac{d \alpha_E}{d
+	      E}\right|_{\Einf}\right]^{-1} e^{-2 \kinf L} + \mathcal{O}(e^{-4
+	  \kinf L}) \;.
+	\eeq
+	Note that this result is independent of	the normalization of the
+	wave function.
+
+	To calculate the derivative explicitly, we turn to scattering theory,
+	following the notation and discussion in
+	Ref.~\cite{taylor2006scattering}.  In particular, the asymptotic form
+	of the regular scattering wave function $\phi_{l,k}$ for orbital
+	angular momentum $l$ and for positive energy $E \equiv \hbar^2 k^2/2\mu$
+	is given in terms of the Jost function
+	$\Jost_l(k)$~\cite{taylor2006scattering},
+	%
+	\beq
+	  \phi_{l,k}(r) \longrightarrow
+	    \frac{i}{2}[\Jost_l(k)\hat{h}_l ^{-}(k r)-\Jost_l(-k)\hat{h}_l^{+}(k r)]
+	    \;,
+	    \label{eq:phi_asymp}
+	\eeq
+	%
+	where the $\hat{h}_l^{\pm}$ functions (related to Hankel functions)
+	behave asymptotically as
+	%
+	\beq
+	\hat{h}_l ^{\pm}(k r)
+	    \overset{r\rightarrow\infty}\longrightarrow e^{\pm i (k r - l \pi/2)}
+	    \;.
+	\eeq
+	%
+	The ratio of the Jost functions appearing in Eq.~\eqref{eq:phi_asymp}
+	gives the partial wave $S$-matrix $s_l(k)$:
+	%
+	\beq
+	   s_l(k) = \frac{\Jost_l(-k)}{\Jost_l(+k)}
+	   \;,
+	   \label{eq:s_l}
+	\eeq
+	%
+	which is in turn related to the partial-wave scattering amplitude
+	$f_l(k)$ by
+	%
+	\beq
+	  f_l(k) = \frac{s_l(k) - 1}{2i k}
+	  \;.
+	  \label{eq:f_l}
+	\eeq
+	%
+	We will restrict ourselves to $l=0$ for simplicity; the generalization
+	to higher $l$ is straightforward and will be considered later.
+
+	To apply Eq.~\eqref{eq:phi_asymp} to negative energies, we
+	analytically continue from real to (positive) imaginary $k$.  So,
+	%
+	\bea
+	   \phi_{0,ik_E}(r)
+	       &\overset{r \gg R}\longrightarrow&
+	         \frac{i}{2}\bigl(
+		    \Jost_0(ik_E)e^{k_E r}-\Jost_0(-ik_E) e^{-k_E r} \bigr)
+		 \nonumber \\
+	       &=&
+	       -\frac{i}{2}\Jost_0(-ik_E) \bigl(
+	           e^{-k_E r} - \frac{\Jost_0(-ik_E)}{\Jost_0(ik_E)} e^{k_E r}
+	         \bigr)
+	       	\;,
+	  \label{eq:asymptotic_form_phiE}
+	\eea
+	%
+	where $R$ is the range of the potential.  Upon comparing to
+	Eq.~\eqref{eq:asymptotic_form_uE} we conclude that
+	%
+	\beq
+	  \alpha_E = -\frac{\Jost_0(ik_E)}{\Jost_0(-ik_E)}
+	   = -\frac{1}{s_0(ik_E)} \;.
+	  \label{eq:alphaE_and_S}
+	\eeq
+	%
+	Note that Eq.~\eqref{eq:alphaE_and_S} is consistent with the
+	bound-state limit of Eq.~\eqref{eq:asymptotic_form_uE}: at a bound
+	state where $\Einf = -\hbar^2 \kinf^2/2\mu$ there is a simple pole in the $S$
+	matrix, which means $\alpha_E = 0$ as expected (no exponentially
+	rising piece).
+
+	From Ref.~\cite{taylor2006scattering} we learn that the residue as a
+	function of $E$ of the partial wave amplitude $f_l(E)$ at the
+	bound-state pole is $\displaystyle (-1)^{l+1} \ANC^2 \hbar^2/2 \mu$,
+	where $\ANC$ is	the ANC.  The ANC is defined by the large-$r$ behavior of the
+	\emph{normalized} bound-state wave function:
+	%
+	\beq
+	  u_{\rm norm}(r)\overset{r\gg R}\longrightarrow \ANC e^{-\kinf r}
+	  \;.
+	  \label{eq:definition_of_ANC}
+	\eeq
+	%
+	Thus, near the bound-state pole (with $E = \hbar^2 k^2/2\mu$),
+	%
+	\beq
+	  f_0(k)  \approx  \frac{- \hbar^2\ANC^2}{2\mu (E-\Einf)}
+	      =  \frac{-\ANC^2}{k^2 + \kinf^2}
+	   \;.
+	\eeq
+	%
+	or, using Eqs.~\eqref{eq:f_l} and \eqref{eq:alphaE_and_S},
+	%
+	%\beq
+	%  s_0(k) = \frac{k^2+\kinf^2 - 2 i k \ANC^2}{k^2+\kinf^2}
+	%\eeq
+	%
+	%and therefore
+	%
+	\beq
+	  \alpha_E(k) \approx -\frac{k^2+\kinf^2}{k^2+\kinf^2-2 i k \ANC^2}
+	  \;.
+	  \label{eq:alphaE_k}
+	\eeq
+	%
+	Now,
+	%
+	\beq
+	  \left.\frac{d \alpha_E}{d E}
+	  \right|_{\Einf}=\frac{d\alpha_E/dk\vert_{k=i\kinf}}
+	  {dE/dk|_{k=i\kinf}}
+	  \;,
+	\eeq
+	%
+	so using Eq.~\eqref{eq:alphaE_k} we find
+	%
+	\beq
+	  \left.\frac{d\alpha_E}{d k}\right|_{k=i\kinf}=\frac{-i}{\ANC^2}
+	  \;,
+	\eeq
+	%
+	and therefore
+	%
+	\beq
+	  \left.\frac{d\alpha_E}{dE}\right|_{\Einf}=\frac{-\mu}{\hbar^2 \kinf \ANC^2}
+	  \;.
+	\eeq
+	%
+	Putting it all together, we have
+	%
+	\beq
+	  \Delta E_L = \frac{\hbar^2 \kinf \ANC^2}{\mu} e^{-2 \kinf L}
+	    + \mathcal{O}(e^{-4 \kinf L})
+	    \;.
+	    \label{eq:complete_IR_scaling}
+	\eeq
+	%
+	Equation~\eqref{eq:complete_IR_scaling} matches the result
+	\beq
+	E(L) = \Einf + A e^{-2 \kinf L} + \mathcal{O}(e^{-4 \kinf L})
+	\eeq
+	in \cite{Furnstahl2012}, but now we have identified
+	$\displaystyle A = \hbar^2\kinf\ANC^2/\mu$.
+
+	In \cite{More:2013rma}, we advocated including second term in
+	Eq.~\eqref{eq:entire_correction} for weakly bound states (small $\kinf$
+	makes the term $\displaystyle \Ainf \frac{\mu}{\hbar^2}\frac{r}{\kinf} e^{-\kinf r}$
+	non-negligible).  Including this term was also seen to give better prediction
+	for weakly bound states like deuteron.  As we pointed out in
+	\cite{Furnstahl:2013vda}, a better way to arrange an expression for
+	$\Delta E$ is to have a systematic expansion in powers of $e^{-2 \kinf L}$.
+ 	Keeping the second term in Eq.~\eqref{eq:entire_correction}, generates terms
+	in higher powers of $\mathcal{O}(e^{-2 \kinf L})$.  However, these higher
+	order terms also arise from the $\mathcal{O}(\Delta E_L ^2)$ term in
+	Eq.~\eqref{eq:linear_energy_approx} and to be consistent
+	we need to take in account contributions up to a given order from both the
+	sources (i.e., Eqs.~\eqref{eq:linear_energy_approx} and
+	\eqref{eq:entire_correction}).  As we will see below, relating $k_L$
+	($k_L$ is the binding momentum when we have a hard wall at length $L$)
+	directly to the $S$-matrix allows us to transparently obtain systematic
+	expansion for $\Delta E$ in powers of $e^{-2 \kinf L}$.
+
+	\subsubsection{The $S$-matrix way}
+
+	In \cite{Furnstahl:2013vda}, we returned to Eq.~\eqref{eq:asymptotic_form_uE}
+	and noted that the boundary condition uniquely fixed the coefficient
+	$\alpha_E$.  We need $u_E(r = L) = 0$ which fixes
+	\beq
+	\alpha_E = -e^{-2 k_E L}\;.
+	\label{eq:alpha_def}
+	\eeq
+	To make the $L$ dependence explicit, we modify the notation and let
+	$k_L \equiv k_E$.  Comparing Eqs.~\eqref{eq:alpha_def} and
+	\eqref{eq:alphaE_and_S}, we have
+	\beq
+	e^{-2 k_L L} = \left[s_0(i k_L)\right]^{-1} \;.
+	\label{eq:basiceq}
+	\eeq
+	We then use appropriate parametrization for $s_0$ valid in the complex $k$
+	region and solve the transcendental
+	equation~\eqref{eq:basiceq} for $k_L$ and thereby find $E_L$.
+
+	If the potential has no long-range part that introduces a singularity
+	in the complex $k$ plane nearer to the origin than the bound-state
+	pole (which is the case, for example, for the deuteron when we assume that
+	the longest-ranged interaction is from pion exchange), then the
+	continuation of the positive-energy partial-wave S-matrix (i.e., the
+	phase shifts) to the pole should be unique.  Because $|k_L| <
+	|\kinf|$, $s_0(i k_L)$ and therefore $k_L$ and the energy shift $E_L$
+	should be determined solely by observables.
+
+	The leading term in an expansion of $k_L - \kinf$ using
+	Eq.~\eqref{eq:basiceq} comes from the bound-state pole, at which $s_0$
+	behaves like~\cite{newton2002scattering}
+	%
+	\beq
+	  s_0(k) \approx \frac{-i\ANC^2}{k-i\kinf}
+	  \;.
+	  \label{eq:purepole}
+	\eeq
+	%
+	Note that $\ANC$ here is
+	the asymptotic normalization coefficient (ANC) defined in
+	Eq.~\eqref{eq:definition_of_ANC}.
+	%
+	Substituting Eq.~\eqref{eq:purepole} into Eq.~\eqref{eq:basiceq} yields
+	%
+	\beq
+	  k_L - \kinf \approx -\ANC^2 e^{-2k_L L} \approx -\ANC^2 e^{-2\kinf L}
+	  \;.
+	  \label{eq:kLatLO}
+	\eeq
+	%
+	This is the leading-order (LO) result for $k_L$ obtained in
+	Eq.~\eqref{eq:complete_IR_scaling}.  Note that in
+	Eq.~\eqref{eq:complete_IR_scaling}, $\displaystyle \Delta E_L \equiv
+	E_L - \Einf = \kinf^2/2 - k_L^2/2$.  We set $\displaystyle \hbar^2/ \mu = 1$.
+	The notation $\kinf$ for the exact binding momentum make sense in this
+	context, because in the exact case, the hard wall is at $L = \infty$.
+
+	Iterations of the intermediate equation  in \eqref{eq:kLatLO} motivate the
+	NLO parameterization of $k_L$ as
+	%
+	\beq
+	  k_L = \kinf + A e^{-2 \kinf L} + (B L + C) e^{-4 \kinf L}  +
+		\mathcal{O}(e^{-6 \kinf L})
+	  \;,
+	  \label{eq:kLexpansion}
+	\eeq
+	%
+	with $A = -\ANC^2$.  In general we can substitute this expansion into
+	Eq.~\eqref{eq:basiceq} using an parametrized form of the S-matrix,
+	then expand in powers of $e^{-2 \kinf L}$ and equate $e^{-2 \kinf L}$,
+	$L e^{-4 \kinf L}$, and $e^{-4 \kinf L}$ terms on both sides of the
+	equation.  However, while both $A$ and $B$ are uniquely determined by
+	the pole in $s_0(k)$ at $k=i\kinf$, $C$ is only determined unambiguously if
+	$s_0(k)$ is consistently parameterized away from the pole.  For
+	example, the two parametrizations
+	%
+	\beq
+	\label{eq:S0_1}
+	    s_0(i k_L) \approx \frac{\kinf^2 - k_L^2 + 2 k_L \ANC^2}{\kinf^2 - k_L^2}
+	\eeq
+	%
+	and
+	%
+	\beq
+	  s_0(k) \approx \frac{-\ANC^2}{2\kinf}\,\frac{k+i\kinf}{k- i\kinf}
+	  \label{eq:s0_Newton}
+	\eeq
+	%
+	yield different results for $C$. The first
+	parametrization~(\ref{eq:S0_1}) is based on a particular form for the
+	partial-wave scattering amplitude near the
+	pole~\cite{taylor2006scattering}, and was employed in
+	Ref.~\cite{More:2013rma}.  The second paramerization
+	(\ref{eq:s0_Newton}) correctly incorporates that the S-matrix also has
+	a zero at $-i\kinf$~\cite{newton2002scattering}.  In neither case,
+	however, do we have a sufficiently general parametrization that allows
+	us to unambiguously determine $C$.
+
+	For the complete NLO energy correction, we start from the
+	general expression for the S-matrix
+	%
+	\beq
+	  s_0(k) = \frac{k\,\cot\delta_0(k) + ik}{k\,\cot\delta_0(k) -ik}
+	  \;,
+	  \label{eq:s0_exact}
+	\eeq
+	%
+	and use an effective range expansion to substitute for $k\,\cot
+	\delta_0(k)$.  In particular, we use an expansion
+	around the bound-state pole rather than about zero energy,
+	namely~\cite{wu2011scattering,Phillips:1999hh},
+	%
+	 \beq
+	  k\,\cot\delta_0(k) = -\kinf + \frac12 \rho_d(k^2 + \kinf^2)
+	     + w_2(k^2+\kinf^2)^2 +  \cdots
+	     \;.
+	     \label{eq:eff_range_kinf}
+	\eeq
+	%
+	To match the residue at the S-matrix pole as in \eqref{eq:purepole},
+	we identify
+	%
+	\beq
+	 \rho_d = \frac{1}{\kinf} - \frac{2}{\ANC^2}
+	  \;.
+	  \label{eq:rhoD_gamma_rel}
+	\eeq
+	%
+	Now we substitute \eqref{eq:eff_range_kinf} into \eqref{eq:s0_exact}
+	and use Eq.~\eqref{eq:kLexpansion} to expand both sides of
+	Eq.~\eqref{eq:basiceq}, equating terms with equal powers of
+	$e^{-2\kinf L}$ and $L$. The resulting expansion for the binding
+	momentum to NLO is
+	%
+	\begin{align}
+    [k_L]_{\rm NLO} &=  \kinf - \ANC^2 e^{-2\kinf L}  - 2  L \ANC^4
+		e^{-4\kinf L}
+    \nonumber  \\
+    &\null - \ANC^2 \left(1 - \frac{\ANC^2}{2\kinf} - \frac{\ANC^4}{4\kinf^2}
+		+ 2 \kinf w_2 \ANC^4 \right) e^{-4\kinf L}
+    \;.
+    \label{eq:complete_k_correction_NLO}
+  \end{align}
+	%
+	Using $\Delta E_L \equiv E_L - \Einf = \kinf^2/2 - k_L^2/2$,
+	the correction for the energy due to finite $L$ is
+	%
+	\begin{align}
+  	[\Delta E_L]_{\rm NLO} &=  \kinf \ANC^2 e^{-2\kinf L}
+  	+ 2\kinf L\ANC^4 e^{-4\kinf L}
+    \nonumber \\
+  	& \null\quad +
+    \kinf\ANC^2 \Bigl( 1-\frac{\ANC^2}{\kinf}-\frac{\ANC^4}{4\kinf^2}
+    +
+    2\kinf w_2 \ANC^4  \Bigr)  e^{-4\kinf L}
+    \;.
+    \label{eq:complete_E_correction_NLO}
+\end{align}
+	%
+	In what follows we use LO to refer to the first term in this expansion and
+	L-NLO to
+	refer to the first two terms (the second term should dominate the full
+	NLO expression when $\kinf L$ is large).  We also note that
+	higher-order terms in Eq.~\eqref{eq:eff_range_kinf} (e.g., terms
+	proportional to $(k^2+\kinf^2)^3$ and higher powers) do not affect the
+	binding momentum or energy predictions
+	Eqs.~\eqref{eq:complete_k_correction_NLO} and
+	\eqref{eq:complete_E_correction_NLO} at NLO.
+
+	As a special case, let us consider the zero-range limit of a
+	potential. In this case $\rho_d = w_2 = 0$, $\ANC^2 = 2\kinf$, and
+	%
+	\beq
+	   [s_0(ik_L)]^{-1} = \frac{\kinf-k_L}{\kinf+k_L}\;.
+	\eeq
+	%
+	The expansion for $k_L$ in a form similar to Eq.~\eqref{eq:kLexpansion}
+	can be extended to arbitrary order using Eq.~\eqref{eq:basiceq}.
+
+	We note finally that the leading corrections beyond NLO scale as $L^2
+	e^{-6\kinf L}$. While we do not pursue a derivation of such high-order
+	corrections here, the knowledge of the leading form is useful in some of
+	the error analysis we present in Subsec.~\ref{subsec:pudding_proof}.
+
+
+
+	\subsubsection{Differential method}
+
+	\subsection{The proof of the pudding}
+	\label{subsec:pudding_proof}
+
+	\subsubsection{Comparison to conventional extrapolation schemes}
+
 	\subsection{Radii and phase shifts}
 
 	\begin{figure}[h]
