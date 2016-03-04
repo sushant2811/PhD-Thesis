@@ -1068,6 +1068,7 @@
 	  \label{eq:rhoD_gamma_rel}
 	\eeq
 	%
+	$w_2$ is a low-energy observable like $\ANC$ and $\kinf$.
 	Now we substitute \eqref{eq:eff_range_kinf} into \eqref{eq:s0_exact}
 	and use Eq.~\eqref{eq:kLexpansion} to expand both sides of
 	Eq.~\eqref{eq:basiceq}, equating terms with equal powers of
@@ -1125,8 +1126,174 @@
 	the error analysis we present in Subsec.~\ref{subsec:pudding_proof}.
 
 
-
 	\subsubsection{Differential method}
+
+	Because we seek the change in energy with respect to a cutoff, it is
+	natural to formulate the problem in the spirit of renormalization
+	group methods by seeking a flow equation for the bound-state energy as
+	a function of $L$.  Such an approach is already documented in the
+	literature, for example in Refs.~\cite{Arteca1984} and
+	\cite{Fernandez1981}, and it provides us with an alternative method that
+	does not directly reference the S-matrix.  The basic equation is
+	%
+	\beq
+	  \frac{\partial E_L}{\partial L} = -\frac12 \frac{|u'_L(L)|^2}
+		{\int_0^L |u_L(r)|^2\, dr}
+	  \;.
+	  \label{eq:dEdL}
+	\eeq
+	%
+	Here the prime denotes a derivative with respect to $r$.  Given an
+	expression for the right-hand side in terms of observables ($\kinf$,
+	$\ANC$, and so on) and $L$, we can simply integrate to find the energy
+	correction for a bc at $L$
+	%
+	\beq
+	  \Delta E_L \equiv E_L - \Einf = \int_{\Einf}^{E_L}\! dE\,
+	     = \int_\infty^L\! \frac{\partial E_L}{\partial L} dL
+	     \;.
+	\eeq
+	%
+	To derive Eq.~\eqref{eq:dEdL}, we start with
+	%
+	\beq
+	  \frac{\partial}{\partial L}\left [
+	   \int_0^L u_L(r) H u_L(r)\, dr = E_L \int_0^L\! dr\, u_L(r)^2
+	  \right]
+	  \;,
+	\eeq
+	%
+	which yields (after some cancellations)
+	%
+	\beq
+	    \frac12 \left.\left( \frac{\partial u_L(r)}{\partial r}
+	         \frac{\partial u_L(r)}{\partial L}
+	         \right)\right|_0^L
+	   =
+	  \frac{\partial E_L}{\partial L} \int_0^L\! dr\, u_L(r)^2
+	         \;.
+	         \label{eq:DeltaEL}
+	\eeq
+	%
+	The left-hand side is a surface term from partially integrating the
+	kinetic energy in $H$.  The lower limit vanishes because $u_L(0) = 0$
+	for any $L$.  Finally, we replace the partial derivative with respect
+	to $L$ at the upper limit using
+	%
+	\beq
+	   \frac{\partial u_L(L)}{\partial L} = - \frac{\partial u_L(L)}{\partial r}
+	   \;,
+	\eeq
+	%
+	which follows from expanding $u_{L'}(L') = 0$ about $u_{L}(L) = 0$ for
+	$L' = L + \Delta L$.
+
+	To apply Eq.~\eqref{eq:dEdL}, we start with $u_L(r)$ in the asymptotic
+	region, as given by
+	\beq
+  	u_L(r) \overset{r \gg R}{\longrightarrow}  \left(e^{-k_L r} - e^{-2k_L L}
+		e^{k_L r}\right)
+   	\;.
+   	\label{eq:uLasymp2}
+  \eeq
+	The normalization
+	constant $\gamma_L$ is chosen so that the integral of $u_L(r)^2$ from
+	0 to $L$ is unity; it becomes the ANC $\ANC$ as
+	$L\rightarrow\infty$.  Thus
+	%
+	\beq
+	   u_L'(L) = -2 \gamma_L k_L e^{-k_L L}
+	   \;.
+	   \label{eq:uLprime}
+	\eeq
+	%
+	Now we need to expand $k_L$ and $\gamma_L$ about $\kinf$ and $\ANC$,
+	respectively.  The leading term is trivial: $k_L \rightarrow \kinf$
+	and $\gamma_L \rightarrow \ANC$, so the only $L$ dependence in
+	$u_L'(L)^2$ is in $e^{-2 \kinf L}$ and the integration in
+	\eqref{eq:dEdL} is immediate:
+	%
+	\begin{align}
+	\Delta E_L
+	     = \int_\infty^L\! \frac{\partial E_L}{\partial L} dL
+	     =  -2 \ANC^2 \kinf^2 \int_\infty^L\! e^{-2\kinf L} \, dL
+	     =  \kinf \ANC^2 e^{-2 \kinf L} +  \mathcal{O}(e^{-4 \kinf L})
+	     \;.
+	\end{align}
+	%
+	This is the same LO result for $\Delta E_L$ found by other methods.
+
+	To go to NLO we need an expression for $\gamma_L$.  In the zero-range
+	(zr) limit, $\gamma_L$ is given completely in terms of $k_L$ using the
+	normalization condition (because the asymptotic form in
+	Eq.~\eqref{eq:uLasymp2} holds
+	over the entire range of the integral)
+	%
+	\begin{align}
+	  \gamma_L^2 &= \left[\int_0^L\! dr\, (e^{-k_L r} - e^{-2k_L L}e^{k_L r})^2
+		\right]^{-1}
+	  =
+	  2 k_L(1 + 4 k_L L e^{-2 k_L L}) + \mathcal{O}(e^{-4 k_L L}) \;.
+	\end{align}
+	%
+	We expand $k_L$ everywhere in Eq.~\eqref{eq:dEdL} using
+	Eq.~\eqref{eq:uLprime} and our LO result
+	%
+	\beq
+	   k_L = \kinf (1 - 2 e^{-2 \kinf L})
+	   \;.
+	\eeq
+	%
+	Here, we neglected terms that are $\mathcal{O}(e^{-6 \kinf L})$ or smaller.
+	We need to expand $e^{-2 k_L L}$ in $u_L'(L)$ to get
+	%
+	\beq
+	   e^{-2 k_L L} = e^{-2 \kinf L} (1 + 4 \kinf L e^{-2 \kinf L})
+	    + \mathcal{O}(e^{-6 \kinf L}) \;.
+	\eeq
+	%
+	(Elsewhere it suffices to replace $e^{-2 k_L L}$ by $e^{-2 \kinf L}$ to NLO.)
+	So we find that
+	%
+	\begin{align}
+	  \frac{\partial E_L}{\partial L} &= -\frac12 (4 \gamma_L^2 k_L^2
+		e^{-2 k_L L})
+	  \nonumber \\
+	  &\approx -2  [2\kinf (1 - 2 e^{-2 \kinf L})(1 + 4 \kinf L
+		e^{-2 \kinf L})]
+	  \nonumber \\
+	  & \  \null \times [\kinf^2 (1 - 4 e^{-2\kinf L})][e^{-2 \kinf L}
+		(1 + 4 \kinf L e^{-2 \kinf L})]
+	  \nonumber \\
+	  &\approx
+	  -4 \kinf^3 e^{-2 \kinf L} -  8 \kinf^3 (4\kinf L - 3)e^{-4 \kinf L}
+	  + \mathcal{O}(e^{-6 \kinf L})
+	  \;,
+	\end{align}
+	%
+	and then finally
+	%
+	\begin{align}
+	[\Delta E_L]_{\rm zr, NLO}
+	     &= \int_\infty^L\! \frac{\partial E_L}{\partial L} dL
+	     \nonumber \\
+	     &=
+	     2 \kinf^2 e^{-2 \kinf L} +  4 \kinf^2 (2\kinf L - 1)e^{-4 \kinf L}
+	     + \mathcal{O}(e^{-6 \kinf L})
+	     \;,
+	\end{align}
+	%
+	in agreement with Eq.~\eqref{eq:complete_E_correction_NLO}
+	with $\ANC^2 = 2\kinf$ and $w_2 = 0$.
+	We can take this procedure to higher order by
+	using a more general expansion for $k_L$.
+
+	To extend the differential method
+	to higher order for nonzero range, we must parametrize
+	$\gamma_L$ to account for the part of the integration within the
+	range of the potential; e.g., in terms of the effective range.  However,
+	we have not found a clear advantage in doing this
+	compared to the straightforward S-matrix method.
 
 	\subsection{The proof of the pudding}
 	\label{subsec:pudding_proof}
