@@ -138,6 +138,7 @@
 	$E (L_{\rm box} = \infty)$ which equals $E(\Nmax = \infty)$.
 
 	\subsection{Tale of tails}
+	\label{subsec:tale_of_tails}
 
 	The box size is usually bigger than the range of the potential.  Thus
 	imposing the IR cutoff modifies the asymptotic part (or tail) of the
@@ -502,7 +503,8 @@
 
 	The derivation of our key result $\kappa_{\rm min}=\pi/L_2$ is based
 	on the assumption that the number of shells $N$ fulfills $N\gg 1$.
-	Table~\ref{tab1} shows a comparison of numerical results for
+	Table~\ref{tab:L0_L2_k_min_comparison} shows a comparison of
+	numerical results for
 	$\kappa_{\rm min}$ in different model spaces. We see that
 	$\pi/L_2$ is a very good approximation already for $N=2$, with a
 	deviation of about 1\%.
@@ -525,7 +527,7 @@
 	\end{tabular}
 	\caption{Comparison between the lowest momentum $\kappa_{\rm min}$, $\pi/L_2$,
 	 and $\pi/L_0$ for model spaces with up to $N$ oscillator quanta.}
-	\label{tab1}
+	\label{tab:L0_L2_k_min_comparison}
 	\end{table}
 
 	Note that this approach can be generalized to other localized
@@ -634,6 +636,7 @@
 
 
 	\subsection{Cashing in on the hard wall correspondence}
+	\label{subsec:make_cash}
 
 	We have so far focused on establishing how HO truncation is analogous to
 	putting the system in a spherical box of a specified radius.  Now let's see
@@ -917,13 +920,15 @@
 	Equation~\eqref{eq:complete_IR_scaling} matches the result
 	\beq
 	E(L) = \Einf + A e^{-2 \kinf L} + \mathcal{O}(e^{-4 \kinf L})
+	\label{eq:exp_L_extrapolation}
 	\eeq
 	in \cite{Furnstahl2012}, but now we have identified
 	$\displaystyle A = \hbar^2\kinf\ANC^2/\mu$.
 
 	In \cite{More:2013rma}, we advocated including second term in
 	Eq.~\eqref{eq:entire_correction} for weakly bound states (small $\kinf$
-	makes the term $\displaystyle \Ainf \frac{\mu}{\hbar^2}\frac{r}{\kinf} e^{-\kinf r}$
+	makes the term $\displaystyle \Ainf \frac{\mu}{\hbar^2}\frac{r}{\kinf}
+	e^{-\kinf r}$
 	non-negligible).  Including this term was also seen to give better prediction
 	for weakly bound states like deuteron.  As we pointed out in
 	\cite{Furnstahl:2013vda}, a better way to arrange an expression for
@@ -1297,6 +1302,230 @@
 
 	\subsection{The proof of the pudding}
 	\label{subsec:pudding_proof}
+
+	In this subsection we will test the Eq.~\eqref{eq:complete_E_correction_NLO}
+	for various test models and for the deuteron.  Note that for the cases
+	that we test Eq.~\eqref{eq:complete_E_correction_NLO}, the exact answer
+	$\Einf$ is already known (either by exact analytical calculation or by using
+	large number of basis states).  So we can compare how good the prediction from
+	Eq.~\eqref{eq:complete_E_correction_NLO} is by comparing to exact answer.
+	In cases where the exact values for $\Einf$ and $\ANC$ are not known, our
+	approach suggests that we can use the exponential in $L$ fit of
+	Eq.~\eqref{eq:exp_L_extrapolation} to extract $\Einf$ and $\kinf$.
+
+	Based on the results
+	presented in Subsect.~\ref{subsec:tale_of_tails}, we use $L_2$ in all our
+	further analyses.
+	%
+	It is important that we isolate the IR corrections in making these
+	tests.  The truncation in the HO basis also introduces an
+	ultraviolet error inversely proportional to the ultraviolet cutoff
+	$\Lambda_{\rm UV} \approx \sqrt{2 \mu \hbar \Omega (N+3/2)}$.  In the
+	results here we use combinations of $\hbar \Omega$ and $N$ values such
+	that the UV error in each case can be neglected compared to the IR
+	error.
+
+	For each of the model potentials, the radial Schr\"odinger equation is
+	accurately solved numerically in coordinate space for the energy,
+	which yields $\kinf$, and the wave functions.  The asymptotic
+	normalization coefficient $\ANC$ is found by multiplying the wave
+	function by $e^{\kinf r}$ and reading off its asymptotic value.  This
+	is illustrated in the inset of Fig.~\ref{fig:IR_quartic_inset_ANC},
+	which also shows the onset of the plateau that defines the asymptotic
+	region in $L_2$ where we expect our correction formulas to hold.  For
+	the deuteron, the Hamiltonian is diagonalized in
+	momentum space to find $\kinf$, and then an extrapolation to the pole
+	is used to find the $s$-wave and $d$-wave ANCs~\cite{Amado:1979zz}.
+	In the present subsection we use only the $s$-wave ANC for the deuteron.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]
+	{Extrapolation/quarticIRfitpredictnANC_v2}
+  \caption{Energy versus $L_2$ for a quartic potential
+    well Eq.~\eqref{eq:Vq} for a wide range of $N$ and $\hw$
+    (circles) ($\hbar = \mu = R=1$).  The solid line is a fit to
+		Eq.~\eqref{eq:exp_L_extrapolation}
+    with $A$, $\kinf$ and $\Einf$ as fit parameters while the dashed line is
+		the prediction from Eq.~\eqref{eq:complete_IR_scaling}.
+    The horizontal line is the exact energy, $\Einf=-1.0115$.
+    The inset illustrates the calculation of the asymptotic
+    normalization coefficient (ANC) from the (normalized) wave
+    function.}
+		\label{fig:IR_quartic_inset_ANC}
+	\end{figure}
+
+	The derivations in Subsec.~\ref{subsec:make_cash} imply that the
+	energy corrections should have the same exponential form and
+	functional dependence on the radius $L$ at which the wave
+	function is zero, independent of the potential and for
+	any bound state.
+	Here we make some representative tests of a direct fit of
+	Eq.~\eqref{eq:exp_L_extrapolation} in comparison to applying
+	Eq.~\eqref{eq:complete_IR_scaling}.
+
+	Figure~\ref{fig:IR_quartic_inset_ANC} shows results for a quartic
+	potential with a moderate depth.  The fit to
+	Eq.~\eqref{eq:exp_L_extrapolation} is very good over a large range in $L_2$
+	for which the energy changes by 30\%, and the prediction for $\Einf$
+	is accurate to 0.2\%.  However, the fit value of $\kinf$ is 1.61
+	compared to the exact value of 1.42.  The dashed curve shows the
+	prediction from Eq.~\eqref{eq:complete_IR_scaling} using the exact
+	$\kinf$ and $\ANC$.  It is evident that the approximation is very good
+	above $L_2 > 2$ but increasingly deviates at smaller $L_2$.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/sq_gaussIRfitspredictn_v2}
+	\caption{Energy versus $L_2$ for moderate-depth (a) square
+  	well Eq.~\eqref{eq:Vsw} and for (b) Gaussian potential
+  	well Eq.~\eqref{eq:Vg} ($\hbar = \mu = R=1$) for a wide range of $N$ and
+		$\hw$ (circles).  The solid line is a fit to
+		Eq.~\eqref{eq:exp_L_extrapolation} with $A$, $\kinf$ and $\Einf$ as
+  	fit parameters while the dashed line is the
+  	prediction from Eq.~\eqref{eq:complete_IR_scaling}.  The horizontal dotted
+		lines are the exact energies;
+   	square well: $\Einf = -1.5088$, Gaussian well: $\Einf = -1.2717$}
+	\label{fig:universal_sq_gauss_wells}
+	\end{figure}
+	%
+
+	In Fig.~\ref{fig:universal_sq_gauss_wells}, examples are shown for
+	square well and Gaussian potentials with a moderate depth.  Again we
+	find a good fit to an exponential fall-off in $L_2$, but in these
+	cases not only are the energies well predicted (again to better than
+	0.2\%) but the fit values of $\kinf$ are within 5\% of the exact results.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/deepgaussV10predictnANC_v2}
+	\caption{Energy versus $L_2$ for the deeply bound
+  	ground state of a Gaussian potential for a wide range of $N$ and
+  	$\hw$ (circles) ($\hbar = \mu = R = 1$).  These are compared to the
+		prediction of
+	  Eq.~\eqref{eq:complete_IR_scaling} (dashed).  The solid line
+	  is a fit to Eq.~\eqref{eq:exp_L_extrapolation} with $A$, $\kinf$ and
+		$\Einf$ as fit parameters.  The horizontal dotted line
+	  is the exact energy, $\Einf=-4.2806$.}
+	\label{fig:deep_gauss_ANC_inset}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/deepexpV10predictnANC_v2}
+	\caption{Energy versus $L_2$ for the deeply bound
+	  ground state of an exponential potential well for a wide range of
+	  $N$ and $\hw$ (circles) ($\hbar = \mu = R = 1$).  These are compared to the
+		predictions of Eq.~\eqref{eq:complete_IR_scaling} (dashed).  The solid line
+	  is a fit to Eq.~\eqref{eq:exp_L_extrapolation} with $A$, $\kinf$ and
+		$\Einf$ as fit parameters. The horizontal dotted line
+	  is the exact energy, $\Einf=-3.3121$.}
+	\label{fig:deep_exp_ANC_inset}
+	\end{figure}
+	%
+	For deeply bound states, Eqs.~\eqref{eq:complete_IR_scaling} fails
+	for a different reason.  The error in
+	Eq.~\eqref{eq:complete_IR_scaling} is proportional to $e^{-4 \kinf L}$,
+	so one might expect that the prediction to become increasingly
+	accurate as the state becomes more bound.  However, as seen in
+	Figs.~\ref{fig:deep_gauss_ANC_inset} and \ref{fig:deep_exp_ANC_inset},
+	results for deep Gaussian and exponential potential wells do not match
+	this expectation.  In deriving the energy corrections we used
+	the asymptotic form of the wave functions.  This is valid only in the
+	region $r \gg R$, where $R$ is the range of the potential.  The
+	potentials at the smaller values of $L_2$ shown in the figures are not
+	negligible.  Indeed, it is evident from the insets in
+	Figs.~\ref{fig:deep_gauss_ANC_inset} and \ref{fig:deep_exp_ANC_inset}
+	that we are not in the asymptotic region for those values of $L$.
+	The lesson is that when applying the IR extrapolation schemes
+	discussed in the present paper we need to make sure that the two
+	conditions for its applicability are fulfilled.  First, we need $N$
+	sufficiently large
+	for $L_2$ to be the correct box size
+	(see Table~\ref{tab:L0_L2_k_min_comparison}).
+	Second we need $L_2$ to be the
+	largest length scale in the problem under consideration.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/gaussquartexctdIRpredictn1_v2}
+	\caption{Energy versus $L_2$ for the first excited
+	  states of deep (a) Gaussian Eq.~\eqref{eq:Vg} and (b) quartic
+	  Eq.~\eqref{eq:Vq} potential wells for a wide range of $N$ and $\hw$
+	  (circles) ($\hbar = \mu = R=1$).  The solid line is a fit to
+		Eq.~\eqref{eq:exp_L_extrapolation}
+	  with $A$, $\kinf$ and $\Einf$ as fit parameters while the dashed line is
+		the prediction from Eqs.~\eqref{eq:complete_IR_scaling}.
+	  The horizontal dotted lines are the exact energies for the first excited
+		states; Gaussian well: $\Einf = -1.2147$, quartic well: $\Einf = -1.8236$}
+	  \label{fig:IR_excited_gauss_quartic_wells}
+	\end{figure}
+  %
+	The results so far are for the ground state of the potential.  However,
+	the derivations in the Subsec.~\ref{subsec:make_cash} should
+	also hold for excited states.  This is so because the generalization of
+	the results in Subsec~\ref{subsec:tale_of_tails} shows that
+	$(j\pi/L_2)^2$ is a very good approximation to the $j^{\rm th}$
+	eigenvalue of the operator $p^2$ for $j \ll N$.  In
+	Fig.~\ref{fig:IR_excited_gauss_quartic_wells} representative results
+	for excited states from two model potentials are shown.  We find the
+	same systematics as with the ground-state results: the exponential fit
+	works very well but the extracted $\kinf$ is only correct at about the 10\%
+	level.  In assessing the success of	Eq.~\eqref{eq:complete_IR_scaling}, we
+	note that these excited states in deep potentials are comparable to the
+	ground states in moderate-depth potentials shown in
+	Fig.~\ref{fig:universal_sq_gauss_wells}.  The discussion there applies
+	here as well, namely that the prediction from
+	Eq.~\eqref{eq:complete_IR_scaling} is very good at large $L_2$, but
+	increasingly deviates at smaller $L_2$.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/deutrngauss_sq_v2}
+	\caption{ (a) Ground-state energy versus $L_2$ for
+    model Gaussian potential. (b) Energy versus $L$
+    for the square well.  The energies for the square well are from solving
+		the	Schr\"odinger equation
+    exactly with a Dirichlet boundary condition on wave functions at
+    $r=L$. The dashed line is the prediction from
+    Eqs.~\eqref{eq:complete_IR_scaling}.  The depths of these model potentials
+    are chosen so that the scaled
+    energies (with $\hbar = \mu = R=1$) are the same as the deuteron binding
+		energy.}
+	\label{fig:prediction_deuteron_equivalent}
+	\end{figure}
+	%
+	The case of weakly bound states is of special interest because of the
+	correspondence to deuteron which is also a weakly bound shallow state.
+	Figure~\ref{fig:prediction_deuteron_equivalent} (a) shows ground-state
+	energies for many different $N$ and $\hw$ versus $L_2$ using Gaussian model
+	potentials whose parameters are chosen so that the energies are the
+	same as the deuteron binding energy (scaled to units with $\hbar=1$,
+	$\mu=1$, $R=1$).
+	In Fig.~\ref{fig:prediction_deuteron_equivalent} (b)
+	we have a `deuteron-like' square well. The energies in this case are
+	obtained by	solving the Schr\"odinger equation exactly with a Dirichlet
+	boundary condition on wave
+	functions at $r=L$.  The prediction from Eq.~\eqref{eq:complete_IR_scaling}
+	fails to reproduce the data except at the highest values of $L_2$.
+	Eq.~\eqref{eq:complete_IR_scaling} keeps only the leading-order (LO)
+	corrections	to $Delta E$.  For the weakly bound states, the higher-order
+	corrections become important.  The corrections to the energy up to the next
+	to leading order (NLO) were noted in Eq.~\eqref{eq:complete_E_correction_NLO}.
+	Note that the NLO correction involves the low-energy constant $w_2$.  In
+	certain cases, this constant $w_2$ can be calculated and $\Delta E$ up to NLO
+	can be obtained.  Now we turn to the test of
+	Eq.~\eqref{eq:complete_E_correction_NLO}.
+
+	\subsubsection{NLO and systematics of the correction}
+
+	
+
 
 	\subsubsection{Comparison to conventional extrapolation schemes}
 
