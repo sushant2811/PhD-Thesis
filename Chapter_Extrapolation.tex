@@ -25,7 +25,7 @@
 	%
 	\begin{figure}[h]
 		\centering
-		\includegraphics[width=0.5\textwidth]
+		\includegraphics[width=0.55\textwidth]
 		{Extrapolation/He6_Eb_vs_hw_kvnn10_srg_lam2p0_combined_Nmax6_Kval1_L1_0b.pdf}
 		\caption{Ground state energy for $^6$He as a function of $\Nmax$ and
 		  $\Omega$.  Figure taken from \cite{Furnstahl2012}. }
@@ -50,7 +50,7 @@
 	%
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]
+	\includegraphics[width=0.55\textwidth]
 	{Extrapolation/6He_gs_range2_142.pdf}
 	\caption{The estimate for exact $^6$He ground state energy using
 	  Eq.~\eqref{eq:exp_Nmax_extrapolation}.  Extrapolated answer from the
@@ -196,7 +196,7 @@
 		truncation is dictated by the square of HO wave function for the highest
 		radial quantum number (dot-dashed).
 		(b) The wave functions obtained from imposing a Dirichlet
-	  boundary condition at $L_0$, $\LA$ and $L_2$ are compared to the wave
+	  boundary condition (bc) at $L_0$, $\LA$ and $L_2$ are compared to the wave
 		function in truncated HO basis. }
 		\label{fig:sq_well_tail_matching}
 	\end{figure}
@@ -217,7 +217,7 @@
 	quantity) is also plotted in the top panel (dot-dashed).  It is
 	evident that the tail of the wave function in the truncated basis is
 	fixed by this squared wave function.  Our premise is that the HO truncation
-	is well modeled by a hard-wall (Dirichlet) boundary condition at $r=L$.
+	is well modeled by a hard-wall (Dirichlet) bc at $r=L$.
 	If so, the question remains how best to \emph{quantitatively} determine $L$
 	given	$\Nmax$ and $\hw$.  In the bottom panel of
 	Fig.~\ref{fig:sq_well_tail_matching} we show the wave functions	for several
@@ -277,7 +277,7 @@
 		energies from HO basis truncation.
 		The energies obtained by
 		numerically solving the Schr{\"o}dinger equation with a Dirichlet
-		boundary condition at $L$ lie on the solid line.
+		bc at $L$ lie on the solid line.
 		The horizontal dotted lines mark
 		the exact energy $\Einf=-1.27$.}
   \label{fig:spatial_cutoff_vs_HO_gauss}
@@ -294,19 +294,19 @@
 	  energies from HO basis truncation.
 	  The energies obtained by
 	  numerically solving the Schr{\"o}dinger equation with a Dirichlet
-	  boundary condition at $L$ lie on the solid line.
+	  bc at $L$ lie on the solid line.
 	  The horizontal dotted lines mark
 	  the exact energy $\Einf=-1.51$.}
   \label{fig:spatial_cutoff_vs_HO_square_well}
   \end{figure}
 	%
 	As a further test, we solve the Schr{\"o}dinger equation with a
-	vanishing Dirichlet boundary condition (solid lines in
+	vanishing Dirichlet bc (solid lines in
 	Figs.~\ref{fig:spatial_cutoff_vs_HO_gauss} and
 	\ref{fig:spatial_cutoff_vs_HO_square_well}), and compare to the
 	energies obtained from the HO truncations (crosses).  The finite
 	oscillator basis energies are well approximated by a Dirichlet
-	boundary condition with a mapping from the oscillator $\hbar\Omega$
+	bc with a mapping from the oscillator $\hbar\Omega$
 	and $\Nmax$ to an equivalent length given by $L_2$.  Note that for large
 	$\Nmax$, the differences between $L_0$, $\LA$ and $L_2$ may be smaller
 	than other uncertainties involved in nuclear calculations, but for
@@ -619,7 +619,7 @@
 		in units of $1/R^2$ with $\hbar^2/\mu = 1$) from solving the Schr\"odinger
 	  equation with a truncated harmonic oscillator basis with $\hbar\Omega = 18$
 	  and $N = 8$ (dashed) and with a
-	  Dirichlet boundary condition at $r=L_2$ given from Eq.~\eqref{eq:L2_def}
+	  Dirichlet bc at $r=L_2$ given from Eq.~\eqref{eq:L2_def}
 		(solid).  The coordinate-space radial wave functions in a) exhibit a
 		difference at $r$ near 1.5, but the Fourier-transformed wave functions in
 		b) are in close agreement at low $k$, showing that the differences are
@@ -630,7 +630,7 @@
 	The binding momentum in this case is $1.7$ (in units of $1/R$).  The
 	Fourier-transformed wave functions differ at much larger momentum and this
 	difference is irrelevant for the long-wavelength physics of bound states.
-	Thus the use of Dirichlet boundary condition to take into account the HO
+	Thus the use of Dirichlet bc to take into account the HO
 	truncation is similar in spirit to the use of contact interactions to
 	describe the effect of unknown short-ranged forces on long-wavelength probes.
 
@@ -647,7 +647,7 @@
 	Our first approximation to the IR correction
 	is based on what is known in quantum chemistry
 	as the linear energy method~\cite{Djajaputra:2000aa}.  Given a
-	hard-wall boundary condition at $r=L$ beyond the range of the
+	hard-wall bc at $r=L$ beyond the range of the
 	potential, we write the energy compared to that for $L=\infty$ as
 	%
 	\beq
@@ -657,7 +657,7 @@
 	%
 	We seek an estimate for $\Delta E_L$, which is assumed to be small,
 	based on an expansion of the wave function in $\Delta E_L$.  Let
-	$u_E(r)$ be a radial solution with regular boundary condition at the
+	$u_E(r)$ be a radial solution with regular bc at the
 	origin and energy $E$.  For convenience in using standard quantum
 	scattering formalism below, we choose the normalization corresponding
 	to what is called the ``regular solution'' in
@@ -677,7 +677,7 @@
 	for $r\leq L$.
 	%
 	By evaluating Eq.~\eqref{eq:linear_energy_approx} at $r=L$ with the
-	boundary condition $u_L(L)=0$, we find
+	bc $u_L(L)=0$, we find
 	%
 	\beq
 	  \Delta E_L \approx -u_\infty(L) \left(\left.\frac{d u_E(L)}
@@ -947,7 +947,7 @@
 	\subsubsection{The $S$-matrix way}
 
 	In \cite{Furnstahl:2013vda}, we returned to Eq.~\eqref{eq:asymptotic_form_uE}
-	and noted that the boundary condition uniquely fixed the coefficient
+	and noted that the bc uniquely fixed the coefficient
 	$\alpha_E$.  We need $u_E(r = L) = 0$ which fixes
 	\beq
 	\alpha_E = -e^{-2 k_E L}\;.
@@ -1340,7 +1340,7 @@
 	%
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.5\textwidth]
+	\includegraphics[width=0.6\textwidth]
 	{Extrapolation/quarticIRfitpredictnANC_v2}
   \caption{Energy versus $L_2$ for a quartic potential
     well Eq.~\eqref{eq:Vq} for a wide range of $N$ and $\hw$
@@ -1491,7 +1491,7 @@
     model Gaussian potential. (b) Energy versus $L$
     for the square well.  The energies for the square well are from solving
 		the	Schr\"odinger equation
-    exactly with a Dirichlet boundary condition on wave functions at
+    exactly with a Dirichlet bc on wave functions at
     $r=L$. The dashed line is the prediction from
     Eqs.~\eqref{eq:complete_IR_scaling}.  The depths of these model potentials
     are chosen so that the scaled
@@ -1510,7 +1510,7 @@
 	In Fig.~\ref{fig:prediction_deuteron_equivalent} (b)
 	we have a `deuteron-like' square well. The energies in this case are
 	obtained by	solving the Schr\"odinger equation exactly with a Dirichlet
-	boundary condition on wave
+	bc on wave
 	functions at $r=L$.  The prediction from Eq.~\eqref{eq:complete_IR_scaling}
 	fails to reproduce the data except at the highest values of $L_2$.
 	Eq.~\eqref{eq:complete_IR_scaling} keeps only the leading-order (LO)
@@ -1524,10 +1524,272 @@
 
 	\subsubsection{NLO and systematics of the correction}
 
-	
+	For the square-well potential of Eq.~\eqref{eq:Vsw}, the parameters in
+	Eq.~\eqref{eq:complete_E_correction_NLO} can be calculated easily.
+	The $S$-wave scattering phase shift for	the square well is
+	%
+	\beq
+	 \delta_0 (k) =
+	  \tan^{-1}\left[\sqrt{{k^2 \over k^2 + \eta^2}} \tan(\sqrt{k^2+\eta^2}
+	  R)\right] - k R\;,
+	  \label{eq:delta0}
+	\eeq
+	%
+	with $\eta = \sqrt{2 V_0}$. 	Analytically continuing the effective
+	range expansion by taking $k \rightarrow i k_L$
+	in Eqs.~\eqref{eq:eff_range_kinf} and \eqref{eq:delta0}, we obtain
+	%
+  \begin{align}
+	{i k_L \sqrt{\eta^2 - k_L^2} -k_L^2 \tan( \sqrt{\eta^2 - k_L^2} R)
+	\tan(i k_L R) \over i k_L \tan(\sqrt{\eta^2 - k_L^2} R) -
+	\sqrt{\eta^2 - k_L^2} \tan(i k_L R) }
+	= -\kinf
+	+ \frac12{\rho_d} (\kinf^2-k_L^2) + w_2 (\kinf^2 - k_L^2)^2
+	\nonumber \\
+	+ \mathcal{O}\left((\kinf^2-k_L^2)^3\right)	\;.
+	\label{eq:get_w2_sq_well}
+\end{align}
+	%
+	The branch for the square-root is fixed by the requirement that
+	$\tan \delta (i\kinf) = -i$.  Note from Eq.~\eqref{eq:s0_exact} that
+	this builds in the requirement that the $S$-matrix has a pole at
+	$i \kinf$.  To get $\rho_d$ ($w_2$) we differentiate once (twice) each
+	side of Eq.~\eqref{eq:get_w2_sq_well} with
+	respect to $k_L$ and then set $k_L = \kinf$.  The $\rho_d$ obtained in
+	this way is consistent with Eq.~\eqref{eq:rhoD_gamma_rel} when $\ANC$
+	is obtained by the large $r$ behavior of the bound-state wave function
+	as defined in Eq.~\eqref{eq:definition_of_ANC}.
 
+	The square well with a Dirichlet bc at $L > R$ can be solved analytically.
+	The wave functions inside and outside the square well are
+	\beq
+  u^<_L(r) = C \sin\kappa_L r \,,
+  \qquad
+  u^>_L(r) = D(e^{-k_L r} - e^{-2 k_L L} e^{+k_L r})
+  \;,
+	\eeq
+	%
+	which builds in the boundary condition $u^>_L(L) = 0$.
+	The interior wave number $ \kappa_L = \sqrt{\eta^2 - k_L^2}$ and
+	$k_L = \sqrt{2 |E_L|}$.
+	Matching the logarithmic derivatives at $r=R$ for $E=\Einf$ yields
+	%
+	\beq
+	  \kappa_\infty \cot{\kappa_\infty R} = -\kinf
+	\eeq
+	%
+	and with the boundary condition at $L$ we get:
+	%
+	\beq
+	 \kappa_L \cot \kappa_L R = - k_L \frac{1 + e^{-2k_L (L-R)}}
+	 {1-e^{-2k_L (L-R)}} \;.
+	 \label{eq:sq_well_matchingL}
+	\eeq
+	%
+	We expand both sides of Eq.~\eqref{eq:sq_well_matchingL} in powers of
+	%
+	\beq
+	  \Delta k \equiv k_L - \kinf\;.
+	  \label{eq:Delta_k_def}
+	\eeq
+	%
+	We write the left-hand side of Eq.~\eqref{eq:sq_well_matchingL} as
+	%
+	\beq
+	\kappa_L \cot \kappa_L R = \kappainf \cot \kappainf R + \mathcal{A}
+	(\Delta k)  + \mathcal{B} (\Delta k)^2+\cdots \;,
+	\label{eq:LHS_matchingL_expansion}
+	\eeq
+	%
+	and obtain the coefficients $\mathcal{A}$, $\mathcal{B}$ by Taylor
+	expanding $\kappa_L	\cot (\kappa_L R)$ around $\kinf$.
+	We write $\Delta k$ as
+	%
+	\beq
+	\label{eq:Delta_k_def2} \Delta k = k_{(1)} + k_{(2)} + \cdots \;.
+	\eeq
+	%
+	Here $k_{(1)} \sim e^{-2 \kinf L}$ is the LO correction, $k_{(2)}
+	\sim e^{-4\kinf L}$ is the NLO correction and so on, and we truncate the
+	expressions consistently to obtain the energy correction for the
+	square well to the desired order.  The results of the general S-matrix
+	and square-well-only Taylor expansion methods of calculating energy
+	corrections are found to match explicitly at LO, \LNLO, and NLO.
+	We would like to remind that we use \LNLO to denote terms proportional
+	to $L e^{-4 \kinf L}$.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/sqwell_curvesV4_v2}
+	\caption{Bound-state energy for a square well of depth
+	  $V_0=4$ (lengths are in units of $R$ and energies in units of
+	  $1/R^2$ with $\hbar^2/\mu = 1$) from solving the Schr\"odinger
+	  equation with a Dirichlet bc at $r=L$.  The diamonds
+	  are exact results for each $L$ while the horizontal dotted line is
+	  the energy for $L\rightarrow\infty$, $\Einf = -1.5088$.  The dashed,
+	  dot-dashed and solid lines are predictions for the energy using the
+	  systematic correction formula
+	  Eq.~\eqref{eq:complete_E_correction_NLO} at LO (first term only),
+	  \LNLO\ (first two terms), and full NLO (all terms), respectively.
+	  The dotted curve on top of the solid line and the dot-double-dashed
+	  lines are respectively the NLO and N2LO predictions for the square
+	  well from the Taylor expansion using Eqs.~\eqref{eq:sq_well_matchingL}
+		and \eqref{eq:LHS_matchingL_expansion}.}
+	\label{fig:sqwell_curvesV4}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/sq_well_error_log_plotsV4_v2}
+	\caption{Error plots of the energy correction at each
+	  $L$ for the square well of Fig.~\ref{fig:sqwell_curvesV4} ($V_0 =
+	  4$) predicted at different orders by
+	  Eq.~\eqref{eq:complete_E_correction_NLO} and by the Taylor expansion
+	  method, each compared to the exact energy.
+	  Lines proportional to $L e^{-4\kinf L}$ (dashes) and $L^2 e^{-6\kinf L}$
+		(with arbitrary normalization) are plotted for comparison to
+	  anticipated error slopes. }
+	\label{fig:sq_well_error_log_plotsV4}
+	\end{figure}
+	%
+	Figure~\ref{fig:sqwell_curvesV4} compares the energy corrections
+	for the general S-matrix method at LO and NLO for a representative
+	square-well potential with one bound state to the exact energies.  The
+	Taylor expansion results for the square well at NLO and N2LO (which is
+	proportional to $e^{-6\kinf L}$) are also plotted.  We note that the
+	predictions are systematically improved as higher-order terms are
+	included and that keeping terms only up to \LNLO~overestimates the
+	energy correction.  Also as seen in Fig.~\ref{fig:sqwell_curvesV4},
+	the full NLO energy correction predicted by
+	Eq.~\eqref{eq:complete_E_correction_NLO}, with $w_2$ determined by
+	Eq.~\eqref{eq:get_w2_sq_well}, matches the `exact' NLO result obtained
+	by Taylor expansion.  This confirms that
+	Eq.~\eqref{eq:complete_E_correction_NLO} is indeed the complete energy
+	correction at NLO.
+
+	To see if the errors decrease with the implied systematics, we plot
+	the difference of actual energy corrections and the energy corrections
+	predicted at different orders on a log-linear scale in
+	Fig.~\ref{fig:sq_well_error_log_plotsV4}.  We observe that the errors
+	successively decrease at each fixed $L$ as we go from LO to NLO to
+	N2LO.  The up triangles in Fig.~\ref{fig:sq_well_error_log_plotsV4} are
+	$\Delta E_{\rm actual} - \Delta E_{\rm LO}$.  From
+	Eq.~\eqref{eq:complete_E_correction_NLO} the dominant omitted
+	correction in $\Delta E_{\rm LO}$ is proportional to $L e^{-4 \kinf L}$.
+	As seen in Fig.~\ref{fig:sq_well_error_log_plotsV4}, the slope
+	of $\Delta E_{\rm actual} - \Delta E_{\rm LO}$ is roughly $L
+	e^{-4 \kinf L}$, as expected.  We also note that $\Delta E_{\rm \LNLO}$
+	is only a marginal improvement over $\Delta E_{\rm LO}$ and that
+	$\Delta E_{\rm actual} - \Delta E_{\rm NLO}$ has the expected slope of
+	$L^2 e^{-6 \kinf L}$. We again see a perfect agreement between the
+	results obtained from the S-matrix method
+	\eqref{eq:complete_E_correction_NLO} and those obtained from the
+	Taylor expansion of Eq.~\eqref{eq:sq_well_matchingL}.  We have also
+	studied deeper square wells with more than one bound state
+	and verified that our results apply even in the presence of excited
+	states.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\textwidth]
+	{Extrapolation/sqwell_curves_v2}
+	\caption{Bound-state energy for a square well of depth
+	  $V_0=1.83$ (units with $R=1$), which simulates a deuteron, from
+	  solving the Schr\"odinger equation with a Dirichlet bc at $r=L$.
+		The horizontal dotted line is the exact energy,
+	  $\Einf = -0.1321$ and the other curves are as the same as in
+	  Fig.~\ref{fig:sqwell_curvesV4}.}
+	\label{fig:sqwell_curves}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\textwidth]
+	{Extrapolation/sq_well_error_log_plots_v2}
+	\caption{Comparison of the actual energy correction due
+	  to truncation to the energy correction predicted to different orders
+	  by Eq.~\eqref{eq:complete_E_correction_NLO} for a square well
+	  (Eq.~\eqref{eq:Vsw}) with $V_0 = 1.83$ and $R=1$.}
+	\label{fig:sq_well_error_log_plots}
+	\end{figure}
+	%
+	In Figs.~\ref{fig:sqwell_curves} and
+	\ref{fig:sq_well_error_log_plots}, the same analysis is done but now
+	with the depth of the square well adjusted so that the exact binding
+	energy is the same as the deuteron binding energy scaled to the units
+	$\hbar=1$, $\mu=1$ and $R=1$. An important difference in this case
+	compared to the deeper square well is that the \LNLO~prediction gives
+	a very close estimate for the truncated energies.  However as seen in
+	Fig.~\ref{fig:sq_well_error_log_plots}, the improvement achieved by
+	the \LNLO~prediction is not systematic with $L$.  At large $L$,
+	$\Delta E-\Delta E_{\rm \LNLO}$ has the same slope as $\Delta E -
+	\Delta E_{\rm LO}$ and is not the dominant NLO correction.  In this
+	regard, the proximity of \LNLO~ prediction to the actual data in
+	Fig.~\ref{fig:sqwell_curves} should not be over-emphasized.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\textwidth]
+	{Extrapolation/deuteron_curves_v2}
+	\caption{Deuteron energy versus $L_2$ (see
+	  Eq.~\eqref{eq:L2_def}) for the chiral N$^3$LO (500\,MeV) potential
+	  of Ref.~\cite{Entem:2003ft}.  To eliminate the UV contamination we
+	  only plot results for $\hw > 49$~MeV.  The dashed, dot-dashed and solid
+	  lines are respectively the LO (first term in
+	  Eq.~\eqref{eq:complete_E_correction_NLO}), \LNLO~(first two terms in
+	  Eq.~\eqref{eq:complete_E_correction_NLO}) and the full NLO (all the
+	  terms in Eq.~\eqref{eq:complete_E_correction_NLO}) predictions for
+	  the energy correction.  The horizontal dotted line is the deuteron
+	  energy.}
+	\label{fig:deuteron_curves}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.55\textwidth]
+	{Extrapolation/deuteron_error_log_plots_v3}
+	\caption{Comparison of the actual energy correction due
+	  to HO basis truncation ($\hw$ restricted to be greater than $49$~MeV to
+	  eliminate UV contamination) for the deuteron to the energy
+	  correction predicted to different orders from
+	  Eq.~\eqref{eq:complete_E_correction_NLO}.  For the parameter $w_2$ in
+	  Eq.~\eqref{eq:complete_E_correction_NLO} we use the value reported
+	  in \cite{Phillips:1999hh}.}
+	\label{fig:deuteron_error_log_plots}
+	\end{figure}
+	%
+	Figures~\ref{fig:deuteron_curves} and
+	\ref{fig:deuteron_error_log_plots} show analogous results for the
+	deuteron calculated with the chiral EFT potential of
+	Ref.~\cite{Entem:2003ft}.  We use the HO basis and predict the ($l=0$) energy
+	correction from Eq.~\eqref{eq:complete_E_correction_NLO} assuming a
+	Dirichlet bc at $L_2$ given by Eq.~\eqref{eq:L2_def}.  We only include
+	energies for which $\hw > 49$~MeV, which is sufficient to render UV
+	corrections negligible.  For the parameter $w_2$ in
+	Eq.~\eqref{eq:complete_E_correction_NLO} we use $w_2
+	= 0.389$ as reported in \cite{Phillips:1999hh}.  We also note that the
+	$\rho_d$ value reported in \cite{Phillips:1999hh} satisfies
+	Eq.~\eqref{eq:rhoD_gamma_rel}, where $\ANC$ now is the $s$-wave ANC.
+	The $y$-axis minimum is dictated by the limited precision of
+	the ANC and $w_2$ values.
+	We notice again that the close agreement of the \LNLO~prediction to
+	the deuteron data is not systematic while the full corrections to the
+	LO and NLO predictions have the anticipated slopes except at large
+	$L_2$.  In the next Subsec.~\ref{subsec:higher_angular_momenta} we
+	extend our formulas to $l>0$, which
+	enables us to include contributions from the $d$-wave at LO.  This
+	becomes noticable on the error plot for large $L_2$ (see
+	Fig.~\ref{fig:deuteron_error_plot_l2}).
 
 	\subsubsection{Comparison to conventional extrapolation schemes}
+
+	\subsubsection{Relation to L\"{u}scher-type formulas}
+
+	\subsection{Higher angular momenta}
+	\label{subsec:higher_angular_momenta}
+
 
 	\subsection{Radii and phase shifts}
 
@@ -1549,7 +1811,6 @@
 	of $L_2$ (but not as a function of $L_0$), fall on a continuous curve
 	with minimal spread.
 
-	\subsection{Higher angular momenta}
 
 	\section{Ultraviolet story}
 	\label{Sec:UV_story}
