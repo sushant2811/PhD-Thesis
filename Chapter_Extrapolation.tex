@@ -1880,7 +1880,8 @@
 	is of the same order.
 	The methods presented in \cite{Lee:2010km,Pine:2012zv}
 	can be used to extend the present formulas to higher
-	orders and more general cases, including coupled channels.
+	orders and more general cases, including coupled channels.  This area
+	is ripe for investigation.
 
 	\subsection{Higher angular momenta}
 	\label{subsec:higher_angular_momenta}
@@ -2121,7 +2122,114 @@
 
 	\subsubsection{Energy correction for finite angular momentum}
 
-	
+	Let us extend our $l=0$ result for $[\Delta E]_{\rm LO}$ to $l>0$ following
+	the	$S$-matrix method in Subsec.~\ref{subsec:make_cash}.
+	For orbital angular momentum $l$, the asymptotic wave function is
+	%
+	\beq
+  u_L(r) \overset{r \gg R}{\longrightarrow}  k_L r\Bigl(h_l^{(1)}(ik_L r) -
+	{h_l^{(1)}(ik_L L)\over h_l^{(1)}(-ik_L L)}
+	h_l^{(1)}(-ik_Lr)\Bigr) \;.
+  \label{eq:uLasympl}
+	\eeq
+	%
+	Here, $h_l^{(1)}$ denotes the spherical Hankel function of the first
+	kind (or the spherical Bessel function of the third
+	kind)~\cite{abramowitz1964}.  By definition $u_L(L)=0$.
+
+	In complete analogy to the case of $s$ waves (e.g., using
+	\eqref{eq:basiceq} and \eqref{eq:purepole} for general $l$), the
+	correction $\Delta E$ of the energy at leading order is
+	%
+	\beq
+	[\Delta E]_{\rm LO} = - \kinf \left(\gamma_\infty^{(l)}\right)^2
+	{h_l^{(1)}(ik_L L)\over h_l^{(1)}(-ik_L L)} \ .
+	\label{eq:ELO_general_l}
+	\eeq
+	%
+	We note that
+	\beq
+	{h_l^{(1)}(ix)\over h_l^{(1)}(-ix)} \approx - e^{-2x}
+	\eeq
+	for $x\gg 1$.  In particular, for $l=1$
+	%
+	\beq
+	[\Delta E]_{\rm LO} =\kinf \left(\gamma_\infty^{(1)}\right)^2
+	{\kinf L+1\over \kinf L-1} \, e^{-2\kinf L}  \;,
+	\label{eq:DeltaE_l1}
+	\eeq
+	%
+	and for $l=2$
+	%
+	\beq
+	[\Delta E]_{\rm LO} = \kinf \left(\gamma_\infty^{(2)}\right)^2
+	{(\kinf L)^2 +3 \kinf L +3\over (\kinf L)^2-3\kinf L +3}\, e^{-2\kinf L} \;.
+	\label{eq:DeltaE_l2}
+	\eeq
+	These corrections are tested in Fig.~\ref{fig:sq_well_error_plot_higher_l}.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/sq_well_err_P_D_states}
+	\caption{Error plots of the energy correction at each $L$ for (a) $l = 1$ and
+	(b) $l = 2$ square-well states predicted at leading order by
+	Eqs.~\eqref{eq:DeltaE_l1} and \eqref{eq:DeltaE_l2} compared to the exact
+	energy.  Lines proportional to the expected \LNLO~residual errors are plotted
+	for comparison.}
+	\label{fig:sq_well_error_plot_higher_l}
+	\end{figure}
+	%
+	For coupled channels, the leading energy correction will be the sum
+	of the LO corrections for the individual angular momenta.
+	We note that lattices with periodic bc lead to energy shifts that
+	depend on the angular momentum~\cite{Konig:2011nz}.
+	In contrast, the basis truncations we consider in this work are
+	variational and thus always yield a positive energy correction.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/deuteron_error_log_plots_sd_v3test}
+	\caption{Residual error for the deuteron energy due to
+	  HO basis truncation as a function of $L = L_2$ (with $\hw > 49$~MeV
+	  to eliminate UV contamination) after subtracting $l=0$ energy
+	  corrections at different orders from
+	  Eq.~\eqref{eq:complete_E_correction_NLO} and the $l=2$ correction
+	  from Eq.~\eqref{eq:DeltaE_l2}.  For the parameter $w_2$ in
+	  Eq.~\eqref{eq:complete_E_correction_NLO} we use the value reported
+	  in \cite{Phillips:1999hh}.}
+	\label{fig:deuteron_error_plot_l2}
+	\end{figure}
+	%
+	We return to the deuteron and take
+	$|\gamma_\infty^{(2)}/\gamma_\infty^{(0)}| \approx 0.0226/0.8843$ from
+	Ref.~\cite{Machleidt:2011zz}.  Then
+	%
+	\beq
+	[\Delta E]_{\rm LO} =\kinf \left(\gamma_\infty^{(0)}\right)^2
+	e^{-2\kinf L}
+	  \left[ 1 +
+	\left|\frac{\gamma_\infty^{(2)}}{\gamma_\infty^{(0)}}\right|^2
+	\frac{(\kinf L)^2 +3 \kinf L +3}{(\kinf L)^2-3\kinf L +3}\right]
+	\;.
+	\eeq
+	%
+	This formula is tested in Fig.~\ref{fig:deuteron_error_plot_l2} with
+	the same deuteron calculations as in
+	Fig.~\ref{fig:deuteron_error_log_plots}.  We note that the deviation
+	after subtraction of the NLO ($l=0$) result does not exhibit the
+	$\exp(-6k_\infty L)$ falloff but is rather consistent with an
+	$\exp(-4\kinf L)$ falloff at large $L$.  We attribute this to the
+	missing LO $d$-state correction.  Due to the small value of the
+	$d$-to-$s$ state ratio, the $d$-wave correction is small, but it makes
+	a perceptible shift of the $s$-wave LO result.  When added to the NLO
+	$l=0$ correction, the large $L_2$ behavior of the error is brought
+	somewhat closer in line with the predicted dependence of $L^2
+	e^{-6\kinf L}$.  We note, however, that the NLO correction is not complete
+	due to the missing $l=2$ correction.  Calculating NLO corrections for $l>0$
+	remains an open question.  Particularly, because that would entail taking
+	into account the admixture between different channels.  
 
 	\subsection{Radii and phase shifts}
 
