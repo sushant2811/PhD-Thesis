@@ -1514,7 +1514,7 @@
 	functions at $r=L$.  The prediction from Eq.~\eqref{eq:complete_IR_scaling}
 	fails to reproduce the data except at the highest values of $L_2$.
 	Eq.~\eqref{eq:complete_IR_scaling} keeps only the leading-order (LO)
-	corrections	to $Delta E$.  For the weakly bound states, the higher-order
+	corrections	to $\Delta E$.  For the weakly bound states, the higher-order
 	corrections become important.  The corrections to the energy up to the next
 	to leading order (NLO) were noted in Eq.~\eqref{eq:complete_E_correction_NLO}.
 	Note that the NLO correction involves the low-energy constant $w_2$.  In
@@ -1731,7 +1731,7 @@
 	%
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.55\textwidth]
+	\includegraphics[width=0.6\textwidth]
 	{Extrapolation/deuteron_curves_v2}
 	\caption{Deuteron energy versus $L_2$ (see
 	  Eq.~\eqref{eq:L2_def}) for the chiral N$^3$LO (500\,MeV) potential
@@ -1748,7 +1748,7 @@
 	%
 	\begin{figure}[h]
 	\centering
-	\includegraphics[width=0.55\textwidth]
+	\includegraphics[width=0.6\textwidth]
 	{Extrapolation/deuteron_error_log_plots_v3}
 	\caption{Comparison of the actual energy correction due
 	  to HO basis truncation ($\hw$ restricted to be greater than $49$~MeV to
@@ -1785,7 +1785,102 @@
 
 	\subsubsection{Comparison to conventional extrapolation schemes}
 
+	The extrapolation formulas in Eqs.~\eqref{eq:complete_IR_scaling} and
+	\eqref{eq:complete_E_correction_NLO} with $L=L_2$ are theoretically founded.
+	Thus the functional form for the energy extrapolation that we have is an
+	exponential in $L$.  As mentioned in the introduction to this chapter,
+	a popular	phenomenological choice is an exponential in $N$ extrapolation
+	\big(Eq.~\eqref{eq:exp_Nmax_extrapolation}\big).  From
+	Eq.~\eqref{eq:L2_def} we see that exponential in $N$ extrapolation
+	corresponds to gaussian in $L$.  Authors of
+	Ref.~\cite{Tolle:2012cx} investigated the convergence properties of
+	genuine and smeared contact interactions in
+	an effective theory of trapped bosons and found that the smearing
+	changed a power law dependence of the convergence to an exponential
+	dependence.  Here we will consider all three functional dependences on
+	$L$: exponential, Gaussian, and power law.
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/gaussianV5_IRfits_v2}
+	\caption{The IR energy correction $\Delta E_L$ versus $L_2$
+		for a Gaussian potential well Eq.~\eqref{eq:Vg} with
+		$V_0 = 5$ (and $\hbar = \mu = R=1$) using a wide range of $N$ and $\hw$.
+		%The exact ground-state energy is $\Einf=-1.2717$.
+		The energies are fitted with (a) exponential, (b) Gaussian,
+		and (c) power law dependence on $L_2$.}
+	\label{fig:Vgauss_other_forms}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/deuteronIRfits_v2}
+	\caption{The IR energy correction $\Delta E_L$
+		versus $L_2$ for the deuteron calculated with the chiral EFT potential from
+		Ref.~\cite{Entem:2003ft} using a wide range of $N$ and $\hw$.
+		%The exact ground-state energy is $\Einf=-2.2246\,\mbox{MeV}$.
+		The energies are fitted with (a) exponential, (b) Gaussian,
+		and (c) power law dependence on $L_2$.}
+	\label{fig:deuteron_other_forms}
+	\end{figure}
+	%
+	A purely empirical test can be made for our models and the deuteron
+	because we can calculate the exact $\Einf$, plot $\Delta E(L_2) \equiv
+	E(L_2) - \Einf$ against $L_2$, and then attempt to fit each of the
+	three choices of $\Delta E(L_2)$.  Figure~\ref{fig:Vgauss_other_forms}
+	shows the results for a representative model potential (a Gaussian)
+	with moderate depth while Fig.~\ref{fig:deuteron_other_forms} shows
+	the results for the deuteron.  The plots are made so that the
+	candidate form would yield a straight line if followed precisely.  We
+	see that the exponential form is an excellent fit for the model
+	throughout the range of $L_2$ and a reasonable but not perfect fit for
+	the deuteron.  The not perfect fit for the deuteron can be explained
+	by noting that it is a weakly bound state.  We see from
+	Figs.~\ref{fig:deuteron_curves} and \ref{fig:deuteron_error_log_plots}
+	that for deuteron, the correction will be a sum of exponential terms.
+	In contrast to the exponential extrapolation, Gaussian and power law fits
+	fail over the full range of $L_2$.  This is consistent with
+	Tolle {\it et al.}~\cite{Tolle:2012cx}.  For limited ranges of $L_2$ a
+	Gaussian does	provide a reasonable fit (and should give a good extrapolation
+	for	$\Einf$ if close enough to convergence).  This is consistent with the
+	apparent success of exponential in $N$ extrapolation observed in the
+	literature.  However, we see that globally exponential in $L$ is clearly
+	superior.  Moreover, the exponent and coefficient (see
+	Eq.~\eqref{eq:complete_IR_scaling}) are physically motivated whereas in the
+	exponential in $N$ case (Eq.~\eqref{eq:exp_Nmax_extrapolation}) these
+	parameters are fit to data.
+
+
 	\subsubsection{Relation to L\"{u}scher-type formulas}
+
+	Starting with the seminal work of L\"uscher~\cite{Luscher:1985dn}, a
+	wide variety of formulas have been derived for the energy shift of
+	bound states in finite-volume lattice calculations.  The usual
+	application is to simulations that use periodic boundary conditions in
+	cubic boxes (e.g., see Ref.~\cite{Konig:2011ti}).  The recent work by
+	Pine and Lee~\cite{Lee:2010km,Pine:2012zv} extend the derivation to
+	hard-wall boundary conditions using effective field theory for
+	zero-range interactions and the method of images.  The result for
+	$\Delta E_L$ in a three-dimensional cubic box has a different
+	functional form than found here (the leading exponential is multiplied
+	by $1/L$ with that geometry) and the subleading corrections are
+	parametrically larger.
+
+	However, because the HO truncation we consider is in partial waves,
+	the one-dimensional analysis and formula from Ref.~\cite{Pine:2012zv}
+	are applicable (because $\kinf$ and $\ANC$ are asymptotic quantities,
+	the result for zero-range interaction is actually general for
+	short-range interactions).  The method of images can be applied in a
+	one-dimensional box of size $2L$ after specializing to a particular
+	partial wave and then extending the space to odd solutions in $r$ from
+	$-\infty$ to $+\infty$.  The leading-order finite-volume correction
+	agrees with Eq.~\eqref{eq:complete_IR_scaling}, and the first omitted term
+	is of the same order.
+	The methods presented in \cite{Lee:2010km,Pine:2012zv}
+	can be used to extend the present formulas to higher
+	orders and more general cases, including coupled channels.
 
 	\subsection{Higher angular momenta}
 	\label{subsec:higher_angular_momenta}
