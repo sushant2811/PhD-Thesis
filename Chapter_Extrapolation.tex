@@ -1885,6 +1885,243 @@
 	\subsection{Higher angular momenta}
 	\label{subsec:higher_angular_momenta}
 
+	The deuteron ground state is a mixture of an $s$ and a $d$ state, and
+	the $s$ and $d$ asymptotic normalization coefficients (as well as the
+	$d$-to-$s$ state ratio of about 2.5\%) are observables.  The
+	extrapolation formulas so far were derived for $s$
+	states, and it is of interest to extend these to nonzero angular
+	momenta $l$.  We do so in two steps.  First, we show that $L_2$ is also
+	the relevant effective hard-wall radius for oscillator wave functions
+	with nonzero angular momenta.  Second, we derive the energy correction
+	for nonzero angular momenta.
+
+	\subsubsection{$L$ for nonzero angular momenta}
+
+	For the derivation of the relevant IR length scale at $l>0$ we closely
+	follow the derivation for $l=0$ presented in
+	Subsec.~\ref{subsec:tale_of_tails}.  We compute the smallest eigenvalue
+	$\kappa^2$ of the squared momentum operator $\hat{p}^2$ in a finite
+	oscillator basis and identify $\kappa =x_l/L$ (with $x_l$ being the
+	smallest positive zero of the spherical Bessel function $j_l$). This
+	identification, and the form of the corresponding eigenfunctions are,
+	of course, guided by the Dirichlet bc at $r=L$.  We set the oscillator
+	length $b=1$.  Because this is the only length scale here, the results
+	are general and can be extended to any $b$ with simple rescaling.
+	The normalized radial	oscillator wave function of energy
+	%
+	\beq
+	  E=2n+l+3/2
+	\eeq
+	%
+	is   $\psi_{nl}(r)=u_{nl}(r)/r$ with
+	%
+	\beq
+	u_{nl}(r)=\sqrt{2n!\over\Gamma(n+l+3/2)} r^{l+1} e^{-r^2/2}
+	L_{n}^{l+1/2}(r^2) \;.
+	\eeq
+	%
+	Here, $L_n^{l+1/2}$ denotes the generalized Laguerre polynomial.
+
+	In this basis, the operator $\hat{p}^2$ of the momentum squared is
+	tridiagonal with matrix elements
+	%
+	\begin{align}
+	\langle u_{ml}|\hat{p}^2|u_{nl}\rangle &= (2n+l+3/2)\delta_m^n \nonumber\\
+	   & \qquad \null +\sqrt{n+1}
+	   \sqrt{n+l+3/2}\,\delta_m^{n+1} \nonumber \\
+	  & \qquad \null +\sqrt{n}\sqrt{n+l+1/2}\,\delta_m^{n-1} \;.
+	\end{align}
+	%
+	For the eigenfunction of $\hat{p}^2$ with smallest eigenvalue
+	$\kappa^2$ at angular momentum $l$, we make the ansatz
+	$\psi_{\kappa l}(r)/r$ with
+	%
+	\bea
+	\label{eigen}
+	\psi_{\kappa l}(r) =\left\{\begin{array}{cc}
+	\kappa r j_l(\kappa r) \;, & 0\le \kappa r \le x_l \;, \\
+	0 \;, & \kappa r > x_l \;.\end{array}\right.
+	\eea
+	%
+	Here, $j_l$ is the regular spherical Bessel function and $x_l$ is its
+	smallest positive zero.  Clearly, these eigenfunctions are those of a
+	particle in a spherical cavity with a Dirichlet bc at $x_l/\kappa$. In
+	an infinite basis, the wave function $\psi_{\kappa l}(r)/r$ is an
+	eigenfunction of $\hat{p}^2$ for any non-negative value of $\kappa$.
+	In a finite oscillator basis, only discrete momenta $\kappa$ are
+	allowed.  For their computation we expand the eigenfunction as
+	%
+	\beq
+	\psi_{\kappa l}(r) = \sum_{m=0}^{n} c_m(\kappa) u_{ml}(r) \;,
+	\eeq
+	%
+	where we supress the dependence of the admixture coefficients
+	$c_m(\kappa)$ on $l$, which is kept fixed throughout this derivation.
+
+	The last row of the matrix eigenvalue problem for $\hat{p}^2$ is
+	%
+	\beq
+	\label{quantize}
+	(2n+l+3/2 -\kappa^2)c_n(\kappa) = -\sqrt{n}\sqrt{n+l+1/2}\, c_{n-1} \;,
+	\eeq
+	%
+	and this becomes the quantization condition for $\kappa$.  The direct
+	computation of the coefficients $c_n(\kappa)$ seems difficult.
+	Instead, we make a Fourier-Bessel expansion
+	%
+	\beq
+	\label{fourierbessel}
+	\psi_{\kappa l}(r)= \sqrt{2\over \pi}\int\limits_0^\infty\! dk\,
+	   \tilde{\psi}_{\kappa l}(k)\, kr j_l(kr) \;,
+	\eeq
+	%
+	and use
+	%
+	\beq
+	kr j_l(kr) =\sqrt{\pi\over 2}\sum_{n=0}^\infty (-1)^n u_{nl}(k) u_{nl}(r) \;.
+	\eeq
+	%
+	Thus,
+	%
+	\beq
+	\psi_{\kappa l}(r)= \sum_{n=0}^\infty (-1)^n u_{nl}(r)
+	\int\limits_0^\infty\! dk\, \tilde{\psi}_{\kappa l}(k) u_{nl}(k) \;,
+	\eeq
+	%
+	and the admixture coefficients are therefore
+	%
+	\beq
+	c_n(\kappa)= (-1)^n \int\limits_0^\infty dk\, \tilde{\psi}_{\kappa l}(k)
+	u_{nl}(k) \;.
+	\eeq
+	%
+
+	So far, our formal manipulations have been exact.  We now employ an
+	asymptotic approximation of the generalized Laguerre polynomials
+	(which enters the $u_{nl}(k)$) in terms of Bessel functions, valid for
+	$n\gg 1$, see Eq.~(15) of Ref.~\cite{Deano2013}.  This yields
+	%
+	\begin{align}
+	u_{nl}(k) &\approx {2^{1-n}\over \pi^{1/4}} \sqrt{(2n+2l+1)!\over (n+l)! n!}
+	   \,(4n+2l+3)^{-{l+1\over 2}}
+	  \nonumber \\
+	  & \qquad \null\times \sqrt{4n+2l+3} k\, j_l(\sqrt{4n+2l+3}k) \;,
+	\end{align}
+	%
+	and
+	%
+	\begin{align}
+	c_n(\kappa) &\approx C_{nl} \sqrt{2\over \pi}\int\limits_0^\infty dk \,
+	\tilde{\psi}_{\kappa l}(k)	\sqrt{4n+2l+3} k \nonumber \\
+	  & \qquad\qquad\qquad \null \times j_l(\sqrt{4n+2l+3}k) \;.
+	\end{align}
+	%
+	Here, $C_{nl}$ is a constant that does not depend on $\kappa$.  The key
+	point is that the asymptotic expansion in terms of Bessel functions
+	allows us now to employ the definition~\eqref{fourierbessel} to
+	evaluate the integral
+	%
+	\begin{align}
+	 \sqrt{2\over \pi}\int\limits_0^\infty dk\, & \tilde{\psi}_{\kappa l}(k)
+	\sqrt{4n+2l+3} k\, j_l(\sqrt{4n+2l+3}k) \nonumber \\
+	&=  \psi_{\kappa l}(\sqrt{4n+2l+3}) \nonumber \\
+	&= \sqrt{4n+2l+3}\, \kappa\, j_l(\sqrt{4n+2l+3}\kappa) \;.
+	\end{align}
+	%
+	Putting it all together, we find
+	%
+	\begin{align}
+	c_n(\kappa) &= {2^{1/2-n}(-1)^n \pi^{1/4} \over (4n+2l+3)^{l/2}}
+	\sqrt{(2n+2l+1)!\over (n+l)!n!} \nonumber \\
+	 & \qquad\null\times
+	\kappa\, j_l(\sqrt{4n+2l+3}\kappa) \;.
+	\end{align}
+	%
+	We insert this expression for $c_n(\kappa)$ into the quantization
+	condition~\eqref{quantize} and make the ansatz
+	%
+	\beq
+	\kappa ={x_l\over\sqrt{4n+2l+3+2\Delta}} \ .
+	\eeq
+	%
+	Assuming the limit $n\gg 1$ and $n\gg l$ in the quantization condition
+	then yields
+	%
+	\beq
+	\Delta=2 \ .
+	\eeq
+	%
+	Thus, $\Delta$ does not depend on $l$ in this limit, and the result
+	is consistent with the $l=0$ result of Ref.~\cite{More:2013rma}. In
+	other words, the extent of the position space in finite oscillator
+	basis with maximum radial quantum number $n$ and angular momentum $l$ is
+	%
+	\bea
+	\label{L2}
+	  L_2 &=& \sqrt{2(2n+l+3/2+2)}b \nonumber\\
+	&=& \sqrt{2(N+3/2+2)}b \;,
+	\eea
+	%
+	in accord with Eq.~\eqref{eq:L2_def}.
+
+	Table~\ref{tab:lowest_kappa} shows numerical comparisons for $l=0,1,2$
+	and a range of $n$ of the exact minimum momentum $\kappa$ and the
+	estimate $x_l/L_2$ (with $x_0=\pi$, $x_1\approx 4.49341$, $x_2\approx
+	5.76346$).  The estimates are accurate approximations of the exact
+	results even for small $N=2n+l$, but the accuracy decreases somewhat
+	with increasing orbital angular momentum. In some practical
+	calculations it might thus be of advantage to directly employ the
+	numerical results for $L_2$ instead of the approximate analytical
+	expression~(\ref{L2}).
+
+	\begin{table}[h]
+	\begin{tabular}{c|c|c|c||c|c|c|c||c|c|c|c}
+	$l$& $n$ & $\kappa$  &${x_l/ L_2}$ &
+	$l$& $n$ & $\kappa$  &${x_l/ L_2}$ &
+	$l$& $n$ & $\kappa$  &${x_l/ L_2}$ \\
+	\hline
+	0 &  0  & 1.2247  & 1.1874   &
+	1 &  0  & 1.5811  & 1.4978   &
+	2 &  0  & 1.8708  & 1.7378   \\
+	0 &  1  & 0.9586  & 0.9472   &
+	1 &  1  & 1.2764  & 1.2463   &
+	2 &  1  & 1.5423  & 1.4881   \\
+	0 &  2  & 0.8163  & 0.8112   &
+	1 &  2  & 1.1047  & 1.0898   &
+	2 &  2  & 1.3509  & 1.3222   \\
+	0  &  3  &  0.7236  &  0.7207  &
+	1  &  3  &  0.9892  &  0.9805  &
+	2 &    3  &    1.2191  &     1.2018    \\
+	0   &  4   &   0.6568   &    0.6551    &
+	1 &    4 &     0.9042   &    0.8987  &
+	2 &    4  &    1.1207  &     1.1092   \\
+	0  &   5   &   0.6058   &    0.6046    &
+	1 &    5 &     0.8382   &    0.8344  &
+	2 &    5   &   1.0432   &    1.0352    \\
+	0  &   6   &   0.5651   &    0.5642    &
+	1 &    6 &     0.7850   &    0.7822  &
+	2  &   6  &    0.9801  &     0.9742  \\
+	0   &  7 &     0.5316    &   0.5310    &
+	1  &   7 &     0.7408   &    0.7387  &
+	2 &    7  &    0.9274  &     0.9229   \\
+	0  &   8    &  0.5035    &   0.5031    &
+	1  &   8 &     0.7033   &    0.7018  &
+	2 &    8  &    0.8824  &     0.8789   \\
+	0  &  9  &    0.4795   &    0.4791     &
+	1 &    9 &     0.6711   &    0.6698  &
+	2  &   9   &   0.8435  &     0.8407    \\
+	0  &   10 &   0.4585  &     0.4582    &
+	1 &    10 &   0.6429  &     0.6419   &
+	2  &   10   & 0.8093 &      0.8070  \\
+	\end{tabular}
+	\caption{Comparison of the exact lowest momentum $\kappa$ with the analytical
+		estimate $x_l/L_2$ for $l=0, 1, 2$ and $0 \leq n \leq 10$.}
+	\label{tab:lowest_kappa}
+	\end{table}
+
+	\subsubsection{Energy correction for finite angular momentum}
+
+	
 
 	\subsection{Radii and phase shifts}
 
@@ -1901,7 +2138,7 @@
 	\end{figure}
   %
 	Similar comments apply to the computation
-	of the radius. Figure~\ref{fig:deuteron_radii} shows that the
+	of the radius.  Figure~\ref{fig:deuteron_radii} shows that the
 	numerical results for the squared radius, when plotted as a function
 	of $L_2$ (but not as a function of $L_0$), fall on a continuous curve
 	with minimal spread.
