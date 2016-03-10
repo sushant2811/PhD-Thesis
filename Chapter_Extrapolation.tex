@@ -1782,6 +1782,37 @@
 	enables us to include contributions from the $d$-wave at LO.  This
 	becomes noticable on the error plot for large $L_2$ (see
 	Fig.~\ref{fig:deuteron_error_plot_l2}).
+  %
+	\begin{figure}
+	\centering
+ 	\includegraphics[width=0.6\columnwidth]
+	{Extrapolation/srgwidfithbaromega40every13_v2}
+ 	\caption{Deuteron energy versus $L_2$ for the
+  	potential of Ref.~\cite{Entem:2003ft} evolved by the SRG to four
+   	different resolutions (specified by $\lambda$).  To eliminate the
+   	UV contamination we only keep points for which $\hw >40$.  The
+   	horizontal dotted line is the deuteron binding energy.}
+	\label{fig:SRG_data_with_fit}
+	\end{figure}
+	%
+
+	As a final test of the universal applicability of the correction
+	formula Eq.~\eqref{eq:complete_E_correction_NLO}, we consider a sequence
+	of unitarily equivalent	potentials for the deuteron.  In particular,
+	we use the similarity renormalization group (SRG)~\cite{Bogner:2009bt}
+	to evolve the initial Entem-Machleidt
+	potential to four values of the SRG evolution parameter $\lambda$.
+	Because the transformation is exactly unitary (up to very small
+	numerical errors) at the two-body level, the measurable quantities
+	such as phase shifts, bound-state energies, and ANCs are unchanged.
+	From Eq.~\eqref{eq:complete_E_correction_NLO} or more generally from
+	Eq.~\eqref{eq:basiceq}, we see that the IR energy correction can written
+	in terms of observables ($S$-matrix near the bound state can be
+	parametrized in terms of low-energy observables) and therefore should be
+	independent of the SRG scale.  This is verified in
+	Fig.~\ref{fig:SRG_data_with_fit}.
+
+
 
 	\subsubsection{Comparison to conventional extrapolation schemes}
 
@@ -2229,10 +2260,20 @@
 	e^{-6\kinf L}$.  We note, however, that the NLO correction is not complete
 	due to the missing $l=2$ correction.  Calculating NLO corrections for $l>0$
 	remains an open question.  Particularly, because that would entail taking
-	into account the admixture between different channels.  
+	into account the admixture between different channels.
 
 	\subsection{Radii and phase shifts}
 
+	\subsubsection{Radii}
+
+	Along with binding energies, another nuclear observable that we looked at
+	was the radius squared.  Figure~\ref{fig:deuteron_radii} shows the
+	numerical results for the squared radius for the deuteron calculated in the
+	HO basis.  Analogous to Figs.~\ref{fig:spatial_cutoff_vs_HO_square_well} and
+	\ref{fig:spatial_cutoff_vs_HO_deuteron}, we see that the results for
+	the squared radius fall on a continuous curve with minimal spread when
+	plotted as a function of $L_2$ (but not as a function of $L_0$).
+	%
 	\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]
@@ -2245,11 +2286,224 @@
 	\label{fig:deuteron_radii}
 	\end{figure}
   %
-	Similar comments apply to the computation
-	of the radius.  Figure~\ref{fig:deuteron_radii} shows that the
-	numerical results for the squared radius, when plotted as a function
-	of $L_2$ (but not as a function of $L_0$), fall on a continuous curve
-	with minimal spread.
+
+	Though the squared radius is a long-ranged
+	operator, its matrix elements will still be modified at short distances
+	by renormalizations or  similarity transformations of the Hamiltonian,
+	see, e.g., Ref.~\cite{Stetcu:2004wh}.  Thus we cannot expect an extrapolation
+	law for the radius that depends entirely on observables.
+	Instead, we seek a formula that identifies the $L$ dependence but leaves
+	parameters to be fit.  We define
+	%
+	\beq
+	  \rsqav_L = \rsqinf + \Delta\rsqav_L
+	  \;,
+	\eeq
+	%
+	where
+	%
+	\beq
+	  \Delta\rsqav_L =
+	  \frac{\int_0^L |u_L(r)|^2\, r^2\,dr}{\int_0^L |u_L(r)|^2\, dr}
+	  - \frac{\int_0^\infty |u_\infty(r)|^2\, r^2\,dr}{\int_0^\infty
+		|u_\infty(r)|^2\, dr} \;.
+	  \label{eq:Delta-rsq}
+	\eeq
+	%
+	The strategy is to isolate the polynomial $L$ dependence by splitting the
+	necessary integrals into an interior part and an exterior part:
+	\beq
+  \int_0^L\! r^n |u_L(r)|^2\, dr =
+  \int_0^R\! r^n |u_L(r)|^2\, dr + \int_R^L\! r^n |u_L(r)|^2\, dr \;,
+  \label{eq:rnintegral}
+	\eeq
+	%
+	where $R$ is sufficiently large so that the asymptotic form of $u_L(r)$ from
+	Eq.~\eqref{eq:uLasymp2} can be used in the second integral.
+	Our expression for $\Delta\rsqav_L$ is independent of the normalization
+	of $u_L(r)$, so we are free to choose it so that the large $r$ form is
+	exactly given by Eq.~\eqref{eq:uLasymp2}.
+
+	The first integral in Eq.~\eqref{eq:rnintegral} will depend on the details
+	of the interior wave function	and therefore on the potential, but
+	the linear energy method shows us that to $\mathcal{O}(e^{-2\kinf L})$
+	the $L$ dependence is isolated.  In particular, the dependence on $L$ of
+	$u_L(r)$ in	Eq.~\eqref{eq:linear_energy_approx} is confined to
+	$\Delta E_L = \kinf\ANC^2 e^{-2\kinf L}$ because $du_E(r)/dE|_{\Einf}$ for
+	$r < R$ is independent of $L$ with our choice of normalization.  Thus the
+	integral over $r$ cannot introduce polynomial $L$ dependence and we can
+	conclude that
+	%
+	\beq
+  \int_0^R\! r^n |u_L(r)|^2\, dr = \mathcal{O}(L^0) e^{-2\kinf L}
+	     + \mathcal{O}(e^{-4\kinf L}) \;.
+	\eeq
+	%
+	The $\mathcal{O}(L^0)$ coefficient will depend on the potential, so we
+	will treat it as a parameter to be fit.
+
+	The second integral can be directly evaluated to $\mathcal{O}(e^{-2\kinf L})$
+	using Eq.~\eqref{eq:uLasymp2} and $[k_L]_{LO} = \kinf - \ANC^2 e^{-2\kinf L}$
+	to expand $|u_L(r)|^2$.  For $n=0$ we find
+	%
+	\begin{align}
+	  \int_R^L\! &|u_L(r)|^2\, dr =  \frac{1}{2\kinf}e^{-2\kinf R} + \Bigl[
+	  \frac{\ANC^2}{\kinf} \Bigl(R + \frac{1}{2\kinf}\Bigr)e^{-2\kinf R} + 2R -
+		2L \Bigr]e^{-2\kinf L} + \mathcal{O}(e^{-4\kinf L}) \;,
+	  \label{eq:asympnorm}
+	\end{align}
+	%
+	and for $n=2$ we find
+	%
+	\begin{align}
+  	\int_R^L\! r^2 |u_L(r)|^2\, dr =
+  	\frac{1}{2\kinf^3}\Bigl[ \frac12 + \kinf R + (\kinf R)^2 \Bigr]
+		e^{-2\kinf R}
+    \nonumber \\
+		\null +  \Bigl[ \frac{\ANC^2}{\kinf^4} \Bigl( \frac34 + \frac32\kinf R +
+		\frac32(\kinf R)^2 + (\kinf R)^3 \Bigr)e^{-2\kinf R}  \nonumber \\
+    \null + \frac{1}{\kinf^3} \Bigl( \frac23 (\kinf R)^3 - \kinf L - \frac23
+		(\kinf L)^3 \Bigr) \Bigr]e^{-2\kinf L}
+    % \nonumber \\
+		+ \mathcal{O}(e^{-4\kinf L})  \;.
+    \label{eq:asymprsq}
+	\end{align}
+	%
+	Note that it is necessary to keep the expansion of $|u_L(r)|^2$ up to
+	$e^{-4\kinf L}$	until after doing the integrals because terms proportional
+	to $e^{-4\kinf L} e^{2\kinf r}$ will be leading order.
+
+	When we use \eqref{eq:asympnorm} and \eqref{eq:asymprsq} and our previous
+	result for the interior integrals in Eq.~\eqref{eq:Delta-rsq}, expanding
+	consistently to $\mathcal{O}(e^{-2\kinf L})$, we will mix $R$-dependent
+	terms with the $L$ dependence.  However, we can immediately conclude that
+	the general form to this order is (with $\beta \equiv 2\kinf L$)
+	%
+	\bea
+	 	\rsqav_L \approx {\rsqinf}[ 1 - (c_0 \beta^3 +c_1 \beta + c_2) e^{-\beta}]
+	  \;.
+		\label{rad}
+	\eea
+	%
+	Here, $\rsqinf$, $c_0$, $c_1$, and $c_2$ are fit parameters while $\kinf$
+	should be determined from fitting the energy. 	This form has been verified
+	explicitly for finite-range model potentials (e.g., square well
+	and delta shell). 	The approximation~(\ref{rad}) should be valid
+	in the asymptotic regime $\beta\gg 1$.  In practice, one needs
+	$\beta\gtrsim 3$ so that the dominant $\beta^3$ correction is
+	approximately an order of magnitude larger than the subleading terms
+	(with $c_1$ and $c_2$ expected to be roughly the same size as
+	$c_0$ or smaller).
+
+	If we take the zero-range limit $R\to 0$ of the potential, we
+	arrive at the simple expression
+	%
+	\beq
+	 \frac{\Delta\rsqav_L}{\rsqinf}
+	 \approx -\left(\frac{(2\kinf L)^3}{3} -4\right) e^{-2\kinf L} \;.
+	 \label{eq:rsqzerorange}
+	\eeq
+	%
+	Note that in this limit the correction becomes independent of the potential.
+	Equation~\eqref{eq:rsqzerorange} suggests that for a short-range potential,
+	the $c_1$ and $c_2$ terms will give comparable contributions for moderate
+	$\beta$, and therefore will be difficult to determine reliably.
+
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Extrapolation/H2_radius_sq_vs_L9to15}
+			\caption{Fit region: $L$ from $9$ to $15$ fm.}
+			\label{fig:deuteron_radius_fit_9to15}
+		\end{subfigure}
+		\hspace{0.05\textwidth}
+		\begin{subfigure}[c]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Extrapolation/H2_radius_sq_vs_L12to17}
+			\caption{Fit region: $L$ from $12$ to $17$ fm.}
+			\label{fig:deuteron_radius_fit_12to17}
+		\end{subfigure}
+		\caption{Deuteron radius squared versus $L_2$ for the chiral
+		  N$^3$LO (500\,MeV) potential of Ref.~\cite{Entem:2003ft}.  To
+			eliminate the UV contamination we only plot results for $\hw > 49$~MeV.
+			The solid, dot-dashed, and dashed lines are results from fitting
+			Eq.~\eqref{rad} in the shaded region to find $\rsqinf$ and one,
+			two, or three of the $c_i$ constants, respectively.
+  		The horizontal dotted line is the deuteron radius squared.}
+		\label{fig:deuteron_radius_fit}
+	\end{figure}
+	%
+	Sample fits of Eq.~\eqref{rad} for the deuteron are shown in
+	Fig.~\ref{fig:deuteron_radius_fit}.  Results are obtained for fitting
+	one, two, and all three $c_i$ constants to radii calculated
+	with the same truncated oscillator basis parameters used for
+	Fig.~\ref{fig:deuteron_curves}.  The fit region is for $L_2$
+	between 9 and 15\,fm, where the calculations only show a small
+	amount of curvature and between 12 and 17\,fm.  All points are equally
+	weighted.
+	%
+	\begin{table}[h]
+		\begin{tabular}{ |c|c|c|c|c| }
+			\hline
+	 		\multicolumn{5}{|c|}{fit region: $L$ from $9$ to $15$ fm. Exact:
+	 		$\rsqinf = 3.901$ fm$^2$, $\kinf = 0.232$ fm$^{-1}$} \\ \hline
+			& $\rsqinf$ & $c_0$ & $c_1$ & $c_2$ \\ \hline
+			$1$ term & $3.945 \pm 0.006$ & $0.331 \pm 0.002$ & -- & -- \\ %\hline
+	 		$2$ terms & $3.865 \pm 0.001$ & $0.266 \pm 0.001$ & $1.131 \pm 0.018$ & --
+			\\ %\hline
+	 		$3$ terms & $3.887 \pm 0.001$ & $0.308 \pm 0.002$ & $-1.239 \pm 0.135$ &
+			$7.167 \pm 0.408$ \\ \hline
+	 \end{tabular}
+	 \caption{Coefficients from fitting Eq.~\eqref{rad} to the deuteron data
+	    using one, two, or three $c_i$ constants as shown in
+			Fig.~\ref{fig:deuteron_radius_fit_9to15}}
+	 \label{tab:coeff_deuteron_radius_fit_9to15}
+  \end{table}
+	%
+	\begin{table}
+		\begin{tabular}{ |c|c|c|c|c| }
+	  \hline
+	  \multicolumn{5}{|c|}{fit region: $L$ from $12$ to $17$ fm. Exact:
+		$\rsqinf = 3.901$ fm$^2$, $\kinf = 0.232$ fm$^{-1}$} \\ \hline
+	  & $\rsqinf$ & $c_0$ & $c_1$ & $c_2$ \\ \hline
+	  $1$ term & $3.899 \pm 0.001$ & $0.312 \pm 0.000$ & -- & -- \\ %\hline
+	  $2$ terms & $3.888 \pm 0.001$ & $0.293 \pm 0.001$ & $0.503 \pm 0.026$ & --
+		\\ %\hline
+	  $3$ terms & $3.898 \pm 0.001$ & $0.339 \pm 0.006$ & $-3.577 \pm 0.508$ &
+		$15.339 \pm 1.908$ \\ \hline
+	  \end{tabular}
+		\caption{Coefficients from fitting Eq.~\eqref{rad} to the deuteron data
+ 	    using one, two, or three $c_i$ constants as shown in
+ 			Fig.~\ref{fig:deuteron_radius_fit_12to17}}
+		\label{tab:coeff_deuteron_radius_fit_12to17}
+	\end{table}
+	%
+	The values for $\rsqinf$ and the coefficients $c_i$'s from the fits in
+	Fig.~\ref{fig:deuteron_radius_fit} are reported in
+	Tables~\ref{tab:coeff_deuteron_radius_fit_9to15} and
+	\ref{tab:coeff_deuteron_radius_fit_12to17}.
+	For all of these fits, the value of $c_0$ is
+	fairly stable, ranging from 0.27 to 0.33 (note that
+	$c_0 = 1/3$ in the zero-range limit).  In contrast, $c_1$
+	and $c_2$ are not well determined (even the sign of $c_1$
+	varies).  This is consistent with
+	fits using the square-well potential, where analytic expressions
+	for the $c_i$s can be found.  We find that $\rsqinf$
+	and $c_0$ are well determined by fits in analogous
+	regions but that $c_1$ and $c_2$ are not.
+	If we push the analysis by taking the fit region between 7 and 13\,fm,
+	the $\rsqinf$ prediction using only $c_0$ breaks down, giving
+	4.21\,fm$^2$.  However, the fit with all three $c_i$s is still
+	reasonable, giving 3.86\,fm$^2$.  This indicates the importance of using
+	the correct functional form for extrapolation.
+	Further studies are needed to test how these trends might carry
+	over to $A>2$ nuclei.  It is worthwhile to note that this approach can
+	be generalized to any coordinate space operator.
+
+	\subsubsection{Phase shifts}
 
 
 	\section{Ultraviolet story}
