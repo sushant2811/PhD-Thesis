@@ -2505,9 +2505,102 @@
 
 	\subsubsection{Phase shifts}
 
+	The argument for computing scattering phase shifts is as
+	follows: The oscillator basis appears as a spherical box of size
+	$L$.  For low momenta we have $L=L_2$, but at higher momentum $L$
+	deviates slightly from $L_2$, and can be determined from the
+	eigenvalues of the operator $p^2$.  Thus, the positive-energy states
+	computed in the oscillator basis can be used to extract phase shifts.
+
+	In a fixed harmonic oscillator basis ($N,\hbar\Omega$), the
+	computation of the phase shifts for a given partial wave $^{2S+1}l_J$
+	with orbital angular momentum $l$ proceeds as follows: First, one
+	computes the discrete eigenvalues $p_i^2$ of the operator $p^2$ for
+	orbital angular momentum $l$.  Second, we need to determine the
+	momentum dependent box size $L_i=L(p_i)$.  Assuming that the $i^{\rm th}$
+	momentum eigenstate is the $i^{\rm th}$ eigenstate of a
+	spherical box, we must determine the $i^{\rm th}$ zero of the
+	spherical Bessel function.  Thus $j_l(p_iL_i/\hbar) = 0 $ determines
+	$L(p_i)$.  We evaluate the smooth function $ L(p)$ for arbitrary
+	momentum $p$ by interpolating between the discrete momenta
+	$p_i$.  Third, we compute the discrete positive energies $E_i =
+	\hbar^2k_i^2/(2m)$ of the neutron-proton system in relative
+	coordinates for the partial wave $^{2S+1}l_J$, and compute the phase
+	shifts from the Dirichlet boundary condition at $r=L$, i.e.
+	%
+	\beq
+	\tan\delta_l(k_i) = { j_l(k_iL(\hbar k_i)) \over \eta_l(k_iL(\hbar k_i))}\;.
+	\eeq
+	%
+	Here $\eta_l$ is the spherical Neumann function.  In practice one
+	repeats this procedure for several values of $\hbar\Omega$ in order to
+	get sufficiently many datapoints that fall onto a smooth curve.
+	Note that for $E_i$ or $k_i$ are obtained from diagonalizing the nuclear
+	Hamiltonian in HO basis whereas $p_i$ are obtained from diagonalizing the
+	momentum squared operator.
+
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/1s0_phaseshift_v3}
+	\caption{The $^1$S$_0$ phase shifts (in degrees) of the N$^3$LO
+	  chiral interaction (solid line) compared to the phase shifts
+	  computed directly in the harmonic oscillator basis (circles).}
+	\label{fig:1s0phase}
+	\end{figure}
+	%
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/3p1_phaseshift_v2}
+	\caption{The $^3$P$_1$ phase shifts (in degrees) of the N$^3$LO
+	  chiral interaction (solid line) compared to the phase shifts
+	  computed directly in the harmonic oscillator basis (circles).}
+	\label{fig:3p1phase}
+	\end{figure}
+	%
+	As examples we compute the scattering phase shifts for the $^1$S$_0$ and
+	$^3$P$_1$	partial waves in model spaces with $N=32$ and
+	$\hbar\Omega=20,22,\ldots,40$~MeV.  Our calculations are based on the
+	Entem-Machleidt 500\,MeV chiral EFT N$^3$LO
+	potential~\cite{Entem:2003ft}.  Figures~\ref{fig:1s0phase} and
+	\ref{fig:3p1phase} show the results and compares them to the numerically
+	exact phase	shifts.  For smaller $N$ than our current choice, the
+	computed phase shifts start to deviate from exact phase shifts at
+	higher energies.  However, if one is interested only in low-energy
+	phase shifts and observables such as the scattering length and the
+	effective range, a smaller harmonic oscillator basis is sufficient.
+
+	There are other methods to compute scattering phase shifts in the
+	harmonic oscillator basis.  Bang \emph{et al.} \cite{bang2000} used the
+	method of harmonic oscillator representation of scattering equations
+	(HORSE) for this purpose, and more recent
+	works~\cite{Luu:2010hw,Stetcu:2009ic} computed phase shifts to develop an
+	EFT for nuclear interactions directly in the oscillator
+	basis~\cite{Stetcu:2006ey}.  References~\cite{Luu:2010hw,Stetcu:2009ic}
+	build on the results by Busch {\it et al.}~\cite{busch1998} and their
+	generalization~\cite{Bhattacharyya:2006fg} to finite range corrections,
+	and extract scattering information from the energy shifts of bound
+	states in a harmonic oscillator potential.  The resulting EFTs are
+	quite efficient for contact interactions and systems such as ultracold
+	trapped fermions, but nuclear potentials with a finite range require
+	an extrapolation of $\Omega\to 0$~\cite{Luu:2010hw}.  The approach
+	presented in this Subsection is more direct, as no external oscillator
+	potential is employed.  We note that the phase shift analysis presented
+	here can be extended to coupled channels as well.
+
+	Finally, we note again that the approach of this Section can be
+	utilized in other localized basis sets.  All that is required is the
+	diagonalization of the operator $p^2$ in the employed basis set, which
+	yields the (momentum dependent) box size.
+
 
 	\section{Ultraviolet story}
 	\label{Sec:UV_story}
+
+	
+
+
 
 	\section{Related development and Moving forward}
 
