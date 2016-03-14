@@ -1,0 +1,683 @@
+% !TEX root = More_PhD_Thesis.tex
+% !TEX encoding = UTF-8 Unicode
+% !TEX spellcheck = en_US
+\cleardoublepage
+\chapter{UV extrapolation details}
+\label{Appendix:UV_extra_details}
+
+  \section{Deriving the UV cutoff}
+
+  We present here a detailed derivation of the effective UV cutoff $\Lameff$
+  as a function of the HO parameters (basis size $N$ and frequency $\Omega$)
+  that we report in Subsec.~\ref{subsec:UV_cutoff_duality}.
+
+  Consider the three-dimensional isotropic harmonic oscillator described
+  by the Hamiltonian (in natural units with $\hbar=c=1$)
+  %
+  \begin{equation}
+   H_\mathrm{HO} = \frac{p^2}{2\mu} + \frac{\mu\Omega^2r^2}{2} \,,
+  \label{eq:H-HO}
+  \end{equation}
+  %
+  where $\mu$ is the reduced mass and $\Omega$ denotes the oscillator
+  frequency.  The eigenstates $\ket{n\ell m}$ of $H_\mathrm{HO}$ are
+  degenerate in the quantum number $m$,
+  %
+  \begin{equation}
+   H_\mathrm{HO}\ket{n\ell m} = E_{n\ell m}\ket{n\ell m}
+  \label{eq:H-nlm}
+  \end{equation}
+  %
+  with
+  %
+  \begin{equation}
+   E_{n\ell m} = \left(2n+\ell+\frac32\right)\hw \,.
+  \label{eq:E-nlm}
+  \end{equation}
+  %
+  We use a slightly modified version of the conventions and notation
+  from Ref.~\cite{Caprio:2012rv}.  The full three-dimensional wavefunction in
+  configuration space is
+  %
+  \begin{equation}
+   \psi_{n\ell m}(\vecr) = \braket{\vecr}{n\ell m}
+   = \frac{u_{n\ell}(b;r)}{r}\YY_{\ell m}(\hat{\vecr})
+  \label{eq:psiR}
+  \end{equation}
+  %
+  with the reduced radial wavefunction
+  %
+  \begin{equation}
+   u_{n\ell}(b;r) = N_{n\ell}(b)\times(r/b)^{\ell+1} \ee^{-(r/b)^2/2}
+   L_n^{\ell+\nicefrac12}\big((r/b)^2\big) \,,
+  \label{eq:uR}
+  \end{equation}
+  %
+  where
+  %
+  \begin{equation}
+   N_{n\ell}(b) = \sqrt{\frac{2n!}{b\,\Gamma(n+\ell+\nicefrac32)}} \,,
+  \label{eq:N}
+  \end{equation}
+  %
+  and
+  %
+  \begin{equation}
+   b = (\mu\Omega)^{-1/2}
+  \label{eq:b}
+  \end{equation}
+  %
+  is the oscillator length.  The Fourier transform of Eq.~\eqref{eq:psiR} is
+  %
+  \begin{equation}
+   \tilde{\psi}_{n\ell m}(\veck) = (2\pi)^{-\nicefrac32} \int\ddr\,
+   \ee^{-\ii\veck\cdot\vecr} \psi_{n\ell m}(\vecr) \,.
+  \end{equation}
+  %
+  It can be written as
+  %
+  \begin{equation}
+   \tilde{\psi}_{n\ell m}(\veck)
+   = (-\ii)^\ell\frac{\wt{u}_{n\ell}(b;k)}{k}\YY_{\ell m}(\hat{\veck}) \,,
+  \label{eq:psiK}
+  \end{equation}
+  %
+  such that $\wt{u}_{n\ell}(b;k)$ is the Fourier--Bessel transform of
+  $u_{n\ell}(b;r)$, \ie,
+  %
+  \begin{equation}
+   \wt{u}_{n\ell}(b;k) = \sqrt{\frac{2}{\pi}}\int_0^\infty\dd r'\,
+   kr' j_\ell(kr')\,u_{n\ell}(b;r') \,.
+  \label{eq:uK-FB}
+  \end{equation}
+  %
+  This gives
+  %
+  \begin{equation}
+   \wt{u}_{n\ell}(b;k) = (-1)^n\wt{N}_{n\ell}(b)\times(kb)^{\ell+1}
+   \ee^{-(kb)^2/2} L_n^{\ell+\nicefrac12}\big((kb)^2\big)
+  \label{eq:uK}
+  \end{equation}
+  %
+  with
+  %
+  \begin{equation}
+   \wt{N}_{n\ell}(b) = \sqrt{\frac{2n!\,b}{\Gamma(n+\ell+\nicefrac32)}} \,.
+  \label{eq:N-tilde}
+  \end{equation}
+
+  \subsection{Smallest eigenvalue of $r^2$}
+
+  In the derivation of $\Lameff$ below, we directly consider
+  subspaces with an arbitrary (but fixed) angular momentum $\ell$, but
+  quote S-wave ($\ell=0$) results explicitly for the sake of
+  illustration.  Denoting the square root of the smallest eigenvalue
+  of $r^2$ in the truncated oscillator subspace with angular momentum
+  $\ell$ by $\rho$,\footnote{Strictly, we should write $\rho_\ell$ here,
+  but we omit the additional subscript for notational simplicity.} the
+  localized momentum-space eigenfunction for a hard-wall (Dirichlet)
+  boundary condition in momentum space is
+  %
+  \begin{equation}
+   \wt{\psi}_{\rho,\ell}(p) =
+   \begin{cases}
+    p\rho\,j_\ell(p\rho) \,, & 0 \leq p \leq x_\ell/\rho \,, \\
+    0 \,, & p > x_\ell/\rho \,,
+   \end{cases}
+  \label{eq:psi-rho-ell}
+  \end{equation}
+  %
+  where $x_\ell$ denotes the smallest positive zero of the spherical
+  Bessel function $j_\ell$.  For S-waves, one simply has
+  $\wt{\psi}_{\rho,\ell}(p)=\sin(p\rho)$ and $x_0=\pi$.
+  The eigenfunction can be expanded in terms of oscillator functions as
+  %
+  \begin{equation}
+   \wt{\psi}_\rho(p)
+   = \sum_{k=0}^\infty \wt{c}_k(\rho) \wt{u}_{k}(p) \,,
+  \label{eq:psi-rho-exp}
+  \end{equation}
+  %
+  without basis truncation so far.  We have used the short-hand
+  notation
+  %
+  \begin{equation}
+   \wt{u}_n(p) \equiv \wt{u}_{n\ell}(1;p) \,.
+  \label{eq:u-tilde}
+  \end{equation}
+  %
+  In particular, we set the oscillator length $b$ to unity for the time
+  being.  Exactly as in Subsec.~\ref{subsec:tale_of_tails} and in
+  Ref.~\cite{More:2013rma}, the eigenvalue problem
+  %
+  \begin{equation}
+   \left[r^2-\rho^2\right]\wt{\psi}_\rho(p) = 0
+  \label{eq:r2rho2-psi}
+  \end{equation}
+  %
+  becomes a set of coupled linear equations.  For S-waves, one can use
+  the fact that the three-dimensional oscillator wavefunctions are
+  directly related to the (odd) one-dimensional oscillator states and
+  write
+  %
+  \begin{equation}
+   r^2 = a^\dagger a + \frac{1}{2}
+   + \frac{1}{2}\left[a^2+(a^\dagger)^2\right] \,,
+  \label{eq:r2}
+  \end{equation}
+  %
+  where $a$ and $a^\dagger$ are ladder operators, to obtain (after
+  shifting some indices)
+  %
+  \begin{multline}
+   \left[r^2-\rho^2\right]\wt{\psi}_\rho(p) = 0
+   \iff \sum_{k=0}^\infty\left[(2k+3/2-\rho^2)\wt{c}_k(\rho)
+   - \frac12\sqrt{2k+1}\sqrt{2k+3}\,\wt{c}_{k+1}(\rho)\right. \\
+   \left.-\,\frac12\sqrt{2k}\sqrt{2k+1}\,\wt{c}_{k-1}(\rho)\right]\wt{u}_k(p)
+   = 0 \mathspace (\ell = 0) \,.
+  \label{eq:r2rho2-psi-exp}
+  \end{multline}
+  %
+  More generally, a direct evaluation yields (\cf the analogous results
+  for $p^2$ given in Subsec.~\ref{subsec:tale_of_tails})
+  %
+  \begin{equation}
+   \mbraket{k\ell m}{r^2}{j\ell m} = (2k+\ell+3/2)\delta_k^j
+   + \sqrt{k+1}\sqrt{k+\ell+3/2}\,\delta_k^{j+1}
+   + \sqrt{k}\sqrt{k+\ell+1/2}\,\delta_k^{j-1} \,,
+  \label{eq:r2-gen}
+  \end{equation}
+  %
+  and thus we get
+  %
+  \begin{multline}
+   \left[r^2-\rho^2\right]\wt{\psi}_\rho(p) = 0
+   \iff \sum_{k=0}^\infty\left[(2k+\ell+3/2-\rho^2)\wt{c}_k(\rho)
+   - \sqrt{k+1}\sqrt{k+\ell+3/2}\,\wt{c}_{k+1}(\rho)\right. \\
+   \left.-\sqrt{k}\sqrt{k+\ell+1/2}\,\wt{c}_{k-1}(\rho)\right]
+   \wt{u}_k(p) = 0
+  \label{eq:r2rho2-psi-exp-ell}
+  \end{multline}
+  %
+  for arbitrary angular momentum $\ell$.
+
+  If the basis---and thus the sum in Eq.~\eqref{eq:r2rho2-psi-exp-ell}---is now
+  truncated at some maximum $k \equiv n$, the last
+  equation of the coupled set reads
+  %
+  \begin{equation}
+   (2n+\ell+3/2-\rho^2)\,\wt{c}_{n}(\rho)
+   - \sqrt{n}\sqrt{n+\ell+1/2}\,\wt{c}_{n-1}(\rho) = 0 \,.
+  \label{eq:quant-cond-ell}
+  \end{equation}
+  %
+  Further following Ref.~\cite{Furnstahl:2013vda}, we introduce the
+  Fourier--Bessel transform of $\wt{\psi}_\rho(p)$ as
+  %
+  \begin{equation}
+   \wt{\psi}_\rho(p)
+   = \sqrt{\frac{2}{\pi}}\int_0^\infty \dd r\,\psi_\rho(r)\,pr\,j_\ell(pr) \,,
+  \label{eq:psi-tilde-psi}
+  \end{equation}
+  %
+  and use
+  %
+  \begin{equation}
+   pr\,j_\ell(pr) = \sqrt{\frac{\pi}{2}}\sum_{n=0}^\infty
+   \wt{u}_{n\ell}(b;p)u_{n\ell}(b;r) \mathtext{for arbitrary $b$}
+  \label{eq:j-uKuR}
+  \end{equation}
+  %
+  to infer
+  %
+  \begin{equation}
+   \wt{c}_n(\rho) = \int_0^\infty\dd r\,\psi_\rho(r) u_n(r)
+  \label{eq:c-tilde-1}
+  \end{equation}
+  %
+  from Eq.~\eqref{eq:psi-rho-exp}.  To proceed, we use the asymptotic
+  approximation~\cite{Furnstahl:2013vda,Deano2013}
+  %
+  \begin{multline}
+   u_{n\ell}(b;r) \approx
+   \frac{2^{1-n}}{\pi^{1/4}} \sqrt{\frac{(2n+2\ell+1)!}{b\,(n+\ell)!n!}}
+   (4n-2\ell+3)^{-\frac{\ell+1}{2}} \\
+   \times\sqrt{4n+2\ell+3}\,(r/b)\,j_\ell\left(\sqrt{4n+2\ell+3}\,(r/b)\right)
+   \,,
+  \label{eq:uR-asympt}
+  \end{multline}
+  %
+  valid for $n\gg 1$.  Defining
+  %
+  \begin{equation}
+   \beta_\ell = \sqrt{4n+2\ell+3}
+  \label{eq:beta-ell}
+  \end{equation}
+  %
+  and still setting $b=1$ at this point, we get
+  %
+  \begin{equation}
+  \begin{split}
+   \wt{c}_n(\rho) &\approx
+   \frac{2^{1-n}}{\pi^{1/4}} \sqrt{\frac{(2n+2\ell+1)!}{(n+\ell)!n!}}
+   \, \beta_\ell^{-\ell-1}\int_0^\infty\dd r\,\psi_\rho(r)\,
+   \beta_\ell r \, j_\ell(\beta_\ell r) \\
+   &= \frac{2^{1-n}}{\pi^{1/4}} \sqrt{\frac{(2n+2\ell+1)!}{(n+\ell)!n!}}
+   \, \beta_\ell^{-\ell-1} \sqrt{\frac\pi2}\,\wt{\psi}_\rho(\beta_\ell) \\
+   &= \frac{\pi^{1/4}}{2^{n-1/2}}\sqrt{\frac{(2n+2\ell+1)!}{n!(n+\ell)!}}
+   \, \beta_\ell^{-\ell} \rho\,j_\ell(\beta_\ell\rho)
+   \;.
+  \end{split}
+  \label{eq:c-tilde-2}
+  \end{equation}
+  %
+  The intermediate and final steps here follow from
+  Eqs.~\eqref{eq:psi-tilde-psi} and~\eqref{eq:psi-rho-ell},
+  respectively, and we have the constraint $\rho<x_\ell/\beta_\ell$.
+  Inserting Eq.~\eqref{eq:c-tilde-2} into the quantization
+  condition~\eqref{eq:quant-cond-ell} gives an equation that is formally
+  exactly the same as given in Subsec.~\ref{subsec:tale_of_tails} for the
+  IR case.\footnote{Some relative minus signs---compare, for example,
+  Eq.~\eqref{eq:quant-cond-ell} to Eq.~\eqref{quantize} in
+  Subsec.~\ref{subsec:tale_of_tails}---have dropped out along the way.
+  Note also that Subsec.~\ref{subsec:tale_of_tails} uses a slightly
+  different convention for the momentum-space oscillator wavefunctions
+  that does not involve the phase $(-1)^n$ in our Eq.~\eqref{eq:uK}.}
+
+  \subsection{Cutoff identification}
+
+  If we make the ansatz
+  %
+  \begin{equation}
+  \rho = \frac{x_\ell}{\sqrt{4n+2\ell+3+2\Delta}} \,,
+  \label{eq:rho-ansatz}
+  \end{equation}
+  %
+  we get $\Delta=2$ in the limit $n \gg 1$ and $n\gg\ell$, independent
+  of $\ell$.  As we discuss in Appendix~\ref{subsec:appendix_subleading},
+  it is possible to
+  derive subleading corrections to this result, which then depend on the
+  angular momentum $\ell$, but turn out to be numerically insignificant
+  for all present practical applications.
+
+  With $\Nmax=2n+\ell$, and restoring the oscillator length $b$ by
+  dimensional analysis, our result can also be written as
+  %
+  \begin{equation}
+   \rho = \frac{x_\ell b}{\sqrt2}\left(\Nmax+\frac32+2\right)^{\!-1/2} \,.
+  \label{eq:rho-Nmax}
+  \end{equation}
+  %
+  This implies that the UV cutoff $\Lameff$ corresponding to the basis
+  truncation at $\Nmax$ is not given by the naive estimate
+  %
+  \begin{equation}
+   \Lambda_0 = \sqrt{2(\Nmax+3/2)}/b \,,
+  \label{eq:Lambda-0-app}
+  \end{equation}
+  %
+  which follows from $k = \sqrt{2\mu E}$ and Eq.~\eqref{eq:E-nlm},
+  but rather by
+  %
+  \begin{equation}
+   \Lambda_2 = \frac{x_\ell}{\rho} = \sqrt{2(\Nmax+3/2+2)}/b \,,
+  \label{eq:Lambda-2-app}
+  \end{equation}
+  %
+  completely dual to the configuration-space box size $L_2$ given in
+  Eq.~\eqref{eq:L2_def}.
+
+  \subsection{Subleading corrections to $L_2$ and $\Lambda_2$}
+  \label{subsec:appendix_subleading}
+
+  It is possible to derive subleading corrections to the result $\Delta=2$ that
+  was derived in the previous subsection.  Because of the duality of
+  configuration-space and momentum-space oscillator wavefunctions, the results
+  derived in the following apply directly also to the effective box size $L_2$
+  used to calculate IR corrections.
+
+  For the smallest eigenvalue $\rho^2$ of the operator $r^2$ in the (truncated)
+  oscillator basis we now wish to make the general ansatz
+  %
+  \begin{equation}
+   \rho = \frac{x_\ell}{\sqrt{4n+2\ell+3+2
+   \left(\Delta_0+\dfrac{\Delta_1}{n}+\dfrac{\Delta_2}{n^2}+\cdots\right)}} \,.
+  \label{eq:rho-ansatz-gen}
+  \end{equation}
+  %
+  In principle, there is an infinite sum of terms with increasing inverse
+  powers
+  of $n$ in Eq.~\eqref{eq:rho-ansatz-gen}, but we only give explicit results
+  here up to $\OO(1/n^2)$.
+
+  In Sec.~\ref{sec:Lambda-2}, the result $\Delta=\Delta_0=2$ was found by
+  inserting \eqref{eq:c-tilde-2} into the quantization
+  condition~\eqref{eq:quant-cond-ell} and then considering the limits $n\gg1$
+  and $n\gg\ell$.  In practice, this is done by inserting the ansatz for
+  $\rho=\rho(n)$ into $\tilde{c}_n(\rho)\sim \rho\,j_\ell(\beta_\ell\rho)$ and
+  keeping only the leading term in an asymptotic expansion around $n=\infty$.
+
+  To obtain the desired subleading corrections, it is however not sufficient to
+  simply keep higher-order terms in this asymptotic expansion.  Instead, one
+  first has to go back a few steps and also keep higher-order corrections to
+  the leading asymptotic approximation for the oscillator wavefunctions given
+  in Eq.~\eqref{eq:uR-asympt}.  Note that this approximation follows from using
+  Eq.~(15) of Ref.~\cite{Deano2013}, which states that the generalized
+  Laguerre polynomials have the asymptotic expansion
+  %
+  %\begin{widetext}
+  \begin{multline}
+   L_n^\alpha(z) = \frac{\Gamma(n+\alpha+1)}{n!}\ee^{z/2}
+   \sum\limits_{m=0}^\infty \left(\frac{z}{2}\right)^m P_m(\alpha+1,z)
+   (\kappa z)^{-\frac{m+\alpha}{2}} J_{m+\alpha}(2\sqrt{\kappa z})
+  \label{eq:Laguerre-expansion}
+  \end{multline}
+  %\end{widetext}
+  %
+  with
+  %
+  \begin{subequations}\begin{align}
+   \kappa &= n + \frac{\alpha+1}{2} \\ &= n+\frac34 \mathtext{for} \alpha=1/2
+  \label{eq:kappa}
+  \end{align}\end{subequations}
+  %
+  and
+  %
+  \begin{equation}
+   P_0(c,z) = 1 \mathtext{,} P_1(c,z) = z/6 \mathtext{,} \cdots \,.
+  \label{eq:P0-P1}
+  \end{equation}
+  %
+  Using this in Eq.~\eqref{eq:uR} and keeping only the first ($m=0$) term gives
+  Eq.~\eqref{eq:uR-asympt}.  More generally, one finds that for large $n$ the
+  oscillator wavefunctions $u_{n\ell}(r)$ can be expressed as a sum
+  %
+  \begin{equation}
+   u_{n\ell}(r) = u_{n\ell}^{(0)}(r) + u_{n\ell}^{(1)}(r) + \cdots \,,
+  \label{eq:u-sum}
+  \end{equation}
+  %
+  where the individual terms involve (spherical) Bessel functions of
+  increasing order.  Recalling Eq.~\eqref{eq:c-tilde-1}, it then follows that
+  also
+  %
+  \begin{equation}
+   \tilde{c}_n(\rho) = \tilde{c}_n^{(0)}(\rho)+\tilde{c}_n^{(1)}(\rho)
+   +\cdots \,.
+  \label{eq:c-tilde-sum}
+  \end{equation}
+  %
+  We already know that
+  %
+  \begin{equation}
+   \tilde{c}_n^{(0)}(\rho) = C_\ell (n)\,\beta_\ell^{-\ell}
+   \times\rho\,j_\ell(\beta_\ell\rho)
+  \label{eq:c-tilde-j0}
+  \end{equation}
+  %
+  with
+  %
+  \begin{equation}
+   C_\ell(n) = \frac{\pi^{1/4}}{2^{n-1/2}}\sqrt{\frac{(2n+2\ell+1)!}
+   {n!(n+\ell)!}} \,.
+  \label{eq:C}
+  \end{equation}
+  %
+  The key step in deriving Eq.~\eqref{eq:c-tilde-j0} was to express
+  $\tilde{c}_n^{(0)}(\rho)$ in terms of $\tilde{\psi}_\rho$ by using the
+  Fourier--Bessel transform, which could be done since asymptotically
+  $u_{n\ell}^{(0)}(r)$ is simply proportional to $j_\ell(\beta_\ell\rho)$.
+  More generally, for the individual terms in the expansion~\eqref{eq:u-sum}
+  we have
+  %
+  \begin{equation}
+   u_{n\ell}^{(k)}(r) = \frac{2^{1-n}}{\pi^{1/4}}
+   \sqrt{\frac{(2n+2\ell+1)!}{(n+\ell)!n!}} \beta_\ell^{-(\ell+k)}
+   P_k(\ell+3/2,r^2) r^{k+1} j_{\ell+k}(\beta_\ell r) \,.
+ \end{equation}
+  %
+  This means that to obtain a generalization of Eq.~\eqref{eq:c-tilde-2},
+  we have to calculate expressions of the form
+  %
+  \begin{equation}
+   \tilde{c}_n^{(k)}(\rho) \sim \beta_\ell^{-(\ell+k)}
+   \int_0^\infty\dd r\,\psi_\rho(r)\,  P_k(\ell+3/2,r^2)
+   r^{k+1} j_{\ell+k}(\beta_\ell r) \,.
+  \label{eq:c-tilde-k-1}
+\end{equation}
+  %
+  To evaluate these integrals, it is more convenient to work with
+  Riccati--Bessel functions,
+  %
+  \begin{equation}
+   \hat\jmath_\nu(z) = zj_\nu(z) \,,
+  \label{eq:j-hat-j}
+  \end{equation}
+  %
+  in terms of which we have
+  %
+  \begin{equation}
+   \tilde{c}_n^{(k)}(\rho) \sim \beta_\ell^{-(\ell+k+1)}
+   \int_0^\infty\dd r\,\psi_\rho(r)\,  P_k(\ell+3/2,r^2)
+   r^k \hat\jmath_{\ell+k}(\beta_\ell r) \,.
+   \label{eq:c-tilde-k-1a}
+  \end{equation}
+  %
+  For the Riccati--Bessel functions one has the derivative
+  relation~\cite{abramowitz1964}
+  %
+  \begin{equation}
+   \frac{\partial \hat\jmath_\nu(z)}{\partial z}
+   = \frac{\nu+1}{z} \hat\jmath_\nu(z) - \hat\jmath_{\nu+1}(z) \,,
+  \label{eq:j-hat-derivative}
+  \end{equation}
+  %
+  from which it follows straightforwardly that
+  %
+  \begin{equation}
+   \hat\jmath_{\nu+1}(\beta r) = \frac{1}{r}
+   \left[\frac{\nu+1}\beta-\frac\dd{\dd\beta}\right]\hat\jmath_\nu(\beta r) \,.
+  \label{eq:j-hat-beta}
+  \end{equation}
+
+  Using this relation $k$ times in Eq.~\eqref{eq:c-tilde-k-1}, we can eliminate
+  the prefactor $r^k$ in favor of a differential operator with respect to a
+  variable $\beta$,
+  %
+  \begin{multline}
+   \tilde{c}_n^{(k)}(\rho) \sim \beta_\ell^{-(\ell+k+1)}
+   \int_0^\infty\dd r\,\psi_\rho(r)\,  P_k(\ell+3/2,r^2)\,
+   \left(\frac{\ell+k}{\beta}-\frac{\dd}{\dd\beta}\right) \\
+   \times
+   \left(\frac{\ell+k-1}{\beta}-\frac{\dd}{\dd\beta}\right)
+   \cdots\left(\frac{\ell}{\beta}-\frac{\dd}{\dd\beta}\right)
+   \hat\jmath_{\ell}(\beta r)\,\Big|_{\beta=\beta_\ell} \,.
+  \label{eq:c-tilde-k-1b}
+  \end{multline}
+  %
+  At this point, we have also conveniently reduced the order of
+  the Riccati--Bessel functions so that we have the same function for each
+  $\tilde{c}_n^{(k)}(\rho)$; all remaining additional $r$-dependence comes from
+  the $P_k(\ell+3/2,r^2)$, which are polynomials in $r^2$.  This can also be
+  eliminated by noting that
+  %
+  \begin{equation}
+   r^2 \hat\jmath_\ell(\beta r) = \left(-\frac{\dd^2}{\dd\beta^2}
+   +\frac{\ell(\ell+1)}{\beta^2}\right)\hat\jmath_\ell(\beta r) \,,
+  \label{eq:r2-j-hat}
+  \end{equation}
+  %
+  which follows immediately from the differential equations that defines
+  the Riccati--Bessel functions and is formally just the free radial
+  Schrödinger equation if one interchanges the variables $r$ and $\beta$.
+  Altogether, we have found that we can write
+  %
+  \begin{equation}
+   \tilde{c}_n^{(k)}(\rho) \sim \beta_\ell^{-(\ell+k+1)}\,
+   \int_0^\infty\dd r\,\psi_\rho(r)\,\mathcal{D}_{\beta,\ell}^{(k)}\,
+   \hat\jmath_{\ell}(\beta r)\,\Big|_{\beta=\beta_\ell} \,,
+  \label{eq:c-tilde-k-1c}
+  \end{equation}
+  %
+  where $\mathcal{D}_{\beta,\ell}^{(k)}$ is some differential operator (with
+  respect to $\beta$) which can be pulled out of the integral.  The precise
+  form of this operator can be obtained from the equations above, but it is
+  actually not important here.  At this point we can proceed exactly as in
+  Eq.~\eqref{eq:c-tilde-2} and write, restoring the full prefactor,
+  %
+  \begin{equation}
+  \begin{split}
+   \tilde{c}_n^{(k)}(\rho) &=
+   \frac{2^{1-n}}{\pi^{1/4}} \sqrt{\frac{(2n+2\ell+1)!}{(n+\ell)!n!}}
+   \,\beta_\ell^{-(\ell+k+1)} \,
+   \mathcal{D}_{\beta,\ell}^{(k)} \int_0^\infty\dd r\,\psi_\rho(r)\,
+   \hat\jmath_{\ell}(\beta r)\,\Big|_{\beta=\beta_\ell} \\[0.8em]
+   &= \frac{2^{1-n}}{\pi^{1/4}} \sqrt{\frac{(2n+2\ell+1)!}{(n+\ell)!n!}}
+   \,\beta_\ell^{-(\ell+k+1)} \,
+   \sqrt{\frac\pi2}\,
+   \mathcal{D}_{\beta,\ell}^{(k)}\,\tilde{\psi}_\rho(\beta)\,
+   \Big|_{\beta=\beta_\ell} \\[0.8em]
+   &= C_\ell(n)\,\beta_\ell^{-(\ell+k+1)}
+   \times \mathcal{D}_{\beta,\ell}^{(k)}\,\hat\jmath(\beta\rho)
+   \Big|_{\beta=\beta_\ell} \\[0.8em]
+   &= C_\ell(n)\,\beta_\ell^{-\ell-k} \times P_k(\ell+3/2,\rho^2)\,
+   \rho^{k+1} j_{\ell+k}(\beta_\ell\rho) \,.
+  \end{split}
+  \label{eq:c-tilde-k-2}
+  \end{equation}
+  %
+  We have used here that $\tilde{\psi}_\rho(\beta) = \beta\rho\,
+  j_\ell(\beta\rho) = \hat\jmath(\beta\rho)$ for $\beta \leq x_\ell/\rho$,
+  and that we can ultimately apply the operator
+  $\mathcal{D}_{\beta,\ell}^{(k)}$ to get back the original expression as
+  in Eq.~\eqref{eq:c-tilde-k-1}, only with $r$ replaced by
+  $\rho$.  The coefficients $C_\ell(n)$ have been defined in Eq.~\eqref{eq:C}.
+
+  With these general expressions for all terms in the expansion of
+  $\tilde{c}_n(\rho)$, we can now write the quantization
+  condition~\eqref{eq:quant-cond-ell} as
+  %
+  \begin{equation}
+   (2n+\ell+3/2-\rho^2)\times\sum_{k=0}^{\kmax} \tilde{c}_n^{(k)}(\rho)
+    - \sqrt{n}\sqrt{n+\ell+1/2}
+   \sum_{k=0}^{\kmax}\tilde{c}_{n-1}^{(k)}(\rho) = 0 \,.
+  \label{eq:quant-cond-ell-gen}
+\end{equation}
+  %
+  The appropriate truncation index $\kmax$ in this equation depends on both
+  $\ell$ and the desired order for the subleading corrections.  To solve for
+  these, we insert an ansatz of the form~\eqref{eq:rho-ansatz-gen} into
+  Eq.~\eqref{eq:quant-cond-ell-gen} and solve for the coefficients $\Delta_0$,
+  $\Delta_1$, etc. by performing an asymptotic expansion around $n=\infty$.  To
+  do this consistently, it is important to keep all terms that can
+  contribute to the
+  maximum order we are interested in.  In general, there are cancellations
+  between the polynomial prefactors $P_k(\ell+3/2,\rho^2)\times\rho^{k+1}$ and
+  the spherical Bessel functions $j_{\ell+k}(\beta_\ell\rho)$ since the latter
+  contribute inverse powers of $\beta_\ell\rho$, which become more prominent
+  with increasing $\ell$.  At least for $\ell=0$ and $\ell=1$ we find
+  that $\kmax=2$
+  is sufficient to get the corrections up to and including $\OO(1/n^2)$.  The
+  results, obtained with computer algebra software (Wolfram Mathematica), are
+  %
+  \begin{align}
+   \ell &= 0:  & \Delta_1 &= \frac{3-2\pi^2}{48} \;,
+   & \Delta_2 &= \frac{-7(3-2\pi^2)}{192} \,, \\
+   \ell &= 1:  & \Delta_1 &= \frac{1}{48}(3-2\pi^2) \;,
+   & \Delta_2 &= \frac{3(5+2x_1^2)}{64} \,.
+   \label{eq:lasteq}
+  \end{align}
+  %
+  One always has $\Delta_0=2$, independent of $\ell$.
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[htbp]
+  \centering
+  %
+  \begingroup
+  \renewcommand\arraystretch{1.25}
+  %
+  \label{tab:rho-ell-0}
+  %
+  \begin{tabular}{r|
+   >{\centering\arraybackslash}p{5.1em}|
+   >{\centering\arraybackslash}p{5.1em}|
+   >{\centering\arraybackslash}p{5.1em}||
+   >{\centering\arraybackslash}p{5.1em}
+  }
+    \hline\hline
+    $n$
+    & $\rho$, $\OO(1/n^0)$ & $\rho$, $\OO(1/n^1)$ & $\rho$, $\OO(1/n^2)$
+    & $\rho$, exact \\
+    \hline
+    1 & 0.94723 & 0.97876 & 0.92548 & 0.95857 \\
+    2 & 0.81116 & 0.82075 & 0.81234 & 0.81629 \\
+    3 & 0.72073 & 0.72518 & 0.72258 & 0.72355 \\
+    4 & 0.65507 & 0.65756 & 0.65647 & 0.65681 \\
+    5 & 0.60460 & 0.60617 & 0.60562 & 0.60576 \\
+    6 & 0.56425 & 0.56531 & 0.56500 & 0.56507 \\
+    7 & 0.53103 & 0.53178 & 0.53159 & 0.53163 \\
+    8 & 0.50306 & 0.50362 & 0.50350 & 0.50352 \\
+    9 & 0.47909 & 0.47952 & 0.47944 & 0.47945 \\
+   10 & 0.45825 & 0.45859 & 0.45853 & 0.45854 \\
+   11 & 0.43991 & 0.44018 & 0.44014 & 0.44015 \\
+   12 & 0.42361 & 0.42384 & 0.42380 & 0.42381 \\
+   \hline\hline
+  \end{tabular}
+  %
+  \endgroup
+  %
+  \caption{Comparison of the smallest distance scale $\rho$ at different orders
+  in the $1/n$ expansion to the exact answer for several values of $n$.  S-wave
+  results ($\ell = 0$).}
+  \end{table}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[htbp]
+  \centering
+  %
+  \begingroup
+  \renewcommand\arraystretch{1.25}
+  %
+  \label{tab:rho-ell-1}
+  %
+  \begin{tabular}{r|
+   >{\centering\arraybackslash}p{5.1em}|
+   >{\centering\arraybackslash}p{5.1em}|
+   >{\centering\arraybackslash}p{5.1em}||
+   >{\centering\arraybackslash}p{5.1em}
+  }
+    \hline\hline
+    $n$
+    & $\rho$, $\OO(1/n^0)$ & $\rho$, $\OO(1/n^1)$ & $\rho$, $\OO(1/n^2)$
+    & $\rho$, exact \\
+    \hline
+    1 & 1.2462 & 1.3481 & 1.1464 & 1.2764 \\
+    2 & 1.0898 & 1.1214 & 1.0860 & 1.1047 \\
+    3 & 0.98054 & 0.99560 & 0.98424 & 0.98920 \\
+    4 & 0.89868 & 0.90730 & 0.90242 & 0.90423 \\
+    5 & 0.83441 & 0.83990 & 0.83741 & 0.83821 \\
+    6 & 0.78220 & 0.78596 & 0.78455 & 0.78495 \\
+    7 & 0.73871 & 0.74142 & 0.74055 & 0.74077 \\
+    8 & 0.70175 & 0.70378 & 0.70321 & 0.70334 \\
+    9 & 0.66984 & 0.67141 & 0.67101 & 0.67110 \\
+    10 & 0.64192 & 0.64316 & 0.64288 & 0.64293 \\
+    11 & 0.61722 & 0.61822 & 0.61802 & 0.61805 \\
+    12 & 0.59517 & 0.59599 & 0.59584 & 0.59586 \\
+   \hline\hline
+  \end{tabular}
+  %
+  \endgroup
+  %
+  \caption{Comparison of the smallest distance scale $\rho$ at different orders
+  in the $1/n$ expansion to the exact answer for several values of $n$.  P-wave
+  results ($\ell = 1$).}
+  \end{table}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  In Tables~\ref{tab:rho-ell-0} and~\ref{tab:rho-ell-1} we show (for $\ell=0$
+  and $\ell=1$, respectively) how subsequent inclusion of the correction terms
+  makes the values for $\rho$ as defined in Eq.~\eqref{eq:rho-ansatz-gen}
+  converge to the exact results, which have been calculated numerically.
+
+
+  \section{P\"{o}schl-Teller states and form factors}

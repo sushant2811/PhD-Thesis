@@ -115,6 +115,7 @@
 
 	\section[Infrared story]{Infrared story
 	\footnote{Based on \cite{More:2013rma} and \cite{Furnstahl:2013vda}}}
+	\label{sec:IR_story}
 
 	As mentioned in the introduction, there was a lack of well motivated
 	extrapolation schemes in LENP and this is where our work comes in.
@@ -320,7 +321,7 @@
 	with \hw\ ranging from $1$ to $100\,\mbox{MeV}$ and $\Nmax$ from $4$ to
 	$100$ (in steps of 4 to avoid HO artifacts for the
 	deuteron~\cite{Bogner:2007rx}).  We then restrict the data to where UV
-	corrections are negligible (see Section~\ref{Sec:UV_story}).
+	corrections are negligible (see Section~\ref{sec:UV_story}).
 	%
 	\begin{figure}[h]
 	\centering
@@ -2034,18 +2035,18 @@
 	$n\gg 1$, see Eq.~(15) of Ref.~\cite{Deano2013}.  This yields
 	%
 	\begin{align}
-	u_{nl}(k) &\approx {2^{1-n}\over \pi^{1/4}} \sqrt{(2n+2l+1)!\over (n+l)! n!}
+	u_{nl}(k) \approx {2^{1-n}\over \pi^{1/4}} \sqrt{(2n+2l+1)!\over (n+l)! n!}
 	   \,(4n+2l+3)^{-{l+1\over 2}}
-	  \nonumber \\
-	  & \qquad \null\times \sqrt{4n+2l+3} k\, j_l(\sqrt{4n+2l+3}k) \;,
+	  %\nonumber \\
+	   \sqrt{4n+2l+3} k\, j_l(\sqrt{4n+2l+3}k) \;,
 	\end{align}
 	%
 	and
 	%
 	\begin{align}
-	c_n(\kappa) &\approx C_{nl} \sqrt{2\over \pi}\int\limits_0^\infty dk \,
-	\tilde{\psi}_{\kappa l}(k)	\sqrt{4n+2l+3} k \nonumber \\
-	  & \qquad\qquad\qquad \null \times j_l(\sqrt{4n+2l+3}k) \;.
+	c_n(\kappa) \approx C_{nl} \sqrt{2\over \pi}\int\limits_0^\infty dk \,
+	\tilde{\psi}_{\kappa l}(k)	\sqrt{4n+2l+3} k
+	 j_l(\sqrt{4n+2l+3}k) \;.
 	\end{align}
 	%
 	Here, $C_{nl}$ is a constant that does not depend on $\kappa$.  The key
@@ -2063,9 +2064,8 @@
 	Putting it all together, we find
 	%
 	\begin{align}
-	c_n(\kappa) &= {2^{1/2-n}(-1)^n \pi^{1/4} \over (4n+2l+3)^{l/2}}
-	\sqrt{(2n+2l+1)!\over (n+l)!n!} \nonumber \\
-	 & \qquad\null\times
+	c_n(\kappa) = {2^{1/2-n}(-1)^n \pi^{1/4} \over (4n+2l+3)^{l/2}}
+	\sqrt{(2n+2l+1)!\over (n+l)!n!}
 	\kappa\, j_l(\sqrt{4n+2l+3}\kappa) \;.
 	\end{align}
 	%
@@ -2595,11 +2595,34 @@
 	yields the (momentum dependent) box size.
 
 
-	\section{Ultraviolet story}
-	\label{Sec:UV_story}
+	\section[Ultraviolet story]
+	{Ultraviolet story \footnote{Based on \cite{Konig:2014hma}}}
+	\label{sec:UV_story}
 
-	
+  In Sec.~\ref{sec:IR_story} we worked in the region where the UV errors were
+	small and focused on the IR errors.  However, for many methods full
+	suppression of the UV errors is not feasible and the need to understand
+	UV corrections remains.  In all cases the UV effect is a systematics error
+	that must be quantified.  In addition, this error worsens for harder
+	nucleon--nucleon potentials	that may still be of interest.  Finally,
+	we seek an understanding of
+	the successes (and limitations) of previous phenomenological forms.
+  %
+	We follow the strategy of Sec.~\ref{sec:IR_story} by focusing on the
+	two-body problem and exactly solvable examples to establish the true
+	UV behavior for the	simple systems and then make correspondence to the
+	nuclear systems.
 
+	\subsection{Momentum cutoff from duality}
+	\label{subsec:UV_cutoff_duality}
+
+
+
+	\subsection{Isolating UV errors}
+
+	\subsection{Separate and conquer}
+
+	\subsection{Re-examining SRG based extrapolations}
 
 
 	\section{Related development and Moving forward}
