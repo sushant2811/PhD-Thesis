@@ -2765,10 +2765,292 @@
 	\ref{fig:UV_deuteron_HO}.}). 	These are the UV-converged points; that is,
 	those for which the UV correction	is much smaller than the IR correction.
 
+	In Fig.~\ref{fig:IR_deuteron_HO}(b) these same UV-converged points are
+	plotted (labeled ``raw'').  They are seen to form a smooth line
+	with little spread; this is a signature that $L_2$ is the correct
+	variable for the effective box size (see Subsec.~\ref{subsec:tale_of_tails})
+	(if $L_0$ were used instead there would be a small but noticeable scatter).
+	It is
+	also evident from the straightness of the line on a semi-log plot that the
+	functional form is dominantly an exponential over most of the range of
+	$\Delta E_d/E_d$.  This exponential is predicted by the systematic
+	expansion derived	in Subsec.~\ref{subsec:make_cash}, for
+	which successive orders are suppressed by powers of $\ee^{-2\kinf L_2}$,
+	where $\kinf$ is the deuteron binding momentum.  (There are also
+	pre-factors that are low-order polynomials in $L_2$.)  If we subtract
+	the leading correction, the result is the steeper exponential
+	(proportional to $\ee^{-4\kinf L_2}$) labeled ``LO.''  Finally, if we
+	subtract the NLO correction for only the S-wave part, we get the still
+	steeper
+	exponential (``NLO S-wave''), which is valid down to $10^{-5}$.  Thus we
+	conclude that the IR corrections are well understood for the deuteron.
+	What is	not evident from these plots alone, but is documented in
+	Subsec.~\ref{subsec:pudding_proof}, is that the same results in
+	Fig.~\ref{fig:IR_deuteron_HO}(b) would be obtained with another potential as
+	long as it was S-matrix equivalent at low energies (same phase shifts and
+	deuteron properties, as from a unitary transformation).  In this sense, the IR
+	corrections are universal.
+
+	Next we try in Fig.~\ref{fig:UV_deuteron_HO}(a) to isolate the
+	IR-converged points with an analogous plot of the relative error in
+	the deuteron energy but now as a function of $\Lambda_2$. There is a
+	much greater spread of points, indicating that it is more difficult to
+	have the IR error much smaller than the UV error, at least for a
+	conventional range of $\Omega$.  However, for very low $\Omega$ we do
+	find points collapsed to a single curve.  These points, for which $L_2
+	> 40\,$fm (to reach IR errors smaller than UV errors), are plotted in
+	Fig.~\ref{fig:UV_deuteron_HO}(b).  Just as in the case of isolated
+	IR corrections, we find that a signature both of IR convergence
+	and that $\Lambda_2$ is the appropriate variable is a smooth curve
+	with little scatter of points.  But the functional dependence is
+	manifestly \emph{not} dual: there are no straight-line segments in a
+	semi-log plot.  The phenomenological treatment of the UV correction
+	suggested in Ref.~\cite{Furnstahl:2012qg} for SRG-evolved potentials
+	used an ansatz for which $\Delta E_d/E_d \propto \ee^{-b_1\Lambda_2^2}$
+	(although $\Lambda_0$ instead of $\Lambda_2$ was
+	actually used in~\cite{Furnstahl:2012qg}, this difference is not
+	significant for the present discussion).  As we demonstrate in
+	Sec.~\ref{subsec:gaussian}, this form works for a limited range in
+	$\Lambda_2$ but is not generally applicable.
 
 
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Extrapolation/Lambda0_Lambda2_kmax}
+	\caption{Relative error of deuteron binding energy
+	  plotted vs. lengths $\Lambda_2$, $\Lambda_0$, and $\Lambda_{\kappa,
+	  {\rm max}}$ (multiplied by factors 2, 1, and $1/2$, respectively,
+	  to separate the curves.  Inset: The same values on a linear
+	  scale and without the separation factors.}
+	\label{fig:deuteron_lambdas}
+	\end{figure}
+	%
+	To develop a theoretical understanding of UV corrections, we first
+	validate the claim that the error from oscillator basis truncation is
+	well reproduced by applying instead a sharp cutoff in momentum at
+	$\Lambda_2$.  In Fig.~\ref{fig:deuteron_vs_cutLam}, the calculations
+	from Fig.~\ref{fig:UV_deuteron_HO}(b) are plotted as a function of
+	$\Lambda = \Lambda_2(\Nmax,\Omega)$ along with several other functions
+	of $\Lambda$ given by the relative error from the same Hamiltonian,
+	but now smoothly cut off as
+	%
+	\begin{equation}
+	H_{\rm cut}(k,k') = \ee^{-(k^2/\Lambda^2)^n} H(k,k')
+	\ee^{-(k'{}^2/\Lambda^2)^n} \,,
+	\end{equation}
+	%
+	for $n=2,4,8$ and $\infty$.  The latter corresponds to a sharp cutoff.
+	We find that the curve from a sharp cutoff tracks the
+	truncated-oscillator points through many orders of magnitude.  Finally,
+	Fig.~\ref{fig:deuteron_lambdas} shows the relative error when plotted
+	against three cutoff variables, $\Lambda_2$, $\Lambda_0$, and
+	$\Lambda_{\kappa_{\rm max}}$.  The latter is defined as the square root
+	of the largest eigenvalue of the squared momentum operator in the finite
+	oscillator basis, which one might naively expect to be a natural choice.
+	However, of the cases considered this actually gives the largest scatter
+	in data.  From the fact that we get an essentially
+	smooth curve  only for $\Lambda_2$, we conclude that this identification of
+	the	relevant UV cutoff is correct.
 
 	\subsection{Separate and conquer}
+
+	In this section we show that the UV error from oscillator basis
+	truncations in the two-body problem can be determined exactly for any
+	rank-one separable interaction by applying the effective
+	sharp-momentum cutoff.  We demonstrate that unlike the case for IR
+	corrections, the UV corrections depend on the high-momentum behavior
+	of the potential.  We derive an explicit correction formula for
+	separable potentials, and then adapt the approach to more general
+	potentials, which leads to a practical fitting procedure.
+
+	Let us consider two particles interacting via an S-wave ($\ell=0$) rank-one
+	separable interaction of the form
+	%
+	\begin{equation}
+	 V(\veck,\veck') = V(k',k) = a\,\flam(k') \flam(k) \,.
+	\label{eq:pot-RegContact}
+	\end{equation}
+	%
+	While most of the following derivation is actually more general, we
+	will consider below the case of non-negative, dimensionless regulator
+	functions $\flam(k)$ that satisfy $\flam(0)=1$ and $\flam\to 0$ for
+	$k/\lambda\to\infty$.  The potential~\eqref{eq:pot-RegContact} is then
+	just a regularized contact interaction as it would arise, for example,
+	from a low-energy effective theory (EFT), and the coupling constant
+	$a$ is a length scale related (up to some rescaling factors) to an
+	S-wave scattering length.  For convenience, in this section we work in
+	units with $2\mu=1$, where $\mu$ is the reduced mass of the
+	two-particle system.  We focus on the single bound state (assuming $a$
+	is negative and large enough) with energy $\Einf \equiv -\kapinf^2$
+	and momentum-space wavefunction $\phi(k)$.\footnote{$\phi(k)$ is the
+  full three-dimensional wavefunction of the state, but it only
+  depends on $k=|\veck|$ due to the S-wave nature of the state, and we
+  have absorbed the constant factor $Y_{00}=1/\sqrt{4\pi}$ into the
+  definition of $\phi$.}  Thus $\kappa_\infty$ is the binding
+	momentum.  The Schr{\"o}dinger equation for $\phi(k)$ is
+	%
+	\begin{equation}
+	 k^2 \phi(k) + a  \flam(k) \int\! \dd^3k'\, \flam(k')\phi(k')
+	 = -\kappa_\infty^2 \phi(k) \,.
+	\label{eq:haminfty}
+	\end{equation}
+
+	\subsubsection{Exact extrapolation formula}
+
+	Let us assume now that we are in a limited model space with an
+	effective sharp momentum cutoff $\Lambda$.  In
+	Sec.~\ref{subsec:UV_cutoff_duality}
+	we have illustrated how this cutoff is related to the truncation
+	parameter of a finite harmonic oscillator basis; below we will use a
+	model interaction to further demonstrate the result
+	$\Lambda=\Lambda_2$ numerically.
+
+	Given $\Lambda$ and defining $\phi_\Lambda(k) \equiv
+	\phi(k)\Theta(\Lambda-k)$, Eq.~\eqref{eq:haminfty} becomes
+	%
+	\begin{equation}
+	 k^2\,\phi_\Lambda(k)
+	 + a \,\flam(k)\,\Theta(\Lambda-k) \int\!\dd^3k'\,
+	 \flam(k')\,\phi_\Lambda(k')
+	 = -\kappa_\Lambda^2 \phi_\Lambda(k) \,.
+	\label{eq:hamlambda}
+\end{equation}
+	%
+	Here, $\Theta$ denotes the unit step function, so $\Theta(\Lambda-k)$ is a
+	projector, and Eq.~\eqref{eq:hamlambda} is obtained by simply introducing
+	such
+	a projector for each momentum dependence.  To indicate the cutoff dependence
+	of the energy eigenvalue, we now write it as $-\kappa_\Lambda^2$.  Note that
+	Eq.~\eqref{eq:hamlambda} turns into Eq.~\eqref{eq:haminfty} for
+	$\Lambda\to\infty$.  We solve Eq.~\eqref{eq:hamlambda} for $\phi_\Lambda(k)$
+	and find (for $k < \Lambda$)
+	%
+	\begin{equation}
+	\phi_\Lambda(k) = \frac{c_\Lambda \flam(k)}{\kappa^2_\Lambda +k^2} \,,
+	\label{eq:phi}
+	\end{equation}
+	%
+	where
+	%
+	\begin{equation}
+	c_\Lambda \equiv -a \int\! \dd^3k\, \flam(k)\,\phi_\Lambda(k)
+	\label{eq:cLambda}
+	\end{equation}
+	%
+	is independent of $k$.  Thus, we know the full momentum dependence of
+	$\phi_\Lambda$ from Eq.~\eqref{eq:phi}.  The cutoff does not imply
+	that $\phi_\Lambda(k)$ goes smoothly to zero at $k=\Lambda$, unlike
+	the behavior of a coordinate-space wavefunction with a hard-wall
+	boundary condition, because the momentum-space potential is nonlocal.
+
+	For the determination of the eigenvalue $\kappa_\Lambda$ we insert the
+	solution~\eqref{eq:phi} into Eq.~\eqref{eq:hamlambda}---or just
+	substitute~\eqref{eq:phi} into~\eqref{eq:cLambda} and cancel the common
+	factor $c_\Lambda$---to find the quantization condition
+	%
+	\begin{equation}
+	 {-}1 = a \int\! \dd^3k\,
+	 \frac{f^2_\lambda(k)\Theta(\Lambda-k)}{\kappa^2_\Lambda+k^2}
+	 = 4\pi a \int_0^\Lambda\!\dd k\,
+	 \frac{k^2\,f^2_\lambda(k)}{\kappa^2_\Lambda+k^2}
+	 \,,
+	\label{eq:quant}
+	\end{equation}
+	%
+	which is straightforward to solve numerically.  Note that
+	Eq.~\eqref{eq:quant} implies that there is at most one bound state,
+	as we have assumed.  Note also that the quantized solution
+	$\kappa^2_\Lambda$ \emph{increases} to $\kapinf^2$ as $\Lambda$
+	approaches $\infty$.
+
+	To derive an analytic formula for the dependence of $\kappa_\Lambda$
+	on $\Lambda$, we start by defining (recall that we set $\hbar=2\mu=1$)
+	%
+	\begin{equation}
+	\Delta E_{\Lambda} \equiv E_\Lambda - \Einf =
+	\kapinf^2 - \kappa_\Lambda^2 \,.
+	\end{equation}
+	%
+	Inserting this into Eq.~\eqref{eq:quant} and Taylor-expanding to first order
+	in $\Delta E_{\Lambda}/\kappa_\infty^2$, we find
+	%
+	\begin{align}
+	 -1 &= a \int\! \dd^3k\,
+	 \frac{f^2_\lambda(k)\Theta(\Lambda-k)}
+	 {\kappa^2_\infty+k^2-\Delta E_{\Lambda}} \nonumber \\
+	 &\approx
+	 a\int\! \dd^3 k\,
+	 \frac{f^2_\lambda(k)\Theta(\Lambda-k)}{\kappa^2_\infty+k^2}
+	 \left(1+{\frac{\Delta E_{\Lambda}}{\kappa_\infty^2+k^2}}\right)
+	 \nonumber \\
+	 &= -1 - a \int\! \dd^3k\,
+	 \frac{f^2_\lambda(k)\Theta(k-\Lambda)}{\kappa^2_\infty+k^2}
+	 + \Delta E_{\Lambda} \, a\int\! \dd^3k\,
+	 \frac{f^2_\lambda(k)\Theta(\Lambda-k)}{(\kappa^2_\infty+k^2)^2} \,.
+	\end{align}
+	%
+	In the second step here we have employed Eq.~\eqref{eq:quant} for
+	$\Lambda=\infty$, also using $\Theta(\Lambda-k) = 1 - \Theta(k-\Lambda)$.
+	Thus, the general result for $\Delta E_{\Lambda}$ is
+	%
+	\begin{equation}
+	 \Delta E_{\Lambda} \approx
+	 \dfrac{\displaystyle\int\!\dd^3 k\,
+	     \dfrac{f^2_\lambda(k)\Theta(k-\Lambda)}{\kapinf^2 + k^2}
+	 }
+	 {\displaystyle\int\!\dd^3 k\,
+	     \dfrac{f^2_\lambda(k)\Theta(\Lambda-k)}{(\kappa^2_\infty+k^2)^2}} \,.
+	\label{eq:deltaE}
+	\end{equation}
+	%
+	This should be a quantitatively accurate expression in those regions
+	of $\Lambda$ for which $\Delta E_{\Lambda} \le \kappa_\infty^2$.
+
+	We can further approximate the result by dropping terms of
+	$\mathcal{O}(\kapinf^2/\Lambda^2)$, noting that this may not be a good
+	quantitative approximation when $\Lambda \approx \lambda$:
+	%
+	\begin{eqnarray}
+	 \Delta E_{\Lambda} &=&
+	 \dfrac{\displaystyle\int\!\dd^3 k\,
+	   \dfrac{f^2_\lambda(k)\Theta(k-\Lambda)}{k^2}}
+	 {\displaystyle\int\! \dd^3 k\,
+	   \dfrac{f^2_\lambda(k)\Theta(\Lambda-k)}{(\kappa^2_\infty+k^2)^2}}
+	   \Big[1+ {\mathcal O}(\kappa_\infty^2/\Lambda^2)\Big]
+	   \nonumber\\
+	 &\approx&
+	   \dfrac{\displaystyle\int\!\dd^3 k\,
+	     \dfrac{f^2_\lambda(k)\Theta(k-\Lambda)}{k^2}}
+	 {\displaystyle\int\!\dd^3 k\,
+	    \dfrac{f^2_\lambda(k)}{(\kappa^2_\infty+k^2)^2}}
+	    \Big[1+ {\mathcal O}(\kappa_\infty^2/\Lambda^2)\Big]
+	 \,.
+	\label{eq:deltaEapprox}
+	\end{eqnarray}
+	%
+	In the last step, we extended the integration in the denominator from
+	$\Lambda$ to $\infty$.  This introduces a negligible error for
+	reasonable regulators when $\Lambda \gg \lambda$.  However, we may
+	want to keep the $\Lambda$-dependence in the denominator more general.
+
+	If we make all these approximations, then the $\Lambda$-dependence of
+	$\Delta E_{\Lambda}$ is simple, and we have
+	%
+	\begin{equation}
+	 \Delta E_{\Lambda} \propto \int\!\dd k\, f^2_\lambda(k)\Theta(k-\Lambda)
+	 = \int\limits_\Lambda^\infty \dd k\, f^2_\lambda(k) \,.
+	\label{eq:final}
+	\end{equation}
+	%
+	Thus, the cutoff dependence is determined entirely by the regulator,
+	while the low-energy length scale $a$ has dropped out in this
+	approximation and only appears in weaker approximations through
+	$\kapinf$.  In other words, the energy correction will depend strongly
+	on the details of how the potential falls off at large momentum, but
+	only weakly on the strength of the potential.
+
+
 
 	\subsection{Re-examining SRG based extrapolations}
 
