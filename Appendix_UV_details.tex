@@ -6,6 +6,7 @@
 \label{Appendix:UV_extra_details}
 
   \section{Deriving the UV cutoff}
+  \label{sec:appendix_Lambda-Details}
 
   We present here a detailed derivation of the effective UV cutoff $\Lameff$
   as a function of the HO parameters (basis size $N$ and frequency $\Omega$)
@@ -350,7 +351,7 @@
   of $n$ in Eq.~\eqref{eq:rho-ansatz-gen}, but we only give explicit results
   here up to $\OO(1/n^2)$.
 
-  In Sec.~\ref{sec:Lambda-2}, the result $\Delta=\Delta_0=2$ was found by
+  In Sec.~\ref{subsec:UV_cutoff_duality}, the result $\Delta=\Delta_0=2$ was found by
   inserting \eqref{eq:c-tilde-2} into the quantization
   condition~\eqref{eq:quant-cond-ell} and then considering the limits $n\gg1$
   and $n\gg\ell$.  In practice, this is done by inserting the ansatz for
@@ -681,3 +682,69 @@
 
 
   \section{P\"{o}schl-Teller states and form factors}
+  \label{sec:PT-Details}
+
+  In this section we provide some details about the wavefunctions and separable
+  form factors $\eta(k)$ for the Pöschl--Teller potential used in
+  Sec.~\ref{sec:Sep-Approx}.  In the conventions of Fl\"{u}gge's
+  textbook~\cite{Fluegge:1999}, this potential can be written as
+  \footnote{Compared to Ref.~\cite{Fluegge:1999} we have slightly changed the
+  notation here by writing
+  ``$\beta$'' instead of ``$\lambda$'' (to avoid confusion with the scale
+  $\lambda$ in Sec.~\ref{sec:RegContact}), and ``$\nu$'' instead of ``$m$''
+  (to label the states).}
+  %
+  \begin{equation}
+  \VPT(r) = -\frac{\alpha^2 \beta(\beta-1)}{\cosh^2(\alpha r)}
+  \label{eq:V-PT-app}
+  \end{equation}
+  %
+  Labeling different states with an index $\nu$, we can write their
+  wavefunctions as
+  %
+  \begin{equation}
+  \psi_{\beta\nu}(\alpha;r) = \frac{\sqrt{2}}{r}\cosh^\beta(\alpha r)
+  \sinh(\alpha r) \,
+  {_2F_1}\!\Bigl(\nu+\frac32,\beta-\nu-\frac12,\frac32;
+  -\sinh^2(\alpha r)\Bigr) \,,
+  \label{eq:psi-PT}
+  \end{equation}
+  %
+  where $_2F_1$ is the hypergeometric function~\cite{Olver:2010:NHMF}.
+  The first odd bound state with nonzero energy occurs for $\beta=3,
+  \nu=0$, and has a binding momentum $\kappa=\alpha$.  For $\beta=4$,
+  there are two odd bound states, one of which has zero energy.  For
+  $\beta=5$ one finds two odd bound states at $\kappa=3\alpha$ ($\nu=0$)
+  and $\kappa=\alpha$ ($\nu=1$).  With Eq.~\eqref{eq:psi-PT} it is
+  straightforward to obtain the separable approximations for these
+  states.  We find
+  %
+  \begin{eqnarray}
+   \eta_\PT(k) &=& -\frac{\sqrt{2}\,(k^2+\alpha^2)}
+   {\alpha^2\cosh\!\left(\frac{\pi k}{2\alpha}\right)} \mathtext{,}
+    \nonumber \\
+   g_{\PT} &=& -\frac{5\pi}{16\alpha}
+   \mathtext{for} \beta = 3 \mathtext{and} \nu = 0 \,,
+  \label{eq:eta-PT-3}
+  \end{eqnarray}
+  %
+  and
+  %
+  \begin{subequations}%
+  \begin{align}
+   \eta_\PT(k) = -\frac{\sqrt{2}\,(k^2+\alpha^2)(k^2+9\alpha^2)}
+   {6\alpha^4\cosh\!\left(\frac{\pi k}{2\alpha}\right)} &\mathtext{,}
+   g_{\PT} = -\frac{63\pi}{256\alpha}
+   \nonumber \\
+   \mathtext{for} \beta = 5 \mathtext{and} \nu = 0 \,, \\
+   \eta_\PT(k) = -\frac{\sqrt{2}\,(k^2+\alpha^2)(-7k^2+17\alpha^2)}
+   {18\alpha^4\cosh\!\left(\frac{\pi k}{2\alpha}\right)} &\mathtext{,}
+   g_{\PT} = -\frac{81\pi}{256\alpha}
+   \nonumber \\
+   \mathtext{for} \beta = 5 \mathtext{and} \nu = 1 \,.
+  \end{align}
+  \label{eq:eta-PT-5}%
+  \end{subequations}%
+  %
+  It is straightforward to obtain results also for higher values of $\beta$, but
+  we restrict ourselves to these representative examples here.

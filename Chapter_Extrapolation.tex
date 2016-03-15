@@ -17,8 +17,8 @@
 	\eeq
 	$\phi_{\alpha}^{\Omega}(r)$ in Eq.~\eqref{eq:single_particle_truncation} are
 	the HO wave functions; $\Omega$ is the frequency of the HO \footnote{
-	In LENP, the oscillator frequency is denoted by $\Omega$ rather than $\omega$.
-	}.
+	In LENP, the oscillator frequency is often denoted by $\Omega$ rather
+	than $\omega$.}.
 	Thus the energy obtained in the HO basis -- $E(\Nmax, \Omega)$ -- is a
 	function of $\Nmax$ and $\Omega$.  This is illustrated in
 	Fig.~\ref{fig:H6_function_Omega}.
@@ -2613,12 +2613,160 @@
 	UV behavior for the	simple systems and then make correspondence to the
 	nuclear systems.
 
-	\subsection{Momentum cutoff from duality}
+	\subsection{Duality and momentum-space boxes}
 	\label{subsec:UV_cutoff_duality}
 
+	To briefly recap results in Subsec.~\ref{subsec:tale_of_tails}---we
+	demonstrated there that a
+	truncated oscillator basis with highest excitation energy
+	$N\Omega$ effectively imposes a spherical hard-wall boundary condition
+	at a radius depending on $N$ and $b$.  The optimal effective radius
+	$\Leff$ can be determined by matching the smallest eigenvalue
+	$\kappa^2$ of the squared momentum operator $p^2$ in the finite
+	basis to the corresponding eigenvalue of the spherical box, namely
+	$\kappa=\pi/L$ (for $\ell=0$).  The value can be established numerically,
+	but an accurate approximation for the two-body system is
+	%
+	\begin{equation}
+	\label{eq:L2_def}
+	  \Leff = L_2\equiv\sqrt{2(N+3/2+2)}b \,.
+	\end{equation}
+	%
+	Note that $L_2$ differs by $\mathcal{O}(1/N)$ from the naive estimate
+	$L_0\equiv\sqrt{2(N+3/2)}b$.  In localized bases that differ from the
+	harmonic oscillator, $L$ can also be determined from a numerical
+	diagonalization of the operator $p^2$.
+
+	The dual nature of the harmonic oscillator Hamiltonian \eqref{eq:H-HO}
+	(\ie, under $p \leftrightarrow \mu\Omega r$) implies that the
+	truncation of the basis will effectively impose a sharp cutoff at a
+	momentum $\Lameff$ depending only on $N$ and $b$.  The analog matching
+	condition leads us to consider the smallest eigenvalue (denoted $\rho$) of
+	the operator $r^2$ evaluated in that truncated basis.  This eigenvalue is
+	identical to the smallest (squared) distance that can be realized in the
+	oscillator basis.  Thus it corresponds to a lattice spacing on a grid
+	and therefore sets the highest momentum available.  As we see
+	in Fig.~\ref{fig:deuteron_lambdas}, the square root of the largest
+	eigenvalue of the squared momentum operator, which might be a natural guess
+	for the effective UV cutoff, is not an accurate estimate for $\Lameff$.
+
+	The smallest eigenvalue $\rho$ is determined by Eqs.~\eqref{eq:quant-cond-ell}
+	and~\eqref{eq:c-tilde-2} in Appendix~\ref{sec:appendix_Lambda-Details}.
+	From steps completely analogous (dual) to those given in
+	Subsec.~\ref{subsec:tale_of_tails} for the IR case, we find that
+	the solution (in a subspace with fixed angular momentum $\ell$) is
+	%
+	\begin{equation}
+	 \rho = \frac{x_\ell b}{\sqrt2}\left(\Nmax+\frac32+\Delta\right)^{\!-1/2}
+	\label{eq:rho-Nmax-Delta}
+	\end{equation}
+	%
+	with $\Delta=2$ to leading order.  The constant $x_\ell$ in the prefactor is
+	the first positive zero of the spherical Bessel function $j_\ell$.  Since the
+	UV cutoff is given by $x_\ell/\rho$, it drops out again in our final
+	result:
+	%
+	\begin{equation}
+	\Lambda_2 \equiv \sqrt{2(\Nmax+3/2+2)}/b \,.
+	\label{eq:Lambda-2-simple}
+	\end{equation}
+	%
+	Hence, we have shown that the proper effective UV cutoff imposed by
+	the basis truncation is given by $\Lambda_2$, which differs by a correction
+	term from the naive estimate
+	%
+	\begin{equation}
+	 \Lambda_0 \equiv \sqrt{2(\Nmax+3/2)}/b
+	\label{eq:Lambda-0}
+	\end{equation}
+	%
+	that one obtains by simply considering the maximum single-particle energy
+	level represented by the truncated basis.  We note that subleading corrections
+	to $\Delta=2$, which by duality apply equally to the IR and UV cutoff, are
+	derived in Appendix~\ref{subsec:appendix_subleading}.
+
+	\subsection{Isolating UV corrections}
+
+	\begin{figure}[thbp]
+ 	\centering
+ 	\includegraphics[width=0.45\textwidth]
+ 	{Extrapolation/IR_deuteron_HO_plot1_test2b}~~~%
+ 	\includegraphics[width=0.45\textwidth]%
+ 	{Extrapolation/IR_deuteron_HO_plot1_test2b_largeLambda}
+ 	\caption{(a) The relative error in the deuteron
+   	energy, computed in harmonic-oscillator bases, for a wide range of
+   	oscillator parameters $\Nmax$ and $\hw$ as a function of
+   	$L_2(\Nmax,\hw)$.  The red labels mark the minimum and maximum
+   	$\Nmax$ along sequences of constant $\Omega$ (indicated by blue
+   	labels along the sequence of crosses).  These calculations use the
+   	N$^3$LO $NN$ potential with a $500~\MeV$ regulator cutoff from
+   	Ref.~\cite{Entem:2003ft}, which was evolved by the similarity
+   	renormalization group~\cite{Bogner:2006pc} to $\lambda = 2\,\fmi$.
+   	(b) Subset of calculations from (a) for which the UV correction can
+   	be neglected compared to the IR correction (``raw''), with LO and
+   	NLO corrections subtracted as described in the text.  The inset
+   	shows the curves for the lowest values of $L_2$.}
+	\label{fig:IR_deuteron_HO}
+	\end{figure}
+	%
+	\begin{figure*}[thbp]
+	\centering
+	\includegraphics[width=0.45\textwidth]
+	{Extrapolation/UV_deuteron_HO_plot1_test2b}~~~%
+	\includegraphics[width=0.45\textwidth]
+	{Extrapolation/UV_deuteron_HO_plot1_test2b_largeL}
+	\caption{(a) Oscillator calculations of the relative
+	  error in the deuteron energy for a wide range of oscillator
+	  parameters $\Nmax$ and $\hw$ as a function of
+	  $\Lambda_2(\Nmax,\hw)$.  These are the same calculations as in
+	  Fig.~\ref{fig:IR_deuteron_HO}.  (b) Subset of calculations from (a)
+	  for which the IR correction can be neglected compared to the UV
+	  correction.  The inset is a linear plot.  }
+	\label{fig:UV_deuteron_HO}
+	\end{figure*}
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Extrapolation/deuteron_deltaE_vs_cutLamT_HO_Lam2_no_inset}
+	\caption{Calculations of the relative error in the
+	   deuteron energy as a function of $\Lambda_2(\Nmax,\hw)$.  Circles
+	   represent a wide range of oscillator parameters $\Nmax$ and
+	   $\hw$ that are IR converged.  The series of lines shows energies for
+	   which the Hamiltonian has been smoothly cutoff with exponent $n$.
+	   The solid line corresponds to a sharp cutoff.}
+	\label{fig:deuteron_vs_cutLam}
+	\end{figure}
+	%
+	For an oscillator basis truncation with general $b$ and $\Nmax$, both
+	IR and UV errors will be significant.  However, by choosing
+	appropriate ranges of these parameters we can isolate one or the other
+	and thereby analyze them separately (the combined effect is yet to be
+	investigated).  In Fig.~\ref{fig:IR_deuteron_HO}(a) we
+	plot the relative error in the deuteron energy $\Delta E_d/E_d$ for a
+	large set of basis parameters with $4 < \Nmax < 100$ and
+	$1\,\mbox{MeV} < \Omega < 100\,\mbox{MeV}$ against the value of $L_2$
+	(recall $\Omega = 1/\mu b^2$) from Eq.~\eqref{eq:L2_def}.  The
+	calculations use the 500\,MeV N$^3$LO nucleon-nucleon $NN$ potential
+	of Ref.~\cite{Entem:2003ft}, evolved by the
+	SRG~\cite{Bogner:2006pc} to
+	$\lambda = 2\,\fmi$.  For sufficiently large $\Omega$, above a minimum
+	$\Nmax$ all points collapse to a single exponential curve that runs
+	over six decades (at which point numerical errors in the calculation
+	are reached and cause the curve to flatten)\footnote{This effect is analogous
+	to what is shown in Fig.~4 in Ref.~\cite{Coon:2012ab}.  Once the calculation
+	is converged in the UV regime, the curves in such error plots flatten out at
+	a value determined by whatever else limits the precision of the calculation.
+	In Fig.~4 in Ref.~\cite{Coon:2012ab}, the value of the plateau is different
+	for each curve because the data points have not been filtered to ensure
+	convergence in the IR.  In our case, the value is determined by the numerical
+	precision	of the calculation, which is reflected in the fact that the
+	plateaus are the same in Figs.~\ref{fig:IR_deuteron_HO} and
+	\ref{fig:UV_deuteron_HO}.}). 	These are the UV-converged points; that is,
+	those for which the UV correction	is much smaller than the IR correction.
 
 
-	\subsection{Isolating UV errors}
+
 
 	\subsection{Separate and conquer}
 
