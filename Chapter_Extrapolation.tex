@@ -338,8 +338,7 @@
 	criterion of a continuous curve with the smallest spread of points
 	clearly favors $L_2$.
 
-
-
+	\medskip
 	\subsubsection{Analytical derivation of $L_2$}
 
 	In the asymptotic region (this is the region where IR cutoff is imposed), the
@@ -536,6 +535,7 @@
 	operator $p^2$ yields the box size $L$ corresponding to the employed Hilbert
 	space.
 
+	\medskip
 	\subsubsection{EFT-like approach}
 
 	We mentioned that the relevant operator for IR truncation is $p^2$.  To
@@ -643,6 +643,7 @@
 	putting the system in a spherical box of a specified radius.  Now let's see
 	how this correspondence helps us in getting the exact energy $\Einf$.
 
+	\medskip
 	\subsubsection{Linear energy method}
 
 	Our first approximation to the IR correction
@@ -945,6 +946,7 @@
 	directly to the $S$-matrix allows us to transparently obtain systematic
 	expansion for $\Delta E$ in powers of $e^{-2 \kinf L}$.
 
+	\medskip
 	\subsubsection{The $S$-matrix way}
 
 	In \cite{Furnstahl:2013vda}, we returned to Eq.~\eqref{eq:asymptotic_form_uE}
@@ -1131,7 +1133,7 @@
 	corrections here, the knowledge of the leading form is useful in some of
 	the error analysis we present in Subsec.~\ref{subsec:pudding_proof}.
 
-
+	\medskip
 	\subsubsection{Differential method}
 
 	Because we seek the change in energy with respect to a cutoff, it is
@@ -1523,6 +1525,7 @@
 	can be obtained.  Now we turn to the test of
 	Eq.~\eqref{eq:complete_E_correction_NLO}.
 
+	\medskip
 	\subsubsection{NLO and systematics of the correction}
 
 	For the square-well potential of Eq.~\eqref{eq:Vsw}, the parameters in
@@ -1813,8 +1816,7 @@
 	independent of the SRG scale.  This is verified in
 	Fig.~\ref{fig:SRG_data_with_fit}.
 
-
-
+	\medskip
 	\subsubsection{Comparison to conventional extrapolation schemes}
 
 	The extrapolation formulas in Eqs.~\eqref{eq:complete_IR_scaling} and
@@ -1884,7 +1886,7 @@
 	exponential in $N$ case (Eq.~\eqref{eq:exp_Nmax_extrapolation}) these
 	parameters are fit to data.
 
-
+	\medskip
 	\subsubsection{Relation to L\"{u}scher-type formulas}
 
 	Starting with the seminal work of L\"uscher~\cite{Luscher:1985dn}, a
@@ -1928,6 +1930,7 @@
 	with nonzero angular momenta.  Second, we derive the energy correction
 	for nonzero angular momenta.
 
+	\medskip
 	\subsubsection{$L$ for nonzero angular momenta}
 
 	For the derivation of the relevant IR length scale at $l>0$ we closely
@@ -2151,6 +2154,7 @@
 	\label{tab:lowest_kappa}
 	\end{table}
 
+	\medskip
 	\subsubsection{Energy correction for finite angular momentum}
 
 	Let us extend our $l=0$ result for $[\Delta E]_{\rm LO}$ to $l>0$ following
@@ -2264,6 +2268,7 @@
 
 	\subsection{Radii and phase shifts}
 
+	\medskip
 	\subsubsection{Radii}
 
 	Along with binding energies, another nuclear observable that we looked at
@@ -2503,6 +2508,7 @@
 	over to $A>2$ nuclei.  It is worthwhile to note that this approach can
 	be generalized to any coordinate space operator.
 
+	\medskip
 	\subsubsection{Phase shifts}
 
 	The argument for computing scattering phase shifts is as
@@ -2853,7 +2859,8 @@
 	smooth curve  only for $\Lambda_2$, we conclude that this identification of
 	the	relevant UV cutoff is correct.
 
-	\subsection{Separate and conquer}
+	\subsection{Separable two-body interactions}
+	\label{subsec:Separable_interactions}
 
 	In this section we show that the UV error from oscillator basis
 	truncations in the two-body problem can be determined exactly for any
@@ -2868,7 +2875,7 @@
 	separable interaction of the form
 	%
 	\begin{equation}
-	 V(\veck,\veck') = V(k',k) = a\,\flam(k') \flam(k) \,.
+	V(\veck,\veck') = V(k',k) = a\,\flam(k') \flam(k) \,.
 	\label{eq:pot-RegContact}
 	\end{equation}
 	%
@@ -2896,6 +2903,7 @@
 	\label{eq:haminfty}
 	\end{equation}
 
+	\medskip
 	\subsubsection{Exact extrapolation formula}
 
 	Let us assume now that we are in a limited model space with an
@@ -2915,7 +2923,7 @@
 	 \flam(k')\,\phi_\Lambda(k')
 	 = -\kappa_\Lambda^2 \phi_\Lambda(k) \,.
 	\label{eq:hamlambda}
-\end{equation}
+  \end{equation}
 	%
 	Here, $\Theta$ denotes the unit step function, so $\Theta(\Lambda-k)$ is a
 	projector, and Eq.~\eqref{eq:hamlambda} is obtained by simply introducing
@@ -3050,7 +3058,516 @@
 	on the details of how the potential falls off at large momentum, but
 	only weakly on the strength of the potential.
 
+	\medskip
+	\subsubsection{Perturbation theory}
 
+	Here we show that the result~\eqref{eq:deltaEapprox} for $\Delta
+	E_{\Lambda}$ in the region $\Lambda > \lambda$ can also be derived
+	from first-order perturbation theory.  The unperturbed wavefunction is
+	from Eq.~\eqref{eq:phi} with $\Lambda\rightarrow\infty$:
+	%
+	\begin{equation}
+	 \phiinf(k) \equiv \langle k | \phiinf \rangle
+	 = \frac{\cinf \flam(k)}{\kapinf^2+k^2}
+	 \,,
+	\label{eq:phiunperturb}
+	\end{equation}
+	%
+	and the perturbation can be written  (for S-waves) as
+	%
+	\begin{multline}
+	 \delta H(k,k') =
+	    -\Big[
+	     k^2 \frac{\delta(k-k')}{4\pi kk'} \Theta(k-\Lambda) \Theta(k'-\Lambda) \\
+	     + a\,\flam(k')\flam(k) \big[\Theta(k-\Lambda) + \Theta(k'-\Lambda)\big]
+	    \Big] \,.
+	\label{eq:sepperturbation}
+	\end{multline}
+	%
+	In writing $\delta H(k,k')$, we have
+	neglected a contribution to the second term proportional to $\Theta(k-\Lambda)
+	\Theta(k'-\Lambda)$, which would be doubly suppressed by $\flam(k>\Lambda)$.
+
+	The first-order energy shift is
+	%
+	\begin{eqnarray}
+	 \Delta\ELam
+	 &=& \frac{\langle\phiinf|\delta H | \phiinf\rangle}
+	   {\langle\phiinf|\phiinf\rangle}
+	 \nonumber \\ [0.8em]
+	 &=& -\biggl[
+	  4\pi \cinf^2 \int_\Lambda^\infty\! \dd k\, k^2 \frac{k^2\flam^2(k)}
+	  {(\kapinf^2 + k^2)^2}
+	  + (2a)4\pi \cinf \int_0^\infty\! \dd k'\, k'^{2}
+	  \flam(k')\frac{\flam(k')}{\kapinf^2 + k'{}^2}
+	  \nonumber \\
+	  & &\qquad\null
+	  \times 4\pi\cinf \int_\Lambda^\infty\! \dd k\, k^2 \flam(k)\frac{\flam(k)}
+	  {\kapinf^2 + k^2}
+	 \biggr]
+	 \left[4\pi \cinf^2\int_{0}^{\infty}\! \dd k\, k^2
+	  \frac{\flam^2(k)}{(\kapinf^2 + k^2)^2} \right]^{-1}
+	 \nonumber \\ [0.8em]
+	 &=& -\left[
+	  \int_\Lambda^\infty\! \dd k\, \frac{k^4\flam^2(k)}{(\kapinf^2 + k^2)^2}
+	   - 2 \int_\Lambda^\infty\! \dd k\,  \frac{k^2\flam^2(k)}{\kapinf^2 + k^2}
+	   \right]
+	   \left[\int_{0}^{\infty}\! \dd k\,
+	   \frac{k^2 \flam^2(k)}{(\kapinf^2 + k^2)^2} \right]^{-1}
+	 \nonumber \\ [0.8em]
+	 &=& \left[
+	     \int_\Lambda^\infty\! \dd k\, \flam^2(k)
+	   \right]
+	   \times \left[\int_{0}^{\infty}\! \dd k\, \frac{k^2 \flam^2(k)}
+	   {(\kapinf^2 + k^2)^2} \right]^{-1}
+	  \Big[1+ {\mathcal O}(\kapinf^2/\Lambda^2)\Big] \,.
+	\end{eqnarray}
+	%
+	This agrees with Eq.~\eqref{eq:deltaEapprox} up to terms of order
+	$\kapinf^2/\Lambda^2$.
+	Note that an analogous application of first-order perturbation theory
+	fails if applied to the IR correction; one finds the leading
+	$\ee^{-2\kinf L}$ dependence is found, but with the wrong coefficient.
+
+	\medskip
+	\subsubsection{Asymptotic expansion}
+
+	It is instructive to look at the large $\Lambda$ expansion of
+	Eq.~\eqref{eq:final} when $\flam(k)$ has the form of a Gaussian or
+	super-Gaussian:
+	%
+	\begin{equation}
+	  f_\lambda(k) = \ee^{-(k/\lambda)^{2n}}
+	  \;.
+	\end{equation}
+	%
+	We can express $\varepsilon$ in this case in terms of the incomplete
+	gamma function $\Gamma(a,z)$~\cite{Olver:2010:NHMF}:
+	%
+	\begin{eqnarray}
+	  \Delta\ELam &\propto& \int_{\Lambda}^{\infty}\! \dd
+	k\,\ee^{-2(k/\lambda)^{2n}}
+	     \nonumber \\
+	  &=& \frac{\lambda}{4n}\int_{2(\Lambda/\lambda)^{2n}}^\infty \! \dd t\,
+	     (t/2)^{\frac{1}{2n} - 1} \ee^{-t}
+	     \nonumber \\
+	  &=& \frac{\lambda}{4n}\frac{1}{2^{\frac{1}{2n} - 1}}
+	  \Gamma\!\left(\frac{1}{2n},2(\Lambda/\lambda)^{2n}\right)
+	  \;,
+	\end{eqnarray}
+	%
+	so that for $\Lambda \gg \lambda$,
+	%
+	\begin{equation}
+	  \varepsilon(\Lambda) \underset{\Lambda\gg\lambda}{\longrightarrow}
+	   [\mbox{const.}] \times \lambda
+	   \left(\frac{\Lambda}{\lambda}\right)^{1-2n} \ee^{-2(\Lambda/\lambda)^{2n}}
+	   \;.
+	\end{equation}
+	%
+	Only for $n=1$ does this have the Gaussian form used in
+	phenomenological methods for extrapolation, which is further
+	verification of the non-universality of UV corrections.  However, the
+	asymptotic region where $\Lambda \gg \lambda$ is seldom reached in
+	practice (if it were, convergence would likely be sufficient without
+	extrapolation).  When $\Lambda$ is the same size or smaller than
+	$\lambda$, and if the region over which a fit is made is limited, then a
+	Gaussian form can arise, as shown in Sec.~\ref{subsec:gaussian}.
+
+	\medskip
+	\subsubsection{Numerical calculations}
+
+	We test the extrapolation law~\eqref{eq:final} with the specific but
+	arbitrary choice
+	%
+	\begin{equation}
+	\flam(k) = \ee^{-\left({k/\lambda}\right)^4} \,,
+	\label{eq:regul-f4}
+	\end{equation}
+	%
+	with $\lambda=2.0$~fm$^{-1}$ and $a=-0.1$~fm.  The solution of the
+	quantization condition~\eqref{eq:quant} yields $\kappa_\infty\approx
+	0.634$~fm$^{-1}$.
+	%
+	\begin{figure}[tbh-]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/SimpleContactFit}
+	 \caption{Test of the extrapolation law~\eqref{eq:final} for a
+	   contact $a=-0.1$~fm and quartic regulator~\eqref{eq:regul-f4} with
+	   $\lambda=2$~fm.  Points: solution of the quantization
+	   condition~\eqref{eq:quant}.  Line: Fit of $\kappa_\infty$ and $A$ from
+	   Eq.~\eqref{eq:fit}.
+	 }
+	\label{fig:SimpleContactFit}
+	\end{figure}
+	%
+	Figure~\ref{fig:SimpleContactFit} shows the numerical solution of the
+	exact quantization condition~\eqref{eq:quant} plotted as
+	$\kappa_\Lambda$ {\it vs.} $\Lambda$ (circles).  The line is the
+	extrapolation with the function~\eqref{eq:final}, \ie, we write
+	%
+	\begin{equation}
+	 \Delta\ELam = \kappa_\Lambda^2 - \kappa_\infty^2
+	 \approx 2\kappa_\infty \Delta\kappa_\Lambda
+	 \mathtext{with}
+	 \Delta\kappa_\Lambda = \kappa_\infty - \kappa_\Lambda
+	\label{eq:kappaEps}
+	\end{equation}
+	%
+	and determine $\kappa_\infty$ and the proportionality constant $A$ from a
+	fit to
+	%
+	\begin{equation}
+	 \kappa_\Lambda
+	 = \kappa_\infty - \Delta\kappa
+	 = \kappa_\infty - A \int_\Lambda^\infty \dd k\,f^2_\lambda(k) \,.
+	\label{eq:fit}
+	\end{equation}
+	%
+	Note that $\kappa_\infty\ll\Lambda$, and $\Lambda>\lambda$, as
+	required.  Despite the approximations, the fit is very good, and in
+	fact the extracted value for $A$ agrees to better than 10\% with the
+	explicit result
+	%
+	\begin{equation}
+	 A_\infty = \left
+	 (2\kappa_\infty
+	 \times \int_0^\infty\!\dd k\,k^2 \frac{\flam(k)^2}
+	 {(\kappa_\infty^2+k^2)^2} \right)^{\!-1} \,,
+	\end{equation}
+	%
+	which follows directly from combining Eqs.~\eqref{eq:deltaEapprox}
+	and~\eqref{eq:kappaEps}.
+	This simple test already suggests that the approximations in deriving
+	the extrapolation law~\eqref{eq:final} are well under control.
+	%
+	\begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/OscContactFit-f4}
+	 \caption{Oscillator calculations (with $b=2.5$~fm and
+	   $n=6,\ldots,16$) and extrapolations a contact $a=-0.1$~fm and
+	   quartic regulator~\eqref{eq:regul-f4} with $\lambda=2$~fm.
+	   Circles and short-dashed line: direct-quantization result and fit, same as
+	   in Fig.~\ref{fig:SimpleContactFit}.
+	   Squares: oscillator result with $\Lambda=\Lambda_0(n)$.
+	   Dotted line: fit of Eq.~\eqref{eq:fit} to squares.
+	   Diamonds: oscillator result with $\Lambda=\Lambda_2(n)$.
+	   Long-dashed line: fit of Eq.~\eqref{eq:fit} to diamonds.
+	 }
+	\label{fig:OscContactFit-f4}
+	\end{figure}
+	%
+	Indeed, the extrapolation also works very well for calculations in
+	truncated oscillator bases, provided the effective UV cutoff is
+	calculated according to $\Lambda=\Lambda_2$ as derived in
+	Subsec.~\ref{subsec:UV_cutoff_duality}.  Although the overall cutoff
+	dependence is	quite small for the simple regularized contact interaction,
+	one can	clearly see a substantial improvement when one uses
+	$\Lambda=\Lambda_2$ instead of the naive estimate $\Lambda=\Lambda_0$.
+	As shown in Fig.~\ref{fig:OscContactFit-f4}, the difference between
+	the two choices is a horizontal shift of the oscillator data that
+	moves them almost right on top of the direct-quantization result
+	according to Eq.~\eqref{eq:quant}.  If instead of
+	Eq.~\eqref{eq:regul-f4} we use a Gaussian regulator,
+	%
+	\begin{equation}
+	 \flam(k) = \ee^{-\left({k/\lambda}\right)^2} \,,
+	\label{eq:regul-f2}
+	\end{equation}
+	%
+	the overall cutoff dependence is somewhat stronger, but, as shown in
+	Fig.~\ref{fig:OscContactFit-f2}, the qualitative behavior is exactly
+	the same.  In fact, the agreement is even somewhat better, at least
+	for the parameters chosen in the calculation.
+	%
+	\begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/OscContactFit-f2}
+	 \caption{Oscillator calculations (with $b=2.5$~fm and
+	   $n=6,\ldots,34$) and extrapolations for a contact $a=-0.1$~fm and Gaussian
+	   regulator~\eqref{eq:regul-f2} with $\lambda=2$~fm.
+	   Symbols and curves are as in Fig.~\ref{fig:OscContactFit-f4}.}
+	\label{fig:OscContactFit-f2}
+	\end{figure}
+	%
+
+	To get a more quantitative assessment of the agreement, in
+	Figs.~\ref{fig:ContactErrorPlot-f4} and~\ref{fig:ContactErrorPlot-f2}
+	we plot the quantity
+	%
+	\begin{equation}
+	 \Delta\kappa_\Lambda = |\kappa(m) - \kappa_{\Lambda(m)}|
+	\label{eq:Delta-kappa}
+	\end{equation}
+	%
+	on a logarithmic scale for different choices of $\Lambda_m$.  With this
+	notation we mean that for a given truncation parameter $m$ we first calculate
+	the corresponding effective cutoff $\Lambda_m$ and then apply
+	Eq.~\eqref{eq:quant} to obtain the exact binding momentum for that cutoff.
+	In these calculations we have used a very large oscillator length $b=6.0$~fm to
+	suppress IR corrections and go up to very large truncation parameters
+	(up to $n=72$) to still reach sizable UV cutoffs.  For both regulators
+	discussed above (quartic and Gaussian), the $\Lambda=\Lambda_2$ curve clearly
+	lies below the one for $\Lambda=\Lambda_0$.
+	%
+	\begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/ContactErrorPlot-f4}
+	 \caption{Logarithmic plot of $\Delta\kappa_\Lambda$ as defined
+	   in Eq.~\eqref{eq:Delta-kappa} for a contact $a=-0.2$~fm and quartic
+	   regulator~\eqref{eq:regul-f4} with $\lambda=1.8$~fm.  Dotted line:
+	   result for $\Lambda=\Lambda_0$.  Thick dashed line: result for
+	   $\Lambda=\Lambda_2$.  Thin dashed line: result for
+	   $\Lambda=\Lambda_2^{(1)}$ (including the first subleading
+	   correction). Inset: The small improvement from $\Lambda_2$
+	   to $\Lambda_2^{(1)}$.  }
+	\label{fig:ContactErrorPlot-f4}
+	\end{figure}
+	%
+	\begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/ContactErrorPlot-f2}
+	 \caption{Logarithmic plot of $\Delta\kappa_\Lambda$ as defined
+	   in Eq.~\eqref{eq:Delta-kappa} for a contact $a=-0.33$~fm and
+	   Gaussian regulator~\eqref{eq:regul-f2} with $\lambda=1.66$~fm.
+	   Curves and inset are as in Fig.~\ref{fig:ContactErrorPlot-f4}.}
+	\label{fig:ContactErrorPlot-f2}
+	\end{figure}
+	%
+
+	In these plots we have also included the result with the first
+	subleading correction to $\Lambda=\Lambda_2$ (see
+	Appendix~\ref{subsec:appendix_subleading}).  It is reassuring to see that
+	there is some	small improvement (the curves for $\Lambda=\Lambda_2^{(1)}$ lie
+	consistently below those for $\Lambda=\Lambda_2$), but we conclude that these
+	corrections can	safely be neglected for all present practical purposes.
+
+	\subsection{Separable approximations and tests on model potentials}
+	\label{subsec:Separable_approximation}
+
+	For a general rank-1 separable potential
+	%
+	\begin{equation}
+	 \hat{V}_\text{sep} = g \, \ket{\eta}\bra{\eta} \,,
+	\end{equation}
+	%
+	which in momentum space simply becomes (with $\eta(k)\equiv\braket{k}{\eta}$)
+	%
+	\begin{equation}
+	 V_\text{sep}(k,k') = g \, \eta(k)\eta(k') \,,
+	\end{equation}
+	%
+	the quantization condition~\eqref{eq:quant} can be written as
+	%
+	\begin{equation}
+	 -1 = 4\pi g
+	 \int_0^\Lambda\!\dd k\, k^2 \frac{\eta(k)^2}{\kappa^2_\Lambda+k^2} \,.
+	\label{eq:quant-sep}
+	\end{equation}
+	%
+	This is, of course, merely a change of notation, $a \rightarrow g$ and
+	$\flam(k)\rightarrow\eta(k)$ compared to Eq.~\eqref{eq:quant}.  Most
+	interactions used in practical calculations, however, do not have this
+	convenient simple form (at least not in nuclear physics).  Still,
+	Eq.~\eqref{eq:quant-sep} can be put to some use.
+
+	Methods to obtain separable approximations for a given potential have
+	been known and used for quite a while (see, \eg,
+	Refs.~\cite{Harms:1970hd,Ernst:1973zzb,elgaroy1998} and further references
+	therein).  We use the technique here in its simplest form, also called
+	the \emph{unitary pole approximation
+	(UPA)}~\cite{Ernst:1973zzb,Lovelace:1964aa}.  Assuming that for an
+	arbitrary potential $\hat{V}$ we know a (bound) eigenstate $\ket{\psi}$, we
+	can	construct a rank-1 separable approximation in momentum space by setting
+	%
+	\begin{equation}
+	 \hat{V}_\text{sep} = \frac{\hat{V}\ket{\psi}\bra{\psi}\hat{V}}
+	 {\mbraket{\psi}{\hat{V}}{\psi}} \,.
+	\label{eq:UPA-op}
+	\end{equation}
+	%
+	In other words, we have
+	%
+	\begin{equation}
+	 \eta(k) = \mbraket{k}{\hat{V}}{\psi}
+	\end{equation}
+	%
+	for the momentum-space ``form factor,'' and the coupling strength
+	$g=\mbraket{\psi}{\hat{V}}{\psi}$ is, of course, independent of any
+	particular representation.  From Eq.~\eqref{eq:UPA-op} one immediately sees
+	that
+	%
+	\begin{equation}
+	 \hat{V}_\text{sep}\ket{\psi} = \hat{V}\ket{\psi} \,.
+	\label{eq:Vsep-psi-V-psi}
+	\end{equation}
+	%
+	This means that the separable approximation is constructed in such a
+	way that it exactly reproduces the state $\ket{\psi}$ used for its
+	construction.  The potential~\eqref{eq:UPA-op} reproduces the exact
+	half off-shell T-matrix at the energy corresponding to the state
+	$\psi$, and more sophisticated approximations (separable potential of
+	rank $>1$) can be constructed by using more than a single
+	state~\cite{Ernst:1973zzb}.  Since we are only interested in
+	performing the UV extrapolation for a single state here, however, the
+	rank-1 approximation should be sufficient.  In fact, based on our
+	expectation that the UV extrapolation we seek should depend on
+	short-range/high-momentum modes of the potential and the state under
+	consideration, Eq.~\eqref{eq:UPA-op} looks very promising.  To assess
+	to what extent it actually reflects the UV behavior of a calculation
+	based on the \emph{original} potential, we first consider some
+	examples where the separable approximation can be constructed
+	analytically.
+
+	\medskip
+	\subsubsection{Spherical Well}
+
+	One of the simplest potentials for which the
+	bound-state wavefunctions can be written down explicitly in closed form is
+	the	spherical well (step),
+	%
+	\begin{equation}
+	 \Vstep(r) = V_0\,\Theta(R - r) \mathtext{,} V_0 < 0 \,.
+	\label{eq:V-step}
+	\end{equation}
+	%
+	The eigenfunctions for this standard textbook example are spherical Bessel
+	functions.  Separable approximations for these potential have been discussed
+	in Ref.~\cite{Bund:1980aa}.  If $\Vstep$ supports an S-wave bound-state at
+	energy $E=-\kappa^2$, we find from the results presented there that
+	%
+	\begin{subequations}%
+	\begin{align}
+	 \eta_{\text{step}}(k) &= \frac{2}{\pi} V_0 R^2
+	 \frac{Z(E;V_0,kR)}{K^2 - k^2} \,, \\
+	 g_{\text{step}} &= \left(\frac{2}{\pi}V_0 R^2\,F(E;V_0,R)\right)^{\!\!-1} \,,
+	\end{align}
+	\label{eq:eta-step}
+	\end{subequations}%
+	%
+	with $K \equiv K(E;V_0) = \sqrt{E-V_0}$ and
+	%
+	\begin{align}
+	 L(E;V_0,R) &= K\,\frac{j_0'(KR)}{j_0(KR)} \,, \\
+	 Z(E;V_0,kR) &= k\,j_0'(KR) - L(E;V_0,R)\,j_0(KR) \,, \\
+	 F(E;V_0,R) &= \frac{1}{2KR}
+	 \Bigl[R^2 L(E;V_0,R)
+	  + R L(E;V_0,R) + R^2 K\Bigr] \,.
+	\end{align}
+	%
+	\begin{figure}[thbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/SepCompare-SW}
+	 \caption{Oscillator calculations (with $b=2.0$~fm and
+	   $n=4,\ldots,64$) for a  spherical step potential with $V_0=-4~\fm^{-1}$
+		 and $R=1~\fm$ and its separable approximation.  Dashed line:
+	   direct-quantization result according to Eqs.~\ref{eq:quant-sep}
+	   and~\eqref{eq:eta-step}.  Squares: oscillator result with separable
+	   approximation~\eqref{eq:eta-step}.  Circles: oscillator result with the
+	   original (full) potential~\eqref{eq:V-step}.  The horizontal dotted line
+	   indicates the exact result for the binding momentum.}
+	\label{fig:SepCompare-SW}
+	\end{figure}
+	%
+	In Fig.~\ref{fig:SepCompare-SW} we show how the separable
+	approximation~\eqref{eq:eta-step} (squares) performs compared to the original
+	potential~\eqref{eq:V-step} (circles) in an oscillator calculation.  We use
+	$V_0=-4~\fm^{-1}$ and $R=1~\fm$, which produces a bound state at
+	$\kappa_\infty\approx0.638~\fm^{-1}$ (determined numerically from the
+	quantization condition for attractive step potentials and shown as the
+	dotted line in Fig.~\ref{fig:SepCompare-SW}).  The dashed line furthermore
+	shows the result of a direct calculation based on Eqs.~\eqref{eq:quant-sep}
+	and~\eqref{eq:eta-step} (see inset).
+
+	The results of all three calculations agree remarkably well.  The fact that
+	the separable approximation used in the oscillator calculations follows the
+	result from the direct quantization according to Eq.~\eqref{eq:quant-sep} is
+	primarily reassuring.  More interestingly, the latter also traces the result
+	of a ``full''
+	oscillator calculation based on the original step potential---including the
+	rather slow convergence towards the exact result and even the peculiar step
+	around $\Lambda\approx6~\fm^{-1}$ in Fig.~\ref{fig:SepCompare-SW}.
+
+	These features are due to the rather pathological (oscillatory)
+	behavior of the step potential in momentum space.  In the next subsection, we
+	avoid this complication by studying another class of exactly solvable
+	interactions, which are smooth.
+
+	\medskip
+	\subsubsection{P\"{o}schl-Teller potential}
+
+	It is convenient for us to consider a
+	so-called P\"{o}schl--Teller potential of the form
+	%
+	\begin{equation}
+	 \VPT(r) = -\frac{\alpha^2 \beta(\beta-1)}{\cosh^2(\alpha r)}
+	\label{eq:V-PT}
+	\end{equation}
+	%
+	Originally, this potential describes a one-dimensional problem on the interval
+	$(-\infty,\infty)$.  However, restricting ourselves to S-waves (and to
+	states with odd wavefunctions), we can use it as a solvable problem in
+	three dimensions.  For given values of $\alpha$ and $\beta$, this potential has
+	an analytically known bound-state spectrum.  Labeling different states by an
+	index $\nu$, we have, for example, a single bound state ($\nu=0$) with binding
+	momentum $\kappa=\alpha$ for $\beta=3$.  For $\beta=5$, there are two bound
+	states at $\kappa=3\alpha$ ($\nu=0$) and $\kappa=\alpha$ ($\nu=1$).  The
+	wavefunctions for this potentials are known analytically as well, which allows
+	us to derive explicit expressions for the form factors $\eta(k)$ as well.
+	These details are given in Appendix~\ref{sec:appendix_PT-Details}.
+
+	%
+	\begin{figure}[hbtp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/SepCompare-PT}
+	 \caption{Oscillator calculations (with $b=2.5$~fm and
+	   $n=4,\ldots,32$) for a P\"{o}schl--Teller potential with $\beta=3$ and
+	   $\alpha=2/3~\fm^{-1}$ and its separable approximation.  Dashed line:
+	   direct-quantization result according to Eqs.~\ref{eq:quant-sep}
+	   and~\eqref{eq:eta-PT-3}.  Squares: oscillator result with separable
+	   approximation~\eqref{eq:eta-PT-3}.  Circles: oscillator result with the
+	   original (full) potential~\eqref{eq:V-PT}.  The horizontal dotted line
+	   indicates the exact result for the binding momentum.}
+	\label{fig:SepCompare-PT}
+	\end{figure}
+	%
+	\begin{figure}[thbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/bDep-PT3-23}
+	 \caption{Binding momentum as a function of $b$ obtained from
+	   oscillator with different basis sizes.  Circles: $n=6$.  Boxes: $n=12$.
+	   Diamonds: $n=24$.  The horizontal dotted line
+	   indicates the exact result for the binding momentum.}
+	\label{fig:bDep-PT3-23}
+	\end{figure}
+	%
+	In Fig.~\ref{fig:SepCompare-PT} we show results for a P\"{o}schl--Teller
+	potential
+	with $\beta=3$ and a bound-state at $\kappa=\alpha=2/3~\fmi$.  The curves are
+	analogous to those shown in Fig.~\ref{fig:SepCompare-SW} for the step
+	potential.  While the agreement of the calculations with the original
+	potential and with the separable approximation is not as impressive as for the
+	step potential, it is still very good for cutoffs $\Lambda_2\gsim2.5~\fm^{-1}$
+	($n>8$).
+
+	In general, the regime where UV cutoff effects dominate the energy
+	correction can be found from plots like the one shown in
+	Fig.~\ref{fig:bDep-PT3-23}, where we plot the $b$-dependence of
+	$\kappa$ for our P{\"o}schl--Teller potential with $\beta=3$ and
+	$\alpha=2/3~\fm$.  Recalling that large $b$ correspond to large
+	configuration-space boxes $L_2 = \sqrt{2(2n+3/2+2)}b$ and thus
+	negligible IR correction, we identify the UV-dominated region as the
+	one with $b\gsim2$.
+
+	\subsection{Separable deuteron extrapolation}
 
 	\subsection{Re-examining SRG based extrapolations}
 
