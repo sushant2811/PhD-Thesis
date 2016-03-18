@@ -1816,6 +1816,40 @@
 	independent of the SRG scale.  This is verified in
 	Fig.~\ref{fig:SRG_data_with_fit}.
 
+	\begin{figure}
+		\centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Extrapolation/deutrnNmaxsrg_v2}
+	 \caption{The same SRG-evolved potentials as in
+	   Fig.~\ref{fig:SRG_data_with_fit} are used to generate energies, but
+	   with $N$ fixed at (a) 8 and (b) 12 and no restriction on
+	   $\hw$.  Thus UV corrections are not negligible everywhere.  The
+	   horizontal dotted line is the deuteron binding energy.}
+	 \label{fig:SRG_data_collapse}
+	\end{figure}
+	%
+	As $\lambda$ decreases, the SRG systematically reduces the coupling
+	between high-momentum and low-momentum potential matrix elements, thereby
+	lowering the effective UV cutoff.  Thus these potentials are useful
+	tools to assess the role of UV corrections.  This is exploited in
+	Fig.~\ref{fig:SRG_data_collapse} where we relax the condition
+	that the UV corrections are small compared to IR corrections.  In
+	particular, we fix $N$ at 8 and 12 and scan through the full range of
+	$\hw$.  We observe that with increasing $L_2$, each of the curves with
+	a given $\lambda$ eventually deviates from the universal curve,
+	first with $\lambda = 3.0\fmi$ and then later with decreasing
+	$\lambda$ or with higher $N$.  We can understand this in terms of the
+	behavior of the induced UV cutoff.  For fixed $N$, Eq.~\eqref{eq:L_i}
+	tells us that increasing $L_2$ means increasing $b$ (or decreasing
+	$\hw$).  But at fixed $N$, $\LamUV \propto 1/b$, so the UV cutoff will
+	be decreasing and the corresponding UV energy correction increasing.
+	Thus the curves at fixed $\lambda$ correspond to the curves
+	seen in conventional plots of energy versus $\hw$ (e.g., see
+	Ref.~\cite{Bogner:2007rx}).  The softer potentials (lower $\lambda$)
+	will have lower intrinsic UV cutoffs and therefore they are only
+	affected for larger $L_2$. The minima for each $\lambda$ are when IR
+	and UV corrections are roughly equal.
+
 	\medskip
 	\subsubsection{Comparison to conventional extrapolation schemes}
 
@@ -3554,9 +3588,9 @@
 	with $\beta=3$ and a bound-state at $\kappa=\alpha=2/3~\fmi$.  The curves are
 	analogous to those shown in Fig.~\ref{fig:SepCompare-SW} for the step
 	potential.  While the agreement of the calculations with the original
-	potential and with the separable approximation is not as impressive as for the
-	step potential, it is still very good for cutoffs $\Lambda_2\gsim2.5~\fm^{-1}$
-	($n>8$).
+	potential and with the separable approximation is not as impressive as for
+	the	step potential, it is still very good for cutoffs
+	$\Lambda_2\gsim2.5~\fm^{-1}$ ($n>8$).
 
 	In general, the regime where UV cutoff effects dominate the energy
 	correction can be found from plots like the one shown in
