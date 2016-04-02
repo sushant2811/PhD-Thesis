@@ -1839,7 +1839,7 @@
 	a given $\lambda$ eventually deviates from the universal curve,
 	first with $\lambda = 3.0\fmi$ and then later with decreasing
 	$\lambda$ or with higher $N$.  We can understand this in terms of the
-	behavior of the induced UV cutoff.  For fixed $N$, Eq.~\eqref{eq:L_i}
+	behavior of the induced UV cutoff.  For fixed $N$, Eq.~\eqref{eq:L2_def}
 	tells us that increasing $L_2$ means increasing $b$ (or decreasing
 	$\hw$).  But at fixed $N$, $\LamUV \propto 1/b$, so the UV cutoff will
 	be decreasing and the corresponding UV energy correction increasing.
@@ -1920,36 +1920,6 @@
 	exponential in $N$ case (Eq.~\eqref{eq:exp_Nmax_extrapolation}) these
 	parameters are fit to data.
 
-	\medskip
-	\subsubsection{Relation to L\"{u}scher-type formulas}
-
-	Starting with the seminal work of L\"uscher~\cite{Luscher:1985dn}, a
-	wide variety of formulas have been derived for the energy shift of
-	bound states in finite-volume lattice calculations.  The usual
-	application is to simulations that use periodic boundary conditions in
-	cubic boxes (e.g., see Ref.~\cite{Konig:2011ti}).  The recent work by
-	Pine and Lee~\cite{Lee:2010km,Pine:2012zv} extend the derivation to
-	hard-wall boundary conditions using effective field theory for
-	zero-range interactions and the method of images.  The result for
-	$\Delta E_L$ in a three-dimensional cubic box has a different
-	functional form than found here (the leading exponential is multiplied
-	by $1/L$ with that geometry) and the subleading corrections are
-	parametrically larger.
-
-	However, because the HO truncation we consider is in partial waves,
-	the one-dimensional analysis and formula from Ref.~\cite{Pine:2012zv}
-	are applicable (because $\kinf$ and $\ANC$ are asymptotic quantities,
-	the result for zero-range interaction is actually general for
-	short-range interactions).  The method of images can be applied in a
-	one-dimensional box of size $2L$ after specializing to a particular
-	partial wave and then extending the space to odd solutions in $r$ from
-	$-\infty$ to $+\infty$.  The leading-order finite-volume correction
-	agrees with Eq.~\eqref{eq:complete_IR_scaling}, and the first omitted term
-	is of the same order.
-	The methods presented in \cite{Lee:2010km,Pine:2012zv}
-	can be used to extend the present formulas to higher
-	orders and more general cases, including coupled channels.  This area
-	is ripe for investigation.
 
 	\subsection{Higher angular momenta}
 	\label{subsec:higher_angular_momenta}
@@ -2301,6 +2271,7 @@
 	into account the admixture between different channels.
 
 	\subsection{Radii and phase shifts}
+	\label{subsec:radii_phase_shifts}
 
 	\medskip
 	\subsubsection{Radii}
@@ -2973,10 +2944,127 @@
 	the UV correction is expected to scale simply with the number of particles.
 
 
-	\section{Related development and Moving forward}
+	\section{Moving forward and Related developments}
 
+  In this section, we will list the open questions with respect to both IR
+	and UV extrapolations.  As mentioned before, this approach of mapping the
+	HO truncation to IR and UV cutoffs and using them to obtain physically
+	motivated extrapolation formulas was rigorously developed for the first
+	time by us \cite{More:2013rma,Furnstahl:2013vda,Konig:2014hma}.  This
+	pioneering work has sprouted many new developments by extending our work.
+	We will also briefly touch upon some of these related developments.
 
 	\subsection{IR front}
+
+  \medskip
+	\subsubsection{Open questions}
+
+	As discussed towards the end of Subsec.~\ref{subsec:higher_angular_momenta},
+	the NLO IR correction is incomplete due to the missing $l=2$ correction.
+	It might be challenging to derive NLO corrections to the binding
+	energies for nuclei with $A> 2$, particular for nuclei with nonzero
+	ground-state spin.  Here, many different orbital anglar momenta can
+	contribute to the ground-state wave function, and one would presumably
+	need to know the admixture of the different channels quite accurately.
+	Our results show that nonzero orbital angular momenta yield
+	corrections in inverse powers of $\kinf L$ to the LO energy
+	extrapolation.  On the other hand, the leading contributions to
+	bound-state energies in finite model spaces fall off as $\exp{(-2\kinf
+	L)}$ for all orbital angular momenta.  This makes extrapolations
+	feasible in practice.
+
+	The formulation in terms of S-matrix analytic structure is closely
+	related to methods used to analyze break-up reactions, which provides a
+	link to $A>2$ extrapolations.  Indeed, in Ref.~\cite{Furnstahl:2012qg}
+	the basic form of the LO extrapolation proportional to $e^{-2\kinf L}$
+	was based on interpreting $\kinf$ in terms of the one-particle
+	separation energy.  More generally, the asymptotic many-body wave
+	function is dominated by configurations corresponding to the break-up
+	channels with the lowest separation energies and it is
+	their modification by the hard wall at $L$ that will be associated
+	with the energy shift $\Delta E_L$.  This is in turn dominantly
+	described by the S-matrix near poles at the corresponding separation
+	binding momenta.  Future work will seek to clarify the precise nature
+	of the more general expansion (including the effects of the Coulomb
+	interaction) and whether it will be possible to quantitatively extract
+	asymptotic normalization constants.
+
+	\paragraph{Relation to L\"{u}scher-type formulas}
+
+	Starting with the seminal work of L\"uscher~\cite{Luscher:1985dn}, a
+	wide variety of formulas have been derived for the energy shift of
+	bound states in finite-volume lattice calculations.  The usual
+	application is to simulations that use periodic boundary conditions in
+	cubic boxes (e.g., see Ref.~\cite{Konig:2011ti}).  The recent work by
+	Pine and Lee~\cite{Lee:2010km,Pine:2012zv} extend the derivation to
+	hard-wall boundary conditions using effective field theory for
+	zero-range interactions and the method of images.  The result for
+	$\Delta E_L$ in a three-dimensional cubic box has a different
+	functional form than found here (the leading exponential is multiplied
+	by $1/L$ with that geometry) and the subleading corrections are
+	parametrically larger.
+
+	However, because the HO truncation we consider is in partial waves,
+	the one-dimensional analysis and formula from Ref.~\cite{Pine:2012zv}
+	are applicable (because $\kinf$ and $\ANC$ are asymptotic quantities,
+	the result for zero-range interaction is actually general for
+	short-range interactions).  The method of images can be applied in a
+	one-dimensional box of size $2L$ after specializing to a particular
+	partial wave and then extending the space to odd solutions in $r$ from
+	$-\infty$ to $+\infty$.  The leading-order finite-volume correction
+	agrees with Eq.~\eqref{eq:complete_IR_scaling}, and the first omitted term
+	is of the same order.
+	The methods presented in \cite{Lee:2010km,Pine:2012zv}
+	can be used to extend the present formulas to higher
+	orders and more general cases, including coupled channels.  This area
+	is ripe for investigation.
+
+	Another area of investigation is how the trends for operator extrapolation
+	carry over for $A > 2$.
+
+	\medskip
+	\subsubsection{Related developments}
+
+	The results presented in this chapter have exclusively been for the two-body
+	case.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Extrapolation/triton_energy_vs_L2_srg_v3_widmu_log}
+	\caption{Residual error for triton plotted as a function of $L_2$ (here
+ 		calculated with the deuteron-neutron reduced mass) for the two- and
+		three-nucleon	potential in Ref.~\cite{Jurgenson:2009qs} unitarily evolved
+		by the SRG to four different resolutions (specified by $\lambda$) with the
+		same binding energy~\cite{Jurgenson:2009qs,Jurgenson:2010wy}.}
+	\label{fig:triton_vs_L2}
+	\end{figure}
+	%
+	Figure~\ref{fig:triton_vs_L2} shows $\Delta E = E_{\rm HO} - \Einf$ for triton
+	plotted as a function of $L_2$.  Recall from Eq.~\eqref{eq:L2_def} that
+	evaluating $L_2$ involves calculating the oscillator length $b$.  In
+	Fig.~\ref{fig:triton_vs_L2}, we use the deuteron-neutron reduced mass,
+	$\mu = 2/3 M_N$, to calculate $b$ and thereby $L_2$.  There are a few
+	interesting observations to be made about Fig.~\ref{fig:triton_vs_L2}.
+	Triton energies when plotted as a function of $L_2$ lie on a single line.
+	Also, as in Fig.~\ref{fig:SRG_data_collapse}, triton energies from potentials
+	evolved to various SRG $\lambda$'s, fall on the same line.  This indicates
+	that $L_2$ is the correct length even for the three-body case and the
+	three-body IR correction can also be written in terms of observables.
+
+  There has been lot of work on extending the results for IR energy corrections
+	presented in this thesis to the many-body case.  This has been documented in
+	Refs.~\cite{Furnstahl:2014hca, Wendt:2015nba}.  In
+	Subsec.~\ref{subsec:radii_phase_shifts} we looked at the
+	extrapolation of the radius-squared operator.  Authors of
+	Ref.~\cite{Odell:2015xlw} extended this to the extrapolation of quadrupole
+	moments and transitions for the deuteron.
+
+	As mentioned previously, the approach of mapping the HO truncation into a
+	hard-wall boundary condition (in both position as well as momentum space)
+	can be used for any localized basis.  This has been explored for the case
+	of Coulomb-Sturmian basis \cite{Caprio_Coulomb_Sturmian}.  
+
 
 	\subsection{UV front}
 	\label{subsec:UV_front}
