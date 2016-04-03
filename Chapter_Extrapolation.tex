@@ -111,7 +111,7 @@
 	two sections.  Insights from our work has also led to development of
 	extrapolation schemes (both in IR and UV) for the many-body case by other
 	groups.  We will touch upon these developments in
-	Sec.~\ref{sec:related_development_IR}.
+	Subsec.~\ref{subsec:IR_front}.
 
 	\section[Infrared story]{Infrared story
 	\footnote{Based on \cite{More:2013rma} and \cite{Furnstahl:2013vda}}}
@@ -1796,7 +1796,7 @@
    	different resolutions (specified by $\lambda$).  To eliminate the
    	UV contamination we only keep points for which $\hw >40$.  The
    	horizontal dotted line is the deuteron binding energy.}
-	\label{fig:SRG_data_with_fit}
+	\label{fig:SRG_data_collapse}
 	\end{figure}
 	%
 
@@ -1814,25 +1814,25 @@
 	in terms of observables ($S$-matrix near the bound state can be
 	parametrized in terms of low-energy observables) and therefore should be
 	independent of the SRG scale.  This is verified in
-	Fig.~\ref{fig:SRG_data_with_fit}.
+	Fig.~\ref{fig:SRG_data_collapse}.
 
 	\begin{figure}
 		\centering
 	 \includegraphics[width=0.6\textwidth]
 	 {Extrapolation/deutrnNmaxsrg_v2}
 	 \caption{The same SRG-evolved potentials as in
-	   Fig.~\ref{fig:SRG_data_with_fit} are used to generate energies, but
+	   Fig.~\ref{fig:SRG_data_collapse} are used to generate energies, but
 	   with $N$ fixed at (a) 8 and (b) 12 and no restriction on
 	   $\hw$.  Thus UV corrections are not negligible everywhere.  The
 	   horizontal dotted line is the deuteron binding energy.}
-	 \label{fig:SRG_data_collapse}
+	 \label{fig:SRG_data_collapse_contamination}
 	\end{figure}
 	%
 	As $\lambda$ decreases, the SRG systematically reduces the coupling
 	between high-momentum and low-momentum potential matrix elements, thereby
 	lowering the effective UV cutoff.  Thus these potentials are useful
 	tools to assess the role of UV corrections.  This is exploited in
-	Fig.~\ref{fig:SRG_data_collapse} where we relax the condition
+	Fig.~\ref{fig:SRG_data_collapse_contamination} where we relax the condition
 	that the UV corrections are small compared to IR corrections.  In
 	particular, we fix $N$ at 8 and 12 and scan through the full range of
 	$\hw$.  We observe that with increasing $L_2$, each of the curves with
@@ -2955,6 +2955,7 @@
 	We will also briefly touch upon some of these related developments.
 
 	\subsection{IR front}
+	\label{subsec:IR_front}
 
   \medskip
 	\subsubsection{Open questions}
@@ -3063,10 +3064,80 @@
 	As mentioned previously, the approach of mapping the HO truncation into a
 	hard-wall boundary condition (in both position as well as momentum space)
 	can be used for any localized basis.  This has been explored for the case
-	of Coulomb-Sturmian basis \cite{Caprio_Coulomb_Sturmian}.  
-
+	of Coulomb-Sturmian basis \cite{Caprio_Coulomb_Sturmian}.
 
 	\subsection{UV front}
 	\label{subsec:UV_front}
 
-	\label{sec:related_development_IR}
+	The dependence of UV corrections on the number of nucleons $A$ is not
+	yet established theoretically, but the tests in \cite{Konig:2014hma}
+	seem to indicate that the cutoff dependence of $\Delta E$ for the
+	many-body case is same as in the two-body case, just scaled by an
+	$A$-dependent overall constant.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Extrapolation/momentum_distribution_ratio_modified}
+	\caption{The ratio of the momentum distributions in nucleus to the deuteron
+		momentum distributions.  The dashed, dotted, dot-dashed, long dashed,
+		dot-long dashed lines correspond to $^3$He, $^4$He, $^{16}$O, $^{56}$Fe,
+		and nuclear matter respectively.  Figure taken from
+		\cite{CiofidegliAtti:1995qe}.}
+	\label{fig:mom_distribution_ratio}
+	\end{figure}
+	%
+	This can be understood
+	from general considerations of short-range correlations~\cite{Kimball:1973aa}
+	or more systematically using the operator product
+	expansion~\cite{Bogner:2012zm,Hofmann:2013aa}.  If there is a common two-body
+	part, it may determine the dominant $\Lambda_2$ dependence
+	with the rest providing the $A$-dependent scale factor.  This behavior would
+	be consistent with the observation of a universal shape for high-momentum
+	tails in momentum distributions (or the corresponding short-distance
+	behavior)~\cite{CiofidegliAtti:1995qe,Feldmeier:2011qy}.  Connecting the
+	two-body UV extrapolation results to the many-body case remains an open
+	question.
+
+	In this chapter we worked in the region where either the IR or the UV
+	errors were dominant.  We saw in
+	Fig.~\ref{fig:SRG_data_collapse_contamination} how UV contamination spoils
+	the data collapse for IR extrapolation.  However, it is not always possible
+	to isolate the IR and the UV contributions.  We therefore need reliable
+	extrapolation schemes which can be employed when both the IR and UV errors
+	are comparable.  Ref.~\cite{Jurgenson:2013yya} combined phenomenological
+	UV errors \footnote{Phenomenological form for the UV error is found to be
+	Gaussian in the cutoff $\Lambda_2$.  Ref.~\cite{Konig:2014hma} discusses how
+	the Gaussian form arises.} with leading IR errors and used extrapolation of
+	the	form
+	%
+	\beq
+	E(\Lambda_2, L_2) = \Einf + B_0 \ee^{-2 \Lambda_2^2/ B_1^2} + B_2
+		\ee^{-2 \kinf L_2} \;.
+	\label{eq:combine_IR_UV_phenomenological}
+	\eeq
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Extrapolation/Li7_Eb_vs_hw_kvnn10_srg_lam2p0_NNN_combined_Nmax6_Kval1_L2_contributions_labeled}
+	\caption{Ground-state energy for $^7$Li with IR (vertical dashed lines) and
+		UV (vertical dotted lines) corrections from
+		Eq.~\eqref{eq:combine_IR_UV_phenomenological} added to predict $\Einf$
+		values.  The horizontal dashed line is the global $\Einf$.
+		Figure taken from \cite{Jurgenson:2013yya}.}
+	\label{fig:combine_IR_UV_Jurgenson}
+	\end{figure}
+	%
+	As seen in Fig.~\ref{fig:combine_IR_UV_Jurgenson} this simple addition of IR
+	and UV errors seems to work well.  More work will be needed to place this
+	on a sound theoretical foundation.
+
+	Authors of Ref.~\cite{Binder:2015trg} developed interactions from chiral
+	EFT that are tailored to the HO basis.  In their approach, the UV convergence
+	with respect to the model space is implemented by construction (through
+	refitting of LECs) and IR convergence is achieved by enlarging the model
+	space for the kinetic energy.  This exhibited a fast convergence of
+	ground-state energies and radii for nuclei up to $^{132}$Sn.  Thus,
+	the development of reliable extrapolation schemes is indeed pushing the
+	ab-initio frontier to heavier nuclei. 
