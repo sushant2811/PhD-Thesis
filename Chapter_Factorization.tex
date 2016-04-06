@@ -4,6 +4,85 @@
 
 	\section{Motivation}
 
+	Most of the information we know about nuclear interactions and the properties
+	of the nuclei comes from some kind of scattering experiments (either elastic
+	or inelastic).  In such experiments we scatter a known probe off a nucleus
+	and	extract information about nuclear interactions by looking at the final
+	outcome of the scattering experiment.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]%
+	{Factorization/knock_out_schematic.png}
+	\caption{Schematic of a nucleon knockout reaction.}
+	\label{fig:knock_out_schematic}
+	\end{figure}
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Factorization/factorization_schematic_annotated}
+	\caption{Schematic illustration of factorization between nuclear structure
+		and reactions component.}
+	\label{fig:factorization_schematic}
+	\end{figure}
+	%
+	Figure~\ref{fig:knock_out_schematic} shows a schematic for a nucleon knockout
+	reaction where the probe is electrons which in turn interact with the nucleus
+	by emitting virtual photons.
+
+	The process of extracting nuclear properties from such experiments relies
+	on the assumption that the effects of the probe are well understood and can
+	be separated from the nuclear interactions we are trying to study.  This is
+	the	\emph{factorization} between the nuclear structure and the nuclear
+	reaction components illustrated schematically in
+	Fig.~\ref{fig:factorization_schematic}.  The reaction component describes the
+	probe and the structure includes description of the initial and final states.
+	This factorization between the structure and reaction components depends
+	on the renormalization scale and scheme.  In some physical systems
+	(e.g., in cold atoms near unitarity~\cite{Hoinka:2013fsa}), the scale and
+	scheme dependence is very weak and can be safely neglected.  In some other
+	physical system such as in deep inelastic scattering (DIS) in high-energy
+	QCD, the scale and scheme dependence is very manifest.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.55\textwidth]%
+	{Factorization/factorization_schematic_highE_QCD}
+	\caption{Factorization in high-energy QCD.  $x$ is the Bjorken-$x$ and it
+		denotes the fraction of momentum of the nucleon carried by the parton
+		under consideration.  $a$ denotes the parton flavor.}
+	\label{fig:factorization_schematic_highE_QCD}
+	\end{figure}
+	%
+	Figure~\ref{fig:factorization_schematic_highE_QCD} illustrates the
+	factorization in DIS.  The form factor $F_2$ of the nucleon
+	(which up to some kinematic factors is the cross section) is given by the
+	convolution of the long-distance parton density and the short-distance
+	Wilson coefficient.  In this case, the parton density forms the structure
+	part which is non-perturbative and the Wilson coefficient form the reactions
+	part which can be calculated in perturbative QCD.  These separation
+	between long- and short-distance physics is not unique, and is defined by
+	the factorization scale $\mu_f$.  To minimize the contribution of logarithms
+	that can disturb the perturbative expansion, $\mu_f$ is chosen to be equal to
+	the	magnitude of the four-momentum transfer $Q$.
+	The form factor $F_2$ (because it is
+	related to the observable cross section) is independent of $\mu_f$, but
+	the individual components are not.  As a consequence, the parton density
+	(or distribution) function $f_a(x, Q^2)$ runs with $Q^2$.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.55\textwidth]%
+	{Factorization/uquark_parton_distribution_3d_surf}
+	\caption{Parton distribution for the up quarks in the proton as a function
+		of $x$ and $Q^2$.  Figure taken from \cite{Furnstahl:2013dsa}.}
+	\label{fig:uquark_PDF_3D}
+	\end{figure}
+	%
+	This is demonstrated in Fig.~\ref{fig:uquark_PDF_3D}.  
+
+
 	\section{Test ground: Deuteron disintegration}
 
 	\section{Summary and Outlook}
