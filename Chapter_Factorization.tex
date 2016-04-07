@@ -1,6 +1,7 @@
 % !TEX root = More_PhD_Thesis.tex
 \cleardoublepage
-\chapter{Factorization}
+\chapter[Factorization]{Factorization
+	\footnote{Based on \cite{More:2015tpa}}}
 
 	\section{Motivation}
 
@@ -221,8 +222,106 @@
 	\eeq
 	The SRG evolved wave function is given by $\ket{\psi_i^\lambda} =
 	U_{\lambda} \ket{\psi_i}$, where $U_{\lambda}$ is the unitary matrix
-	associated with the SRG transformation.
+	associated with the SRG transformation.  The cross section is an
+	experimental observable and should be independent of our choice of
+	the SRG scale.  If we evolve all the components
+	of the matrix element consistently
+	\beq
+	\mbraket{\psi_f}{\wh{O}}{\psi_i} = \mbraket{
+	\underbrace{\psi_f U_{\lambda}^\dag}_{\psi_f^\lambda}}
+	{\underbrace{U_\lambda \wh{O} U_{\lambda}^{\dag}}_{\wh{O}^\lambda}}
+	{\underbrace{U_{\lambda} \psi_i}_{\psi_i^{\lambda}}} \;,
+	\label{eq:matrix_element_invariance}
+	\eeq
+	then the evolved matrix element is same as the unevolved one and the
+	observable cross section is unchanged.
 
+	In general, to be consistent between structure and reactions one must
+	calculate	cross sections or decay rates within a single framework.
+	That is, one must	use
+	the same Hamiltonian and consistent operators throughout the calculation
+	(which means the same scale and scheme).  Such consistent calculations have
+	existed	for some time for few-body nuclei (e.g.,
+	see~\cite{Epelbaum:2008ga,Hammer:2012id,Carlson:2014vla,Marcucci:2015rca})
+	and	are becoming increasingly feasible for heavier nuclei because of advances
+	in reaction technology, such as using complex basis states to handle
+	continuum	physics.  Recent examples in the literature include
+	No Core Shell Model Resonating Group Method
+	(NCSM/RGM)~\cite{Quaglioni:2015via}, coupled cluster~\cite{Bacca:2013dma},
+	and lattice EFT calculations~\cite{Pine:2013zja}.
+	But there are many open	questions about constructing consistent currents and
+	how to compare results from two such calculations.
+	Some work along this direction which includes the evolution of the operator
+	has recently been done.  Anderson \etal looked at the static properties
+	of the deuteron such as momentum distributions, radii, and form factors under
+	SRG evolution; they found no pathologies in the evolved operators, and
+	the evolution effects were small for low-momentum observables
+	\cite{Anderson:2010aq}.  Schuster \etal found in their work on radii and
+	dipole transition matrix elements in light nuclei that the evolution effects
+	are as important as three-body forces
+	\cite{Schuster:2014lga,Schuster:2013sda}.
+	Neff \etal looked at the SRG transformed density operators and concluded that
+	it is essential to use evolved operators for observables sensitive to
+	short-range physics \cite{Neff:2015xda}.  But all this work was done for
+	expectation values of the operator, i.e, the state on the either side of the
+	matrix element was the same.  In particular, there was no work which dealt
+	with the issues related to operator evolution when we have a transition to
+	continuum.  This is what we sought to address in \cite{More:2015tpa}.
+
+	The electron scattering knock-out process is particularly interesting because
+	of the connection to past, present, and planned
+	experiments~\cite{Boffi:1996, LENP_white_paper2015}.
+	The conditions for clean factorization
+	of structure and reactions in this context is closely related to the impact of
+	3N forces,
+	two-body currents, and final-state interactions, which have not been cleanly
+	understood as yet~\cite{Furnstahl:2010wd}.
+	All of this becomes particularly relevant for high-momentum-transfer electron
+	scattering.%
+	\footnote{Note that high-momentum transfers imply high-resolution
+	\emph{probes}, which is different from the resolution induced by the SRG
+	scale.  How the latter should be chosen to best
+	accommodate the former is a key unanswered question.}
+	This physics is conventionally explained in terms of short-range correlation
+	(SRC) phenomenology~\cite{Frankfurt:2008zv,Atti:2015eda}.  SRCs are two- or
+	higher-body components of the nuclear wave function with high relative
+	momentum and low center-of-mass momentum.  These explanations would seem to
+	present a	puzzle for descriptions of nuclei with low-momentum Hamiltonians,
+	for which	SRCs are essentially absent from the wave functions.
+
+	This puzzle is resolved by the unitary transformations that mandate the
+	invariance of cross section (cf.~Eq.~\eqref{eq:matrix_element_invariance}).
+	The physics that was described by SRCs in the
+	wave functions must shift to a different component, such as a two-body
+	contribution from the current (cf.~Fig.~\ref{fig:replace_loop_contact}).
+	This may appear to complicate the reaction
+	problem just as we have simplified the structure part, but past work and
+	analogies to other processes suggests that factorization may in fact
+	become cleaner~\cite{Anderson:2010aq,Bogner:2012zm}.  One of our goals is to
+	elucidate this issue, although we will only started doing so in
+	\cite{More:2015tpa}.
+
+	In particular, we take the first steps in exploring the interplay of
+	structure and reaction as a function of kinematic variables and SRG decoupling
+	scale $\lambda$ in a controlled calculation of a knock-out process.  There are
+	various complications for such processes.  With RG evolution, a
+	Hamiltonian---even with only a two-body potential initially---will develop
+	many-body components as the decoupling scale decreases.  Similarly, a one-body
+	current will develop two- and higher-body components.
+
+	Our strategy is to avoid dealing with all of these complications
+	simultaneously
+	by considering the cleanest knock-out process: deuteron electrodisintegration
+	with only an initial one-body current.  With a two-body system, there are no
+	three-body forces or three-body currents to contend with.  Yet it still
+	includes several key ingredients to investigate: i) the wave function will
+	evolve with changes in resolution; ii) at the same time, the one-body current
+	develops two-body components, which are simply managed; and iii) there are
+	final-state interactions (FSI).  It is these ingredients that will mix under
+	the RG evolution.  We can focus on different effects or isolate parts of the
+	wave function by choice of kinematics.  For example, we can examine when the
+	impulse approximation is best and to what extent that is a
+	resolution-dependent assessment.
 
 
 	\section{Test ground: Deuteron disintegration}
