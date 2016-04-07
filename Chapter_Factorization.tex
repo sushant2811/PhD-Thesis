@@ -80,9 +80,157 @@
 	\label{fig:uquark_PDF_3D}
 	\end{figure}
 	%
-	This is demonstrated in Fig.~\ref{fig:uquark_PDF_3D}.  
+	This is demonstrated in Fig.~\ref{fig:uquark_PDF_3D}.  The parton
+	distributions
+	$f_a(x, Q^2)$ and $f_a(x, Q_0^2)$	at two different $Q^2$ are related by
+	DGLAP evolution or the Altarelli-Parisi equations \cite{Altarelli:1977zs}.
+	Thus the scale dependence of the structure and reaction components is well
+	understood in high-energy QCD.
+
+	The situation is far from well settled in low-energy nuclear physics.
+	Nuclear
+	structure has conventionally been treated largely separate from nuclear
+	reactions
+	(e.g., the two volumes of Feshbach's \emph{Theoretical Nuclear Physics} are
+	divided
+	this way).  The nuclear structure community usually dealt with calculating
+	time-independent properties such as nuclear binding energies, excitation
+	spectra, radii, so on whereas the nuclear reaction experts worked on
+	disintegration,	knock-out and
+	transfer reactions.  However, both the communities invariably use inputs
+	from the other side, and the consistency and universality of different
+	components is not
+	always guaranteed. 	To go back to the high-energy QCD analogy, the parton
+	distribution functions (PDFs) $f_a(x, Q)$ extracted from the DIS are
+	universal, in	the sense that they are process-independent.  For instance,
+	the PDFs extracted
+	from the DIS can be used for making prediction for the Drell-Yan process.
+	The analogous process independence in the extracted quantities has not yet
+	been achieved in low-energy nuclear physics.  This leads to ambiguous
+	uncertainty	quantification when the nuclear properties extracted from one
+	process	(cf.~Fig.~\ref{fig:factorization_schematic}) are used as an input to
+	predict something	else.
+
+	The factorization in low-energy nuclear physics is illustrated in
+	Fig.~\ref{fig:low_energy_factorization}.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Factorization/low_energy_factorization}
+	\caption{Schematic illustration of factorization in low-energy nuclear
+		physics.}
+	\label{fig:low_energy_factorization}
+	\end{figure}
+	%
+	The observable cross section in this case is a convolution of the
+	spectroscopic factor
+	and single-particle cross section.  However, there are many open questions
+	such as	what are the nuclear properties that we can extract and what is the
+	scale/scheme dependence of the extracted properties.
+
+	The Similarity Renormalization Group (or the SRG) transformations were
+	introduced in	Subsec.~\ref{subsec:SRG_intro}.  We noted that SRG
+	transformations are a class of unitary transformations that soften nuclear
+	Hamiltonians and lead to accelerated convergence of observables.
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Factorization/vsrg_T_3S1_kvnn_06_md_3dplot3}
+	\caption{Deuteron momentum distribution at different SRG resolutions
+		$\lambda$.  The evolved momentum distribution does not have the short-range
+		correlations (SRCs).  Figure from \cite{Furnstahl:2013dsa}.}
+	\label{fig:momentum_distribution}
+	\end{figure}
+	%
+	Figure~\ref{fig:momentum_distribution} shows the momentum distribution for
+	the deuteron as a function of the SRG scale and momentum.  Note that
+	Fig.~\ref{fig:momentum_distribution} is analogous to
+	Fig.~\ref{fig:uquark_PDF_3D}.  The SRG evolution gets rid of the
+	high-momentum components and therefore the evolved momentum distributions
+	don't have the short-range correlations (SRCs).
+	Figure~\ref{fig:momentum_distribution} makes it clear that the
+	high-momentum tail of the momentum distribution is dramatically resolution
+	dependent.  Yet it is common in the literature that
+	high-momentum components are treated as measurable, at least
+	implicitly~\cite{Frankfurt:2008zv,Arrington:2011xs,Rios:2013zqa,
+	Boeglin:2015cha}.
+	In fact, what can be extracted is the momentum distribution at some scale,
+	and	with the specification of a scheme.  This makes momentum distributions
+	model	dependent~\cite{Ford:2014yua, Sammarruca:2015hba}.
+
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]%
+	{Factorization/wave_functions_evolution}
+	\caption{$D$-state wave functions for the deuteron for the AV18 potential and
+		the AV18 potential evolved to two SRG $\lambda$'s.}
+	\label{fig:wavefunction_evolution_deuteron_D_state}
+	\end{figure}
+	%
+	Figure~\ref{fig:wavefunction_evolution_deuteron_D_state} shows the $D$-state
+	wave function for deuteron.  We see that just like the momentum distributions,
+	SRG transformed wave functions do not have the high-momentum components.
+	Therefore,
+	if we use the SRG evolved wave function for calculating cross section for a
+	process involving high-momentum probe, then the only way we get the same
+	answer as with the unevolved wave function is if the relevant operator
+	changed as well.  Thus, with SRG evolution, the high-momentum physics is
+	shuffled from the wave function (nuclear structure) to the operator
+	(nuclear reaction component).  This is reminiscent of chiral EFTs where the
+	renormalization replaces the high-momentum modes in intermediate states
+	by contact interactions (see Fig.~\ref{fig:replace_loop_contact}).
+	%
+	\begin{figure}[thbp]
+	\centering
+	\includegraphics[width=0.55\textwidth]%
+	{Factorization/fig_vsrgreplace3}
+	\caption{High-momentum modes in intermediate states replaced by contact
+		interactions.  Figure from \cite{Furnstahl:2013dsa}.}
+	\label{fig:replace_loop_contact}
+	\end{figure}
+	%
+	Discussion so far shows how SRG makes the scale dependence of factorization
+	explicit.  SRG transformations come with the momentum scale $\lambda$ and
+	%
+	\begin{figure}[thbp]
+	\centering
+	\begin{overpic}
+   [width=0.6\textwidth]%
+	 {Factorization/factorization_part.pdf}
+   \put(20,33){\textcolor{black}{\large $p < \lambda$}}
+   \put(67,33){\textcolor{black}{\large $p > \lambda$}}
+   \end{overpic}
+	\caption{The SRG scale $\lambda$ sets the natural scale for factorization.}
+	\label{fig:SRG_factorization}
+	\end{figure}
+	%
+	this sets the scale for factorization.  As seen in the
+	Fig.~\ref{fig:SRG_factorization}, we have a natural separation that the piece
+	which involves momenta less than $\lambda$ forms the long-distance part and
+	the piece that involves momenta greater than $\lambda$ forms the
+	short-distance part.
+
+	Consider the differential cross section given by the overlap matrix element
+	of initial and final states.
+	\beq
+	\frac{d \sigma}{d \Omega} \propto \left|
+	\mbraket{\psi_f}{\widehat{O}}{\psi_i} \right|^2 \;.
+	\eeq
+	The SRG evolved wave function is given by $\ket{\psi_i^\lambda} =
+	U_{\lambda} \ket{\psi_i}$, where $U_{\lambda}$ is the unitary matrix
+	associated with the SRG transformation.
+
 
 
 	\section{Test ground: Deuteron disintegration}
+
+	\subsection{Formalism}
+
+	\subsection{Numerical implementation}
+
+	\subsection{Results}
 
 	\section{Summary and Outlook}
