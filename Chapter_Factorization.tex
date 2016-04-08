@@ -443,7 +443,7 @@
 	The one-body current matrix element is given by
 	%
 	\begin{multline}
-	 \la \mbf{k}_1 \, T_1| \, J_0(\mbf{q}) \, | \,\mbf{k}_2 \, T=0 \ra \\
+	 \la \mbf{k}_1 \, T_1| \, J_0(\mbf{q}) \, | \,\mbf{k}_2 \, T=0 \ra
 	 = \frac{1}{2} \big(G_E^p + (-1)^{T_1} G_E^n\big) \,
 	 \delta(\mbf{k}_1 - \mbf{k}_2 - \mbf{q}/2) \\
 	 \null + \frac{1}{2} \big((-1)^{T_1} G_E^p +  G_E^n\big) \, \delta(\mbf{k}_1
@@ -476,10 +476,10 @@
 	$S=1$. 	Hence, we have
 	%
 	\begin{eqnarray}
-	 \ket{\phi} &\equiv \ket{\mbf{\pp}\, S=1 \, \msf \psi_T} \nonumber \\
-	 &= \frac{1}{2} \sum_{T = 0,1}
-	 \Big(\ket{\mbf{\pp} \, S=1 \, \msf}
-		+ (-1)^T \ket{{-}\mbf{\pp} \, S=1 \, \msf} \Big) \,\ket{T} \,.
+	 \ket{\phi} & \equiv & \ket{\mbf{\pp}\, S=1 \, \msf \psi_T} \nonumber \\
+	 & = & \dfrac{1}{2} \sum_{T = 0,1}
+	 \big(\ket{\mbf{\pp} \, S=1 \, \msf}
+		+ (-1)^T \ket{{-}\mbf{\pp} \, S=1 \, \msf} \big) \,\ket{T} \,.
 	\label{eq:phi_def}
 	\end{eqnarray}
 	%
@@ -492,8 +492,8 @@
 	 \CG{L_d}{\mJd - \msf}{S=1}{\msf}{J=1}{\mJd} \\
 	 \null \times \Big[
 	  G_E^p \, \psi_{L_d}(|\mbf{\pp} - \mbf{q}/2|)
-	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} - \mbf{q}/2})
-	  + G_E^n \, \psi_{L_d}(|\mbf{\pp} + \mbf{q}/2|)
+	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} - \mbf{q}/2}) \\
+	  \null + G_E^n \, \psi_{L_d}(|\mbf{\pp} + \mbf{q}/2|)
 	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} + \mbf{q}/2})
 	 \Big] \,,
 	\label{eq:overlap_IA}
@@ -526,13 +526,13 @@
 	%
 	In our work we follow the conventions of Ref.~\cite{Landau:1989}.  Because
 	$\thetacm$ and $\phicm$ are the angles of $\mbf{\pp}$, $\Omega_{\mbf{\pp} -
-	\mbf{q}/2} \equiv \big(\thetacprime(\pp, \thetacm ), \phicm \big)$
+	\mbf{q}/2} \equiv \big(\thetacprime(\pp, \thetacm, q), \phicm \big)$
 	and $\Omega_{\mbf{\pp} + \mbf{q}/2} \equiv
-	\big(\thetacdoubleprime(\pp, \thetacm),
+	\big(\thetacdoubleprime(\pp, \thetacm, q),
 	\phicm \big)$, where
 	%
 	\begin{equation}
-	 \thetacprime (\pp, \thetacm) = \cos^{-1}
+	 \thetacprime (\pp, \thetacm, q) = \cos^{-1}
 	 \!\left(
 	  \frac{\pp \cos \thetacm - q/2}{\sqrt{{\pp}^2 - \pp q \cos\thetacm + q^2/4}}
 	 \right)
@@ -542,7 +542,7 @@
 	and
 	%
 	\begin{equation}
-	 \thetacdoubleprime (\pp, \thetacm) = \cos^{-1}
+	 \thetacdoubleprime (\pp, \thetacm, q) = \cos^{-1}
 	 \!\left(
 	  \frac{\pp \cos \thetacm + q/2}{\sqrt{{\pp}^2 + \pp q \cos\thetacm + q^2/4}}
 	 \right) \,.
@@ -580,8 +580,6 @@
 	 \la \phi | \, k_1 \, J_1 \, m_{J_1} \, L_1 \, S = 1 \, T_1 \ra
 	  =  \frac{1}{2} \, {\sqrt\frac{2}{\pi}} \, \frac{\pi}{2} \,
 	 \frac{\delta(\pp - k_1)}{k_1 ^2}
-	  \\
-	  \null\times
 	 \CG{L_1}{m_{J_1} - \msf}{S=1}{\msf}{J_1}{m_{J_1}}
 	 \, \\
 	 \null \times \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
@@ -608,13 +606,15 @@
 	 \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S = 1 \, T_1}{J_0^{-}}
 	 {\,k_2 \, J=1 \, \mJd \, L_2 \, S = 1 \, T = 0}
 	 = \frac{\pi^2}{2} \, \big(G_E ^p + (-1)^{T_1} \, G_E^n\big) \\
-	 \times \sum_{\widetilde{m}_s = -1}^1 \int\!\dcostheta
-	 \,\CG*{J_1}{\mJd}{L_1}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}
-	 \,P_{L_1}^{\mJd - \widetilde{m}_s}\!(\cos\theta)
-	 \,P_{L_2}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_1, \theta)\big) \\
-	 \null\times \frac{\delta\big(k_2-\sqrt{k_1^2-k_1 q \cos\theta + q^2/4}\big)}
-	 {k_2^2}
-	 \,\CG{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \,.
+	 \null \times \sum_{\widetilde{m}_s = -1}^1 \int\!\dcostheta
+	 \, \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S=1 \,\wt{m}_s}
+	 \,P_{L_1}^{\mJd - \widetilde{m}_s}\!(\cos\theta) \\
+	 \null \times
+	 \,P_{L_2}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_1, \theta, q)
+	 \big) \frac{\delta\big(k_2-\sqrt{k_1^2-k_1 q \cos\theta + q^2/4}\big)}
+	 {k_2^2} \\
+	 \null \times
+	 \CG{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \,.
 	\label{eq:J_0_minus_def_pw}
 	\end{multline}
 	%
@@ -641,28 +641,66 @@
 	 \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0^-}{\psi_i}
 	 = \sqrt{\frac{2}{\pi}} \,\frac{M}{\hbar c}
 	 \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
-	 \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
-	 \, Y_{L_1 , \mJd - \msf}\!(\thetacm, \phicm) \\
-	 \null\times \sum_{J_1 = |L_1 - 1|}^{L+1}
+	 \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+	 \null \times Y_{L_1 , \mJd - \msf}\!(\thetacm, \phicm)
+	 \sum_{J_1 = |L_1 - 1|}^{L+1}
 	 \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd}
-	 \sum_{L_2 = 0}^{L_{\rm max}} \int \dd k_2 \, k_2^2 \,
-	  t^\ast(k_2, \pp, L_2, L_1, J_1, S = 1, T_1) \\
-	 \null\times \sum_{\widetilde{m}_s = -1}^1
-	 \CG*{J_1}{\mJd}{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}
-	 \sum_{L_d = 0,2}
-	 \CG{L_d}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \\
-	 \null\times \int \dcostheta
-	 \, \frac{1}{{\pp}^2 - k_2^2 - i \epsilon}
+	 \sum_{L_2 = 0}^{L_{\rm max}} \int \dd k_2 \, k_2^2 \\
+	 \null \times t^\ast(k_2, \pp, L_2, L_1, J_1, S = 1, T_1)
+	 \sum_{\widetilde{m}_s = -1}^1
+	 \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s} \\
+	 \null \times \sum_{L_d = 0,2}
+	 \CG{L_d}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd}
+	 \int \dcostheta
+	 \, \frac{1}{{\pp}^2 - k_2^2 - i \epsilon} \\
+	 \null \times
 	 P_{L_2}^{\mJd - \widetilde{m}_s}(\cos\theta) \,
-	 P_{L_d}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_2,\theta)\big) \,
-	 \psi_{L_d}\Big(\!\sqrt{{k_2}^2 - k_2 \, q \, \cos\theta + q^2/4}\Big) \,.
+	 P_{L_d}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_2, \theta, q)\big)
+	 \, \psi_{L_d}\Big(\!\sqrt{{k_2}^2 - k_2 \, q \, \cos\theta + q^2/4}\Big) \,.
 	\label{eq:phi_t_g0_J0_minus}
 	\end{multline}
 
+	We denote the second term in the one-body current Eq.~\eqref{eq:J0_def} by
+	$J_0^+$.  The expression for $\mbraket{\phi}{t^\dag \, \GreensFn^\dag \,
+	J_0^+}{\psi_i}$ is analogous to Eq.~\eqref{eq:phi_t_g0_J0_minus}, the only
+	differences being that the form-factor coefficient is $(-1)^{T_1} G_E^p +
+	G_E^n$ and the input arguments for the second associated Legendre polynomial
+	and the deuteron wave function are different.  The two factors respectively
+	become $\displaystyle P_{L_d}^{\mJd - \widetilde{m}_s}\!
+	\big(\cos\thetacdoubleprime(k_2, \theta, q)\big)$
+	and $\psi_{L_d}\big(\sqrt{{k_2}^2 + k_2 \,q \, \cos\theta + q^2/4}\big)$,
+	where	$\thetacdoubleprime$ is defined in
+	Eq.~\eqref{eq:theta_c_double_prime_def}.
+	It can be shown that
+	$\mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0^+}{\psi_i}
+	= \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0^-}{\psi_i}$.  Thus,
+	%
+	\begin{equation}
+	 \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0}{\psi_i}
+	 = 2 \, \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0^-}{\psi_i} \,.
+	\label{eq:J0_minus_twice_relation}
+	\end{equation}
+	%
+	Using this we can evaluate the overlap matrix element in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI}.  As outlined in Eqs.~\eqref{eq:f_L_from_T}
+	and \eqref{eq:T_definiton}, this matrix element is related to the
+	longitudinal structure function $\fL$.  Recall that the deuteron spin is
+	conserved throughout and therefore $S_f = 1$ in Eq.~\eqref{eq:f_L_from_T}.
 
+	In Subsec.~\ref{subsec:Results} we present results for $\fL$ both in
+	the IA and including the FSI.  These results match those of
+	Ref.~\cite{Yang:2013rza,Arenhoevel:1992xu}, verifying the accuracy of the
+	calculations presented above.
+
+	\subsection{Evolution setup}
+
+	\medskip
+
+	\subsubsection{First-order analytical calculation}
 
 	\subsection{Numerical implementation}
 
 	\subsection{Results}
+	\label{subsec:Results}
 
 	\section{Summary and Outlook}
