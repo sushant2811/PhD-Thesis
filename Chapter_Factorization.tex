@@ -328,6 +328,339 @@
 
 	\subsection{Formalism}
 
+	Deuteron electrodisintegration is the simplest nucleon-knockout process
+	and has been considered as a test ground for various $NN$ models for a
+	long time (see, for example, Refs.~\cite{Arenhovel:2004bc,Boeglin:2015cha}).
+	It has also been well studied
+	experimentally~\cite{Gilad:1998wia,Egiyan:2007qj}.
+	The absence of three-body currents and forces
+	makes it an ideal starting point for studying the interplay with SRG evolution
+	of the deuteron wave function, current, and final-state interactions.
+
+	We follow the approach of Ref.~\cite{Yang:2013rza}, which we briefly review.
+	The kinematics for the process in the laboratory frame is shown in
+	Fig.~\ref{fig:deut_dis_kinematics}.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Kinematics}
+	 \caption{The geometry of the electro-disintegration process in
+	 the lab frame.  The virtual photon disassociates the deuteron into the proton
+	 and the neutron (not shown in this figure).}
+	 \label{fig:deut_dis_kinematics}
+	\end{figure}
+	%
+	The virtual photon from electron scattering transfers enough energy and momentum
+	to break up the deuteron into a proton and neutron.  The differential cross
+	section for deuteron electrodisintegration for unpolarized scattering in the lab
+	frame is given by~\cite{Arenhovel:1988qh}
+	%
+	\begin{multline}
+	 \frac{\dd^3 \sigma}{\dd {k^\prime}^{\rm lab} \dd\Omega_e^{\rm lab}
+	 \dd \Omega_p^{\rm lab}}
+	 = \frac{\alpha}{6 \, \pi^2} \frac{{k^\prime}^{\rm lab}}
+	 {k^{\rm lab} (Q^2)^2}
+	 \Big[
+	  v_L \fL + v_T f_T \\
+	  \null + v_{TT} f_{TT} \cos 2 \phi_p^{\rm lab}
+	  + v_{LT} f_{LT} \cos \phi_p^{\rm lab}
+	 \Big] \,.
+	\end{multline}
+	%
+	Here $\Omega_e^{\rm lab}$ and $\Omega_p^{\rm lab}$ are the solid angles of the
+	electron and the proton, $k^{\rm lab}$ and ${k^\prime}^{\rm lab}$ are the
+	magnitude of incoming and outgoing electron 3-momenta,  $Q^2$ is the
+	4-momentum-squared of the virtual photon, and $\alpha$ is the fine structure
+	constant.  $\phi_p^{\rm lab}$ is the angle between the scattering plane
+	containing the electrons and the plane spanned by outgoing nucleons.
+	$v_L\,, v_T\,, \ldots$ are electron kinematic factors, and $\fL, f_T, \ldots$
+	are the deuteron structure functions.  These structure functions contain all
+	the dynamic information about the process.
+	The four structure functions are independent and can be separated by combining
+	cross-section measurements carried out with appropriate kinematic
+	settings~\cite{Kasdorp:1997ba}.  Structure functions are thus cross sections
+	up to kinematic factors and are independent of the SRG scale $\lambda$.
+	They are analogous of the form factor $F_2$ we saw in the DIS case
+	(cf.~Fig.~\ref{fig:factorization_schematic_highE_QCD}).  In our
+	work we focus on the longitudinal structure function $\fL$, following the
+	approach of Ref.~\cite{Yang:2013rza}.
+
+	\medskip
+
+	\subsubsection{Calculating $\fL$}
+
+	As in Ref.~\cite{Yang:2013rza}, we carry out the calculations in
+	the center-of-mass frame of the outgoing proton-neutron pair.
+	In this frame the photon
+	four-momentum is $(\omega,\mbf{q})$, which can be obtained from the
+	initial electron energy and $\theta_e$, the electron scattering angle.
+	We denote the momentum of the outgoing proton by $\mathbf{\pp}$ and
+	take $\mbf{q}$ to be along $z$-axis.  The angles of $\mbf{\pp}$ are
+	denoted by $\Omega_{\mbf{\pp}} = (\thetacm, \phicm)$.
+
+	The longitudinal structure function can be written as
+	%
+	\begin{equation}
+	 \fL = \sum_{\substack{S_f, m_{s_f}\\ \mJd}}
+	 \ampT_{S_f,m_{s_f},\mu = 0,\mJd}\!(\thetacm, \phicm) \,
+	 \ampT_{S_f, m_{s_f},\mu = 0,\mJd}^\ast\!(\thetacm, \phicm) \,,
+	\label{eq:f_L_from_T}
+	\end{equation}
+	%
+	where $S_f$ and $m_{s_f}$ are the spin quantum numbers of the final
+	neutron-proton state, $\mu$ is the polarization index of the virtual photon,
+	and $\mJd$ is the angular momentum of the initial deuteron
+	state. The amplitude $\ampT$ is given by~\cite{Arenhoevel:1992xu}
+	%
+	\begin{equation}
+	 \ampT_{S,\msf,\mu,\mJd}
+	 = -\pi \sqrt{2\alpha|\mathbf{\pp}|E_p E_d / M_d}
+	 \,\la \psi_{f} \,|\, J_{\mu}(\mathbf{q}) \,| \psi_i \ra \,,
+	\label{eq:T_definiton}
+	\end{equation}
+	%
+	where $\bra{\psi_f}$ is the final-state wavefunction of the outgoing
+	neutron-proton pair, $\ket{\psi_i}$ is the initial deuteron state, and
+	$J_{\mu} (\mbf{q})$ is the current operator that describes the momentum
+	transferred by the photon.
+	%
+	The variables in Eq.~\eqref{eq:T_definiton} are:
+	%
+	\begin{itemize}
+	\item fine-structure constant $\alpha$;
+	\item outgoing proton (neutron) 3-momentum $\mbf{\pp} \, (-\mbf{\pp})$;
+	\item proton energy $\displaystyle E_p = \sqrt{M^2 + \mbf{\pp}^2}$,
+	where $M$ is the average of proton and neutron mass
+	\item deuteron energy $\displaystyle E_d = \sqrt{M_d^2 + \mbf{q}^2} $,
+	where $M_d$ is the mass of the deuteron.
+	\end{itemize}
+	%
+	As mentioned before, all of these quantities are in the center-of-mass
+	frame of the outgoing nucleons.
+
+	For $f_L$, $\mu = 0$ and therefore only $J_0$ contributes.
+	The one-body current matrix element is given by
+	%
+	\begin{multline}
+	 \la \mbf{k}_1 \, T_1| \, J_0(\mbf{q}) \, | \,\mbf{k}_2 \, T=0 \ra \\
+	 = \frac{1}{2} \big(G_E^p + (-1)^{T_1} G_E^n\big) \,
+	 \delta(\mbf{k}_1 - \mbf{k}_2 - \mbf{q}/2) \\
+	 \null + \frac{1}{2} \big((-1)^{T_1} G_E^p +  G_E^n\big) \, \delta(\mbf{k}_1
+	 - \mbf{k}_2 + \mbf{q}/2) \,,
+	\label{eq:J0_def}
+	\end{multline}
+	%
+	where $G_E^p$ and $G_E^n$ are the electric form factors of the proton and the
+	neutron, and the deuteron state has isospin $T=0$.
+
+	The final-state wave function of the outgoing proton-neutron pair can be
+	written	as
+	%
+	\begin{equation}
+	 |\psi_f\ra = | \phi \ra + G_0 (E^\prime) \, t(E^\prime) \,| \phi \ra \,,
+	\label{eq:psi_f_def}
+	\end{equation}
+	%
+	where $\ket{\phi}$ denotes a relative plane wave, $\GreensFn$ and $t$
+	are the Green's function and the $t$-matrix respectively, and  $E^\prime =
+	\mbf{\pp}^2/M$ is the energy of the outgoing nucleons.  The second term in
+	Eq.~\eqref{eq:psi_f_def} describes the interaction between the outgoing
+	nucleons.
+
+	In the impulse approximation (IA) as defined here, the interaction between the
+	outgoing nucleons is ignored and $|\psi_f \ra_{\rm IA} \equiv | \phi \ra$.
+	The plane wave $|\phi\ra$ will have both isospin $0$ and $1$ components.
+	The current $J_0$, $\GreensFn$, and the $t$-matrix are diagonal in spin space.
+	The deuteron has spin $S=1$ and therefore the final state will also have
+	$S=1$. 	Hence, we have
+	%
+	\begin{eqnarray}
+	 \ket{\phi} &\equiv \ket{\mbf{\pp}\, S=1 \, \msf \psi_T} \nonumber \\
+	 &= \frac{1}{2} \sum_{T = 0,1}
+	 \Big(\ket{\mbf{\pp} \, S=1 \, \msf}
+		+ (-1)^T \ket{{-}\mbf{\pp} \, S=1 \, \msf} \Big) \,\ket{T} \,.
+	\label{eq:phi_def}
+	\end{eqnarray}
+	%
+	Using Eqs.~\eqref{eq:J0_def} and~\eqref{eq:phi_def}, the overlap matrix
+	element	in IA becomes
+	%
+	\begin{multline}
+	 \la \psi_f | \, J_0 \, |\psi_i \ra_{\rm IA}
+	 = \sqrt{\frac{2}{\pi}} \sum_{L_{d} = 0, 2}
+	 \CG{L_d}{\mJd - \msf}{S=1}{\msf}{J=1}{\mJd} \\
+	 \null \times \Big[
+	  G_E^p \, \psi_{L_d}(|\mbf{\pp} - \mbf{q}/2|)
+	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} - \mbf{q}/2})
+	  + G_E^n \, \psi_{L_d}(|\mbf{\pp} + \mbf{q}/2|)
+	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} + \mbf{q}/2})
+	 \Big] \,,
+	\label{eq:overlap_IA}
+	\end{multline}
+	%
+	where $\Omega_{\mbf{\pp} \pm \mbf{q}/2}$ is the solid angle between the
+	unit vector $\hat{z}$ and $\mbf{\pp}\pm\mbf{q}/2$.  $\psi_{L_d}$ is the
+	deuteron wave function in momentum space defined as
+	%
+	\begin{equation}
+	 \braket{k_1 \, J_1 \, m_{J_1} \, L_1 \, S_1 \, T_1}{\psi_i}
+	 = \psi_{L_1}(k_1)
+	  \delta_{J_1,1}\delta_{m_{J_1},\mJd}
+	 \delta_{L_1,L_d}\delta_{S_1,1}\delta_{T_1,0} \,.
+  \end{equation}
+	%
+	The $S$-wave $(L=0)$ and $D$-wave $(L=2)$ components of the deuteron wave
+	function satisfy the normalization condition
+	%
+	\begin{equation}
+	 \frac{2}{\pi} \int dp \, p^2 \, \big(\psi_0^2(p) + \psi_2^2(p)\big) = 1 \,.
+	\end{equation}
+	%
+	In deriving Eq.~\eqref{eq:overlap_IA} we have used the property of the
+	spherical harmonics that
+	%
+	\begin{equation}
+	 Y_{lm}(\pi-\theta,\phi+\pi) = (-1)^l \, Y_{lm}(\theta,\phi) \,.
+	\end{equation}
+	%
+	In our work we follow the conventions of Ref.~\cite{Landau:1989}.  Because
+	$\thetacm$ and $\phicm$ are the angles of $\mbf{\pp}$, $\Omega_{\mbf{\pp} -
+	\mbf{q}/2} \equiv \big(\thetacprime(\pp, \thetacm ), \phicm \big)$
+	and $\Omega_{\mbf{\pp} + \mbf{q}/2} \equiv
+	\big(\thetacdoubleprime(\pp, \thetacm),
+	\phicm \big)$, where
+	%
+	\begin{equation}
+	 \thetacprime (\pp, \thetacm) = \cos^{-1}
+	 \!\left(
+	  \frac{\pp \cos \thetacm - q/2}{\sqrt{{\pp}^2 - \pp q \cos\thetacm + q^2/4}}
+	 \right)
+	\label{eq:theta_c_prime_def}
+	\end{equation}
+	%
+	and
+	%
+	\begin{equation}
+	 \thetacdoubleprime (\pp, \thetacm) = \cos^{-1}
+	 \!\left(
+	  \frac{\pp \cos \thetacm + q/2}{\sqrt{{\pp}^2 + \pp q \cos\thetacm + q^2/4}}
+	 \right) \,.
+	\label{eq:theta_c_double_prime_def}
+	\end{equation}
+
+	The overlap matrix element including the final-state interactions (FSI) is
+	given by
+	%
+	\begin{equation}
+	 \la \psi_f| \, J_0 \,|\psi_i \ra
+	 = \underbrace{\la \phi| \, J_0 \,|\psi_i \ra}_{\rm IA}
+	 + \underbrace{\la \phi| t^\dag \, \GreensFn^\dag\, J_0 \,|\psi_i \ra}_
+	 {\rm FSI} \,.
+	\label{eq:overlap_IA_plus_FSI}
+	\end{equation}
+	%
+	The first term on the right side of Eq.~\eqref{eq:overlap_IA_plus_FSI}
+	has already been evaluated in Eq.~\eqref{eq:overlap_IA}.  Therefore, the term
+	we still need to evaluate is $\la \phi| t^\dag \, \GreensFn^\dag\, J_0
+	\,|\psi_i \ra$.  The $t$-matrix is most conveniently calculated in a
+	partial-wave basis.  Hence, the FSI term is evaluated by inserting complete
+	sets of states in the form
+	%
+	\begin{equation}
+	 1 = \frac{2}{\pi} \sum_{\substack{L, S \\ J,  m_J }}
+	 \sum_{T = 0, 1} \int dp \,p^2 \, |p \, J \, m_J \, L \, S \, T \ra
+	 \, \la p \, J\, m_J \, L \, S \, T | \,.
+	\label{eq:completeness_partial_wave}
+	\end{equation}
+	%
+	The outgoing plane-wave state in the partial-wave basis is given by
+	%
+	\begin{multline}
+	 \la \phi | \, k_1 \, J_1 \, m_{J_1} \, L_1 \, S = 1 \, T_1 \ra
+	  =  \frac{1}{2} \, {\sqrt\frac{2}{\pi}} \, \frac{\pi}{2} \,
+	 \frac{\delta(\pp - k_1)}{k_1 ^2}
+	  \\
+	  \null\times
+	 \CG{L_1}{m_{J_1} - \msf}{S=1}{\msf}{J_1}{m_{J_1}}
+	 \, \\
+	 \null \times \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
+	 \,Y_{L_1,m_{J_1} - \msf}\!(\thetacm, \phicm) \,.
+	\label{eq:phi_def_pw}
+	\end{multline}
+	%
+	The Green's
+	function is diagonal in $J$, $m_J$, $L$, $S$, and $T$, so we have
+	%
+	\begin{equation}
+	 \la k_1 | \, \GreensFn^\dag \,| k_2 \ra
+	 = \frac{\pi}{2} \, \frac{\delta(k_1 - k_2)}{k_1^2}
+	 \, \frac{M}{{\pp}^2 - k_1 ^2 - i\epsilon} \,.
+	\label{eq:G0_def_pw}
+	\end{equation}
+
+	We also need to express the current in Eq.~\eqref{eq:J0_def} in the
+	partial-wave basis.  To begin with, let us just work with first term in
+	Eq.~\eqref{eq:J0_def}, which we denote by $J_0 ^-$.  In the partial-wave
+	basis, it is written as
+	%
+	\begin{multline}
+	 \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S = 1 \, T_1}{J_0^{-}}
+	 {\,k_2 \, J=1 \, \mJd \, L_2 \, S = 1 \, T = 0}
+	 = \frac{\pi^2}{2} \, \big(G_E ^p + (-1)^{T_1} \, G_E^n\big) \\
+	 \times \sum_{\widetilde{m}_s = -1}^1 \int\!\dcostheta
+	 \,\CG*{J_1}{\mJd}{L_1}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}
+	 \,P_{L_1}^{\mJd - \widetilde{m}_s}\!(\cos\theta)
+	 \,P_{L_2}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_1, \theta)\big) \\
+	 \null\times \frac{\delta\big(k_2-\sqrt{k_1^2-k_1 q \cos\theta + q^2/4}\big)}
+	 {k_2^2}
+	 \,\CG{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \,.
+	\label{eq:J_0_minus_def_pw}
+	\end{multline}
+	%
+	Here $\mJd$ is the deuteron quantum number, which is preserved throughout.
+	We have used the deuteron quantum numbers in the ket in anticipation
+	that we will always evaluate the matrix element of $J_0$ with the deuteron
+	wave function on the right.   $\thetacprime$ is as defined in
+	Eq.~\eqref{eq:theta_c_prime_def}.  In deriving Eq.~\eqref{eq:J_0_minus_def_pw}
+	we have also made use of the relation \cite{Jerry_thesis}
+	%
+	\begin{equation}
+	 \int Y_{lm} ^\ast(\theta, \varphi) \,
+	 Y_{l^\prime m^\prime}(\alpha^\prime,\varphi)
+	 \,\dd\!\cos \theta \, \dd \varphi
+	 = 2\pi \delta_{m m^\prime}
+	 \int\!\dcostheta
+	 P_l^m(\cos\theta) \, P_{l^\prime}^m(\cos \alpha^\prime) \,.
+	\end{equation}
+
+	Equations~\eqref{eq:phi_def_pw}, \eqref{eq:G0_def_pw},
+	and~\eqref{eq:J_0_minus_def_pw} can be combined to obtain
+	%
+	\begin{multline}
+	 \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0^-}{\psi_i}
+	 = \sqrt{\frac{2}{\pi}} \,\frac{M}{\hbar c}
+	 \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
+	 \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
+	 \, Y_{L_1 , \mJd - \msf}\!(\thetacm, \phicm) \\
+	 \null\times \sum_{J_1 = |L_1 - 1|}^{L+1}
+	 \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd}
+	 \sum_{L_2 = 0}^{L_{\rm max}} \int \dd k_2 \, k_2^2 \,
+	  t^\ast(k_2, \pp, L_2, L_1, J_1, S = 1, T_1) \\
+	 \null\times \sum_{\widetilde{m}_s = -1}^1
+	 \CG*{J_1}{\mJd}{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}
+	 \sum_{L_d = 0,2}
+	 \CG{L_d}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \\
+	 \null\times \int \dcostheta
+	 \, \frac{1}{{\pp}^2 - k_2^2 - i \epsilon}
+	 P_{L_2}^{\mJd - \widetilde{m}_s}(\cos\theta) \,
+	 P_{L_d}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_2,\theta)\big) \,
+	 \psi_{L_d}\Big(\!\sqrt{{k_2}^2 - k_2 \, q \, \cos\theta + q^2/4}\Big) \,.
+	\label{eq:phi_t_g0_J0_minus}
+	\end{multline}
+
+
+
 	\subsection{Numerical implementation}
 
 	\subsection{Results}
