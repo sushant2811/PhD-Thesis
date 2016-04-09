@@ -279,3 +279,15 @@
 \newcommand{\ei}{\end{itemize}}
 \newcommand{\li}{\item}
 \newcommand{\CG}[6]{\ensuremath{\braket{#1\,#2\,#3\,#4}{#5\,#6}}}
+
+\NewEnviron{subalign}[1][]{%
+\begin{subequations}\begin{align}
+  \BODY
+\end{align}\label{#1}\end{subequations}
+}
+
+\NewEnviron{spliteq}{%
+\begin{equation}\begin{split}
+  \BODY
+\end{split}\end{equation}
+}

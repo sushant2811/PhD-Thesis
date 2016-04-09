@@ -327,6 +327,7 @@
 	\section{Test ground: Deuteron disintegration}
 
 	\subsection{Formalism}
+	\label{subsec:formalism}
 
 	Deuteron electrodisintegration is the simplest nucleon-knockout process
 	and has been considered as a test ground for various $NN$ models for a
@@ -693,12 +694,139 @@
 	calculations presented above.
 
 	\subsection{Evolution setup}
+	\label{subsec:evolution_setup}
+
+	As outlined previously, we want to investigate the effect of
+	unitary transformations on calculations of $\fL$.
+	Let us start by looking at the IA matrix element:
+	%
+	\begin{eqnarray}
+	 \la \phi | J_0 | \psi_i \ra
+	 &=& \la \phi | U^\dag \, U \, J_0 \, U^\dag \, U \, | \psi_i \ra \nonumber \\
+	 &=& \underbrace{\la\phi|\widetilde{U}^\dag J_0^\lambda|\psi_i^\lambda\ra}_{A}
+	 + \underbrace{\la \phi | \, J_0^\lambda | \psi_i^\lambda \ra}_{B} \,,
+	\label{eq:A_B_split_up}
+	\end{eqnarray}
+	%
+	where we decompose the unitary matrix $U$ into the identity and a residual
+	$\widetilde{U}$,
+	%
+	\begin{equation}
+	 U = I + \widetilde{U} \,.
+	\label{eq:U_decomposition}
+	\end{equation}
+	%
+	The matrix $\widetilde{U}$ is smooth and therefore amenable to interpolation.
+	The $U$ matrix is calculated following the approach in \cite{Anderson:2010aq}.
+	The terms in Eq.~\eqref{eq:A_B_split_up} can be further split into
+	%
+	\begin{equation}
+	 \la \phi | \, J_0^\lambda | \psi_i^\lambda \ra
+	 = \underbrace{\la \phi | \widetilde{U}\, J_0 \, \widetilde{U}^\dag |
+	  \psi_i^\lambda \ra}_{B_1}
+	 + \underbrace{\la \phi | \widetilde{U}\, J_0 \, | \psi_i^\lambda \ra}_{B_2}
+	 + \underbrace{\la \phi | \, J_0 \, \widetilde{U}^\dag | \psi_i^\lambda
+	  \ra}_{B_3}
+	 + \underbrace{\la \phi |\, J_0 \, | \psi_i^\lambda \ra}_{B_4}
+	\label{eq:B_split_up}
+  \end{equation}
+ 	%
+ 	and
+ 	%
+ 	\begin{equation}
+	 \la \phi | \widetilde{U}^\dag \, J_0^\lambda | \psi_i^\lambda \ra \\[0.25em]
+	 = \underbrace{\la \phi | \widetilde{U}^\dag \, \widetilde{U}\, J_0 \,
+	  \widetilde{U}^\dag | \psi_i^\lambda \ra}_{A_1}
+	 + \underbrace{\la \phi | \widetilde{U}^\dag \, \widetilde{U}\, J_0 |
+	  \psi_i^\lambda \ra}_{A_2}
+	 + \underbrace{\la \phi | \widetilde{U}^\dag J_0 \,
+	  \widetilde{U}^\dag | \psi_i^\lambda \ra}_{A_3}
+	 + \underbrace{\la\phi | \widetilde{U}^\dag J_0 | \psi_i^\lambda\ra}_{A_4} \,.
+	\label{eq:A_split_up}
+ 	\end{equation}
+	%
+	The $B_4$ term is the same as in Eq.~\eqref{eq:overlap_IA}, but with the
+	deuteron wave function replaced by the evolved version $\psi_{L_d}^\lambda$.
+	Inserting complete sets of partial-wave basis states as in
+	Eq.~\eqref{eq:completeness_partial_wave} and using Eqs.~\eqref{eq:phi_def_pw}
+	and \eqref{eq:J_0_minus_def_pw}, we can obtain the expressions for $B_1$,
+	$B_2$, $B_3$ and $A_1,\ldots,A_4$.  These expressions are given in
+	Appendix~\ref{Appendix:sec:evolution_expressions}.
+
+	Using the expressions for $A_1,\ldots, A_4$ and $B_1,\ldots, B_4$, we can
+	obtain results for $\fL$ in the IA with one or more components of the overlap
+	matrix element $\mbraket{\phi}{J_0}{\psi}$ evolved.  When calculated in IA,
+	$\fL$ with all components evolved matches its unevolved counterpart, as shown
+	later	in Subsec.~\ref{subsec:Results}.
+	%
+	The robust agreement between the evolved and unevolved answers indicates that
+	the expressions derived for $A_1, \ldots, B_4$ are correct and that there is
+	no error in generating the $U$-matrices.  In
+	Sec.~\ref{subsec:numerical_implementation} we provide some details about the
+	numerical implementation of the equations presented here.
+
+	Let us now take into account the FSI and study the effects
+	of evolution.  The overlap matrix element should again be unchanged under
+	evolution,
+	%
+	\begin{equation}
+	 \mbraket{\psi_f}{J_0}{\psi_i}
+	 = \mbraket{\psi_f^\lambda}{J_0^\lambda}{\psi_i^\lambda} \,,
+	\end{equation}
+	%
+	where $\psi_f$ is given by Eq.~\eqref{eq:psi_f_def}.  Furthermore,
+	%
+	\begin{equation}
+	 |\psi_f ^\lambda \ra = | \phi \ra + G_0 \, t_\lambda |\phi \ra \,,
+	\label{eq:psi_f_lam_def}
+	\end{equation}
+	%
+	where $t_\lambda$ is the evolved $t$-matrix, \ie, the $t$-matrix obtained
+	by solving the Lippmann--Schwinger equation using the evolved potential, as
+	discussed in Appendix~\ref{Appendix:sec:evolution_final_state}.  Thus
+	%
+	\begin{equation}
+	 \mbraket{\psi_f^\lambda}{J_0^\lambda}{\psi_i^\lambda}
+	 = \underbrace{\mbraket{\phi}{J_0^\lambda}{\psi_i^\lambda}}_{B}
+	 + \underbrace{\mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag
+	  \, J_0^\lambda}{\psi_i^\lambda}}_{F} \,.
+	\end{equation}
+	%
+	The term $B$ is the same that we already encountered in
+	Eq.~\eqref{eq:A_B_split_up}.  The term $F$ can also be split up into four
+	terms:
+	%
+	\begin{multline}
+	 \mbraket{\phi}{t_\lambda^\dag\,G_0^\dag\,J_0^\lambda}{\psi_i^\lambda}
+	 = \underbrace{\mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag \, \widetilde{U}
+	  \, J_0 \, \widetilde{U}^\dag}{\psi_i^\lambda}}_{F_1}
+	 + \underbrace{\mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag \, \widetilde{U}
+	  \, J_0 }{\psi_i^\lambda}}_{F_2} \\
+	 \null + \underbrace{\mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag
+	  \, J_0 \, \widetilde{U}^\dag}{\psi_i^\lambda}}_{F_3}
+	 + \underbrace{\mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag
+	  \, J_0}{\psi_i^\lambda}}_{F_4} \,.
+	\label{eq:F_split_up}
+	\end{multline}
+	%
+	The expression for $F_4$ can easily be obtained from
+	Eqs.~\eqref{eq:phi_t_g0_J0_minus} and~\eqref{eq:J0_minus_twice_relation} by
+	replacing the deuteron wave function and the $t$-matrix by their evolved
+	counterparts.  As before, we insert complete sets of partial-wave basis states
+	using Eq.~\eqref{eq:completeness_partial_wave} and evaluate $F_3$, $F_2$,
+	and $F_1$; see Eqs.~\eqref{eq:F3}, \eqref{eq:F2}, and \eqref{eq:F1}.
+	%
+	Figures in Subsec.~\ref{subsec:Results} compare $\fL$ calculated
+	from the matrix element with all components evolved to the unevolved $\fL$.
+	We find an excellent
+	agreement, validating the expressions for $F_1, \ldots, F_4$.
 
 	\medskip
 
 	\subsubsection{First-order analytical calculation}
 
 	\subsection{Numerical implementation}
+	\label{subsec:numerical_implementation}
 
 	\subsection{Results}
 	\label{subsec:Results}

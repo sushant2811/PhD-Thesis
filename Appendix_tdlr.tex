@@ -2,7 +2,363 @@
 % !TEX encoding = UTF-8 Unicode
 % !TEX spellcheck = en_US
 \cleardoublepage
-\chapter{Too long; didn't read}
-\label{Appendix:tdlr}
+\chapter{Evolution details for deuteron disintegration}
+\label{Appendix:evolution_details}
 
-  
+  \section{Expressions for evolved matrix elements}
+  \label{Appendix:sec:evolution_expressions}
+
+  Here we document the expressions used in Subsec.~\ref{subsec:evolution_setup}.
+  As seen in Eq.~\eqref{eq:B_split_up}, in order to evaluate the term $\la \phi|
+  \, J_0^\lambda | \psi_i^\lambda \ra$ we split it into four terms: $B_1$,
+  $B_2$, $B_3$, and $B_4$.  $B_4$ is obtained from Eq.~\eqref{eq:overlap_IA} by
+  using the evolved deuteron wave function instead of the unevolved one.  The
+  expressions for the terms $B_3$, $B_2$, and $B_1$ are as follows:
+  %
+  \begin{multline}
+   B_3 \equiv \la \phi | \, J_0 \, \widetilde{U}^\dag | \psi_i^\lambda \ra
+   = 2 \, \sqrt{\frac{2}{\pi}} \,
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+   \null \times Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times \sum_{\widetilde{m}_s = -1}^1
+   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \sum_{L_2 = 0}^{L_{\rm max}}
+   \CG{L_2}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \null \times \sum_{L_d = 0, 2}
+   \int \! \dd k_3 \, \psi_{L_d}^\lambda(k_3) \, k_3^2 \int \! \dcostheta \,
+    P_{L_1}^{\mJd-\widetilde{m}_s}(\cos \theta)
+    P_{L_2}^{\mJd-\widetilde{m}_s}\!\big(\cos\thetacprime(\pp, \theta, q)\big)
+    \\ \null \times
+    \widetilde{U}\!\left(
+     k_3, \sqrt{{\pp}^2 - \pp q \cos\theta + q^2/4}, L_d, L_2, J=1, S=1, T=0
+    \right) \,,
+  \end{multline}
+  %
+  \begin{multline}
+   B_2 \equiv \la \phi | \,\widetilde{U}\, J_0 \, | \psi_i^\lambda \ra
+   = 2 \, \sqrt{\frac{2}{\pi}} \,
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+   \null \times Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times
+   \sum_{L_2, \widetilde{m}_s}
+   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S= 1 \, \wt{m}_s}
+   \sum_{L_d = 0, 2}
+   \CG{L_d}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J = 1}{\mJd} \\
+   \null \times
+   \int \! \dd k_2 \, k_2^2 \, \widetilde{U}(\pp, k_2, L_1, L_2, J_1, S=1,T_1)
+   \int \! \dcostheta \,
+   P_{L_2}^{\mJd-\widetilde{m}_s}(\cos\theta) \\
+   \null \times
+   P_{L_d}^{\mJd-\widetilde{m}_s}\!\big(\cos\thetacprime(k_2, \theta, q)\big)
+   \psi_{L_d}^\lambda\!\left(\sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}\right)
+   \,,
+  \end{multline}
+  %
+  \begin{multline}
+   B_1 \equiv \la \phi | \,\widetilde{U}\, J_0 \,\widetilde{U}^\dag \, |
+   \psi_i^\lambda \ra = \frac{4}{\pi} \, \sqrt{\frac{2}{\pi}} \,
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+   \null \times
+   Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd-\msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times
+   \sum_{L_2, \widetilde{m}_s}
+   \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \sum_{L_3 = 0}^{L_{\rm max}}
+   \CG{L_3}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \null \times
+   \int \! \dd k_2 \, k_2^2 \, \widetilde{U} (\pp, k_2, L_1, L_2, J_1, S = 1,T_1)
+   \sum_{L_d = 0, 2} \int \! \dd k_4 \, k_4^2 \, \psi_{L_d}^\lambda (k_4) \\
+   \null \times
+   \int \! \dcostheta \, P_{L_2}^{\mJd - \widetilde{m}_s}(\cos\theta)
+   P_{L_3}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_2, \theta, q)\big)
+   \\ \null \times
+   \widetilde{U}\!\left(
+     k_4, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J=1, S=1, T=0
+   \right) \,.
+  \end{multline}
+  %
+  In deriving the equations for $B_1$, $B_2$, and $B_3$ we have made use of
+  the fact that the matrix elements with $J_0$ are twice the matrix elements
+  with $J_0^-$, i.e., $\mbraket{\phi}{J_0 \, \widetilde{U}^\dag}{\psi_i^\lambda}
+  = 2 \,\mbraket{\phi}{J_0^- \, \widetilde{U}^\dag}{\psi_i^\lambda}$, and
+  similarly for $B_2$ and $B_1$ (cf.~Eq.~\ref{eq:J0_minus_twice_relation}).
+
+  Evaluating Eq.~\eqref{eq:A_split_up} involves calculating the individual terms
+  $A_1$, $A_2$, $A_3$, and $A_4$.  The expressions for $A_4$ and $A_3$ can be
+  obtained from expressions for $B_2$ and $B_1$, respectively, by replacing
+  $\widetilde{U}$ with $\widetilde{U}^\dag$.  The $U$-matrices are real.
+  Therefore, $\widetilde{U}^\dag$ is obtained from $\widetilde{U}$ by
+  interchanging momentum and angular momentum indices.  The expressions for
+  $A_2$ and $A_1$ are
+  %
+  \begin{multline}
+   A_2 \equiv \la \phi | \widetilde{U}^\dag \, \widetilde{U}\, J_0 |
+   \psi_i^\lambda \ra  = \frac{4}{\pi} \, \sqrt{\frac{2}{\pi}} \,
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \, G_E^n\big)
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+   \null \times  Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd-\msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times
+   \sum_{L_3, \widetilde{m}_s}
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \sum_{L_2 = 0}^{L_{\rm max}} \int \! \dd k_2 \, k_2^2 \,
+   \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S=1, T_1) \\
+   \null \times
+   \sum_{L_d = 0, 2}
+   \CG{L_d}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd}
+   \int \! \dd k_3 \, k_3^2 \,
+   \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S = 1, T_1) \\
+   \null \times
+   \int \! \dcostheta \,P_{L_3}^{\mJd - \widetilde{m}_s}(\cos\theta)
+   P_{L_d}^{\mJd - \widetilde{m}_s}\!\big(
+   \cos\thetacprime(k_3, \theta, q)\big) \,
+   \psi_{L_d}^\lambda\!\left(\sqrt{{k_3}^2 - k_3 q \cos\theta + q^2/4} \right)
+  \end{multline}
+  %
+  and
+  %
+  \begin{multline}
+   A_1 \equiv \la \phi | \widetilde{U}^\dag \, \widetilde{U}\, J_0 |
+   \psi_i^\lambda \ra  = \frac{8}{\pi^2} \,\sqrt{\frac{2}{\pi}} \,
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \,G_E^n\big)
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
+   \null \times
+   Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times \sum_{L_3, \widetilde{m}_s}
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \sum_{L_4 = 0}^{L_{\rm max}}
+   \CG{L_4}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \null \times
+   \sum_{L_2 = 0}^{L_{\rm max}} \int \! \dd k_2 \, k_2^2 \,
+    \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+   \int \! \dd k_3 \, k_3^2 \,
+    \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S=1, T_1) \\
+   \null \times
+   \sum_{L_d = 0, 2} \int \! \dd k_5 \, k_5^2 \, \psi_{L_d}^\lambda (k_5)
+   \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta)
+   P_{L_4}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_3, \theta, q)\big)
+   \\  \null \times
+   \,\widetilde{U}\!\left(
+    k_5, \sqrt{{k_3}^2 - k_3 q \cos\theta  + q^2/4}, L_d, L_4, J=1, S=1, T=0
+   \right) \,.
+  \end{multline}
+
+  Evaluating the evolved current while including the final-state interactions
+  involves computing the terms $F_1$, $F_2$, $F_3$, and $F_4$, as indicated in
+  Eq.~\eqref{eq:F_split_up}.  $F_4$ is obtained from
+  Eqs.~\eqref{eq:phi_t_g0_J0_minus} and~\eqref{eq:J0_minus_twice_relation} by
+  replacing the deuteron wave function and the $t$-matrix by their evolved
+  counterparts.  The expressions for the terms $F_3$, $F_2$, and $F_1$ are then
+  as follows:
+  %
+  \begin{multline}
+   F_3 \equiv \mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag \,
+   J_0 \, \widetilde{U}^\dag}{\psi_i^\lambda}
+   = \frac{4}{\pi} \, \sqrt{\frac{2}{\pi}} \, \frac{M}{\hbar c}
+   \int \! \frac{\dd k_2 \, k_2^2}{(\pp + k_2)(\pp - k_2 - i \epsilon)}
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \,G_E^n\big) \\
+   \null \times
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
+   Y_{L_1 , \mJd - \msf}(\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+    \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+    \null \times
+   \sum_{L_2 = 0}^{L_{\rm max}}
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+    \sum_{\widetilde{m}_s = -1}^1
+    \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s} \\
+    \null \times
+   \sum_{L_3 = 0}^{L_{\rm max}}
+    \CG{L_3}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J=1}{\mJd}
+   \int \! \dcostheta \, P_{L_2}^{\mJd - \widetilde{m}_s}(\cos \theta)
+   P_{L_3}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_2, \theta, q)
+   \big) \\
+   \null \times
+   \int \! \dd k_5 \, k_5^2 \sum_{L_d = 0, 2}
+   \widetilde{U}\!\left(
+    k_5, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J=1, S=1, T=0
+   \right) \psi_{L_d}^\lambda (k_5) \,,
+  \label{eq:F3}
+  \end{multline}
+  %
+  \begin{multline}
+   F_2 \equiv \mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag \, \widetilde{U} \,
+   J_0}{\psi_i^\lambda}
+   = \frac{4}{\pi} \, \sqrt{\frac{2}{\pi}} \,\frac{M}{\hbar c}
+   \int \! \frac{\dd k_2 \, k_2^2}{(\pp + k_2)(\pp - k_2 - i \epsilon)}
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \,G_E^n\big) \\
+   \null \times
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
+   Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \null \times
+   \sum_{L_2 = 0}^{L_{\rm max}}
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S = 1,T_1)
+   \sum_{L_3 = 0}^{L_{\rm max}} \int \! \dd k_4 \, k_4^2 \,
+   \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S=1, T_1) \\
+   \null \times
+   \sum_{\widetilde{m}_s = -1}^1
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S = 1 \, \wt{m}_s}
+   \sum_{L_d = 0, 2}
+   \CG{L_d}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J = 1}{\mJd} \\
+   \null \times
+   \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta)
+   P_{L_d}^{\mJd - \widetilde{m}_s} \big(\cos \thetacprime(k_4, \theta, q)\big)
+   \, \psi_{L_d}^\lambda\!\left(\sqrt{{k_4}^2 - k_4 q \cos\theta + q^2/4}\right)
+   \,,
+  \label{eq:F2}
+  \end{multline}
+  %
+  \begin{multline}
+   F_1 \equiv \mbraket{\phi}{t_\lambda ^\dag \, G_0^\dag \, \widetilde{U} \,
+   J_0 \, \widetilde{U}^\dag}{\psi_i^\lambda}
+   = \frac{8}{\pi^2} \, \sqrt{\frac{2}{\pi}} \, \frac{M}{\hbar c}
+   \int \! \frac{\dd k_2 \, k_2^2}{(\pp + k_2)(\pp - k_2 - i \epsilon)}
+   \sum_{T_1 = 0,1} \big(G_E ^p + (-1)^{T_1} \,G_E^n\big) \\
+   \null \times
+   \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
+   Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
+   \sum_{J_1 = |L_1 - 1|}^{L+1}
+    \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+    \null \times
+   \sum_{L_2 = 0}^{L_{\rm max}}
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+    \sum_{L_3 = 0}^{L_{\rm max}} \, \sum_{\widetilde{m}_s = -1}^1
+    \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S= 1 \, \wt{m}_s} \\
+   \null \times \sum_{L_4 = 0}^{L_{\rm max}}
+    \CG{L_4}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J=1}{\mJd}
+    \int \! \dd k_4 \, k_4^2 \,
+    \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S=1, T_1) \\
+    \null \times
+   \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta) \,
+   P_{L_4}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_4, \theta, q)\big)
+   \int \! \dd k_6 \, k_6^2
+   \sum_{L_d = 0, 2} \psi_{L_d}^\lambda (k_6) \\
+   \null \times
+   \widetilde{U}\!\left(
+    k_6, \sqrt{{k_4}^2 - k_4 q \cos\theta + q^2/4}, L_d, L_4, J=1, S=1, T=0
+   \right)  \,.
+  \label{eq:F1}
+  \end{multline}
+
+
+  \section{Evolution of the final state}
+  \label{Appendix:sec:evolution_final_state}
+
+  The interacting final neutron-proton state $\ket{\psi_f}$ as defined in
+  Eq.~\eqref{eq:psi_f_def} is the formal solution of the Lippmann--Schwinger
+  (LS) equation for the scattering wave function,
+  %
+  \begin{spliteq}
+   \ket{\psi_f}
+   &= \ket{\phi} + G_0 (E^\prime) \, V \ket{\psi_f} \\
+   &= \ket{\phi} + G_0 (E^\prime) \, t(E^\prime) \ket{\phi} \,.
+   \label{eq:LS-psi}
+  \end{spliteq}
+  %
+  The $t$-matrix, in turn, is defined by the LS equation
+  %
+  \begin{equation}
+   t(E^\prime) = V + V \, G_0(E') \, t(E') \,.
+  \label{eq:LS-t}
+  \end{equation}
+  %
+  The subsitution $E' \to E' + \ii\epsilon$ and the limit $\epsilon\to0$
+  are implied to select outgoing boundary conditions.  We want to show now
+  that the SRG-evolved final state can be obtained directly by using the solution
+  $t^\lambda$ of Eq.~\eqref{eq:LS-t} with $V \to V_\lambda$ in the second line of
+  Eq.~\eqref{eq:LS-psi}, which is the same as Eq.~\eqref{eq:psi_f_def} in
+  Subsec.~\ref{subsec:formalism}, i.e.,
+  %
+  \begin{equation}
+   U_\lambda \ket{\psi_f} = \ket{\psi_f^\lambda} \,,
+  \label{eq:U-psi-final}
+  \end{equation}
+  %
+  where
+  %
+  \begin{equation}
+   \ket{\psi_f^\lambda} = \ket{\phi} +
+   G_0 (E^\prime) \, t_\lambda(E^\prime) \ket{\phi} \,.
+  \end{equation}
+  %
+  In this section, we suppress all spin and isospin degrees of freedom, and only
+  denote the (arbitrary) energy parameter as $E^\prime$ for consistency with
+  Subsec.~\ref{subsec:formalism}.
+
+  First, it is important to recall that by definition the free Hamiltonian
+  $H_0$ does not evolve, so that for $H = H_0 + V$ we have
+  %
+  \begin{equation}
+   H_\lambda = U_\lambda \;\! H \, U_\lambda^\dagger
+   \equiv H_0 + V_\lambda \,.
+  \label{eq:H-lambda}
+  \end{equation}
+  %
+  In other words, the evolved potential $V_\lambda$ is defined such that it
+  absorbs the evolution of the initial free Hamiltonian (kinetic energy) as well.
+
+  In order to prove Eq.~\eqref{eq:U-psi-final}, it is convenient to consider the
+  evolved and unevolved full Green's functions $G_\lambda(E^\prime)$ and
+  $G(E^\prime)$, defined via
+  %
+  \begin{subalign}[eq:G-inv]
+   G_\lambda(z)^{-1} &= z - H_\lambda = G_0^{-1}(z)^{-1} - V_\lambda \,,
+   \label{eq:G-lambda-inv} \\
+   G(z)^{-1} &= z - H_{\phantom{\lambda}} = G_0^{-1}(z)^{-1} - V \,.
+   \label{eq:G-bare-inv}
+  \end{subalign}
+  %
+  Here, $G_0^{-1}(z)^{-1} = z - H_0$ is the free Green's function (which does not
+  change under the SRG evolution because $H_0$ does not), and $z$ is an arbitrary
+  complex energy parameter that is set to $E^\prime + \ii\epsilon$ to recover the
+  physically relevant case.  The Green's functions can be expressed in terms of
+  the $t$-matrix as
+  %
+  \begin{equation}
+   G(z) = G_0(z) + G_0(z) \, t(z) \, G_0(z) \,,
+  \end{equation}
+  %
+  and analogously for the evolved version.  Furthermore, the Green's functions
+  can be written in their spectral representations
+  %
+  \begin{subalign}[eq:G-spectral]
+   G_\lambda(z)^{-1} &\simeq \int\!\dd^3 k
+   \, \frac{\ket{\psi_f^\lambda(k)}\bra{\psi_f^\lambda(k)}}{z - k^2/M}
+   + \text{bound states} \,,
+   \label{eq:G-lambda-spectral} \\
+   G(z)^{-1} &\simeq \int\!\dd^3 k
+   \, \frac{\ket{\psi_f(k)}\bra{\psi_f(k)}}{z - k^2/M}
+   + \text{bound states} \,.
+   \label{eq:G-bare-spectral}
+  \end{subalign}
+  %
+  Here, $\ket{\psi_f^{(\lambda)}(k)}$ denotes the (evolved) continuum states with
+  momentum $k$, and we have $\ket{\psi_f^{(\lambda)}}
+  = \ket{\psi_f^{(\lambda)}(\sqrt{M E^\prime})}$
+
+  From Eqs.~\eqref{eq:H-lambda} and~\eqref{eq:G-inv} it now follows that
+  %
+  \begin{eqnarray}
+   G_\lambda(z)^{-1} &=& z - H_\lambda
+   = z - U_\lambda \;\! H \, U_\lambda^\dagger \nonumber\\
+   &=& U_\lambda (z - H) \:\! U_\lambda^\dagger
+   = U_\lambda \, G(z)^{-1} \, U_\lambda^\dagger \,.
+ \end{eqnarray}
+  %
+  Combining this with Eqs.~\eqref{eq:G-spectral} and matching residues at $z =
+  E^\prime + \ii\epsilon$, we find that indeed $\ket{\psi_f^{\lambda}} =
+  U_\lambda \ket{\psi_f}$, as stated in Eq.~\eqref{eq:U-psi-final}.
