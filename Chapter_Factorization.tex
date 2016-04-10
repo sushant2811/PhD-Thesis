@@ -924,7 +924,7 @@
 	 \psi(p) =& \int \dd q\,q^2\,G_0(-E_B,q) V(p,q)\,\psi(q) \nonumber \\
 	 \rightarrow& \sum_{i} w_i\,q_i^2\,G_0(-E_B,q_i) V(p,q_i)\,\psi(q_i) \,,
 	\label{eq:SG-simple}
-\end{eqnarray}
+  \end{eqnarray}
 	%
 	it can be solved numerically as a simple matrix equation by setting
 	$p\in\{q_i\}$.  For any $p=p_0$ not on this mesh, the sum in
@@ -959,5 +959,541 @@
 
 	\subsection{Results}
 	\label{subsec:Results}
+
+	For our analysis, we studied the effect of evolution of individual components
+	on $\fL$ for selected kinematics in the ranges $E^\prime = 10$--$100~\MeV$ and
+	$\mbf{q}^2 = 0.25$--$25~\fm^{-2}$, where $E^\prime$ is the energy of outgoing
+	nucleons and $\mbf{q}^2$ is the three-momentum transferred by the virtual
+	photon; both are taken in the center-of-mass frame of the outgoing nucleons.
+	This range was chosen to cover a variety of kinematics and motivated by the
+	set covered in Ref.~\cite{Yang:2013rza}.  We use the Argonne $v_{18}$
+	potential
+	(AV18)~\cite{Wiringa:1994wb} for our calculations.  It is one of the widely
+	used potentials for nuclear few-body reaction calculations, particularly those
+	involving large momentum transfers~\cite{Carlson:1997qn,Carlson:2014vla}.
+
+	How strong the evolution of individual components (or a subset thereof)
+	affects	the result for $\fL$ depends on the kinematics.  One kinematic
+	configuration of particular interest is the so-called quasi-free ridge.  As
+	discussed in Subsec.~\ref{subsec:formalism}, the four-momentum transferred by
+	the	virtual photon in the center-of-mass frame is $(\omega, \mbf{q})$.  The
+	criterion for a configuration to lie on the quasi-free ridge is $\omega = 0$.
+	Physically, this means that the nucleons in the deuteron are on their mass
+	shell.  As shown in Ref.~\cite{Yang:2013rza}, at the quasi-free ridge the
+	energy of the outgoing nucleons ($E^\prime$) and the photon momentum transfer
+	are related by
+	%
+	\begin{equation}
+	 \Ep = \sqrt{M_d^2 + \mbf{q}^2} - 2 M \,,
+	 \label{eq:quasi_free_condition_exact}
+	\end{equation}
+	%
+	which reduces to
+	%
+	\begin{equation}
+	E^\prime~\text{(in~$\MeV$)} \approx 10 \, \mbf{q}^2~\text{(in~$\fm^{-2}$)} \,.
+	\label{eq:quasi_free_condition}
+	\end{equation}
+	%
+	The quasi-free
+	condition in the center-of-mass frame is the same as the quasi-elastic
+	condition in the lab frame.  There, the quasi-elastic ridge is defined by $W^2
+	= m_p^2 \Rightarrow Q^2 = 2 \, \omega_\text{lab} \, m_p$, where $W$ is
+	the invariant mass.  On the quasi-elastic ridge, the so-called missing
+	momentum%
+	\footnote{The missing momentum is defined as the difference of
+	the measured proton momentum and the momentum transfer, $\mbf{p}_\text{miss}
+	\equiv \mbf{p}_\text{lab}^\text{proton} - \mbf{q}_\text{lab}$.}
+	vanishes, $p_\text{miss} = 0$.
+
+	In Fig.~\ref{fig:evolution_at_qfr} we plot $\fL$ along the quasi-free ridge
+	both in the impulse approximation (IA) and with the final-state interactions
+	(FSI) included as a function of energy of the outgoing nucleons for a fixed
+	angle, $\thetacm = 15^{\circ}$ of the outgoing proton.
+	$\Ep$ and $\mbf{q}^2$ in Fig.~\ref{fig:evolution_at_qfr} are related by
+	Eq.~\eqref{eq:quasi_free_condition_exact}.  Comparing the solid curve labeled
+	$\mbraket{\psi_f}{J_0}{\psi_i}$ in the legend to the dashed curve (labeled
+	$\mbraket{\phi}{J_0}{\psi_i}$) we find that FSI effects are minimal for
+	configurations on the quasi-free ridge especially at large energies.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/evolution_at_quasi_free_ridge_exact_location_fine_mesh}
+	 \caption{ $\fL$ calculated at various points on the quasi-free ridge for
+	   $\thetacm = 15^{\circ}$ for the AV18 potential.
+	   Legends indicate which component of the matrix element in
+	   Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+	   There are no appreciable evolution effects all
+	   along the quasi-free ridge.  The effect due to evolution of
+	   the final state is small as well and is not shown here to avoid clutter.
+	   $\fL$ calculated in the impulse
+	   approximation is also shown for comparison.}
+	 \label{fig:evolution_at_qfr}
+	\end{figure}
+	%
+
+	In an intuitive picture, this is because after the initial photon is absorbed,
+	both the nucleons in the deuteron are on their mass shell at the quasi-free
+	ridge, and therefore no FSI are needed to make the final-state particles real.
+	As we move away from the ridge, FSI become more important, as additional
+	energy-momentum transfer is required to put the neutron and the proton on
+	shell	in the final state.  The difference between full $\fL$ and $\fL$ in IA
+	at small
+	energies is also seen to hold for few-body nuclei \cite{Bacca:2014tla}.
+
+	Figure~\ref{fig:evolution_at_qfr} also shows $\fL$ calculated from evolving
+	only one of the components of the matrix element in
+	Eq.~\eqref{eq:fl_prop_matrix_element}.  We note that the effects of SRG
+	evolution of the individual components are minimal at the quasi-free ridge as
+	well.  The kinematics at the quasi-free ridge are such that only the
+	long-range (low-momentum) part of the deuteron wave function is probed, the
+	FSI remains	small under evolution, and then unitarity implies minimal
+	evolution of the current.  As one moves away from the quasi-free ridge, the
+	effects of evolution
+	of individual components become prominent.  Note that
+	$\mbraket{\psi_f}{J_0}{\psi_i} =
+	\mbraket{\psi_f^\lambda}{J_0^\lambda}{\psi_i^\lambda}$ and therefore the
+	unevolved vs.\ all-evolved $\fL$ overlap in Fig.~\ref{fig:evolution_at_qfr}.
+
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/More-1p5}
+	 \caption{`Phase space' of kinematics for
+	 $\lambda = 1.5~\fm^{-1}$.  The effects of evolution
+	 get progressively prominent as one moves further away from the quasi-free
+	 ridge. The kinematics of the labeled points are considered later}
+	 \label{fig:More-1p5}
+	\end{figure}
+	%
+	Figure~\ref{fig:More-1p5} shows the `phase space' of kinematics for SRG
+	$\lambda = 1.5~\rm{fm^{-1}}$.  The quasi-free ridge is along the solid line
+	in Fig.~\ref{fig:More-1p5}.  In the shaded region the effects generated by the
+	evolution of individual components are weak (only a few percent
+	relative difference).
+	As one moves away from the quasi-free ridge, these differences get
+	progressively	more prominent.
+	The terms `small' and `weak' in Fig.~\ref{fig:More-1p5} are used in a
+	qualitative
+	sense.  In the shaded region denoted by `weak effects', the effects of evolution
+	are not easily discernible on a typical $\fL$ versus $\thetacm$ plot, as
+	seen in Fig.~\ref{fig:100_10_quasi_free_fsi}, whereas in the region
+	labeled by `strong effects', the differences due to evolution are evident on
+	a plot (e.g., see Fig.~\ref{fig:30_16_fsi}).
+	The size of the shaded region in Fig.~\ref{fig:More-1p5} depends
+	on the SRG $\lambda$.  It is large for high $\lambda$'s and gets smaller as
+	the	$\lambda$ is decreased (note that smaller SRG $\lambda$ means greater
+	evolution).  Next, we look in detail at a few representative
+	kinematics, indicated by points in Fig.~\ref{fig:More-1p5}.
+
+  \medskip
+
+	\subsubsection{At the quasifree ridge}
+
+	As a representative of quasi-free kinematics, we choose
+	$E^\prime = 100~\MeV$ and $\mbf{q}^2 = 10~\fm^{-2}$ and plot $\fL$ as a
+	function of angle in Fig.~\ref{fig:100_10_quasi_free_fsi}.  The effect of
+	including FSI is small for this configuration for all
+	angles.  Also, the effects due to evolution of the individual components are
+	too small to be discernible.  All this is consistent with the discussion in
+	the	previous section.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-100_10-4_50_30}
+	 \caption{
+	   $\fL$ calculated for $E^\prime = 100~\MeV$ and $\mbf{q}^2 = 10~\fm^{-2}$
+	   (point ``1'' in Fig.~\ref{fig:More-1p5}) for the AV18 potential.
+	   Legends indicate which component of the matrix element in
+	   Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+	   $\thetacm$ is the angle of the outgoing proton in the center-of-mass frame.
+	   There are no discernible evolution effects for all
+	   angles.  The effect due to evolution
+	   of the final state is small as well and is not shown here to avoid clutter.
+	   $\fL$ calculated in the IA,
+	   $\mbraket{\phi}{J_0}{\psi_i}$, is also shown for comparison.
+	   }
+	 \label{fig:100_10_quasi_free_fsi}
+	\end{figure}
+	%
+
+	\medskip
+	\subsubsection{Near the quasi-free ridge}
+
+	Next we look at the kinematics $E^\prime = 10~\MeV$ and $\mbf{q}^2 =
+	4~\fm^{-2}$, which is near the quasi-free ridge.  This is the point ``2'' in
+	Fig.~\ref{fig:More-1p5}.  As seen in Fig.~\ref{fig:10_4_fsi}, the different
+	curves for $\fL$ obtained from evolving different components start to diverge.
+	Figure~\ref{fig:10_4_fsi} also shows $\fL$ calculated in IA.  Comparing this
+	to the full $\fL$ including FSI, we see that the effects due to evolution are
+	small	compared to the FSI contributions.  This smallness prevents us from
+	making any
+	systematic observations about the effects due to evolution at this kinematics.
+	We thus move on to kinematics which show more prominent effects.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-10_4-4_50_30}
+	 \caption{
+		 $\fL$ calculated for $E^\prime = 10~\MeV$ and $\mbfq^2 = 4~\fm^{-2}$
+		 (point ``2'' in Fig.~\ref{fig:More-1p5}) for the AV18 potential.
+		 Legends indicate which component of the matrix element in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+		 $\fL$ calculated in the IA, $\mbraket{\phi}{J_0}{\psi_i}$,
+		 is also shown for comparison.  The effects due to evolution of individual
+		 components on $\fL$ are discernible, but still small (compared to the FSI
+		 contribution).  The effect due to evolution of the final state is small as
+		 well and is not shown here to avoid clutter. }
+	 \label{fig:10_4_fsi}
+	\end{figure}
+
+	\medskip
+	\subsubsection{Below the quasi-free ridge}
+
+	We next look in the region where $E^{\prime}~\text{(in~$\MeV$)}
+	\ll 10\,\mbfq^2~\text{(in~$\fm^{-2}$)}$, \ie, below the quasi-free ridge in
+	Fig.~\ref{fig:More-1p5}.  We look at two momentum transfers
+	$\mbfq^2 = 16~\fm^{-2}$ and $\mbfq^2 = 25~\fm^{-2}$ for $\Ep = 30~\MeV$,
+	which are points ``3'' and ``$3^\prime$'' in Fig.~\ref{fig:More-1p5}.
+	Figures~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi} indicate the effects on
+	$\fL$	from evolving individual components of the matrix elements.
+	It is noteworthy that in both cases evolution of the current gives a
+	prominent enhancement, whereas evolution of the initial and final state gives
+	a suppression.  When
+	all	the components are evolved consistently, these changes combine and we
+	recover	the unevolved answer for $\fL$.  This verifies the accurate
+	implementation of	the equations derived in
+	Subsec.~\ref{subsec:evolution_setup}.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]
+	 {Factorization/Dis-av18_1p5-30_16-4_50_30}
+	 \caption{$\fL$ calculated for
+	 $E^\prime = 30~\MeV$ and $\mbfq^2 = 16~\fm^{-2}$
+	 (point ``3'' in Fig.~\ref{fig:More-1p5})
+	 for the AV18 potential.
+	 Legends indicate which component of the matrix element in
+	 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+	 Prominent enhancement with evolution of the
+	 current only and suppression with evolution of the initial state and the final
+	 state only, respectively.}
+	 \label{fig:30_16_fsi}
+	\end{figure}
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-30_25-4_50_30}
+	 \caption{
+	 	 $\fL$ calculated for $E^\prime = 30~\MeV$ and $\mbfq^2 = 25~\fm^{-2}$
+		 (point ``3$^{\prime}$'' in Fig.~\ref{fig:More-1p5})
+		 for the AV18 potential.
+		 Legends indicate which component of the matrix element in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+		 Prominent enhancement with evolution of the
+		 current only and suppression with evolution of the initial state and the
+		 final state only, respectively.}
+	 \label{fig:30_25_fsi}
+	\end{figure}
+	%
+
+	It is possible to qualitatively explain the behavior seen in
+	Figs.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}.  As noted in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI}, the overlap matrix element is given by the
+	sum of the IA part and the FSI part.  Below the quasi-free ridge these two
+	terms add constructively.  In this region, $\fL$ calculated in impulse
+	approximation is smaller than $\fL$ calculated by including the final-state
+	interactions.
+
+	\paragraph{\emph{(a) Evolving the initial state}} Let us first consider the
+	effect of evolving the initial state only.  We have
+	%
+	\begin{equation}
+	 \mbraket{\psi_f}{J_0}{\psi_i^\lambda}
+	 = \mbraket{\phi}{J_0}{\psi_i^\lambda}
+	 + \mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0}{\psi_i^\lambda} \,.
+	\label{eq:overlap_IA_plus_FSI_evol_wf}
+	\end{equation}
+	%
+	As seen in Eq.~\eqref{eq:overlap_IA}, in the term
+	$\mbraket{\phi}{J_0}{\psi_i^\lambda}$ the deuteron wave function is
+	probed between $|\pp - q/2|$ and $\pp + q/2$.  These numbers are
+	$(1.2, 2.9)~\fm^{-1}$ and $(1.7, 3.4)~\fm^{-1}$ for $\Ep = 30~\MeV$,
+	$\mbfq^2 = 16~\fm^{-2}$ and $\Ep = 30~\MeV$, $\mbfq^2 = 25~\fm^{-2}$,
+	respectively.  The evolved deuteron wave function is significantly suppressed
+	at these high momenta.
+	This behavior is reflected in the deuteron momentum distribution plotted in
+	Fig.~\ref{fig:deut_md}.  The deuteron momentum distribution $n(k)$ is
+	proportional to the sum of the squares of $S$- and $D$- state deuteron
+	wave functions.  Thus, the first (IA) term in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI_evol_wf} is much smaller than its
+	unevolved counterpart in Eq.~\eqref{eq:overlap_IA_plus_FSI}, for all angles.
+	We note that even though we only use the AV18 potential to
+	study changes due to evolution, these changes will be significant for other
+	potentials as well.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/deuteron_momentum_distribution}
+	 \caption{
+		 Momentum distribution for the deuteron for the AV18~\cite{Wiringa:1994wb},
+		 CD-Bonn~\cite{Machleidt:2000ge},
+		 and the Entem-Machleidt N$^3$LO chiral EFT~\cite{Entem:2003ft}
+		 potentials, and for the AV18 potential evolved to two SRG $\lambda$'s.}
+	 \label{fig:deut_md}
+	\end{figure}
+	%
+
+	Evaluation of the second (FSI) term in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI_evol_wf} involves an integral over all
+	momenta, as indicated in Eq.~\eqref{eq:phi_t_g0_J0_minus}.  We find that
+	$|\mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0}{\psi_i^\lambda}| <
+	|\mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0}{\psi_i}|$.  As mentioned
+	before, because the terms $\mbraket{\phi}{J_0}{\psi_i}$ and
+	$\mbraket{\phi}{t^\dag \, \GreensFn^\dag \, J_0}{\psi_i}$ add constructively
+	below the quasi-free ridge and because the magnitude of both these terms
+	decreases upon evolving the wave function, we have
+	%
+	\begin{equation}
+	 |\mbraket{\psi_f}{J_0}{\psi_i^\lambda}| < |\mbraket{\psi_f}{J_0}{\psi_i}|
+	\label{eq:evolv_wf_below_qfr} \,.
+	\end{equation}
+	%
+	The above relation holds for most combinations of $\mJd$ and $\msf$.  For
+	those	$\mJd$ and $\msf$ for which Eq.~\eqref{eq:evolv_wf_below_qfr} does not
+	hold,	the absolute value of the matrix element is much smaller than for those
+	for	which the Eq.~\eqref{eq:evolv_wf_below_qfr} \emph{does} hold, and
+	therefore we have $\fL$ calculated from $\mbraket{\psi_f}{J_0}
+	{\psi_i^\lambda}$ smaller than the
+	$\fL$ calculated from $\mbraket{\psi_f}{J_0}{\psi_i}$, as seen in
+	Figs.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}.
+
+	\paragraph{\emph{(b) Evolving the final state}}  As indicated in
+	Eq.~\eqref{eq:psi_f_lam_def}, evolving the final state entails
+	the evolution of the $t$-matrix.  The overlap matrix element therefore is
+	%
+	\begin{equation}
+	 \mbraket{\psi_f^\lambda}{J_0}{\psi_i}
+	 = \mbraket{\phi}{J_0}{\psi_i}
+	 + \mbraket{\phi}{t^\dag_\lambda \, \GreensFn^\dag \, J_0}{\psi_i} \,.
+	\label{eq:evol_final_state_overlap}
+	\end{equation}
+	%
+	The IA term is the same as in the unevolved case.  The SRG evolution leaves the
+	on-shell part of the $t$-matrix---which is directly related to
+	observables---invariant.  The magnitude of the relevant off-shell $t$-matrix
+	elements decreases
+	on evolution, though.  As a result we have
+	%
+	\begin{equation}
+	|\mbraket{\psi_f^\lambda}{J_0}{\psi_i}| < |\mbraket{\psi_f}{J_0}{\psi_i}| \,.
+	\end{equation}
+	%
+	This is reflected in $\fL$ as calculated from the evolved final state, and
+	seen in Figs.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}.
+
+	The effect of evolution of the initial state and the final state is to suppress
+	$\fL$.  When all the three components are evolved, we reproduce the unevolved
+	answer as indicated in Fig.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}.  It is
+	therefore required that we find a huge enhancement when just the current
+	is evolved.
+
+	The kinematics $\Ep = 30~\MeV$, $\mbfq^2 = 25~\fm^{-2}$ is further away from
+	the quasi-free ridge than $\Ep = 30~\MeV$, $\mbfq^2 = 16~\fm^{-2}$.
+	The evolution effects discussed above get
+	progressively more prominent the further away one is from the quasifree
+	ridge.  This can be verified by
+	comparing the effects due to evolution of individual components in
+	Figs.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}.
+
+	As remarked earlier, away from the quasi-free ridge the FSI
+	become important.  Nonetheless, it is still instructive to look at $\fL$
+	calculated in the IA at these kinematics.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-30_16-4_50_30_IA}
+	 \caption{
+		 $\fL$ in IA $(\bra{\psi_f} \equiv \bra{\phi})$ calculated for
+		 $E^\prime = 30~\MeV$ and $\mbfq^2 = 16~\fm^{-2}$ for the AV18 potential.
+		 Legends indicate which component of the matrix element in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ are evolved.}
+	 \label{fig:30_16_ia}
+	\end{figure}
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-30_25-4_50_30_IA}
+	 \caption{
+		 $\fL$ in IA $(\bra{\psi_f} \equiv \bra{\phi})$ calculated for
+		 $E^\prime = 30~\MeV$ and $\mbfq^2 = 25~\fm^{-2}$ for the AV18 potential.
+		 Legends indicate which component of the matrix element in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ are evolved.}
+	 \label{fig:30_25_ia}
+	\end{figure}
+	%
+	Note that the (unevolved) $\fL$ calculated in the IA, shown
+	in Figs.~\ref{fig:30_16_ia} and~\ref{fig:30_25_ia}, is smaller than the full
+	$\fL$ that takes into account the final state interactions (cf.~the
+	corresponding curves in Figs.~\ref{fig:30_16_fsi} and~\ref{fig:30_25_fsi}).
+	This is consistent with the claim made earlier that below the quasi-free ridge
+	the two terms in Eq.~\eqref{eq:overlap_IA_plus_FSI} add constructively.
+
+	The results in Figs.~\ref{fig:30_16_ia} and~\ref{fig:30_25_ia} can again be
+	qualitatively explained based on our discussion above.  The evolution of the
+	deuteron wave function leads to suppression as the evolved wave function does
+	not have strength at high momentum.  The evolved current thus leads to
+	enhancement.  Evolution of both the current and the initial state decreases
+	$\fL$ from just the evolved current value, but it is not until we evolve all
+	three components---final state, current, and the initial state---that we
+	recover the unevolved answer.
+
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/fl_IA_J0_evolution_vs_lambda}
+	 \caption{
+		 $\fL$ in IA calculated at $\thetacm = 15^{\circ}$ for
+		 $E^\prime = 30~\MeV$ and $\mbfq^2 = 25~\fm^{-2}$
+		 for the AV18 potential when the current operator in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved to
+		 various SRG $\lambda$'s.  The horizontal dotted line is the unevolved
+		 answer.}
+	 \label{fig:J0_evolution_vs_lambda}
+	\end{figure}
+	%
+	As expected, the effect due to evolution increases with further evolution.
+	This is illustrated in Fig.~\ref{fig:J0_evolution_vs_lambda}, where we
+	investigate the effects of the current-operator evolution on $\fL$ as a
+	function of the SRG $\lambda$.  To isolate the effect of operator evolution,
+	we only look at $\fL$ calculated in IA at a specific angle in
+	Fig.~\ref{fig:J0_evolution_vs_lambda}.
+
+	\subsubsection{Above the quasi-free ridge}
+
+	Finally, we look at an example from above the quasi-free ridge.
+	Figure~\ref{fig:100_0p5_fsi} shows the effect of evolution of individual
+	components on $\fL$ for $\Ep = 100~\MeV$ and $\mbfq^2 = 0.5~\fm^{-2}$, which
+	is point ``4'' in Fig.~\ref{fig:More-1p5}.  The effects of evolution in this
+	case are qualitatively different from those found below the quasi-free ridge.
+	For instance, we see a peculiar suppression in $\fL$ calculated from the
+	evolved	deuteron wave function at small angles, but an enhancement at large
+	angles.  An	opposite behavior is observed for the final state.  It is again
+	possible to	qualitatively explain these findings.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.6\textwidth]%
+	 {Factorization/Dis-av18_1p5-100_0p5-4_50_30}
+	 \caption{
+		 $\fL$ calculated for $E^\prime = 100~\MeV$ and
+		 $\mbfq^2 = 0.5~\fm^{-2}$ (point ``4'' in Fig.~\ref{fig:More-1p5})
+		 for the AV18 potential.
+		 Legends indicate which component of the matrix element in
+		 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ is evolved.
+		 Opposite effects from the evolution of the
+		 initial state and the final state.}
+	 \label{fig:100_0p5_fsi}
+	\end{figure}
+	%
+
+	\paragraph{\emph{(a) Evolving the initial state}}	 Above the quasi-free ridge,
+	the IA and FSI terms in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI} add destructively.  This can be seen by
+	comparing the unevolved $\fL$ curves in Figs.~\ref{fig:100_0p5_fsi}
+	and~\ref{fig:100_0p5_ia}.  Including the FSI brings down
+	the value of $\fL$ when one is above the quasi-free ridge.
+
+	At small angles, the magnitude of the IA term in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI} is larger than that of the FSI term.  The
+	deuteron wave function for this kinematics is probed between $1.2$ and
+	$1.9~\fm^{-1}$.  With the wave-function evolution, the magnitude of the IA
+	term in Eq.~\eqref{eq:overlap_IA_plus_FSI_evol_wf} decreases, whereas the
+	magnitude of the FSI term in that equation slightly increases compared to its
+	unevolved counterpart.  Still, at small angles, we have
+	$|\mbraket{\phi}{J_0}{\psi_i^\lambda}| > |\mbraket{\phi}{t^\dag \,
+	\GreensFn^\dag \, J_0}{\psi_i^\lambda}|$, which leads to
+	%
+	\begin{equation}
+	 |\mbraket{\psi_f}{J_0}{\psi_i^\lambda}| < |\mbraket{\psi_f}{J_0}{\psi_i}| \,,
+	 \label{eq:psi_i_evolution_small_angles_above_qfr}
+	\end{equation}
+	%
+	and thus to the suppression of $\fL$ at small angles observed in
+	Fig.~\ref{fig:100_0p5_fsi}.
+
+	At large angles, the magnitude of the IA term in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI} is smaller than that of the FSI term.
+	With the wave-function evolution, the magnitude of IA term decreases
+	substantially (large momenta in the deuteron wave function are probed at
+	large	angles, cf.~Eq.~\eqref{eq:overlap_IA}), whereas the FSI term in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI} remains almost the same.  This results in
+	increasing the difference between the two terms in
+	Eq.~\eqref{eq:overlap_IA_plus_FSI} as the SRG $\lambda$ is decreased.  As
+	mentioned before, above the quasi-free ridge, the IA and FSI terms
+	in Eq.~\eqref{eq:overlap_IA_plus_FSI} add destructively and we therefore end
+	up with $|\mbraket{\psi_f}{J_0}{\psi_i^\lambda}| >
+	|\mbraket{\psi_f}{J_0}{\psi_i}|$, leading to the observed enhancement at large
+	angles upon evolution of the wave function (see Fig.~\ref{fig:100_0p5_fsi}).
+
+	\paragraph{\emph{(b) Evolving the final state}}
+
+	The expression to consider is Eq.~\eqref{eq:evol_final_state_overlap}.  With
+	the evolution of the $t$-matrix, the magnitude of the term
+	$\mbraket{\phi}{t^\dag_\lambda \, \GreensFn^\dag \, J_0}{\psi_i}$
+	decreases, and because of the opposite relative signs of the two terms in
+	Eq.~\eqref{eq:evol_final_state_overlap}---and
+	because at small angles the magnitude of the IA term is larger than the
+	FSI term---the net
+	effect is $|\mbraket{\psi_f^\lambda}{J_0}{\psi_i}| >
+	|\mbraket{\psi_f}{J_0}{\psi_i}|$.  This leads to an enhancement of $\fL$ with
+	evolved final state at small angles, as seen in Fig.~\ref{fig:100_0p5_fsi}.
+
+	At large angles the magnitude of the IA term in
+	Eq.~\eqref{eq:evol_final_state_overlap} is smaller than that of the FSI term.
+	With the evolution of the $t$-matrix, the magnitude of the FSI term decreases
+	and the difference between the IA and the FSI terms decreases as well.  This
+	leads to the observed overall suppression in $\fL$ at large angles due to the
+	evolution of the final state seen in Fig.~\ref{fig:100_0p5_fsi}.  For those
+	few	($\msf$, $\mJd$) combinations for which the above general observations do
+	not	hold, the value of individual components is too small to make any
+	qualitative	difference.
+
+	%
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]
+	{Factorization/Dis-av18_1p5-100_0p5-4_50_30_IA}
+	\caption{
+	 $\fL$ in IA $(\bra{\psi_f} \equiv \bra{\phi})$ calculated for
+	 $E^\prime = 100~\MeV$ and $\mbfq^2 = 0.5~\fm^{-2}$
+	 for the AV18 potential.
+	 Legends indicate which component of the matrix element in
+	 Eq.~\eqref{eq:fl_prop_matrix_element} used to calculate $\fL$ are evolved.}
+	\label{fig:100_0p5_ia}
+	\end{figure}
+	%
+	Figure~\ref{fig:100_0p5_ia} shows the effect of evolution of individual
+	components on $\fL$ calculated in the IA for the kinematics
+	under consideration.  Again the evolved deuteron wave function does not have
+	strength at high momenta and therefore $\fL$ calculated from
+	$\mbraket{\phi}{J_0}{\psi_i ^\lambda}$ has a lower value than its unevolved
+	counterpart.
+
+	Unitary evolution means that the effect of the evolved current is always
+	such that it compensates the effect due to the evolution of the initial and
+	final states.  Our ongoing work examines more directly the behavior of the
+	current as it evolves to better understand how to carry over the results
+	observed here to other reactions.
+
 
 	\section{Summary and Outlook}
