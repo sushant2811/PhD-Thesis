@@ -825,8 +825,137 @@
 
 	\subsubsection{First-order analytical calculation}
 
+	Recall that from Eqs.~\eqref{eq:f_L_from_T} and~\eqref{eq:T_definiton} we have
+	%
+	\begin{equation}
+	 \fL \propto \sum_{\msf, \mJd}\left|\mbraket{\psi_f}{J_0}{\psi_i}\right|^2 \,.
+	\label{eq:fl_prop_matrix_element}
+	\end{equation}
+	%
+	When all three components---the final state, the current, and the initial
+	state---are evolved consistently, then $\fL$ is unchanged.  However, if we
+	miss evolving a component, then we obtain a different result.  It is
+	instructive to
+	illustrate this through a first-order analytical calculation.%
+	\footnote{An analogous calculation based on field redefinitions appears
+	in Ref.~\cite{Furnstahl:2001xq}.}
+
+	Let us look at the effects due to the evolution of individual components for a
+	general matrix element $\mbraket{\psi_f}{\widehat{O}}{\psi_i}$.  The evolved
+	initial state is given by
+	%
+	\begin{equation}
+	 \ket{\psi_i^\lambda} \equiv U \, \ket{\psi_i}
+	 = \ket{\psi_i} + \widetilde{U} \, \ket{\psi_i} \,,
+	\label{eq:psi_i_evolution}
+	\end{equation}
+	%
+	where $\widetilde{U}$ is the smooth part of the $U$-matrix defined in
+	Eq.~\eqref{eq:U_decomposition}.  Similarly, we can write down the expressions
+	for the evolved final state and the evolved operator as
+	%
+	\begin{equation}
+	 \bra{\psi_f^\lambda} \equiv \bra{\psi_f} \, U^\dag
+	 = \bra{\psi_f} - \bra{\psi_f}\,\widetilde{U}
+	\label{eq:psi_f_evolution}
+	\end{equation}
+	%
+	and
+	%
+	\begin{equation}
+	 \widehat{O}^\lambda
+	 \equiv U \, \widehat{O} \, U^\dag = \widehat{O}
+	 + \widetilde{U}\, \widehat{O} - \widehat{O} \, \widetilde{U}
+	 + \mathcal{O}(\widetilde{U}^2) \,.
+	\label{eq:O_evolution}
+	\end{equation}
+	%
+	We assume here that $\widetilde{U}$ is small compared to $I$ (which can always
+	be ensured by choosing the SRG $\lambda$ large enough) and therefore keep
+	terms	only up to linear order in $\widetilde{U}$.  Using
+	Eqs.~\eqref{eq:psi_i_evolution}, \eqref{eq:psi_f_evolution},
+	and~\eqref{eq:O_evolution}, we get an expression for the evolved matrix
+	element	in terms of the unevolved one and changes to individual components
+	due to evolution:
+	%
+	\begin{multline}
+	 \mbraket{\psi_f^\lambda}{\widehat{O}^\lambda}{\psi_i^\lambda}
+	 = \mbraket{\psi_f}{\widehat{O}}{\psi_i} - \underbrace{\mbraket{\psi_f}
+	  {\widetilde{U} \, \widehat{O}}{\psi_i}}_{\delta \bra{\psi_f}} \\
+	 \null + \underbrace{\mbraket{\psi_f}{\widetilde{U} \, \widehat{O}}{\psi_i}
+	 - \mbraket{\psi_f}{\widehat{O} \, \widetilde{U}}{\psi_i}}_{\delta\widehat{O}}
+	 + \underbrace{
+	  \mbraket{\psi_f} {\widehat{O} \, \widetilde{U}}{\psi_i}
+	 }_{\delta\ket{\psi_i}}
+	\end{multline}
+	%
+	\begin{equation}
+	\Longrightarrow \mbraket{\psi_f^\lambda}{\widehat{O}^\lambda}{\psi_i^\lambda}
+	 = \mbraket{\psi_f}{\widehat{O}}{\psi_i} + \mathcal{O}(\widetilde{U}^2) \,.
+	\end{equation}
+	%
+	We see that the change due to evolution in the operator is equal and opposite
+	to the sum of changes due to the evolution of the initial and final states.
+	We also find that changes in each of the components are of the same order,
+	and	that they mix;  this feature persists to higher order.  Therefore, if one
+	misses evolving an individual component, one will not reproduce the unevolved
+	answer.  It is interesting to analyze how this is a function of kinematics
+	and will be a subject of Subsec.~\ref{subsec:Results}.
+
+
 	\subsection{Numerical implementation}
 	\label{subsec:numerical_implementation}
+
+	There are various practical issues in the calculation of evolved matrix
+	elements that are worth detailing.  We use C++11 for our numerical
+	implementation of	the expressions discussed in the previous section.  Matrix
+	elements with a	significant	number of components evolved are computationally
+	quite expensive due to a large number of nested sums and integrals (see in
+	particular Appendix~\ref{Appendix:sec:evolution_expressions}).
+
+	The deuteron wave function and $NN$ $t$-matrix are obtained by discretizing
+	the	Schr\"{o}dinger and Lippmann--Schwinger equations, respectively; these
+	equations
+	are also used to interpolate the $t$-matrix and wave function to points not on
+	the discretized mesh.  For example, if we write the momentum-space Schrödinger
+	equation---neglecting channel coupling here for simplicity---as
+	%
+	\begin{eqnarray}
+	 \psi(p) =& \int \dd q\,q^2\,G_0(-E_B,q) V(p,q)\,\psi(q) \nonumber \\
+	 \rightarrow& \sum_{i} w_i\,q_i^2\,G_0(-E_B,q_i) V(p,q_i)\,\psi(q_i) \,,
+	\label{eq:SG-simple}
+\end{eqnarray}
+	%
+	it can be solved numerically as a simple matrix equation by setting
+	$p\in\{q_i\}$.  For any $p=p_0$ not on this mesh, the sum in
+	Eq.~\eqref{eq:SG-simple} can then be evaluated to get $\psi(p_0)$.  This
+	technique is based on what has been introduced in connection with
+	contour-deformation methods in break-up scattering
+	calculations~\cite{Hetherington:1965zza,Schmid:1974}.
+
+	To interpolate the potential, which is stored on a momentum-space grid, we use
+	the  two-dimensional cubic spline algorithm from ALGLIB~\cite{ALGLIB:0915}.
+	In order to avoid unnecessary recalculation of expensive quantities---in
+	particular of the off-shell $t$-matrix---while still maintaining an
+	implementation very	close to the expressions given in this paper, we make use
+	of transparent caching
+	techniques.\footnote{This means that the expensive calculation is only carried
+	out once, the first time the corresponding function is called for a given set
+	of arguments, while subsequent calls with the same arguments return the result
+	directly, using a fast lookup.  All this is done without the \emph{calling}
+	code being aware of the caching details.}  For most integrations, in
+	particular those involving a  principal value, we use straightforward nested
+	Gaussian quadrature
+	rules; only in a few cases did we find it more efficient to use adaptive
+	routines for multi-dimensional integrals.
+
+	With these optimizations, the calculations can in principle still be run on a
+	typical laptop computer.  In practice, we find it more convenient to use a
+	small cluster, with parallelization implemented using the TBB
+	library~\cite{TBB:0915}.  On a node with 48 cores, generating data for a
+	meaningful plot (like those shown in Subsec.~\ref{subsec:Results}) can then
+	be done	in less than an hour.  For higher resolution and accuracy, we used
+	longer runs	with a larger number of data and integration mesh points.
 
 	\subsection{Results}
 	\label{subsec:Results}
