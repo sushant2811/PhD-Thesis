@@ -352,10 +352,10 @@
 	 \label{fig:deut_dis_kinematics}
 	\end{figure}
 	%
-	The virtual photon from electron scattering transfers enough energy and momentum
-	to break up the deuteron into a proton and neutron.  The differential cross
-	section for deuteron electrodisintegration for unpolarized scattering in the lab
-	frame is given by~\cite{Arenhovel:1988qh}
+	The virtual photon from electron scattering transfers enough energy and
+	momentum to break up the deuteron into a proton and neutron.  The
+	differential cross section for deuteron electrodisintegration for unpolarized
+	scattering in the lab	frame is given by~\cite{Arenhovel:1988qh}
 	%
 	\begin{multline}
 	 \frac{\dd^3 \sigma}{\dd {k^\prime}^{\rm lab} \dd\Omega_e^{\rm lab}
@@ -467,10 +467,35 @@
 	are the Green's function and the $t$-matrix respectively, and  $E^\prime =
 	\mbf{\pp}^2/M$ is the energy of the outgoing nucleons.  The second term in
 	Eq.~\eqref{eq:psi_f_def} describes the interaction between the outgoing
-	nucleons.
+	nucleons.  As the momentum associated with the plane wave $\ket{\phi}$ is
+	$\pp$, the $t$-matrix $t(E^\prime)$ that enters our calculation is always
+	half on-shell.
 
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.35\textwidth]%
+	 {Factorization/IA_thesis_hi}
+
+	 \small{(a) Impulse Approximation (IA) \\[1.5 em]}
+
+   \includegraphics[width=0.35\textwidth]%
+	 {Factorization/FSI_thesis_hi}
+
+   \small{(b) Final State Interaction (FSI)}
+
+	 \caption{(a) The first term on the right side of Eq.~\eqref{eq:psi_f_def}.
+	 The outgoing nucleons do not interact.
+	 (b) The second term on the right side of Eq.~\eqref{eq:psi_f_def}.  The
+	 outgoing nucleons interact through the NN potential.  Figures taken from
+	 \cite{Ibrahim:2006lta}. }
+	 \label{fig:IA_FSI_schematic}
+	\end{figure}
+	%
 	In the impulse approximation (IA) as defined here, the interaction between the
 	outgoing nucleons is ignored and $|\psi_f \ra_{\rm IA} \equiv | \phi \ra$.
+	A schematic of IA and FSI contributions is shown in
+	Fig.~\ref{fig:IA_FSI_schematic}.
 	The plane wave $|\phi\ra$ will have both isospin $0$ and $1$ components.
 	The current $J_0$, $\GreensFn$, and the $t$-matrix are diagonal in spin space.
 	The deuteron has spin $S=1$ and therefore the final state will also have
@@ -525,7 +550,23 @@
 	 Y_{lm}(\pi-\theta,\phi+\pi) = (-1)^l \, Y_{lm}(\theta,\phi) \,.
 	\end{equation}
 	%
-	In our work we follow the conventions of Ref.~\cite{Landau:1989}.  Because
+	In our work we follow the conventions of Ref.~\cite{Landau:1989}.
+	Deriving Eq.~\eqref{eq:overlap_IA} also uses partial wave expansion
+	\beq
+	\ket{\mbf{k}} = \sqrt{\frac{2}{\pi}} \sum_{l, m} Y_{l \, m}^\ast
+	(\Omega_{\mbf{k}}) \ket{k \, l \, m} \;,
+	\eeq
+	the normalization condition
+	\beq
+	\braket{p}{k} = \frac{\pi}{2} \frac{\delta(p - k)}{p^2} \;,
+	\eeq
+	and, the Clebsch-Gordan completeness relation
+	\beq
+	\ket{l \, m \, S=1 \, m_s} = \sum_{J, \, m_J} \ket{J \, m_J \, l \, S = 1}
+	\braket{J \, m_J \, l \, S = 1}{l \, m \, S = 1\, m_s} \;.
+	\eeq
+	%
+	Because
 	$\thetacm$ and $\phicm$ are the angles of $\mbf{\pp}$, $\Omega_{\mbf{\pp} -
 	\mbf{q}/2} \equiv \big(\thetacprime(\pp, \thetacm, q), \phicm \big)$
 	and $\Omega_{\mbf{\pp} + \mbf{q}/2} \equiv
@@ -549,6 +590,11 @@
 	 \right) \,.
 	\label{eq:theta_c_double_prime_def}
 	\end{equation}
+	%
+	The expressions for $\thetacprime$ and $\thetacdoubleprime$ can be obtained by
+	elementary trigonometry.  Note that Eqs.~\eqref{eq:theta_c_prime_def} and
+	\eqref{eq:theta_c_double_prime_def} reproduce the correct $\pp = 0$ and
+	$q = 0$ limit.
 
 	The overlap matrix element including the final-state interactions (FSI) is
 	given by
@@ -660,6 +706,19 @@
 	 \, \psi_{L_d}\Big(\!\sqrt{{k_2}^2 - k_2 \, q \, \cos\theta + q^2/4}\Big) \,.
 	\label{eq:phi_t_g0_J0_minus}
 	\end{multline}
+	%
+	Note that the matrix element of the $t$-matrix in
+	Eq.~\eqref{eq:phi_t_g0_J0_minus} should strictly be written as
+	${t^{\ast}}({E^\prime} = {\pp}^2/M; k_2, \pp, L_2, L_1, J_1, S=1, T_1)$.  However,
+	keeping in mind that the $t$-matrix in this chapter is always evaluated
+	half on-shell, we drop the $E^\prime$ index for the sake of brevity.
+	To evaluate the hermitian conjugate, we use the property
+	%
+	\beq
+	t^\dag (\pp, k_2, L_1, L_2, J_1, S = 1, T_1)
+	= t^\ast (k_2, \pp, L_2, L_1, J_1, S = 1, T_1) \;.
+	\eeq
+	%
 
 	We denote the second term in the one-body current Eq.~\eqref{eq:J0_def} by
 	$J_0^+$.  The expression for $\mbraket{\phi}{t^\dag \, \GreensFn^\dag \,
