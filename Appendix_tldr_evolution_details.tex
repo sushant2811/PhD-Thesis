@@ -22,19 +22,19 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
    \null \times Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times \sum_{\widetilde{m}_s = -1}^1
-   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_2 = 0}^{L_{\rm max}}
-   \CG{L_2}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \CG{L_2}{\mJd-\widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \\
    \null \times \sum_{L_d = 0, 2}
    \int \! \dd k_3 \, \psi_{L_d}^\lambda(k_3) \, k_3^2 \int \! \dcostheta \,
     P_{L_1}^{\mJd-\widetilde{m}_s}(\cos \theta)
     P_{L_2}^{\mJd-\widetilde{m}_s}\!\big(\cos\thetacprime(\pp, \theta, q)\big)
     \\ \null \times
     \widetilde{U}\!\left(
-     k_3, \sqrt{{\pp}^2 - \pp q \cos\theta + q^2/4}, L_d, L_2, J=1, S=1, T=0
-    \right) \,,
+     k_3, \sqrt{{\pp}^2 - \pp q \cos\theta + q^2/4}, L_d, L_2, J\!=\!1, S\!=\!1,
+     T\!=\!0 \right) \,,
   \end{multline}
   %
   \begin{multline}
@@ -44,15 +44,15 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
    \null \times Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times
    \sum_{L_2, \widetilde{m}_s}
-   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S= 1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_d = 0, 2}
-   \CG{L_d}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J = 1}{\mJd} \\
+   \CG{L_d}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \\
    \null \times
-   \int \! \dd k_2 \, k_2^2 \, \widetilde{U}(\pp, k_2, L_1, L_2, J_1, S=1,T_1)
-   \int \! \dcostheta \,
+   \int \! \dd k_2 \, k_2^2 \, \widetilde{U}(\pp, k_2, L_1, L_2, J_1, S\!=\!1,
+   T_1)  \int \! \dcostheta \,
    P_{L_2}^{\mJd-\widetilde{m}_s}(\cos\theta) \\
    \null \times
    P_{L_d}^{\mJd-\widetilde{m}_s}\!\big(\cos\thetacprime(k_2, \theta, q)\big)
@@ -68,22 +68,22 @@
    \null \times
    Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd-\msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd-\msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times
    \sum_{L_2, \widetilde{m}_s}
-   \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_3 = 0}^{L_{\rm max}}
-   \CG{L_3}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \CG{L_3}{\mJd-\widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \\
    \null \times
-   \int \! \dd k_2 \, k_2^2 \, \widetilde{U} (\pp, k_2, L_1, L_2, J_1, S = 1,T_1)
-   \sum_{L_d = 0, 2} \int \! \dd k_4 \, k_4^2 \, \psi_{L_d}^\lambda (k_4) \\
+   \int \! \dd k_2 \, k_2^2 \, \widetilde{U} (\pp, k_2, L_1, L_2, J_1, S\!=\!1,
+   T_1)  \sum_{L_d = 0, 2} \int \! \dd k_4 \, k_4^2 \, \psi_{L_d}^\lambda (k_4) \\
    \null \times
    \int \! \dcostheta \, P_{L_2}^{\mJd - \widetilde{m}_s}(\cos\theta)
    P_{L_3}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_2, \theta, q)\big)
    \\ \null \times
    \widetilde{U}\!\left(
-     k_4, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J=1, S=1, T=0
-   \right) \,.
+     k_4, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J\!=\!1, S\!=\!1,
+     T\!=\!0   \right) \,.
   \end{multline}
   %
   In deriving the equations for $B_1$, $B_2$, and $B_3$ we have made use of
@@ -107,17 +107,17 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
    \null \times  Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd-\msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd-\msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times
    \sum_{L_3, \widetilde{m}_s}
-   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_2 = 0}^{L_{\rm max}} \int \! \dd k_2 \, k_2^2 \,
-   \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S=1, T_1) \\
+   \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1) \\
    \null \times
    \sum_{L_d = 0, 2}
-   \CG{L_d}{\mJd-\widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd}
+   \CG{L_d}{\mJd-\widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd}
    \int \! \dd k_3 \, k_3^2 \,
-   \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S = 1, T_1) \\
+   \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S\!=\!1, T_1) \\
    \null \times
    \int \! \dcostheta \,P_{L_3}^{\mJd - \widetilde{m}_s}(\cos\theta)
    P_{L_d}^{\mJd - \widetilde{m}_s}\!\big(
@@ -135,24 +135,24 @@
    \null \times
    Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times \sum_{L_3, \widetilde{m}_s}
-   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_4 = 0}^{L_{\rm max}}
-   \CG{L_4}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J=1}{\mJd} \\
+   \CG{L_4}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \\
    \null \times
    \sum_{L_2 = 0}^{L_{\rm max}} \int \! \dd k_2 \, k_2^2 \,
-    \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+    \widetilde{U} (k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1)
    \int \! \dd k_3 \, k_3^2 \,
-    \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S=1, T_1) \\
+    \widetilde{U} (k_2, k_3, L_2, L_3, J_1, S\!=\!1, T_1) \\
    \null \times
    \sum_{L_d = 0, 2} \int \! \dd k_5 \, k_5^2 \, \psi_{L_d}^\lambda (k_5)
    \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta)
    P_{L_4}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_3, \theta, q)\big)
    \\  \null \times
    \,\widetilde{U}\!\left(
-    k_5, \sqrt{{k_3}^2 - k_3 q \cos\theta  + q^2/4}, L_d, L_4, J=1, S=1, T=0
-   \right) \,.
+    k_5, \sqrt{{k_3}^2 - k_3 q \cos\theta  + q^2/4}, L_d, L_4, J\!=\!1, S\!=\!1,
+    T\!=\!0  \right) \,.
   \end{multline}
 
   Evaluating the evolved current while including the final-state interactions
@@ -173,23 +173,23 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
    Y_{L_1 , \mJd - \msf}(\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-    \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+    \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
     \null \times
    \sum_{L_2 = 0}^{L_{\rm max}}
-    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1)
     \sum_{\widetilde{m}_s = -1}^1
-    \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s} \\
+    \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s} \\
     \null \times
    \sum_{L_3 = 0}^{L_{\rm max}}
-    \CG{L_3}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J=1}{\mJd}
+    \CG{L_3}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd}
    \int \! \dcostheta \, P_{L_2}^{\mJd - \widetilde{m}_s}(\cos \theta)
    P_{L_3}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_2, \theta, q)
    \big) \\
    \null \times
    \int \! \dd k_5 \, k_5^2 \sum_{L_d = 0, 2}
    \widetilde{U}\!\left(
-    k_5, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J=1, S=1, T=0
-   \right) \psi_{L_d}^\lambda (k_5) \,,
+    k_5, \sqrt{{k_2}^2 - k_2 q \cos\theta + q^2/4}, L_d, L_3, J\!=\!1, S\!=\!1,
+    T\!=\!0  \right) \psi_{L_d}^\lambda (k_5) \,,
   \label{eq:F3}
   \end{multline}
   %
@@ -203,17 +203,17 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
    Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-   \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+   \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
    \null \times
    \sum_{L_2 = 0}^{L_{\rm max}}
-    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S = 1,T_1)
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S\!=\!1,T_1)
    \sum_{L_3 = 0}^{L_{\rm max}} \int \! \dd k_4 \, k_4^2 \,
-   \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S=1, T_1) \\
+   \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S\!=\!1, T_1) \\
    \null \times
    \sum_{\widetilde{m}_s = -1}^1
-   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S = 1 \, \wt{m}_s}
+   \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
    \sum_{L_d = 0, 2}
-   \CG{L_d}{\mJd - \widetilde{m}_s}{S=1}{\widetilde{m}_s}{J = 1}{\mJd} \\
+   \CG{L_d}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \\
    \null \times
    \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta)
    P_{L_d}^{\mJd - \widetilde{m}_s} \big(\cos \thetacprime(k_4, \theta, q)\big)
@@ -232,16 +232,16 @@
    \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
    Y_{L_1 , \mJd - \msf} (\thetacm, \phicm)
    \sum_{J_1 = |L_1 - 1|}^{L+1}
-    \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd} \\
+    \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd} \\
     \null \times
    \sum_{L_2 = 0}^{L_{\rm max}}
-    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S=1, T_1)
+    t^\ast_\lambda(k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1)
     \sum_{L_3 = 0}^{L_{\rm max}} \, \sum_{\widetilde{m}_s = -1}^1
-    \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S= 1 \, \wt{m}_s} \\
+    \braket{J_1 \, \mJd}{L_3 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s} \\
    \null \times \sum_{L_4 = 0}^{L_{\rm max}}
-    \CG{L_4}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J=1}{\mJd}
+    \CG{L_4}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd}
     \int \! \dd k_4 \, k_4^2 \,
-    \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S=1, T_1) \\
+    \widetilde{U}(k_2, k_4, L_2, L_3, J_1, S\!=\!1, T_1) \\
     \null \times
    \int \! \dcostheta \, P_{L_3}^{\mJd - \widetilde{m}_s}(\cos \theta) \,
    P_{L_4}^{\mJd - \widetilde{m}_s}\!\big(\cos \thetacprime(k_4, \theta, q)\big)
@@ -249,8 +249,8 @@
    \sum_{L_d = 0, 2} \psi_{L_d}^\lambda (k_6) \\
    \null \times
    \widetilde{U}\!\left(
-    k_6, \sqrt{{k_4}^2 - k_4 q \cos\theta + q^2/4}, L_d, L_4, J=1, S=1, T=0
-   \right)  \,.
+    k_6, \sqrt{{k_4}^2 - k_4 q \cos\theta + q^2/4}, L_d, L_4, J\!=\!1, S\!=\!1,
+    T\!=\!0  \right)  \,.
   \label{eq:F1}
   \end{multline}
 
@@ -278,8 +278,9 @@
   %
   The subsitution $E' \to E' + \ii\epsilon$ and the limit $\epsilon\to0$
   are implied to select outgoing boundary conditions.  We want to show now
-  that the SRG-evolved final state can be obtained directly by using the solution
-  $t^\lambda$ of Eq.~\eqref{eq:LS-t} with $V \to V_\lambda$ in the second line of
+  that the SRG-evolved final state can be obtained directly by using the
+  solution $t^\lambda$ of Eq.~\eqref{eq:LS-t} with $V \to V_\lambda$ in the
+  second line of
   Eq.~\eqref{eq:LS-psi}, which is the same as Eq.~\eqref{eq:psi_f_def} in
   Subsec.~\ref{subsec:formalism}, i.e.,
   %
@@ -322,9 +323,10 @@
    \label{eq:G-bare-inv}
   \end{subalign}
   %
-  Here, $G_0^{-1}(z)^{-1} = z - H_0$ is the free Green's function (which does not
-  change under the SRG evolution because $H_0$ does not), and $z$ is an arbitrary
-  complex energy parameter that is set to $E^\prime + \ii\epsilon$ to recover the
+  Here, $G_0^{-1}(z)^{-1} = z - H_0$ is the free Green's function (which does
+  not change under the SRG evolution because $H_0$ does not), and $z$ is an
+  arbitrary complex energy parameter that is set to $E^\prime + \ii\epsilon$ to
+  recover the
   physically relevant case.  The Green's functions can be expressed in terms of
   the $t$-matrix as
   %
@@ -346,8 +348,8 @@
    \label{eq:G-bare-spectral}
   \end{subalign}
   %
-  Here, $\ket{\psi_f^{(\lambda)}(k)}$ denotes the (evolved) continuum states with
-  momentum $k$, and we have $\ket{\psi_f^{(\lambda)}}
+  Here, $\ket{\psi_f^{(\lambda)}(k)}$ denotes the (evolved) continuum states
+  with momentum $k$, and we have $\ket{\psi_f^{(\lambda)}}
   = \ket{\psi_f^{(\lambda)}(\sqrt{M E^\prime})}$
 
   From Eqs.~\eqref{eq:H-lambda} and~\eqref{eq:G-inv} it now follows that

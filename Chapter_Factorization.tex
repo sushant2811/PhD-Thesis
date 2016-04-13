@@ -444,7 +444,7 @@
 	The one-body current matrix element is given by
 	%
 	\begin{multline}
-	 \la \mbf{k}_1 \, T_1| \, J_0(\mbf{q}) \, | \,\mbf{k}_2 \, T=0 \ra
+	 \la \mbf{k}_1 \, T_1| \, J_0(\mbf{q}) \, | \,\mbf{k}_2 \, T\!=\!0 \ra
 	 = \frac{1}{2} \big(G_E^p + (-1)^{T_1} G_E^n\big) \,
 	 \delta(\mbf{k}_1 - \mbf{k}_2 - \mbf{q}/2) \\
 	 \null + \frac{1}{2} \big((-1)^{T_1} G_E^p +  G_E^n\big) \, \delta(\mbf{k}_1
@@ -502,10 +502,10 @@
 	$S=1$. 	Hence, we have
 	%
 	\begin{eqnarray}
-	 \ket{\phi} & \equiv & \ket{\mbf{\pp}\, S=1 \, \msf \psi_T} \nonumber \\
+	 \ket{\phi} & \equiv & \ket{\mbf{\pp}\, S\!=\!1 \, \msf \psi_T} \nonumber \\
 	 & = & \dfrac{1}{2} \sum_{T = 0,1}
-	 \big(\ket{\mbf{\pp} \, S=1 \, \msf}
-		+ (-1)^T \ket{{-}\mbf{\pp} \, S=1 \, \msf} \big) \,\ket{T} \,.
+	 \big(\ket{\mbf{\pp} \, S\!=\!1 \, \msf}
+		+ (-1)^T \ket{{-}\mbf{\pp} \, S\!=\!1 \, \msf} \big) \,\ket{T} \,.
 	\label{eq:phi_def}
 	\end{eqnarray}
 	%
@@ -515,7 +515,7 @@
 	\begin{multline}
 	 \la \psi_f | \, J_0 \, |\psi_i \ra_{\rm IA}
 	 = \sqrt{\frac{2}{\pi}} \sum_{L_{d} = 0, 2}
-	 \CG{L_d}{\mJd - \msf}{S=1}{\msf}{J=1}{\mJd} \\
+	 \CG{L_d}{\mJd - \msf}{S\!=\!1}{\msf}{J\!=\!1}{\mJd} \\
 	 \null \times \Big[
 	  G_E^p \, \psi_{L_d}(|\mbf{\pp} - \mbf{q}/2|)
 	  \,Y_{L_d,\mJd-m_{s_f}}\!(\Omega_{\mbf{\pp} - \mbf{q}/2}) \\
@@ -562,8 +562,8 @@
 	\eeq
 	and, the Clebsch-Gordan completeness relation
 	\beq
-	\ket{l \, m \, S=1 \, m_s} = \sum_{J, \, m_J} \ket{J \, m_J \, l \, S = 1}
-	\braket{J \, m_J \, l \, S = 1}{l \, m \, S = 1\, m_s} \;.
+	\ket{l \, m \, S\!=\!1 \, m_s} = \sum_{J, \, m_J} \ket{J \, m_J \, l \, S\!=\!1}
+	\braket{J \, m_J \, l \, S\!=\!1}{l \, m \, S\!=\!1\, m_s} \;.
 	\eeq
 	%
 	Because
@@ -624,10 +624,10 @@
 	The outgoing plane-wave state in the partial-wave basis is given by
 	%
 	\begin{multline}
-	 \la \phi | \, k_1 \, J_1 \, m_{J_1} \, L_1 \, S = 1 \, T_1 \ra
+	 \la \phi | \, k_1 \, J_1 \, m_{J_1} \, L_1 \, S\!=\!1 \, T_1 \ra
 	  =  \frac{1}{2} \, {\sqrt\frac{2}{\pi}} \, \frac{\pi}{2} \,
 	 \frac{\delta(\pp - k_1)}{k_1 ^2}
-	 \CG{L_1}{m_{J_1} - \msf}{S=1}{\msf}{J_1}{m_{J_1}}
+	 \CG{L_1}{m_{J_1} - \msf}{S\!=\!1}{\msf}{J_1}{m_{J_1}}
 	 \, \\
 	 \null \times \big(1 + (-1)^{T_1} (-1)^{L_1}\big)
 	 \,Y_{L_1,m_{J_1} - \msf}\!(\thetacm, \phicm) \,.
@@ -650,18 +650,18 @@
 	basis, it is written as
 	%
 	\begin{multline}
-	 \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S = 1 \, T_1}{J_0^{-}}
-	 {\,k_2 \, J=1 \, \mJd \, L_2 \, S = 1 \, T = 0}
+	 \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S\!=\!1 \, T_1}{J_0^{-}}
+	 {\,k_2 \, J\!=\!1 \, \mJd \, L_2 \, S\!=\!1 \, T\!=\!0}
 	 = \frac{\pi^2}{2} \, \big(G_E ^p + (-1)^{T_1} \, G_E^n\big) \\
 	 \null \times \sum_{\widetilde{m}_s = -1}^1 \int\!\dcostheta
-	 \, \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S=1 \,\wt{m}_s}
+	 \, \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \,\wt{m}_s}
 	 \,P_{L_1}^{\mJd - \widetilde{m}_s}\!(\cos\theta) \\
 	 \null \times
 	 \,P_{L_2}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacprime(k_1, \theta, q)
 	 \big) \frac{\delta\big(k_2-\sqrt{k_1^2-k_1 q \cos\theta + q^2/4}\big)}
 	 {k_2^2} \\
 	 \null \times
-	 \CG{L_2}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd} \,.
+	 \CG{L_2}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \,.
 	\label{eq:J_0_minus_def_pw}
 	\end{multline}
 	%
@@ -691,13 +691,13 @@
 	 \sum_{L_1 = 0}^{L_{\rm max}} \big(1 + (-1)^{T_1} (-1)^{L_1}\big) \\
 	 \null \times Y_{L_1 , \mJd - \msf}\!(\thetacm, \phicm)
 	 \sum_{J_1 = |L_1 - 1|}^{L+1}
-	 \CG{L_1}{\mJd - \msf}{S=1}{\msf}{J_1}{\mJd}
+	 \CG{L_1}{\mJd - \msf}{S\!=\!1}{\msf}{J_1}{\mJd}
 	 \sum_{L_2 = 0}^{L_{\rm max}} \int \dd k_2 \, k_2^2 \\
-	 \null \times t^\ast(k_2, \pp, L_2, L_1, J_1, S = 1, T_1)
+	 \null \times t^\ast(k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1)
 	 \sum_{\widetilde{m}_s = -1}^1
-	 \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S=1 \, \wt{m}_s} \\
+	 \braket{J_1 \, \mJd}{L_2 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s} \\
 	 \null \times \sum_{L_d = 0,2}
-	 \CG{L_d}{\mJd - \widetilde{m}_s}{S = 1}{\widetilde{m}_s}{J = 1}{\mJd}
+	 \CG{L_d}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd}
 	 \int \dcostheta
 	 \, \frac{1}{{\pp}^2 - k_2^2 - i \epsilon} \\
 	 \null \times
@@ -709,14 +709,14 @@
 	%
 	Note that the matrix element of the $t$-matrix in
 	Eq.~\eqref{eq:phi_t_g0_J0_minus} should strictly be written as
-	${t^{\ast}}({E^\prime} = {\pp}^2/M; k_2, \pp, L_2, L_1, J_1, S=1, T_1)$.  However,
+	${t^{\ast}}({E^\prime} = {\pp}^2/M; k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1)$.  However,
 	keeping in mind that the $t$-matrix in this chapter is always evaluated
 	half on-shell, we drop the $E^\prime$ index for the sake of brevity.
 	To evaluate the hermitian conjugate, we use the property
 	%
 	\beq
-	t^\dag (\pp, k_2, L_1, L_2, J_1, S = 1, T_1)
-	= t^\ast (k_2, \pp, L_2, L_1, J_1, S = 1, T_1) \;.
+	t^\dag (\pp, k_2, L_1, L_2, J_1, S\!=\!1, T_1)
+	= t^\ast (k_2, \pp, L_2, L_1, J_1, S\!=\!1, T_1) \;.
 	\eeq
 	%
 
