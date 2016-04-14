@@ -7,4 +7,136 @@
 
   \section{Solving the Lippmann-Schwinger equation}
 
+  The Lippmann-Schwinger equation (LSE), which is essentially the
+  Schr\"{o}dinger equation for scattering states is given in operator form by
+  %
+  \beq
+  t = V + V \, G \, t \;,
+  \label{eq:LSE_operator_form}
+  \eeq
+  %
+  where $t$ is the $t$-matrix, $V$ is the potential, and $G$ is the Green's
+  function.  In momentum space, Eq.~\eqref{eq:LSE_operator_form} becomes
+  \beq
+  t_{\lp l} (E_0 \!=\! p_0^2/M ; \pp, p) = V_{\lp l} + \sum_{\lpp}
+  \frac{2}{\pi} M \int \frac{\dd \ppp \, {\ppp}^2 V_{l \lpp}(\pp, \ppp) \,
+    t_{\lpp l}(E_0; \ppp, p)}{p_0^2 - {\pp}^2 + i \epsilon} \;.
+  \label{eq:t_matrix_mom_space}
+  \eeq
+  Derivation of Eq.~\eqref{eq:t_matrix_mom_space} makes use of the completeness
+  relation in Eq.~\eqref{eq:completeness_partial_wave} and the definition of
+  Green's function in Eq.~\eqref{eq:G0_def_pw}.   The indices which are the
+  same on both sides of Eq.~\eqref{eq:t_matrix_mom_space} and are not summed
+  over are suppressed.  For deuteron disintegration calculations, we need only
+  the half on-shell $t$-matrix.  But here we will look at the more general case
+  of evaluating the fully off-shell $t$-matrix.
+
+  For the sake of pedagogy, let us consider that we are evaluating the
+  $t$-matrix for uncoupled channels.  Suppressing the angular momentum indices
+  and putting in the limits of integration,
+  the Eq.~\eqref{eq:t_matrix_mom_space} becomes
+  \beq
+  t(E_0; \pp, p) = V(\pp, p) + \frac{2}{\pi} M \int_0 ^\Lambda
+  \frac{\dd \ppp \, {\ppp}^2
+  V(\pp, \ppp)\, t(E_0; \ppp, p)}{p_0^2 - {\ppp}^2 + i \epsilon} \;.
+  \label{eq:t_uncoupled_channels}
+  \eeq
+  %
+  Next we outline the steps involved in solving
+  Eq.~\eqref{eq:t_uncoupled_channels} numerically.  We follow the approach of
+  Ref.~\cite{Landau:1989}.
+
+  The integrals are efficiently evaluated numerically using a Gauss-Legendre
+  quadrature.  However, the integrand in Eq.~\eqref{eq:t_uncoupled_channels} has
+  a pole at $\ppp = p_0$, and that needs to be accounted for properly.
+  Let's consider the expression
+  \bea
+  \int_0 ^\Lambda \dd p \frac{p^2 f(p)}{p_0^2 - p^2 + i \epsilon}
+  &=& \int_0 ^\Lambda \dd p \frac{p^2 f(p)}{(p_0 + p)(p_0 - p + i \epsilon)}
+  \nonumber \\ [0.4 em]
+  &\equiv& \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{(p_0 - p + i \epsilon)} \;,
+  \label{eq:separating_pole}
+  \eea
+  where we have defined $\wt{f}(p)$ as
+  \beq
+  \wt{f}(p) = \frac{p^2 \, f(p)}{p_0 + p} \;.
+  \eeq
+  %
+  Using Sokhotsky's formula
+  \beq
+  \frac{1}{x \pm i \epsilon} = \mathcal{P} \left(\frac{1}{x}\right) \mp i \, \pi
+  \, \delta(x) \;,
+  \eeq
+  we have
+  \beq
+  \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{(p_0 - p + i \epsilon)} =
+  \mathcal{P} \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{p_0 - p}  - i \, \pi \,
+  \wt{f}(p_0)\;.
+  \label{eq:f_tilde_simple_pole}
+  \eeq
+  %
+  Let's first evaluate the principal value integration in the
+  Eq.~\eqref{eq:f_tilde_simple_pole}.
+  \bea
+  \mathcal{P} \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{p_0 - p}
+  & = &  \mathcal{P} \int_0 ^\Lambda \dd p \frac{\wt{f}(p) - \wt{f}(p_0) +
+  \wt{f}(p_0)}{p_0 - p} \nonumber \\ [0.4 em]
+  & = & \int_0 ^\Lambda \dd p \frac{\wt{f}(p) - \wt{f}(p_0)}{p_0 - p} +
+  \wt{f}(p_0) \, \mathcal{P} \int_0 ^\Lambda \dd p \frac{1}{p_0 - p} \;.
+  \label{eq:add_subtract_pole}
+  \eea
+  %
+  The integrand of the first term on the right side of
+  Eq.~\eqref{eq:add_subtract_pole} is zero at the pole $p = p_0$ and therefore
+  non-singular.  We can therefore drop the principal value for that term and
+  evaluate it as a normal integral.  The second term on the right side of
+  Eq.~\eqref{eq:add_subtract_pole} can be evaluated analytically.
+  \bea
+  \mathcal{P} \int_0 ^\Lambda \dd p \frac{1}{p_0 - p}
+  & = & \int_0 ^{p_0 - \epsilon} \dd p \frac{1}{p_0 - p} +
+  \int_{p_0 + \epsilon} ^\Lambda \dd p \frac{1}{p_0 - p} \nonumber \\ [0.5 em]
+  & = &  \null - {\rm{ln}}(p_0 - p) \Big\vert_0 ^{p_0 - \epsilon} +
+         \null - {\rm{ln}}(p_0 - p) \Big\vert_{p_0 + \epsilon} ^\Lambda
+         \nonumber \\ [0.5 em]
+  & = & - {\rm{ln}}\left(\frac{\Lambda - p_0}{p_0}\right)\;.
+  \label{eq:PV_1_over_x}
+  \eea
+  %
+  From Eqs.~\eqref{eq:PV_1_over_x}, \eqref{eq:add_subtract_pole}, and
+  \eqref{eq:f_tilde_simple_pole}, we have
+  \begin{equation}
+  \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{p_0 - p + i \epsilon}
+  = \int_0 ^\Lambda \dd p \frac{\wt{f}(p) - \wt{f}(p_0)}{p_0 - p} -
+  \wt{f}(p_0) \, {\rm{ln}}\left(\frac{\Lambda - p_0}{p_0}\right)
+  \null - i \, \pi \, \wt{f}(p_0)\;.
+  \end{equation}
+  %
+  Discretizing this on the Gauss-Legendre mesh we have
+  \beq
+  \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{p_0 - p + i \epsilon}
+  = \sum_{j = 1}^N \frac{\wt{f}(p_j)}{p_0 - p_j} w_j - \wt{f}(p_0)
+  \left[ i \pi + {\rm{ln}}\big(\frac{\Lambda - p_0}{p_0}\big) + \sum_{j=1}^N
+  \frac{w_j}{p_0 - p_j}\right] \;.
+  \label{eq:pole_GL}
+  \eeq
+  $p_j$'s are the momentum mesh points, $N$ is the number of mesh points,
+  and $w_j$'s are the associated weights.
+
+  Comparing Eqs.~\eqref{eq:t_uncoupled_channels} and
+  Eq.~\eqref{eq:separating_pole}, the corresponding $\wt{f}$ function for
+  the LSE is
+  \beq
+  \wt{f}(\ppp) = \frac{2}{\pi} M \frac{{\ppp}^2 V(\pp, \ppp) \, t(E_0; \ppp, p)}
+  {(p_0 + \ppp)} \;.
+  \eeq
+  %
+  Using the result of Eq.~\eqref{eq:pole_GL}, the LSE from
+  Eq.~\eqref{eq:t_uncoupled_channels} on the Gauss-Legendre mesh becomes
+  \beq
+  \eeq
+  \emph{Add comment about separating the pole is advantageous numerically.} 
+
+
+
+
   \section{Using the LSE for interpolation}
