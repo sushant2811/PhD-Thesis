@@ -166,7 +166,7 @@
   Using this definition of $D$ and with the identification that
   $k_{j = N+1} = p_0$, Eq.~\eqref{eq:LSE_GL} can be written as
   \beq
-  t(E_0; \pp, p) - \sum_{j = 1}^{N+1} V(\pp, k_j) \, D_j \, t(E_0, k_j, p)
+  t(E_0; \pp, p) - \sum_{j = 1}^{N+1} V(\pp, k_j) \, D_j \, t(E_0; k_j, p)
   = V(\pp, p) \;.
   \label{eq:t_D}
   \eeq
@@ -178,12 +178,14 @@
   separate.}.  Eq.~\eqref{eq:t_D} can then be written as
   a matrix multiplication equation.
   \beq
-  t(E_0; \pp_i, p) - \sum_{j = 1}^{N+1} V(p_i, k_j) \, D_j \, t(E_0, k_j, p)
+  t(E_0; \pp_i, p) - \sum_{j = 1}^{N+1} V(\pp_i, k_j) \, D_j \, t(E_0; k_j, p)
   = V(\pp_i, p)
+  \label{eq:t_D_p_i}
   \eeq
   \beq
   \sum_{j = 1}^{N+1} \underbrace{\big(\delta_{i j} - V(p_i, k_j) \, D_j\big)}
   _{\equiv \, F_{ij}} \, t(E_0, k_j, p)  =  V(p_i, p)
+  \label{eq:F_def}
   \eeq
   \beq
   [F]_{(N+1)\times (N+1)} [t]_{N+1} = [V]_{N+1}
@@ -221,7 +223,101 @@
   \medskip
   \subsubsection{Coupled channels}
 
-  \emph{Add stuff about checking the $t$-matrix}
+  The neutron-proton system has both spin $S = 0$ and $S = 1$ channels.  The
+  uncoupled channels have $S = 0$, whereas coupled channels have $S = 1$.
+  The angular momentum numbers of the coupled channel pairs differ by $2$.
+  For example, some of the coupled channel pairs are $^3 S_1$ - $^3 D_1$,
+  $^3 P_2$ - $^3 F_2$, $^3 D_3$ - $^3 G_3$, so on.
 
+  For coupled channels Eq.~\eqref{eq:LSE_operator_form} becomes
+  \beq
+  \left( \begin{array}{cc}
+    t_{00} & t_{02} \\
+    t_{20} & t_{22}
+  \end{array} \right) =  \left( \begin{array}{cc}
+    V_{00} & V_{02} \\
+    V_{20} & V_{22}
+  \end{array} \right) + \left( \begin{array}{cc}
+    V_{00} & V_{02} \\
+    V_{20} & V_{22}
+  \end{array} \right)  \left( \begin{array}{cc}
+    G_{0} & 0 \\
+    0 & G_{0}
+  \end{array} \right)  \left( \begin{array}{cc}
+    t_{00} & t_{02} \\
+    t_{20} & t_{22}
+  \end{array} \right) \,
+  \eeq
+  where the subscripts $00$, $02$ etc.\ indicate the coupled channels.
+  Following steps similar to the uncoupled case, the analog of
+  Eq.~\eqref{eq:t_D_p_i} is
+  \begin{multline}
+    \left( \begin{array}{cc}
+      t_{00}(\pp_i, p) & t_{02}(\pp_i, p) \\
+      t_{20}(\pp_i, p) & t_{22}(\pp_i, p)
+    \end{array} \right) - \sum_{j = 1}^{N+1} \left( \begin{array}{cc}
+      V_{00}(\pp_i, k_j) & V_{02}(\pp_i, k_j) \\
+      V_{20}(\pp_i, k_j) & V_{22}(\pp_i, k_j)
+    \end{array} \right) \left( \begin{array}{cc}
+      \mathcal{D}(k_j) & 0 \\
+      0 & \mathcal{D}(k_j)
+    \end{array} \right) \\  \left( \begin{array}{cc}
+      t_{00}(k_j, p) & t_{02}(k_j, p) \\
+      t_{20}(k_j, p) & t_{22}(k_j, p)
+    \end{array} \right) =  \left( \begin{array}{cc}
+      V_{00}(\pp_i, p) & V_{02}(\pp_i, p) \\
+      V_{20}(\pp_i, p) & V_{22}(\pp_i, p)
+    \end{array} \right) \;.
+  \end{multline}
+  %
+  $\mathcal{D}$ is a $(N+1) \times (N+1)$ diagonal matrix element with the
+  diagonal matrix elements given by $D$ from Eq.~\eqref{eq:D_def}.
+  Each of $V_{0,2 \, 0,2}(\pp_i, k_j)$ are a $(N+1) \times (N+1)$ matrix,
+  whereas $t_{0,2 \, 0,2}(\pp_i, p)$ and $V_{0,2 \, 0,2}(\pp_i, p)$ have
+  dimensions of $(N+1) \times 1$.
+
+  Analogous to Eqs.~\eqref{eq:F_def} and \eqref{eq:F_t_matrix}, we now have
+  \begin{multline}
+  \sum_{j = 1}^{N+1} \bigg[\delta_{i j} \left( \begin{array}{cc}
+  \mathds{1}_{(N+1) \times (N+1)} & 0 \\
+  0 & \mathds{1}_{(N+1) \times (N+1)}
+  \end{array} \right) -
+  \left( \begin{array}{cc}
+  V_{00}(\pp_i, k_j) D_j & V_{02}(\pp_i, k_j) D_j \\
+  V_{20}(\pp_i, k_j) D_j & V_{22}(\pp_i, k_j) D_j
+  \end{array} \right)
+  \bigg] \\
+  \left( \begin{array}{cc}
+  t_{00}(k_j, p) & t_{02}(k_j, p) \\
+  t_{20}(k_j, p) & t_{22}(k_j, p)
+  \end{array} \right)
+  = \left( \begin{array}{cc}
+    V_{00}(\pp_i, p) & V_{02}(\pp_i, p) \\
+    V_{20}(\pp_i, p) & V_{22}(\pp_i, p)
+    \end{array} \right) \;,
+  \end{multline}
+  and
+  \beq
+  [F]_{(2 N+2)\times (2N+2)} [t]_{(2 N+ 2) \times 2 } =
+  [V]_{(2 N+2) \times 2} \;.
+  \label{eq:F_t_coupled}
+  \eeq
+  Solving Eq.~\eqref{eq:F_t_coupled} for a given $E_0$ and $p$ yields
+  $t_{0,2 \, 0,2}(E_0; k_j, p)$ for points $k_j$ on the mesh.  Analogous to
+  Eq.~\eqref{eq:t_interpolation}, we can again use the LSE to interpolate
+  the $t$-matrix in coupled channel.  Below, we note interpolation for one
+  of the components for the point $p = \wt{p}$ not on the mesh.
+  \beq
+  t_{02}(E_0; \wt{p}, p) = V_{02}(\wt{p}, p) + \sum_{j = 1}^{N+1}
+  V_{00}(\wt{p}, k_j) \, D_j \, t_{02}(E_0, k_j, p) + \sum_{j = 1}^{N+1}
+  V_{02}(\wt{p}, k_j) \, D_j \, t_{22}(E_0, k_j, p)
+  \label{eq:t_interpolation_coupled}
+  \eeq
+  Note that all the quantities on the right side of
+  Eq.~\eqref{eq:t_interpolation_coupled} are known allowing us to evaluate
+  $t_{02}(E_0; \wt{p}, p)$.  Similarly, we can write down equations for
+  interpolation of other components of the $t$-matrix.
+
+  \section{$t$-matrix checks} 
 
   \section{Using the LSE for interpolation}
