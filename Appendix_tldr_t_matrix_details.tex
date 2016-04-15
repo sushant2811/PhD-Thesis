@@ -51,9 +51,10 @@
   a pole at $\ppp = p_0$, and that needs to be accounted for properly.
   Let's consider the expression
   \bea
+  \label{eq:separating_pole_first_step}
   \int_0 ^\Lambda \dd p \frac{p^2 f(p)}{p_0^2 - p^2 + i \epsilon}
   &=& \int_0 ^\Lambda \dd p \frac{p^2 f(p)}{(p_0 + p)(p_0 - p + i \epsilon)}
-  \nonumber \\ [0.4 em]
+  \\ [0.4 em]
   &\equiv& \int_0 ^\Lambda \dd p \frac{\wt{f}(p)}{(p_0 - p + i \epsilon)} \;,
   \label{eq:separating_pole}
   \eea
@@ -62,10 +63,15 @@
   \wt{f}(p) = \frac{p^2 \, f(p)}{p_0 + p} \;.
   \eeq
   %
+  In principle, we can work without separating the singular and non-singular
+  factors of $p_0^2 - p^2 + i \epsilon$.  However, we find better numerical
+  convergence when the pole term is factorized as in
+  Eq.~\eqref{eq:separating_pole_first_step}.
+
   Using Sokhotsky's formula
   \beq
-  \frac{1}{x \pm i \epsilon} = \mathcal{P} \left(\frac{1}{x}\right) \mp i \, \pi
-  \, \delta(x) \;,
+  \frac{1}{x \pm i \epsilon} = \mathcal{P} \left(\frac{1}{x}\right) \mp i \,
+  \pi \, \delta(x) \;,
   \eeq
   we have
   \beq
@@ -132,11 +138,90 @@
   %
   Using the result of Eq.~\eqref{eq:pole_GL}, the LSE from
   Eq.~\eqref{eq:t_uncoupled_channels} on the Gauss-Legendre mesh becomes
+  %
+  \begin{multline}
+  t(E_0; \pp, p) = V(\pp, p) + \frac{2}{\pi} M \sum_{j = 1}^N
+  \frac{k_j^2 \, V(\pp, k_j) \, t(E_0; k_j, p)}{p_0^2 - k_j^2} w_j \\
+  \null - \frac{2}{\pi} M \frac{p_0^2 \, V(\pp, p_0) \, t(E_0; p_0, p)}{2 p_0}
+  \left[ i \pi + {\rm{ln}}\big(\frac{\Lambda - p_0}{p_0}\big)
+  + \sum_{j = 1}^N \frac{w_j}{p_0 - k_j} \right] \;.
+  \label{eq:LSE_GL}
+  \end{multline}
+  %
+  Note that $k_j$ are Gauss-Legendre momentum mesh points and $w_j$ are the
+  corresponding weights.
+
+  Let's define an array $D$ such that
   \beq
+  D_j = \left\{ \begin{array}{ll}
+          \dfrac{2}{\pi} M \dfrac{k_j^2 \, w_j}{p_0^2 - k_j^2}
+          \mbox{~~~~for $j = 1, \cdots, N$} \\ [0.7em]
+          -\dfrac{2}{\pi} M \dfrac{p_0^2}{2 p_0} \Big( i \pi + {\rm{ln}}\big(
+          \dfrac{\Lambda - p_0}{p_0}\big) + \sum_{j = 1}^N \dfrac{w_j}{p_0 - k_j}
+          \Big) \mbox{~~for $j = N+ 1$}.
+        \end{array} \right.
+  \label{eq:D_def}
   \eeq
-  \emph{Add comment about separating the pole is advantageous numerically.} 
+  %
+  Using this definition of $D$ and with the identification that
+  $k_{j = N+1} = p_0$, Eq.~\eqref{eq:LSE_GL} can be written as
+  \beq
+  t(E_0; \pp, p) - \sum_{j = 1}^{N+1} V(\pp, k_j) \, D_j \, t(E_0, k_j, p)
+  = V(\pp, p) \;.
+  \label{eq:t_D}
+  \eeq
 
+  To solve Eq.~\eqref{eq:t_D} in matrix form, we let $\pp \to \{p_i\}$,
+  where $i = 1, \cdots, N$ are the Gauss-Legendre mesh points and $i = N+1$
+  is the on-shell point $p = p_0$ \footnote{$k_i$'s and $p_i$'s are actually
+  the same set of momentum points.  To avoid confusion, we keep the notation
+  separate.}.  Eq.~\eqref{eq:t_D} can then be written as
+  a matrix multiplication equation.
+  \beq
+  t(E_0; \pp_i, p) - \sum_{j = 1}^{N+1} V(p_i, k_j) \, D_j \, t(E_0, k_j, p)
+  = V(\pp_i, p)
+  \eeq
+  \beq
+  \sum_{j = 1}^{N+1} \underbrace{\big(\delta_{i j} - V(p_i, k_j) \, D_j\big)}
+  _{\equiv \, F_{ij}} \, t(E_0, k_j, p)  =  V(p_i, p)
+  \eeq
+  \beq
+  [F]_{(N+1)\times (N+1)} [t]_{N+1} = [V]_{N+1}
+  \label{eq:F_t_matrix}
+  \eeq
+  %
+  Note that $[V]$ in Eq.~\eqref{eq:F_t_matrix} is an array whose $N+1^{\rm{th}}$
+  element is $V(p_0, p)$ and the first $N$ elements are $V(p_i, p)$, where as
+  mentioned before $p_i$'s are the Gauss-Legendre mesh points.  The same
+  indexing holds for $[t]$.
 
+  $[F]$ and $[V]$ in Eq.~\eqref{eq:F_t_matrix} are
+  known.  Eq.~\eqref{eq:F_t_matrix} can be solved using standard matrix equation
+  solving subroutines to get the $t$-matrix array $[t]$.  Recall that
+  $\displaystyle {[t] = \big( t(E_0; p_{j = 1,\cdots, N}, p), \, t(E_0; p_0, p)
+  \big)}$.  Thus, for a given $p$ and $E_0$, we have the $t$-matrix
+  $t(E_0; p_j, p)$ for any point $p_j$ on the Gauss-Legendre mesh, and also
+  have it at the half on-shell point $t(E_0; p_0, p)$.  In principle, we can
+  use any standard interpolation routine to get the $t$-matrix at a point
+  not on the Gauss-Legendre mesh.  However, it turns out that we can use the
+  LSE itself for interpolation.  Consider a point $\wt{p}$ not on the momentum
+  mesh.  From Eq.~\eqref{eq:t_D}, we have
+  \beq
+  t(E_0; \wt{p}, p) = V(\wt{p}, p) + \sum_{j = 1}^{N+1}
+  V(\wt{p}, k_j) \, D_j \, t(E_0, k_j, p) \;.
+  \label{eq:t_interpolation}
+  \eeq
+  %
+  As mentioned before $\{k_j\} = \{p_j\}$, and therefore all the terms on the
+  right side of Eq.~\eqref{eq:t_interpolation} are known allowing us to
+  evaluate $t(E_0; \wt{p}, p)$.  To interpolate the potential, which is stored
+  on a momentum-space grid, we use
+	the two-dimensional cubic spline algorithm from ALGLIB~\cite{ALGLIB:0915}.
+
+  \medskip
+  \subsubsection{Coupled channels}
+
+  \emph{Add stuff about checking the $t$-matrix}
 
 
   \section{Using the LSE for interpolation}
