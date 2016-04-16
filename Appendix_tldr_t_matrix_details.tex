@@ -318,6 +318,84 @@
   $t_{02}(E_0; \wt{p}, p)$.  Similarly, we can write down equations for
   interpolation of other components of the $t$-matrix.
 
-  \section{$t$-matrix checks} 
+  \section{$t$-matrix checks}
 
-  \section{Using the LSE for interpolation}
+  We checked the accuracy of our $t$-matrix by calculating the phase shifts and
+  verifying them against standard values (such as from NN-online).
+  For uncoupled channels, the on-shell part of the $t$-matrix is related to
+  the phase shift as follows \footnote{Be aware that the factors of $M$
+  (nucleon mass) and $\hbar$ might differ based on the conventions and units
+  used.}
+  \beq
+  t_{l} (E_k; k, k) = \frac{\ee^{i \delta_l} \, \sin \delta_l}{- M \, k} \;.
+  \label{eq:t_phase_shift}
+  \eeq
+  Thus, argument of the $t$-matrix gives the phase shift.
+  \beq
+  \delta_l(k) = {\rm{arg}} (t_{l} (E_k; k, k))
+  \label{eq:delta_l_uncoupled}
+  \eeq
+
+  The coupled channel calculation involves an additional parameter called
+  mixing angle denoted by $\bar{epsilon}$.  In the ``Stapp'' or the ``bar''
+  phase shift parametrization \cite{Stapp:1956mz}, the $S$-matrix is written
+  as
+  \beq
+  S = \left( \begin{array}{cc}
+  \cos 2 \bar{\epsilon} \, \ee^{2 i \bar{\delta}_1} &
+  i \, \sin 2 \bar{\epsilon} \, \ee^{i (\bar{\delta}_1 + \bar{\delta}_2)} \\
+  i \, \sin 2 \bar{\epsilon} \, \ee^{i (\bar{\delta}_1 + \bar{\delta}_2)} &
+  \cos 2 \bar{\epsilon} \, \ee^{2 i \bar{\delta}_2}
+  \end{array} \right) \;.
+  \label{eq:S_stapp}
+  \eeq
+  %
+  We calculate $S$ in terms $t$-matrix using (see for instance Eq.~(8.70) in
+  \cite{Landau:1989})
+  \beq
+  S = \left( \begin{array}{cc}
+  1 - 2 \, i \, k \, t_{00}(E_k; k, k )  &
+  - 2 \, i \, k \, t_{02}(E_k; k, k ) \\
+  - 2 \, i \, k \, t_{20}(E_k; k, k ) &
+  1 - 2 \, i \, k \, t_{22}(E_k; k, k )
+  \end{array} \right) \;.
+  \eeq
+  %
+  From Eq.~\eqref{eq:S_stapp}, we can work out that the phase shifts and the
+  mixing angles are given as follows.
+  \bea
+  \bar{\delta}_1 = \dfrac{1}{2} \tan^{-1} \left( \dfrac{
+  {\rm{Im}}\big[S[1,1]\big]}
+  {{\rm{Re}}\big[S[1,1]\big]} \right) \\ [0.5 em]
+  \bar{\delta}_2 = \dfrac{1}{2} \tan^{-1} \left( \dfrac{
+  {\rm{Im}}\big[S[2,2]\big]}
+  {{\rm{Re}}\big[S[2,2]\big]} \right) \\ [0.5 em]
+  \bar{\epsilon} = \dfrac{1}{2} \sin^{-1} \left( \dfrac{
+  {\rm{Im}}\big[S[1,2]\big]}
+  {{\rm{Re}}\big[\sqrt{{\rm{det}}(S)}\big]} \right)
+  \eea
+  %
+  The phase shifts and the mixing angles calculated using these formulas match
+  the results on NN-online.  This indicates that $t$-matrix we have is correct.
+
+  \subsubsection{Checking the imaginary part of the $t$-matrix}
+
+  The formulas for phase shifts check the ratio of real and imaginary parts of
+  $t$-matrix.  This is particularly evident in Eq.~\eqref{eq:delta_l_uncoupled}.
+  But it is also possible to check the imaginary part of the $t$-matrix.
+  From Eq.~\eqref{eq:t_phase_shift}, we have (suppressing the arguments of the
+  $t$-matrix)
+  \bea
+  t & = &  \frac{\sin \delta}{-M \, k \, (\cos \delta - i \, \sin \delta)}
+  \;. \\
+  \Rightarrow \dfrac{1}{-M \, t} & = & k \, \cot \delta - i \, k \;. \\
+  \Rightarrow {\rm{Im}}[1/t] & \propto & k \;.
+  \eea
+  Thus, the imaginary part of $1/t_l(E_k; k, k)$ when plotted as a function of
+  $k$ should be a straight line.  Our $t$-matrix satisfies this condition.
+  The slope of the straight line depends on the units chosen.
+
+
+  \subsubsection{symmetric property of $t$-matrix}
+
+  \section{Using the LSE for wave function interpolation}
