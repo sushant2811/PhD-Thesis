@@ -390,12 +390,109 @@
   \;. \\
   \Rightarrow \dfrac{1}{-M \, t} & = & k \, \cot \delta - i \, k \;. \\
   \Rightarrow {\rm{Im}}[1/t] & \propto & k \;.
+  \label{eq:Im_t_behavior}
   \eea
   Thus, the imaginary part of $1/t_l(E_k; k, k)$ when plotted as a function of
   $k$ should be a straight line.  Our $t$-matrix satisfies this condition.
-  The slope of the straight line depends on the units chosen.
+  The slope of the line in this case is $M$, but in general depends on the
+  units chosen.
 
+  \subsubsection{Symmetric property of $t$-matrix}
 
-  \subsubsection{symmetric property of $t$-matrix}
+  The phase shifts, mixing angles, and the behavior of the imaginary part of
+  $t$-matrix described in Eq.~\eqref{eq:Im_t_behavior}, all check the
+  on-shell part of the $t$-matrix.  To get some confidence about the off-shell
+  part of $t$-matrix, we can check if it has the right symmetries.
+  The $t$-matrix is symmetric under the angular momentum and momentum
+  interchange, i.e.,
+  \beq
+  t(E_0; k, k^\prime, L, L^\prime, J, S , T) = t(E_0; k^\prime, k, L^\prime, L,
+  J, S, T) \;.
+  \eeq
+
+  Note that the $t$-matrix is not Hermitian as one would naively expect.
+  \emph{Cite the paper by Japanese authors that Sebastian once mentioned.}
 
   \section{Using the LSE for wave function interpolation}
+
+  Solving Schr\"{o}dinger's equation we obtain the deuteron wave function
+  on the momentum mesh on which our potential is stored.  We can use the LSE
+  to obtain the wave function at any intermediate momentum point.
+  We use the property that near the bound state pole, the $t$-matrix
+  factorizes as \emph{add reference}
+  \beq
+  \lim_{E \to -E_B} (E + E_B) \, t(E; k, k^\prime) = \mathcal{B}^\ast (k) \,
+  \mathcal{B} (k^\prime) \;,
+  \label{eq:t_near_pole}
+  \eeq
+  where $E_B$ is the bound state energy, and the factor $\mathcal{B}$ is
+  the wave function apart from a factor of propagator
+  \beq
+  \mathcal{B}(q) = \dfrac{-\pi (k_B^2 + q^2)}{2 \, M} \psi(q) \;,
+  \label{eq:B_psi_relation}
+  \eeq
+  where $k_B$ is the bound state momentum.
+
+  Multiplying the LSE equation for the $t_{22}$ channel by $(E + E_B)$ and
+  taking the limit $E \to -E_B$, we have
+  \begin{multline}
+  \lim_{E \to -E_B} (E+E_B) \, t_{22} (E; k, k^\prime)
+  = \lim_{E \to -E_B} (E+E_B) \, V_{22} (k, k^\prime) \\
+  \null + \frac{2}{\pi} M
+  \lim_{E \to -E_B}  \int \dd p \, p^2 \, V_{20} (k, p)
+  \frac{t_{02}(E; p, k^\prime)}{k_E^2 - p^2 + i \epsilon} (E+E_B) \\
+  \null + \frac{2}{\pi} M \lim_{E \to -E_B}  \int \dd p \, p^2 \, V_{22} (k, p)
+  \frac{t_{22}(E; p, k^\prime)}{k_E^2 - p^2 + i \epsilon} (E+E_B)
+  \label{eq:lim_LSE} \;.
+  \end{multline}
+  %
+  The first term on the right side of Eq.~\eqref{eq:lim_LSE} vanishes as the
+  potential does not have a singular part.
+  Using Eq.~\eqref{eq:t_near_pole}, we get
+  \begin{equation}
+  \mathcal{B}_2^\ast(k) = \frac{2}{\pi} M \int \dd p \, p^2
+  \frac{V_{20}(k, p) \, \mathcal{B}_0^\ast (p)}{-k_B^2 - p^2} +
+  \frac{2}{\pi} M \int \dd p \, p^2
+  \frac{V_{22}(k, p) \, \mathcal{B}_2^\ast (p)}{-k_B^2 - p^2} \;.
+  \label{eq:eq_for_B2}
+  \end{equation}
+  %
+  In deriving Eq.~\eqref{eq:eq_for_B2}, we have dropped the factor of
+  $\mathcal{B}_2(k^\prime)$ which is common on both sides.
+  Substituting Eq.~\eqref{eq:B_psi_relation} gives
+  \beq
+  \frac{-\pi}{2 \, M} \, (k_B^2 + k^2) \, \psi_2^\ast(k) =
+  \int \dd p \, p^2 \, V_{20}(k, p) \psi_0^\ast(p) +
+  \int \dd p \, p^2 \, V_{22}(k, p) \psi_2^\ast(p) \;.
+  \eeq
+  The wave function in our case is real and therefore the complex conjugation
+  can be dropped.  Writing the integral in terms of sum, we have
+  \beq
+  \psi_2(k) = \frac{-2 \, M}{\pi \, (k_B^2 + k^2)} \left[
+  \sum_{j = 1}^N w_j \, p_j^2 \, V_{20}(k, p_j) \, \psi_0(p_j)
+  + \sum_{j = 1}^N w_j \, p_j^2 \, V_{22}(k, p_j) \, \psi_2(p_j) \right] \;.
+  \label{eq:psi_2_interpolation}
+  \eeq
+  The wave functions on the mesh---$\psi_0(p_j)$ and $\psi_2(p_j)$---are
+  already known from solving the Schr\"{o}dinger equation and therefore
+  Eq.~\eqref{eq:psi_2_interpolation} allows us to obtain $\psi_2(k)$ for any
+  desired momentum $k$.  We also checked that if we choose $k$ in
+  Eq.~\eqref{eq:psi_2_interpolation} to be one of the on mesh points, then we
+  get back the expected answer.
+
+  Similarly for the $S$-state wave function, we have
+  \beq
+  \psi_0(k) = \frac{-2 \, M}{\pi \, (k_B^2 + k^2)} \left[
+  \sum_{j = 1}^N w_j \, p_j^2 \, V_{00}(k, p_j) \, \psi_0(p_j)
+  + \sum_{j = 1}^N w_j \, p_j^2 \, V_{02}(k, p_j) \, \psi_2(p_j) \right] \;.
+  \label{eq:psi_0_interpolation}
+  \eeq
+  A word of caution---the $M$ in Eqs.~\eqref{eq:psi_2_interpolation} and
+  \eqref{eq:psi_0_interpolation} depends on conventions.  In some cases, the
+  mass factor is absorbed in the potential.  Same goes for the factor of
+  $\hbar$'s.  Therefore, it is important to check that the units are consistent.
+
+  The interpolation techniques for the wave functions and for the $t$-matrix
+  (Eqs.~\eqref{eq:t_interpolation} and \eqref{eq:t_interpolation_coupled})
+  keep the numerical errors minimal.  In our case, the only source of error is
+  from interpolation of the potential.
