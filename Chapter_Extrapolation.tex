@@ -68,8 +68,8 @@
 	not clear which the best choice for $\Omega$.  The terms $a$ and $c$ in
 	Eq.~\eqref{eq:exp_Nmax_extrapolation} are fit to data.  There is no way to
 	extract these terms for one nucleus and use it to predict something else.
-	Moreover, the physical motivation for exponential in $\Nmax$ extrapolation is
-	slim at best.  It has been claimed that for larger nuclei $\Nmax$ is a
+	Moreover, the physical motivation for an exponential in $\Nmax$ extrapolation
+	is slim at best.  It has been claimed that for larger nuclei $\Nmax$ is a
 	logarithmic measure of the number of states \cite{Bogner:2007rx}.
 
 	An alternative approach to extrapolations is motivated by effective field
@@ -253,7 +253,7 @@
 
 	Another signature that demonstrates the suitability of $L_2$ is that
 	points from many different $\hw$ and $\Nmax$ values all lie on the same
-	curve.  Figures.~\ref{fig:spatial_cutoff_vs_HO_gauss} and
+	curve.  Figures~\ref{fig:spatial_cutoff_vs_HO_gauss} and
 	\ref{fig:spatial_cutoff_vs_HO_square_well} show the energies from a
 	wide range of HO truncations for $L_0$, $\LA$ and $L_2$ for the
 	Gaussian well and the square well potential, respectively.  The
@@ -356,7 +356,7 @@
 	eigenvalue $\kappa^2$ is
 	%
 	\bea
-	\label{eigen}
+	\label{eq:eigen_l0}
 	\psi_{\kappa}(r) = \left\{\begin{array}{ll}
 	\sin{\kappa r}\ , & 0 \le r \le {\pi\over\kappa}\\
 	0 \ , & r > {\pi\over\kappa}
@@ -376,7 +376,7 @@
 	with energy $E=(2n +3/2)\hbar\Omega$. Here, $L_n^{1/2}$ denotes the
 	Laguerre polynomial, and it is convenient to rewrite this function in
 	terms of the Hermite polynomial $H_n$. We expand the
-	eigenfunction~(\ref{eigen}) as
+	eigenfunction in Eq.~\eqref{eq:eigen_l0} as
 	%
 	\beq
 	\label{expand}
@@ -404,13 +404,6 @@
 	$(\varphi_1, \varphi_3, \varphi_5,\ldots \varphi_{2n+1})$, however,
 	the last row of the eigenvalue problem
 	%
-	%\bea
-	%\label{quant}
-	%\lefteqn{\left(2n+3/2 -\kappa^2\right) c_{2n+1}(\kappa) =}\nonumber\\
-	% &&{1\over
-	%  2}\sqrt{2n}\sqrt{2 n+1}c_{2n-1}(\kappa) \ ,
-	%\eea
-	%
 	\beq
 	\label{quant}
 	\left(2n+3/2 -\kappa^2\right) c_{2n+1}(\kappa) =
@@ -424,7 +417,7 @@
 	for $n\gg 1$. Those can be derived analytically as follows.
 
 
-	We rewrite the eigenfunction~(\ref{eigen}) as a Fourier transform
+	We rewrite the eigenfunction in Eq.~\eqref{eq:eigen_l0} as a Fourier transform
 	%
 	\beq
 	\psi_{\kappa} (r) = \sqrt{2\over \pi} \int\limits_0^\infty dk
@@ -438,7 +431,7 @@
 	\varphi_{2n+1}(k) \; .
 	\eeq
 	%
-	Thus, the expansion coefficients in Eq.~(\ref{expand}) are given in
+	Thus, the expansion coefficients in Eq.~\eqref{expand} are given in
 	terms of the Fourier transform $\tilde{\psi}_\kappa(k)$ as
 	%
 	\beq
@@ -469,19 +462,19 @@
 	\sin (\sqrt{4n+3}\kappa) \; ,
 	\eea
 	%
-	with $\kappa \le \pi/\sqrt{4n+3}$ due to Eq.~(\ref{eigen}).
+	with $\kappa \le \pi/\sqrt{4n+3}$ due to Eq.~\eqref{eq:eigen_l0}.
 
 	Let us return to the solution of the quantization
-	condition~(\ref{quant}).  We make the ansatz
+	condition in Eq.~\eqref{quant}.  We make the ansatz
 	%
 	\beq
 	\kappa = {\pi\over\sqrt{4n+3+2\Delta}} \; ,
 	\eeq
 	%
 	and must assume that $\Delta > 0$.  This ansatz is well motivated, since the
-	naive semiclassical estimate $\kappa = \pi/L_0$ yields $\Delta=0$. We
-	insert the expansion coefficients~(\ref{phi}) into the quantization
-	condition~(\ref{quant}) and consider its leading-order approximation
+	naive semiclassical estimate $\kappa = \pi/L_0$ yields $\Delta=0$.  We
+	insert the expansion coefficients of Eq.~\eqref{phi} into Eq.~\eqref{quant}
+	and consider its leading-order approximation
 	for $n\gg 1$ and $n\gg \Delta$. This yields
 	%
 	\beq
@@ -496,7 +489,7 @@
 	oscillator basis with $n \gg 1$ basis states (and not $1/b$ as stated in
 	Ref.~\cite{Coon:2012ab}).  It is clear from its
 	very definition that $\pi/L_2$ is also (a very precise approximation of)
-	infrared cutoff in a finite	oscillator basis, and that $L_2$ (and not $b$
+	the infrared cutoff in a finite	oscillator basis, and that $L_2$ (and not $b$
 	as stated in Refs.~\cite{Stetcu:2006ey,Stetcu:2007ms}) is the radial extent
 	of the oscillator basis and the analog to the extent of the lattice in the
 	lattice computations \cite{Luscher:1985dn}.
@@ -587,9 +580,9 @@
 	where $b$ is the oscillator length.
 	Figure~\ref{fig:staircase} shows a comparison between the quantum
 	mechanical staircase function and the semiclassical
-	estimate~(\ref{Mstair}) for $N=32$.  For sufficiently small values of
+	estimate of Eq.~\eqref{Mstair} for $N=32$.  For sufficiently small values of
 	$kb\ll\sqrt{2N}$, the number of $s$-wave momentum eigenstates grows
-	linearly, and inspection of Eq.~(\ref{Mstair}) shows that the slope at
+	linearly, and inspection of Eq.~\eqref{Mstair} shows that the slope at
 	the origin is $L_0/\pi$ semiclassically.  The linear growth of the
 	number of eigenstates of $p^2$ with $k$ clearly demonstrate that --- at
 	not too large values of $kb$ --- the spectrum of $p^2$ in the oscillator
@@ -704,11 +697,11 @@
 	\end{figure}
 
 	We can check the accuracy of the linear energy
-	approximation~(\ref{eq:linear_energy_approx}) by numerically solving
+	approximation~(Eq.~\eqref{eq:linear_energy_approx}) by numerically solving
 	the Schr\"odinger equation with a specified energy.  This determines
 	$L$ as the radius at which the resulting wave function vanishes. Then
 	we compare this wave function for $r \leq L$ to the right side of
-	Eq.~(\ref{eq:linear_energy_approx}), with the derivative calculated
+	Eq.~\eqref{eq:linear_energy_approx}, with the derivative calculated
 	numerically.  Figure~\ref{fig:linear_energy_approx} shows
 	representative examples for a deep and shallow Gaussian potential.  In
 	these examples and other cases, the approximation to the wave function
@@ -721,7 +714,7 @@
 	calculation of other observables the linear energy approximation will
 	be useful.  For observables most sensitive to the long distance
 	(outer) part of the wave function, such as the radius, this has
-	already been shown to be true~\cite{Furnstahl:2012qg}. But the good
+	already been shown to be true~\cite{Furnstahl:2012qg}.  But the good
 	approximation to the wave function at small $r$ means that corrections
 	for short-range observables should also be controlled, with the
 	dominant contribution in an extrapolation formula coming from the
@@ -856,7 +849,8 @@
 	From Ref.~\cite{taylor2006scattering} we learn that the residue as a
 	function of $E$ of the partial wave amplitude $f_l(E)$ at the
 	bound-state pole is $\displaystyle (-1)^{l+1} \ANC^2 \hbar^2/2 \mu$,
-	where $\ANC$ is	the ANC.  The ANC is defined by the large-$r$ behavior of the
+	where $\ANC$ is	the asymptotic normalization coefficient (ANC).  The ANC is
+	defined by the large-$r$ behavior of the
 	\emph{normalized} bound-state wave function:
 	%
 	\beq
@@ -869,17 +863,10 @@
 	%
 	\beq
 	  f_0(k)  \approx  \frac{- \hbar^2\ANC^2}{2\mu (E-\Einf)}
-	      =  \frac{-\ANC^2}{k^2 + \kinf^2}
-	   \;.
+	      =  \frac{-\ANC^2}{k^2 + \kinf^2} \;.
 	\eeq
 	%
 	or, using Eqs.~\eqref{eq:f_l} and \eqref{eq:alphaE_and_S},
-	%
-	%\beq
-	%  s_0(k) = \frac{k^2+\kinf^2 - 2 i k \ANC^2}{k^2+\kinf^2}
-	%\eeq
-	%
-	%and therefore
 	%
 	\beq
 	  \alpha_E(k) \approx -\frac{k^2+\kinf^2}{k^2+\kinf^2-2 i k \ANC^2}
@@ -1037,11 +1024,11 @@
 	\eeq
 	%
 	yield different results for $C$. The first
-	parametrization~(\ref{eq:S0_1}) is based on a particular form for the
+	parametrization~(Eq.~\eqref{eq:S0_1}) is based on a particular form for the
 	partial-wave scattering amplitude near the
 	pole~\cite{taylor2006scattering}, and was employed in
 	Ref.~\cite{More:2013rma}.  The second paramerization
-	(\ref{eq:s0_Newton}) correctly incorporates that the S-matrix also has
+	(Eq.~\eqref{eq:s0_Newton}) correctly incorporates that the S-matrix also has
 	a zero at $-i\kinf$~\cite{newton2002scattering}.  In neither case,
 	however, do we have a sufficiently general parametrization that allows
 	us to unambiguously determine $C$.
@@ -1067,7 +1054,7 @@
 	     \label{eq:eff_range_kinf}
 	\eeq
 	%
-	To match the residue at the S-matrix pole as in \eqref{eq:purepole},
+	To match the residue at the S-matrix pole as in Eq.~\eqref{eq:purepole},
 	we identify
 	%
 	\beq
@@ -1077,10 +1064,10 @@
 	\eeq
 	%
 	$w_2$ is a low-energy observable like $\ANC$ and $\kinf$.
-	Now we substitute \eqref{eq:eff_range_kinf} into \eqref{eq:s0_exact}
+	Now we substitute Eq.~\eqref{eq:eff_range_kinf} into Eq.~\eqref{eq:s0_exact}
 	and use Eq.~\eqref{eq:kLexpansion} to expand both sides of
 	Eq.~\eqref{eq:basiceq}, equating terms with equal powers of
-	$e^{-2\kinf L}$ and $L$. The resulting expansion for the binding
+	$e^{-2\kinf L}$ and $L$.  The resulting expansion for the binding
 	momentum to NLO is
 	%
 	\begin{align}
@@ -1088,8 +1075,7 @@
 		e^{-4\kinf L}
     \nonumber  \\
     &\null - \ANC^2 \left(1 - \frac{\ANC^2}{2\kinf} - \frac{\ANC^4}{4\kinf^2}
-		+ 2 \kinf w_2 \ANC^4 \right) e^{-4\kinf L}
-    \;.
+		+ 2 \kinf w_2 \ANC^4 \right) e^{-4\kinf L} \;.
     \label{eq:complete_k_correction_NLO}
   \end{align}
 	%
@@ -1102,11 +1088,9 @@
     \nonumber \\
   	& \null\quad +
     \kinf\ANC^2 \Bigl( 1-\frac{\ANC^2}{\kinf}-\frac{\ANC^4}{4\kinf^2}
-    +
-    2\kinf w_2 \ANC^4  \Bigr)  e^{-4\kinf L}
-    \;.
+    + 2\kinf w_2 \ANC^4  \Bigr)  e^{-4\kinf L} \;.
     \label{eq:complete_E_correction_NLO}
-\end{align}
+	\end{align}
 	%
 	In what follows we use LO to refer to the first term in this expansion and
 	L-NLO to
@@ -1248,8 +1232,7 @@
 	Eq.~\eqref{eq:uLprime} and our LO result
 	%
 	\beq
-	   k_L = \kinf (1 - 2 e^{-2 \kinf L})
-	   \;.
+	   k_L = \kinf (1 - 2 e^{-2 \kinf L}) \;.
 	\eeq
 	%
 	Here, we neglected terms that are $\mathcal{O}(e^{-6 \kinf L})$ or smaller.
@@ -1275,8 +1258,7 @@
 	  \nonumber \\
 	  &\approx
 	  -4 \kinf^3 e^{-2 \kinf L} -  8 \kinf^3 (4\kinf L - 3)e^{-4 \kinf L}
-	  + \mathcal{O}(e^{-6 \kinf L})
-	  \;,
+	  + \mathcal{O}(e^{-6 \kinf L}) \;,
 	\end{align}
 	%
 	and then finally
@@ -1317,7 +1299,7 @@
 	Eq.~\eqref{eq:exp_L_extrapolation} to extract $\Einf$ and $\kinf$.
 
 	Based on the results
-	presented in Subsect.~\ref{subsec:tale_of_tails}, we use $L_2$ in all our
+	presented in Subsec.~\ref{subsec:tale_of_tails}, we use $L_2$ in all our
 	further analyses.
 	%
 	It is important that we isolate the IR corrections in making these
@@ -1424,12 +1406,12 @@
 	  $N$ and $\hw$ (circles) ($\hbar = \mu = R = 1$).  These are compared to the
 		predictions of Eq.~\eqref{eq:complete_IR_scaling} (dashed).  The solid line
 	  is a fit to Eq.~\eqref{eq:exp_L_extrapolation} with $A$, $\kinf$ and
-		$\Einf$ as fit parameters. The horizontal dotted line
+		$\Einf$ as fit parameters.  The horizontal dotted line
 	  is the exact energy, $\Einf=-3.3121$.}
 	\label{fig:deep_exp_ANC_inset}
 	\end{figure}
 	%
-	For deeply bound states, Eqs.~\eqref{eq:complete_IR_scaling} fails
+	For deeply bound states, Eq.~\eqref{eq:complete_IR_scaling} fails
 	for a different reason.  The error in
 	Eq.~\eqref{eq:complete_IR_scaling} is proportional to $e^{-4 \kinf L}$,
 	so one might expect that the prediction to become increasingly
@@ -1471,7 +1453,7 @@
 	The results so far are for the ground state of the potential.  However,
 	the derivations in the Subsec.~\ref{subsec:make_cash} should
 	also hold for excited states.  This is so because the generalization of
-	the results in Subsec~\ref{subsec:tale_of_tails} shows that
+	the results in Subsec.~\ref{subsec:tale_of_tails} shows that
 	$(j\pi/L_2)^2$ is a very good approximation to the $j^{\rm th}$
 	eigenvalue of the operator $p^2$ for $j \ll N$.  In
 	Fig.~\ref{fig:IR_excited_gauss_quartic_wells} representative results
@@ -1543,16 +1525,16 @@
 	range expansion by taking $k \rightarrow i k_L$
 	in Eqs.~\eqref{eq:eff_range_kinf} and \eqref{eq:delta0}, we obtain
 	%
-  \begin{align}
+  \begin{multline}
 	{i k_L \sqrt{\eta^2 - k_L^2} -k_L^2 \tan( \sqrt{\eta^2 - k_L^2} R)
 	\tan(i k_L R) \over i k_L \tan(\sqrt{\eta^2 - k_L^2} R) -
 	\sqrt{\eta^2 - k_L^2} \tan(i k_L R) }
-	= -\kinf
+	=  \\
+	-\kinf
 	+ \frac12{\rho_d} (\kinf^2-k_L^2) + w_2 (\kinf^2 - k_L^2)^2
-	\nonumber \\
 	+ \mathcal{O}\left((\kinf^2-k_L^2)^3\right)	\;.
 	\label{eq:get_w2_sq_well}
-\end{align}
+	\end{multline}
 	%
 	The branch for the square-root is fixed by the requirement that
 	$\tan \delta (i\kinf) = -i$.  Note from Eq.~\eqref{eq:s0_exact} that
@@ -1619,7 +1601,7 @@
 	square well to the desired order.  The results of the general S-matrix
 	and square-well-only Taylor expansion methods of calculating energy
 	corrections are found to match explicitly at LO, \LNLO, and NLO.
-	We would like to remind that we use \LNLO to denote terms proportional
+	We remind the reader that we use \LNLO~to denote terms proportional
 	to $L e^{-4 \kinf L}$.
 
 	\begin{figure}[h]
@@ -1687,9 +1669,9 @@
 	e^{-4 \kinf L}$, as expected.  We also note that $\Delta E_{\rm \LNLO}$
 	is only a marginal improvement over $\Delta E_{\rm LO}$ and that
 	$\Delta E_{\rm actual} - \Delta E_{\rm NLO}$ has the expected slope of
-	$L^2 e^{-6 \kinf L}$. We again see a perfect agreement between the
+	$L^2 e^{-6 \kinf L}$.  We again see a perfect agreement between the
 	results obtained from the S-matrix method
-	\eqref{eq:complete_E_correction_NLO} and those obtained from the
+	(Eq.~\eqref{eq:complete_E_correction_NLO}) and those obtained from the
 	Taylor expansion of Eq.~\eqref{eq:sq_well_matchingL}.  We have also
 	studied deeper square wells with more than one bound state
 	and verified that our results apply even in the presence of excited
@@ -1950,10 +1932,10 @@
 	The normalized radial	oscillator wave function of energy
 	%
 	\beq
-	  E=2n+l+3/2
+	  E = 2n + l + 3/2
 	\eeq
 	%
-	is   $\psi_{nl}(r)=u_{nl}(r)/r$ with
+	is $\psi_{nl}(r)=u_{nl}(r)/r$ with
 	%
 	\beq
 	u_{nl}(r)=\sqrt{2n!\over\Gamma(n+l+3/2)} r^{l+1} e^{-r^2/2}
@@ -1977,7 +1959,7 @@
 	$\psi_{\kappa l}(r)/r$ with
 	%
 	\bea
-	\label{eigen}
+	\label{eq:eigen_l_gen}
 	\psi_{\kappa l}(r) =\left\{\begin{array}{cc}
 	\kappa r j_l(\kappa r) \;, & 0\le \kappa r \le x_l \;, \\
 	0 \;, & \kappa r > x_l \;.\end{array}\right.
@@ -2039,7 +2021,7 @@
 	So far, our formal manipulations have been exact.  We now employ an
 	asymptotic approximation of the generalized Laguerre polynomials
 	(which enters the $u_{nl}(k)$) in terms of Bessel functions, valid for
-	$n\gg 1$, see Eq.~(15) of Ref.~\cite{Deano2013}.  This yields
+	$n\gg 1$, see Eq.~15 of Ref.~\cite{Deano2013}.  This yields
 	%
 	\begin{align}
 	u_{nl}(k) \approx {2^{1-n}\over \pi^{1/4}} \sqrt{(2n+2l+1)!\over (n+l)! n!}
@@ -2058,7 +2040,7 @@
 	%
 	Here, $C_{nl}$ is a constant that does not depend on $\kappa$.  The key
 	point is that the asymptotic expansion in terms of Bessel functions
-	allows us now to employ the definition~\eqref{fourierbessel} to
+	allows us now to employ the definition in Eq.~\eqref{fourierbessel} to
 	evaluate the integral
 	%
 	\begin{align}
@@ -2077,7 +2059,7 @@
 	\end{align}
 	%
 	We insert this expression for $c_n(\kappa)$ into the quantization
-	condition~\eqref{quantize} and make the ansatz
+	condition of Eq.~\eqref{quantize} and make the ansatz
 	%
 	\beq
 	\kappa ={x_l\over\sqrt{4n+2l+3+2\Delta}} \ .
@@ -2111,7 +2093,7 @@
 	with increasing orbital angular momentum. In some practical
 	calculations it might thus be of advantage to directly employ the
 	numerical results for $L_2$ instead of the approximate analytical
-	expression~(\ref{L2}).
+	expression~(Eq.~\eqref{L2}).
 
 	\begin{table}[h]
 	\begin{tabular}{c|c|c|c||c|c|c|c||c|c|c|c}
@@ -2177,7 +2159,7 @@
 	kind)~\cite{abramowitz1964}.  By definition $u_L(L)=0$.
 
 	In complete analogy to the case of $s$ waves (e.g., using
-	\eqref{eq:basiceq} and \eqref{eq:purepole} for general $l$), the
+	Eqs.~\eqref{eq:basiceq} and \eqref{eq:purepole} for general $l$), the
 	correction $\Delta E$ of the energy at leading order is
 	%
 	\beq
@@ -2306,8 +2288,7 @@
 	parameters to be fit.  We define
 	%
 	\beq
-	  \rsqav_L = \rsqinf + \Delta\rsqav_L
-	  \;,
+	  \rsqav_L = \rsqinf + \Delta\rsqav_L \;,
 	\eeq
 	%
 	where
@@ -2383,7 +2364,7 @@
 	$e^{-4\kinf L}$	until after doing the integrals because terms proportional
 	to $e^{-4\kinf L} e^{2\kinf r}$ will be leading order.
 
-	When we use \eqref{eq:asympnorm} and \eqref{eq:asymprsq} and our previous
+	When we use Eqs.~\eqref{eq:asympnorm} and \eqref{eq:asymprsq} and our previous
 	result for the interior integrals in Eq.~\eqref{eq:Delta-rsq}, expanding
 	consistently to $\mathcal{O}(e^{-2\kinf L})$, we will mix $R$-dependent
 	terms with the $L$ dependence.  However, we can immediately conclude that
@@ -2398,7 +2379,7 @@
 	Here, $\rsqinf$, $c_0$, $c_1$, and $c_2$ are fit parameters while $\kinf$
 	should be determined from fitting the energy. 	This form has been verified
 	explicitly for finite-range model potentials (e.g., square well
-	and delta shell). 	The approximation~(\ref{rad}) should be valid
+	and delta shell). 	The approximation in Eq.~\eqref{rad} should be valid
 	in the asymptotic regime $\beta\gg 1$.  In practice, one needs
 	$\beta\gtrsim 3$ so that the dominant $\beta^3$ correction is
 	approximately an order of magnitude larger than the subleading terms
@@ -2613,7 +2594,7 @@
   In Sec.~\ref{sec:IR_story} we worked in the region where the UV errors were
 	small and focused on the IR errors.  However, for many methods full
 	suppression of the UV errors is not feasible and the need to understand
-	UV corrections remains.  In all cases the UV effect is a systematics error
+	UV corrections remains.  In all cases the UV effect is a systematic error
 	that must be quantified.  In addition, this error worsens for harder
 	nucleon--nucleon potentials	that may still be of interest.
 	The understanding of the UV errors formed the focus of our work in
@@ -2777,11 +2758,11 @@
 	\begin{equation}
 	 {-}1 = 4\pi a \int_0^\Lambda\!\dd k\,
 	 \frac{k^2\,\eta^2_\lambda(k)}{\kappa^2_\Lambda+k^2} \,,
-	\label{eq:quant}
+	\label{eq:quant-sep}
 	\end{equation}
 	which is straightforward to solve numerically.
 
-	However, most	interactions used in practical calculations, do not have this
+	However, most	interactions used in practical calculations do not have this
 	convenient simple form (at least not in nuclear physics).  Still,
 	as shown in Ref.~\cite{Konig:2014hma},	Eq.~\eqref{eq:quant-sep} can be put
 	to some use using separable approximations.
@@ -2821,7 +2802,7 @@
 	%
 	This means that the separable approximation is constructed in such a
 	way that it exactly reproduces the state $\ket{\psi}$ used for its
-	construction.  The potential~\eqref{eq:UPA-op} reproduces the exact
+	construction.  The potential from Eq.~\eqref{eq:UPA-op} reproduces the exact
 	half off-shell T-matrix at the energy corresponding to the state
 	$\psi$, and more sophisticated approximations (separable potential of
 	rank $>1$) can be constructed by using more than a single
@@ -2920,9 +2901,9 @@
 	%
 	We see from Figs.~\ref{fig:deuteron_sep_fit_av18},
 	\ref{fig:deuteron_sep_fit_Epelbaum}, and
-	\ref{fig:deuteron_sep_fit_Epelbaum_evolved} that the fir from
+	\ref{fig:deuteron_sep_fit_Epelbaum_evolved} that the fit from the
 	separable approximation is superior to phenomenological fits.
-	Separable approximation allows extrapolation even when we are far from
+	The separable approximation allows extrapolation even when we are far from
 	convergence (this is especially evident in
 	Fig.~\ref{fig:deuteron_sep_fit_av18}).  It is also worthwhile to note
 	that the separable fit (Eq.~\eqref{eq:fit-eta-simple}) has just
@@ -2952,7 +2933,7 @@
 	motivated extrapolation formulas was rigorously developed for the first
 	time by us \cite{More:2013rma,Furnstahl:2013vda,Konig:2014hma}.  This
 	pioneering work has sprouted many new developments by extending our work.
-	We will also briefly touch upon some of these related developments.
+	We will briefly touch upon some of these related developments.
 
 	\subsection{IR front}
 	\label{subsec:IR_front}
@@ -3053,11 +3034,11 @@
 	that $L_2$ is the correct length even for the three-body case and the
 	three-body IR correction can also be written in terms of observables.
 
-  There has been lot of work on extending the results for IR energy corrections
+  There has been a lot of work on extending the results for IR energy corrections
 	presented in this thesis to the many-body case.  This has been documented in
 	Refs.~\cite{Furnstahl:2014hca, Wendt:2015nba}.  In
 	Subsec.~\ref{subsec:radii_phase_shifts} we looked at the
-	extrapolation of the radius-squared operator.  Authors of
+	extrapolation of the radius-squared operator.  The authors of
 	Ref.~\cite{Odell:2015xlw} extended this to the extrapolation of quadrupole
 	moments and transitions for the deuteron.
 
@@ -3072,7 +3053,7 @@
 	The dependence of UV corrections on the number of nucleons $A$ is not
 	yet established theoretically, but the tests in \cite{Konig:2014hma}
 	seem to indicate that the cutoff dependence of $\Delta E$ for the
-	many-body case is same as in the two-body case, just scaled by an
+	many-body case is the same as in the two-body case, just scaled by an
 	$A$-dependent overall constant.
 	%
 	\begin{figure}[thbp]
@@ -3133,11 +3114,11 @@
 	and UV errors seems to work well.  More work will be needed to place this
 	on a sound theoretical foundation.
 
-	Authors of Ref.~\cite{Binder:2015trg} developed interactions from chiral
+	The authors of Ref.~\cite{Binder:2015trg} developed interactions from chiral
 	EFT that are tailored to the HO basis.  In their approach, the UV convergence
 	with respect to the model space is implemented by construction (through
 	refitting of LECs) and IR convergence is achieved by enlarging the model
 	space for the kinetic energy.  This exhibited a fast convergence of
 	ground-state energies and radii for nuclei up to $^{132}$Sn.  Thus,
 	the development of reliable extrapolation schemes is indeed pushing the
-	ab-initio frontier to heavier nuclei. 
+	ab-initio frontier to heavier nuclei.
