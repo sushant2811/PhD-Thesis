@@ -91,7 +91,7 @@
 	When heavy mesons were discovered, they were added to the intermediate range
 	sector.  (Pion being the lightest meson has the longest range.)
 	These general considerations form the basis for phenomenological potentials
-	used even today as seen in Fig.~\ref{fig:Nuclear_landscape}.
+	used even today as seen in Fig.~\ref{fig:Nuclear_potentials}.
 	%
 	\begin{figure}[htbp]
 	 \centering
@@ -104,7 +104,7 @@
 			300 MeV.  Regions I, II, and III correspond to long-range,
 			intermediate-range, and short-range parts discussed in the text.
 			Figure from \cite{Aoki:2008hh}. }
-	 \label{fig:Nuclear_landscape}
+	 \label{fig:Nuclear_potentials}
 	\end{figure}
 
 	This intense effort is well summarized by Hans Bethe's quote in his essay
@@ -205,9 +205,70 @@
 	\section{Understanding the Force}
 	\label{sec:recent_advances}
 
-	CD-Bonn
+	We saw that non-pertubativeness of QCD at low energies
+	(cf.~Fig.~\ref{fig:alpha_QCD_running}) motivated phenomenological
+	description of nuclear forces.  The two popular categories of
+	phenomenological interactions are the meson exchange models (which we
+	touched upon during discussion of Fig.~\ref{fig:Nuclear_potentials}) and
+	local phenomenological potentials.  Examples of these include potentials
+	from Bonn interactions \cite{Machleidt:1989tm, Machleidt:1987hj,
+	Machleidt:2000ge} and the Argonne interactions \cite{Wiringa:1994wb}.
 
-	AV18
+	The Argonne potential is probably the most widely used phenemenological
+	potential.  One of the reasons being that until recently, it was the only
+	precision interaction usable for Quantum Monte Carlo calculations.  The
+	Argonne interactions are built by writing down all the operators that
+	satisfy the required symmetries---translational and Galilean invariance,
+	rotational invariance in space and spin, rotational invariance in isospin,
+	time reversal, and spatial reflection.  These operators are given below.
+	\beq
+	\wh{O}_i \in \{ \mathds{1}, \bm{\sigma_1} \cdot \bm{\sigma_2},
+	S_{12}, \bm{L} \cdot \bm{S}, \bm{L}^2, \bm{L}^2 \bm{\sigma_1} \cdot
+	\bm{\sigma_2}, (\bm{L} \cdot \bm{S})^2 \} \otimes
+	\{\mathds{1}, \bm{\tau_1} \cdot \bm{\tau_2}\}
+	\label{eq:AV18_14_operators}
+	\eeq
+	$S_{12} = 3 (\bm{\sigma_1} \cdot \wh{\bm{r}})
+	(\bm{\sigma_2} \cdot \wh{\bm{r}}) - \bm{\sigma_1} \cdot \bm{\sigma_2}$
+	is the tensor force.
+
+	There are total of 14 operators in the Eq.~\eqref{eq:AV18_14_operators}.
+	The AV18 potential has four more operators which are the charge-dependent
+	and charge-symmetry breaking terms; they are small but needed to get
+	$\chi^2/{\rm{dof}} \approx 1$ for np, nn, and pp scattering.  There are
+	also AV8, AV6 potentials which use a limited set of operators.
+
+	The AV18 potential is written as
+	\beq
+	\wh{V}_{18}(r) = \sum_{i = 1}^{18} V_i(r) \, \wh{O}_i \;.
+	\eeq
+	$r$ is the inter-nucleon separation and $V_i (r) = V_{{\rm{EM}}} + V_{\pi}
+	+ V_{{\rm{short~range}}}$.  The coefficients in the potential are fit to
+	nucleon scattering up to $350$ MeV, and to deuteron bound state properties
+	such as binding energy, radii, and quadrupole moment.
+	A similar exercise has been done for 3N (3-body) interactions.  However,
+	the large number of possible three-body operators makes it difficult to
+	get rid of model dependence.
+
+	Meson exchange models are formulated in terms of exchange of mesons taking
+	into account to the nature of mesons (scalar, vector, pseudo-scalar, so on).
+	The masses are those of real mesons, but couplings are fit parameters.
+	In the simplest form, the interaction is a sum of Yukawa potentials,
+	\beq
+	V = \left(\frac{-g_s^2}{4 \pi}\right) \frac{\ee^{-m_s r}}{r} +
+	 		\gamma_1^\mu \gamma_{2 \mu} \left(\frac{-g_\omega^2}{4 \pi}\right)
+			\frac{\ee^{-m_\omega r}}{r} +
+			\gamma_1^5 \gamma_{2}^5 \, \bm{\tau_1} \cdot \bm{\tau_2}
+			\left(\frac{-g_{\pi}^2}{4 \pi}\right)
+			\frac{\ee^{-m_{\pi} r}}{r}\;.
+	\eeq
+
+	Meson exchange potentials and the AV18 potential share the common shortcoming
+	that there is no scope for systematic	improvements.  It is also unclear
+	how to seek model independence and do robust uncertainty quantification.
+	These models also offer limited guidance on the strength and relevance of
+	three- and higher-body forces.
+
 
 	\subsection{Chiral EFT}
 
@@ -268,7 +329,7 @@
 	 \includegraphics[width=0.8\textwidth]%
 	 {Introduction/ChEFTTerms}
 	 \caption{Diagrams in a chiral Lagrangian at each order.  Solid lines are the
-	 nucleons and dashes lines pions.  Figure from \cite{MAchleidt:2011zz}.}
+	 nucleons and dashes lines pions.  Figure from \cite{Machleidt:2011zz}.}
 	 \label{fig:ch_EFT_diagrams}
 	\end{figure}
 	%
@@ -315,6 +376,6 @@
 	UQ important.
 
 	Add plot from P.\ Vogel showing differences in neutrinoless double beta decay
-	calculations done using different methods.  
+	calculations done using different methods.
 
 	\section{Thesis organization}
