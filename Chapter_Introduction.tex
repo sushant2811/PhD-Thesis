@@ -359,14 +359,76 @@
 
 	\section{Many-body methods}
 
-	Developments in many-body methods.
+	% \begin{figure}[htbp]
+	%  \centering
+	%  \includegraphics[width=0.65\textwidth]%
+	%  {Introduction/nuclear_landscape_with_methods}
+	%  \caption{Domain of various methods used in nuclear physics.  Figure
+	%  	from \cite{LRP:2007}.}
+	%  \label{fig:nuclear_landscape_with_methods}
+	% \end{figure}
 
-	Nuclear landscape chart with different methods.
+	We learned in kindergarten quantum mechanics that a two-body problem
+	can be solved by reducing it to one-body problem.  The many-body
+	problem is far more relevant to the nuclear physics, and is more
+	challenging.
+	For the nuclear properties such as the bound state energies, the
+	equation we need to solve is the time-independent Schr\"{o}dinger equation
+	\beq
+	\wh{H} \ket{\Psi} = E \ket{\Psi} \;.
+	\label{eq:Schrodinger_many_body}
+	\eeq
+	%
+	The Hamiltonian $\wh{H}$ is given by
+	\beq
+	\wh{H} = \sum_{\rm particles} \wh{T} + \sum_{\rm pairs}
+	\wh{V}^{(2)}_{\rm pair} + \sum_{\rm triplets}
+	\wh{V}^{(3)}_{\rm triplets} + \cdots \;,
+	\eeq
+	where $\wh{T}$ is the kinetic energy and $\wh{V}^{(2)}, \, \wh{V}^{(2)}$ are
+	the nuclear potentials (e.g., from $\chi$-EFT or phenomenological potentials).
 
-	\subsection{``It from the bit" --- lattice theories}
+	Over years various methods have been developed to tackle
+  this problem.  We we will list some of the broad categories below.
+	We only provide
+  a brief explanation for each of them and refer the reader to relevant
+  references for details.
+	\bi
+	\li
+	\emph{Direct diagonalization:}
+	This category involves expanding the many-body wave function $\ket{\Psi}$ in
+	an appropriate complete basis.  Very often this basis is chosen to be the
+	slater determinant of Harmonic oscillator (HO) wave functions.
+	HO has all the symmetries of nuclear many-body problem.  HO also allows
+	separation of center of mass motion from relative motion, ensuring that only
+	intrinsic properties are being calculated.
+
+	Finite computational power forces us to truncate the infinite sum of
+	slater determinants at some point.  One of the common truncation scheme is
+	the $\Nmax$ truncation.  It keeps all $A$ particle states
+	$\ket{n_1 l_1 n_2 l_2 \ldots n_A l_A}$ such that
+	\beq
+	\sum_i 2 n_i + l_i \leq \Nmax \;.
+	\eeq
+	%
+	With $\Nmax$ truncation, solving the many-body Schr\"{o}dinger equation
+	(Eq.~\eqref{eq:Schrodinger_many_body}) becomes a matrix diagonalization
+	problem, and can be solved using standard algorithms.
+
+	\li
+	\emph{Nuclear Shell Model:}
+	\li
+	\emph{Monte Carlo methods:}
+	\li
+	\emph{Coupled Cluster:}
+	\li
+	\emph{DFT}
+	\ei
+
+	\subsection{``It from the bit"---lattice theories}
 	\label{sec:lattice_QCD}
 
-	Add stuff about lattice.
+	Add stuff about lattice---both lattice QCD and lattice EFT.
 
 	``quarks and gluons have so many degrees of freedom, in terms of spin,
 	color charge, and flavors, that non-perturbative numerical calculations of
