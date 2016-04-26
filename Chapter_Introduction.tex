@@ -385,7 +385,7 @@
 	\wh{V}^{(2)}_{\rm pair} + \sum_{\rm triplets}
 	\wh{V}^{(3)}_{\rm triplets} + \cdots \;,
 	\eeq
-	where $\wh{T}$ is the kinetic energy and $\wh{V}^{(2)}, \, \wh{V}^{(2)}$ are
+	where $\wh{T}$ is the kinetic energy and $\wh{V}^{(2)}, \, \wh{V}^{(3)}$ are
 	the nuclear potentials (e.g., from $\chi$-EFT or phenomenological potentials).
 
 	Over years various methods have been developed to tackle
@@ -415,14 +415,69 @@
 	(Eq.~\eqref{eq:Schrodinger_many_body}) becomes a matrix diagonalization
 	problem, and can be solved using standard algorithms.
 
-	\li
-	\emph{Nuclear Shell Model:}
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[c]{0.42\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/He4_vs_nmax_highlight_before}
+			\caption{$^4$He energies as a function of $\Nmax$.}
+			\label{fig:He4_vs_Nmax}
+		\end{subfigure}
+		\hspace{0.07\textwidth}
+		\begin{subfigure}[c]{0.42\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/Li6_vs_nmax_highlight_before}
+			\caption{$^6$Li energies as a function of $\Nmax$.}
+			\label{fig:Li6_vs_Nmax}
+		\end{subfigure}
+		\caption{Convergence of energies as a function of the truncation
+			parameter $\Nmax$ \cite{Jurgenson:2010wy}.}
+		\label{fig:Nmax_convergence}
+	\end{figure}
+	%
+	Figure~\ref{fig:Nmax_convergence} shows convergence plots for ground state
+	energies for $^4$He and	$^6$Li.  As $\Nmax$ is increased the energies
+	approach the asymptotic values \footnote{When the asymptotic value doesn't
+	match the experimental value, it points to the shortcomings in nuclear
+	Hamiltonian.}.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.45\textwidth]%
+	 {Introduction/ncsm_matrix_dimension_vs_Nmax2}
+	 \caption{Matrix dimension grows factorially with the number of nucleons.
+	 	Figure courtesy of Pieter Maris.}
+	 \label{fig:matrix_dimension_growth}
+	\end{figure}
+	%
+	A limitation of diagonalization method is that the size of the Hamiltonian
+	matrix that we need to diagonalize grows rapidly as we go to higher $A$ and
+	higher $\Nmax$ (cf.~Fig.~\ref{fig:matrix_dimension_growth}).  This often
+	forces us to truncate the basis before the convergence is reached
+	(cf.~Fig.~\ref{fig:Li6_vs_Nmax}), and necessitates development of
+	reliable extrapolation schemes.  Chapter~\ref{chap:Extrapolation}
+	describes author's original work devoted to the development of
+	extrapolation schemes relevant to this problem.
+
+	Many different methods fall under the broad umbrella of diagonalization
+	methods.  This includes the traditional shell model~\cite{Brown:2001zz},
+	the No Core Shell Model (NCSM)~\cite{Barrett:2013nh},
+	the No Core Full Configuration (NCFC)~\cite{Maris:2008ax}, and the Importance
+	Truncated No Core Shell Model (IT-NCSM)~\cite{Roth:2009cw}.
+	The last three methods primarily differ in the nature of truncation
+	they employ.
+
 	\li
 	\emph{Monte Carlo methods:}
+
 	\li
 	\emph{Coupled Cluster:}
 	\li
-	\emph{DFT}
+	\emph{DFT:}
+	\li
+	\emph{IM-SRG:}
 	\ei
 
 	\subsection{``It from the bit"---lattice theories}
