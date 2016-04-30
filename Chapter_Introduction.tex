@@ -221,7 +221,9 @@
 	descriptions of nuclear forces.  The two popular categories of
 	phenomenological interactions are the meson exchange models (which we
 	touched upon during discussion of Fig.~\ref{fig:Nuclear_potentials}) and
-	local phenomenological potentials.  Examples of these include potentials
+	local phenomenological potentials \footnote{The potential is local if
+	$V(r, r^\prime) = V(r) \delta(r - r^\prime)$}.
+	Examples of these include potentials
 	from Bonn interactions \cite{Machleidt:1989tm, Machleidt:1987hj,
 	Machleidt:2000ge} and the Argonne interactions \cite{Wiringa:1994wb}.
 
@@ -471,9 +473,70 @@
 
 	\li
 	\emph{Monte Carlo methods:}
+	These methods use the imaginary time evolution of the Schr\"{o}dinger
+	equation
+	\beq
+	-\partial_\tau \ket{\Psi(\tau)} = \wh{H} \ket{\Psi(\tau)} \;.
+	\label{eq:imag_time_SE}
+	\eeq
+	This equation can be solved by making an ansatz for
+	$\ket{\Psi(\tau = 0)} \equiv \ket{\Psi_{\rm trial}}$.
+	$\ket{\Psi_{\rm trial}}$ can be expanded in complete basis of eigenvectors
+	of $\wh{H}$ as
+	\beq
+	\ket{\Psi_{\rm trial}} = c_0 \ket{\Psi_0} +
+	\sum_{i \neq 0} c_i \ket{\Psi_i} \;.
+	\label{eq:Psi_trial_expansion}
+	\eeq
+	As long as the trial wave function is not orthogonal to the actual ground
+	state, i.e, $c_0 \neq 0$ in Eq.~\eqref{eq:Psi_trial_expansion}, it can
+	be shown that the imaginary time evolution (Eq.~\eqref{eq:imag_time_SE})
+	projects out the ground state in $\tau \to \infty$ limit.  There are many
+	different ways to do the stochastic time evolution of
+	Eq.~\eqref{eq:imag_time_SE} to project out the ground state.  The two
+	most popular in nuclear physics are the Green's function Monte Carlo (GFMC)
+	\cite{Pieper:2002ne, Pieper:2007ax}
+	and the Auxiliary Field Diffusion Monte Carlo (AFDMC)
+	\cite{Gandolfi:2007hs, Gezerlis:2014zia}.  Monte Carlo methods require that
+	the nuclear potential used be local.  AV18 potential has been the potential
+	of choice for these methods.  Recently, it has been possible to
+	derive the low-order $\chi$-EFT in local form, making its use possible
+	for Monte Carlo methods \cite{Gezerlis:2014zia}.
 
 	\li
-	\emph{Coupled Cluster:}
+	\emph{Coupled Cluster:} The energy of the many-body state $\Psi$ is given
+	by
+	\beq
+	E = \mbraket{\Psi}{\wh{H}}{\Psi}\;.
+	\label{eq:Schrodinger_CC}
+	\eeq
+	%
+	The coupled cluster (CC) method tries to built the state $\Psi$ from the
+	reference state $\Phi$ (which for instance can be the Hartree-Fock state)
+	using the transformation
+	\beq
+	\ket{\Psi} = \ee^T \ket{\Phi}\;.
+	\label{eq:CC_defining_equation}
+	\eeq
+	%
+	Thus, Eq.~\eqref{eq:Schrodinger_CC} becomes
+	\beq
+	E = \mbraket{\Phi}{\ee^{-T}\wh{H} \ee^{T}}{\Phi}\;.
+	\eeq
+	%
+	The cluster operator $T$ in Eq.~\eqref{eq:CC_defining_equation}
+	is defined with respect to the reference state.
+	\beq
+	T = T_1 + T_2 + \ldots + T_A \;.
+	\label{eq:T_expansion}
+	\eeq
+	%
+	$T_n$ generates $n$-particles-$n$-holes excitations.  In practice,
+	Eq.~\eqref{eq:T_expansion} is truncated at $T_2$.  CC (truncated at $T_2$)
+	scales much better than diagonalization or Monte Carlo methods discussed
+	above and is therefore possible to use it for medium-mass nuclei
+	\cite{Hagen:2013nca}.    
+
 	\li
 	\emph{DFT:}
 	\li
