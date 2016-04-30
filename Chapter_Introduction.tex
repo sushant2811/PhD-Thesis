@@ -535,12 +535,39 @@
 	Eq.~\eqref{eq:T_expansion} is truncated at $T_2$.  CC (truncated at $T_2$)
 	scales much better than diagonalization or Monte Carlo methods discussed
 	above and is therefore possible to use it for medium-mass nuclei
-	\cite{Hagen:2013nca}.    
+	\cite{Hagen:2013nca}.
 
 	\li
-	\emph{DFT:}
+	\emph{Density Functional Theory:} Density Functional Theory (DFT) is based
+	on the principle that the many-body ground state $\Psi(\bm{r_1}, \bm{r_2},
+	\ldots, \bm{r_A})$ can be written as a functional of the density $\rho$,
+	i.e, $\Psi = \Psi[\rho]$.
+	Consequently, the energy (or any other observable) can be written
+	as a functional of density
+	\beq
+	E[\rho] = \mbraket{\Psi[\rho]}{\wh{H}}{\Psi[\rho]} \;.
+	\eeq
+
+	DFT proceeds by writing down a energy density functional (EDF) guided by
+	intuition and general theoretical arguments
+	\cite{Drut:2009ce, Dobaczewski:2010gr}.  Inputs from experiments
+	and exact calculations for simple few-body systems are also used for
+	constructing the EDF.  The properties of the physical system are then found
+	by the two step minimization of the EDF---first minimization is at a fixed
+	density $\rho(\bm{r})$ and the second minimization is over $\rho(\bm{r})$.
+	Once the EDF is decided upon, DFT does not scale prohibitively with
+	the number of nucleons $A$, and is therefore the most popular for
+	calculating properties of heavy-mass nuclei.
+
 	\li
-	\emph{IM-SRG:}
+	\emph{IM-SRG:} In-Medium Similarity Renormalization Group (IM-SRG) is
+	based on the SRG technique we will look at in Subsec.~\ref{subsec:SRG_intro}.
+	It uses a series of continuous unitary transformations to decouple
+	the ground state of the many-body Hamiltonian from the excitations.
+	IM-SRG has made it possible to apply the ab-initio (starting with 2N and
+	3N forces) methods to medium-mass nuclei and beyond.  Please see the
+	Ref.~\cite{Hergert:2015awm} for a recent review on progress acheived by
+	IM-SRG.  
 	\ei
 
 	\subsection{``It from the bit"---lattice theories}
