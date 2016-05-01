@@ -352,7 +352,8 @@
 	low-energy coupling constants (LECs); they encode the QCD physics and
 	cannot be calculated in $\chi$-EFT.  LECs are fitted to experimental data.
 	Lattice QCD provides a promising method for extracting them in near
-	future (cf.~Sec.~\ref{sec:lattice_QCD}).  Despite some concerns over
+	future (cf.~Subsec.~\ref{subsec:lattice_theories}).  Despite some concerns
+	over
 	power-counting (\emph{cite Bira here? and Delta incorporation work}), it is
 	fair to say that $\chi$-EFT has been a major breakthrough in low-energy
 	nuclear theory.  For more details and applications of $\chi$-EFT, please
@@ -567,20 +568,95 @@
 	IM-SRG has made it possible to apply the ab-initio (starting with 2N and
 	3N forces) methods to medium-mass nuclei and beyond.  Please see the
 	Ref.~\cite{Hergert:2015awm} for a recent review on progress acheived by
-	IM-SRG.  
+	IM-SRG.
 	\ei
 
-	\subsection{``It from the bit"---lattice theories}
-	\label{sec:lattice_QCD}
+	\subsection[``It from the bit"---lattice theories]%
+	{``It from the bit"\footnote{The phrase ``It from the bit'' was originally
+	used by John Wheeler while elucidating his ideas on digital physics}
+	---lattice theories}
+	\label{subsec:lattice_theories}
 
-	Add stuff about lattice---both lattice QCD and lattice EFT.
+	\medskip
+	\subsubsection{Lattice QCD}
 
-	``quarks and gluons have so many degrees of freedom, in terms of spin,
-	color charge, and flavors, that non-perturbative numerical calculations of
-	QCD are still just outside the realm of the physics of nucleons. For the
-	lightest nuclei, this situation should be resolved within the next few years
-	cite[Detmold2012], though direct applicability to many-nucleon system will
-	still be inaccessible.""
+	We saw through Fig.~\ref{fig:alpha_QCD_running} that the largeness of the
+	QCD coupling at low-energies makes it unamenable to analytical calculations.
+	A well-established non-perturbative approach in this regime is lattice
+	QCD \cite{Savage:2015eya}.  In lattice QCD, one discretizes space-time;
+	fields representing quarks are defined at lattice sites and
+	the gluon fields are defined on links connecting neighboring sites.
+
+	Ideally we would like the lattice size to be as large as possible and the
+	lattice spacing to be as
+	small as possible.  However, lattice calculations are computationally
+	extremely intensive, thereby severely
+	constraining the lattice size and spacing.  Moreover, the computational
+	cost of simulations
+	scales with the quark mass roughly as $m_q ^{-4}$
+	\cite{Detmold:2003rq}.  The simulations
+	are therefore often done at quark masses larger than the physical quark
+	masses.  From Gell-Mann-Oakes-Renner relation $m_\pi ^2 \sim m_q$,
+	and therefore the pion mass
+	in the lattice calculations is larger than its physical value as well.
+	The results
+	are then extrapolated down to physical quark (or pion) mass.
+	In the nuclear case, for accurate extrapolation one must also take into
+	account the crucial
+	non-analytic structure associated with chiral symmetry breaking
+	\cite{Detmold:2001jb}.
+
+	Recent calculations have been able to use the physical pion
+	mass though only for very light systems \cite{Durr:2010aw}.  In near future,
+	we hope to extract the low-energy constants in Fig.~\ref{fig:ch_EFT_diagrams}
+	from lattice QCD.
+
+
+
+	\medskip
+	\subsubsection{Lattice EFT}
+
+	Quarks and gluons have many degrees of freedom in terms of spin, color
+	charge, and flavor, which makes getting nuclear physics from lattice QCD
+	computationally difficult.  An alternative approach is to have nucleons
+	on the lattice site rather than the quarks.
+	%
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[c]{0.42\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/lattice_QCD}
+			\caption{Lattice QCD~~~~~~~~~~~~}
+			\label{fig:lattice_QCD}
+		\end{subfigure}
+		\hspace{0.1\textwidth}
+		\begin{subfigure}[c]{0.42\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/lattice_EFT}
+			\caption{Lattice EFT~~~~~~~~~~~~}
+			\label{fig:lattice_EFT}
+		\end{subfigure}
+		\caption{Lattice QCD vs.\ lattice EFT.  Figure courtesy of Dean Lee.}
+		\label{fig:lattice_QCD_EFT}
+	\end{figure}
+	%
+	The difference between the two methods is illustrated in
+	Fig.~\ref{fig:lattice_QCD_EFT}.  Lattice EFT combines the framework of
+	effective field theory and computational lattice methods and is a
+	promising tool for studying light nuclear systems.
+
+	Lattice theories inherently come with the associated graininess and the
+	finite size.  Thus, we have a cutoff for both the maximum length and the
+	maximum momentum scale that we can have on a lattice.  This is qualitatively
+	similar	to the harmonic oscillator basis truncation problem that we will
+	look extensively at in Chapter~\ref{chap:Extrapolation}.  Various methods
+	have been used to obtain the continuum limit from the lattice.  We will touch
+	upon these in
+	Subsec.~\ref{subsec:IR_front}, where we look at similarities and differences
+	between the lattice methods and our work with oscillator basis truncation.
+
 
 	\section{RG techniques}
 
