@@ -660,8 +660,189 @@
 
 	\section{RG techniques}
 
+	We saw in Fig.~\ref{fig:Nmax_convergence} that the convergence in many-body
+	calculations is slow.  To understand why this is the case, recall from
+	Fig.~\ref{fig:Nuclear_potentials} that the nuclear potentials have a strong
+	short-range repulsion.  This hard core leads to high-momentum components in
+	the potentials.
+	%
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.45\textwidth]%
+	 {Introduction/vnn_1S0_kvnn06_k_cntr}
+	 \caption{The $^1 S_0$ AV18 potential in momentum space.  Figure from
+	 \cite{Furnstahl:2013oba}.}
+	 \label{fig:momentum_space_AV18}
+	\end{figure}
+	%
+	This can be seen in Fig.~\ref{fig:momentum_space_AV18} where we plot the
+	AV18 potential in the $^1 S_0$ channel in momentum space.  We note that
+	for the AV18 potential, $V(k, k^{\prime}) \to 0$ only for $k, \, k^\prime
+	\gtrsim 25 {\rm{~fm}}^{-1}$.  However, the Fermi momentum of the nucleon
+	in heavy nucleus like $^{208}$Pb is only about $1.2 {\rm{~fm^{-1}}}$.
+	The Fermi momentum sets the momentum scale of low-energy nuclear
+	processes we wish to study.  Thus, we have a mismatch of resolution scales;
+	the processes we wish to describe are $1 - 2 {\rm{~fm^{-1}}}$
+	($200 - 400 {\rm{~MeV}}$), whereas the momentum scale in the potential
+	is much higher.   To use the analogy due to Tom Banks, `it is like trying to
+	understand the properties of waves in the ocean in terms of Feynmann
+	diagrams'.  Though in principle this can be done, it potentially makes
+	calculations intractably complicated.
+
+	This bring us back to Fig.~\ref{fig:degrees_of_freedom}.  The progression
+	from top to bottom in Fig.~\ref{fig:degrees_of_freedom} can be thought of as
+	reduction in resolution.  This can be established theoretically using the
+	renormalization group (RG) methods.  As mentioned before, the focus in LENP
+	is in the intermediate region, where nucleons are the degrees of freedom.
+	But even within this limited region, the concept of changing resolution
+	by RG methods has been extremely advantageous \cite{Furnstahl:2013oba}.
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[c]{0.55\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/nucleus_high_resolution}
+			\caption{Nucleus under a high-resolution probe.}
+			\label{fig:nucleus_high_resolution}
+		\end{subfigure}
+		\vskip 0.6cm
+		\begin{subfigure}[c]{0.55\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/nucleus_low_resolution}
+			\caption{Fine details (nucleon substructure) not resolved when
+			probed at low energies.}
+			\label{fig:nucleus_low_resolution}
+		\end{subfigure}
+		\vskip 0.6cm
+		\begin{subfigure}[c]{0.7\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/1200px-Georges_Seurat_-_A_Sunday_on_La_Grande_Jatte_--_1884_-_Google_Art_Project}
+			\caption{A painting by Georges Seurat, which is an example of
+			pointillism.  Small, distinct dots of color are applied to form a
+			pattern.  The pattern would be lost under a high-resolution probe.
+			Image from Wikipedia.}
+			\label{fig:Georges_Seurat}
+		\end{subfigure}
+		%
+		\caption{Physics interpretation often changes with resolution.}
+		\label{fig:physics_interpretation_resolution}
+	\end{figure}
+	%
+	We would like to stress that contrary to the popular notion, high resolution
+	is not always the best thing, especially when the processes we are looking at
+	are low-momentum.  Also, though the value of the calculated observable is
+	independent of the resolution, the physical interpretation often changes
+	with the resolution.
+	This is illustrated in Fig.~\ref{fig:physics_interpretation_resolution}.
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[t]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/vsrg_cut_1S0_kvnn06_lam5_cut45_reg_0_3_0_ksq}
+			\caption{An illustration of a low-pass filter.}
+			\label{fig:low_pass_filter_example}
+		\end{subfigure}
+		\hspace{0.07 \textwidth}
+		\begin{subfigure}[t]{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/srg_1S0_phases_bare_cut_v2}
+			\caption{$^{1}S_0$ phase shifts for the AV18 potential and for the AV18
+			potential after the low-pass filter which sets $V(k, k^\prime) = 0
+			{\rm{~for~}} k, \, k^\prime > 2 {\rm{~fm^{-1}}}$.}
+			\label{fig:low_pass_filter_effect}
+		\end{subfigure}
+		%
+		\caption{Low-pass filter on nuclear potential---illustration and effect on
+			phase shifts.}
+		\label{fig:low_pass_filter_example_effect}
+	\end{figure}
+	%
+	One of the methods to get rid of the high-momentum components is to apply
+	a `low-pass filter' on the potential
+	(cf.~Fig.~\ref{fig:low_pass_filter_example}).  This is routinely done, for
+	example, in image processing.  Compression of a digital photograph is
+	achieved by Fourier transforming it, setting the high-momentum modes in
+	the Fourier transform equal to zero, and then transforming back.
+	However, as seen in Fig.~\ref{fig:low_pass_filter_example}, the
+	straightforward application of a low-pass filter fails to reproduce
+	nuclear phase shifts even at low energies.
+
+	This failure of low-pass filter can be understood by recalling from
+	Fig.~\ref{fig:momentum_space_AV18} that the high and low-momentum
+	modes are coupled.  For instance, consider (schematically) the expression
+	for the phase shift in perturbation theory
+	\beq
+	\mbraket{k}{\wh{V}}{k} + \sum_{k^\prime}
+	\dfrac{\mbraket{k}{\wh{V}}{k^\prime} \mbraket{k^\prime}{\wh{V}}{k}}
+	{(k^2 - {k^\prime}^2)/m} + \cdots \;.
+	\label{eq:phase_shift}
+	\eeq
+	The second term in Eq.~\eqref{eq:phase_shift} involves sum over off-diagonal
+	matrix elements of $\wh{V}$.  Therefore even phase shifts for small $k$
+	will have significant contributions from high $k^\prime$ if the coupling
+	matrix elements $\mbraket{k}{\wh{V}}{k^\prime}$ are large.
+
+	The correct way to get rid of the high-momentum components is to use the
+	RG evolution and lower the momentum cutoff in small steps.
+	%
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/vlowk_schematic}
+			\caption{The $V_{{\rm{low~}}k}$ running in $\Lambda$.}
+			\label{fig:V_lowk_running}
+		\end{subfigure}
+		\hspace{0.1 \textwidth}
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/srg_schematic}
+			\caption{The SRG running in $\lambda$.}
+			\label{fig:V_srg_running}
+		\end{subfigure}
+		%
+		\caption{Schematic illustration of two types of RG evolution.  For given
+		$\Lambda_i$ or $\lambda_i$ the matrix elements outside the corresponding
+		lines are negligible.  This decouples the high-momentum modes from the
+		low-momentum ones.  Figure from \cite{Furnstahl:2013oba}.}
+		\label{fig:V_lowk_V_srg_running}
+	\end{figure}
+	%
+	Two common choices for RG running are shown in
+	Fig.~\ref{fig:V_lowk_V_srg_running}.  The RG running shown in
+	Fig.~\ref{fig:V_lowk_running} is referred to as ``$V_{{\rm{low~}} k}$'' was
+	historically developed first.  It attempts
+	to get the potential in the low-pass-filter form through successive RG
+	transformations \cite{Bogner:2009bt, Bogner:2003wn}.  Though successful
+	for two-nucleon forces, it has been difficult to systematically treat
+	many-body forces in the $V_{{\rm{low~}} k}$ framework.
+
+ 	A more recent approach through the similarity renormalization group (SRG) is
+	illustrated in Fig.~\ref{fig:V_srg_running}.  SRG running drives the
+	potential to a band-diagonal form.  It is possible to systematically account
+	for the many-body forces in the SRG framework.  We will be using
+	the SRG framework in our work presented in Chapter~\ref{chap:factorization}.
+	Next we present a brief introduction to the SRG technique.
+
+
 	\subsection{SRG}
 	\label{subsec:SRG_intro}
+
+	SRG equation.  continuous Unitary transformation.
+
+	Effect of SRG.
+
+	3N forces.  Factorization blob figure.
+
+	Couple sentences about connecting to IM-SRG.
 
 
 
