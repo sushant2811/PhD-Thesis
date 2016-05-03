@@ -956,7 +956,7 @@
 			\label{fig:phase_shift_SRG_evolv}
 		\end{subfigure}
 		%
-		\caption{Effect of evolution on (non-)observables.}
+		\caption{Effect of RG evolution on (non-)observables.}
 		\label{fig:SRG_effect}
 	\end{figure}
 	%
@@ -1000,13 +1000,57 @@
 		calculations.  Figure from \cite{Furnstahl:2012fn}.}
 		\label{fig:SRG_Nmax_convergence_He4_Li6}
 	\end{figure}
+	%
+	Since the SRG evolved potentials only have a low-momentum modes, they are
+	amenable to numerical calculations.  As seen in
+	Fig.~\ref{fig:SRG_Nmax_convergence_He4_Li6}, SRG evolution greatly
+	accelerated the convergence in many-body calculations.
 
-	Description for the convergence figure.
+	We note that even when we start with just two-body forces, SRG evolution
+	introduces three- and higher-body forces.  This can be understood from the
+	flow equation (Eq.~\eqref{eq:flow_eq_operator_form})
+	\bea
+	\dfrac{d \wh{H}_s}{ds} &=& \left[ [\sum \underbrace{a^\dag a}_{\wh{G}_s},
+	\sum \underbrace{a^\dag a^\dag a a}_{{\rm 2-body}} ],
+	\sum \underbrace{a^\dag a^\dag a a}_{{\rm 2-body}}  \right] \nonumber \\
+	&=& \cdots + \sum \underbrace{a^\dag a^\dag a^\dag a a a}_{{\rm 3-body}}
+	+ \cdots
+	\label{eq:induced_forces_demonstration}
+	\eea
+	The second equality in Eq.~\eqref{eq:induced_forces_demonstration}
+	demonstrates how the commutators give rise to three- and higher-body
+	(up to $A$-body) forces.
+	To keep the invariance of energy with respect to the resolution scale
+	(as in Fig.~\ref{fig:energy_prob_eta_evolv_effect}), it is important
+	to keep the induced 3-body forces \cite{Jurgenson:2010wy}.
+	It has been demonstrated that 3-body forces are crucial in getting the
+	correct experimental values from theory \cite{Hammer:2012id}.
+	The initial
+	potential in Fig.~\ref{fig:SRG_Nmax_convergence_He4_Li6}
+	includes both two- and three-body forces.  A major development
+	in the SRG technology has been the ability to consistently evolve
+	three-body forces \cite{Hebeler:2012pr, Wendt:2013bla}.
 
-	3N forces.  Factorization blob figure. (move to factorization chapter?)
+	A related important development is that of In-Medium SRG (IM-SRG)
+	\cite{Hergert:2015awm}.  IM-SRG uses a reference state $\ket{\Phi}$ which is
+	different from the particle vacuum $\ket{0}$ used in SRG.
+	For example, $\Phi$ can be a Slater determinant which is fair
+	approximation to nucleus' ground state.  Just like in SRG,
+	IM-SRG then uses a series of unitary transformations to decouple the
+	reference state from excitations.  IM-SRG also maintains the hierarchy of
+	many-body forces, namely ${\rm 2N} \gg {\rm 3N} \gg {\rm 4 N} \cdots$.
 
-	Couple sentences about connecting to IM-SRG.
+	RG techniques have made possible calculations of medium-mass nuclei starting
+	from inter-nucleonic interactions.  However, if we keep pushing the
+	calculations to higher-mass nuclei, we run into the same problem as
+	indicated in Fig.~\ref{fig:Li6_vs_Nmax}, i.e, we run out of
+	computational power before we reach convergence.
+	So, along with RG techniques we also need reliable extrapolation
+	techniques that will allow us to extrapolate the results from
+	finite $\Nmax$ to $\Nmax = \infty$.  This problem will
+	form the basis of Chapter~\ref{chap:Extrapolation}.
 
+	Factorization blob figure. (move to factorization chapter?)
 
 
 	\section{Path forward for LENP}
