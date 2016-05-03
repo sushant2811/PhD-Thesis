@@ -174,7 +174,7 @@
 	 \includegraphics[width=0.6\textwidth]%
 	 {Introduction/alpha_QCD_running}
 	 \caption{Summary of measurements of the QCD coupling $\alpha_s$ as a
-	 function of energy scale $Q$. }
+	 function of energy scale $Q$ \cite{Agashe:2014kda}. }
 	 \label{fig:alpha_QCD_running}
 	\end{figure}
 	%
@@ -836,11 +836,174 @@
 	\subsection{SRG}
 	\label{subsec:SRG_intro}
 
-	SRG equation.  continuous Unitary transformation.
+	SRG for LENP was developed at Ohio State by S.\ Bogner (then a post-doc),
+	R.\ Furnstahl, and R.\ Perry \cite{Bogner:2006pc}.  The basic idea in SRG
+	is to apply a series of unitary transformations $U_s$
+	to transform the Hamiltonian $\wh{H}$ into a band-diagonal form shown in
+	Fig.~\ref{fig:V_srg_running}.
+	\beq
+	\wh{H}_s = \wh{U}_s \,\wh{H}\, \wh{U}^\dag_s \;,
+	\label{eq:SRG_H_transformation}
+	\eeq
+	where $s$ is the RG flow parameter.  $U_{s = 0} = \mathds{1}$.  In practice,
+	instead of using Eq.~\eqref{eq:SRG_H_transformation}, the SRG evolution
+	is done through the flow equation
+	\beq
+	\dfrac{d \wh{H}_s}{ds} = \left[[\wh{G}_s, \, \wh{H}_s], \, \wh{H}_s\right] \;.
+	\label{eq:flow_eq_operator_form}
+	\eeq
+	$\wh{G}_s$ is the operator which generates the flow.  $\wh{T}_{\rm rel}$,
+	the relative kinetic energy operator, is the most popular choice for
+	$\wh{G}_s$, though other choices for $\wh{G}_s$ have been explored
+	\cite{Li:2011sr}.
 
-	Effect of SRG.
+	Note that since we just doing unitary transformations, eigenvalues such
+	as energies are unchanged under SRG
+	\beq
+	E_n = \mbraket{\Psi_n}{\wh{H}}{\Psi_n}
+	= {(} \langle \Psi_n | \wh{U}^\dagger_s {)} \wh{U}_s H \wh{U}^\dagger_s
+     {(} \wh{U}_s | \Psi_n \rangle {)}\;.
+	\eeq
+	It is beneficial to change the flow parameter to $\lambda$, where
+	$\lambda ^2 = 1/ \sqrt{s}$.  $\lambda$ has the units of momentum
+	($\rm{fm^{-1}}$).  With this change of variable and setting
+	$\wh{G}_s = \wh{T}_{\rm rel}$, for a given partial-wave channel,
+	the Eq.~\eqref{eq:flow_eq_operator_form} in momentum basis becomes
+	\beq
+	\dfrac{dV_\lambda}{d\lambda}(k,k') \propto
+      - (\epsilon_k - \epsilon_{k'})^2 V_\lambda(k,k')
+      +  \sum_q (\epsilon_k + \epsilon_{k'} - 2\epsilon_q)
+        V_\lambda(k,q) V_\lambda(q,k') \;.
+	\label{eq:SRG_equation_mom_space}
+	\eeq
+	%
+	The first term on the right side of Eq.~\eqref{eq:SRG_equation_mom_space}
+	drives the potential to the band diagonal form shown in
+	Fig.~\ref{fig:V_srg_running} and the second term on right side of
+	Eq.~\eqref{eq:SRG_equation_mom_space} makes sure that the unitarity
+	is maintained.
 
-	3N forces.  Factorization blob figure.
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.9\textwidth]%
+	 {Introduction/tiled_s_3S1_kvnn32_reg_0_3_0_k}
+	 \caption{SRG evolution of the chiral $\rm{N^3LO}$ potential
+	 \cite{Epelbaum:2004fk} in the
+	 $^3S_1$ channel.  Figure from \cite{Bogner:2009bt}.}
+	 \label{fig:SRG_evolution_chiral_NN}
+	\end{figure}
+	%
+	Figure~\ref{fig:SRG_evolution_chiral_NN} shows
+	Eq.~\eqref{eq:SRG_equation_mom_space} in action.  We see that as we
+	go to lower $\lambda$, we achieve the decoupling between high- and
+	low-momentum components.  Once this decoupling has been achieved, one can
+	apply the low-pass filter and work with smaller matrices if desired.
+
+	\medskip
+	\subsubsection{Effects of SRG evolution}
+
+	\begin{figure}[htbp]
+	 \centering
+	 \includegraphics[width=0.5\textwidth]%
+	 {Introduction/3s1rspacewfsq_rev2}
+	 \caption{$^3S_1$ probability density in deuteron for the AV18 potential and
+	 the AV18 potential evolved to three SRG $\lambda$'s.  Figure from
+	 \cite{Furnstahl:2012fn}.}
+	 \label{fig:SRG_evolution_wf}
+	\end{figure}
+	%
+	The conventional nuclear potentials have a strong short-range repulsion.  As
+	a result, the wave functions at short distance are suppressed.  This
+	suppression is seen for the unevolved potential in
+	Fig.~\ref{fig:SRG_evolution_wf}.  This suppression is called the
+	short-range correlation (SRC).  The RG evolution gets rid of the
+	short-range repulsion in the potential (it shifts the strength from
+	high-momentum modes into the low-momentum modes).  The wave functions from
+	the evolved potential therefore do not exhibit the SRC as seen in
+	Fig.~\ref{fig:SRG_evolution_wf}.  It is also noteworthy that even though
+	the deuteron wave functions change at short distances, the long-distance
+	part is independent of the SRG $\lambda$.  The long-distance part of the
+	wave function is related to the asymptotic normalization coefficient (ANC),
+	which is an observable.  We will see later in
+	Chapter~\ref{chap:Extrapolation} that ANC being an observable plays an
+	important role in establishing the universality of the extrapolation formulas
+	derived in Chapter~\ref{chap:Extrapolation}.  The observables should be
+	independent of the resolution scale, which at the end of the day is a
+	theoretical choice.
+
+	%
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/deuteron_properties_av18_n8}
+			\caption{Effect of evolution on binding energy, the $D$-state
+			probability, and the asymptotic $D/S$-state ratio $\eta_d$.  Figure from
+			\cite{Bogner:2009bt}. }
+			\label{fig:energy_prob_eta_evolv_effect}
+		\end{subfigure}
+		\hspace{0.1 \textwidth}
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]
+			{Introduction/phase_shifts_SRG_corped}
+			\caption{The solid
+			black line indicate the phase shifts for the unevolved potential. The
+			dotted blue line and the dashed red line are the phase shifts when the
+			low-pass filter is applied
+			to the unevolved potential and the evolved potential respectively.}
+			\label{fig:phase_shift_SRG_evolv}
+		\end{subfigure}
+		%
+		\caption{Effect of evolution on (non-)observables.}
+		\label{fig:SRG_effect}
+	\end{figure}
+	%
+	In Fig.~\ref{fig:SRG_effect}, we look at the effect of evolution on a few
+	more (non-)observables.  We see in
+	Fig.~\ref{fig:energy_prob_eta_evolv_effect} that the deuteron binding energy
+	and the ratio of $D$-state ANC to the $S$-state ANC are independent of the
+	resolution scale as expected.  However, the $D$-state probability depends
+	on the resolution.  This indicates that the $D$-state probability of
+	the deuteron is not an observable.  We return to the phase shifts with a
+	low-pass filter problem in Fig.~\ref{fig:phase_shift_SRG_evolv}.
+	We see that when the low-pass filter is applied to the SRG evolved potential,
+	it reproduces the unevolved phase shifts up to the cut-off energy of the
+	filter.  This discussion also makes it clear that
+	nuclear potential itself is not an observable and there is no ``correct''
+	nuclear potential.  In fact, there are more than one ``correct'' potential.
+	For instance, all the potentials in Fig.~\ref{fig:SRG_evolution_chiral_NN}
+	give the same values for observables such as binding energies, phase shifts,
+	etc.
+
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/He4_vs_nmax_highlight_after_name}
+			\caption{}
+			%\label{fig:He4_Nmax_convergence_SRG}
+		\end{subfigure}
+		\hspace{0.1 \textwidth}
+		\begin{subfigure}[t]{0.4\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]
+			{Introduction/Li6_vs_nmax_highlight_after}
+			\caption{}
+			%\label{fig:}
+		\end{subfigure}
+		%
+		\caption{SRG evolution greatly accelerates the convergence in many-body
+		calculations.  Figure from \cite{Furnstahl:2012fn}.}
+		\label{fig:SRG_Nmax_convergence_He4_Li6}
+	\end{figure}
+
+	Description for the convergence figure.
+
+	3N forces.  Factorization blob figure. (move to factorization chapter?)
 
 	Couple sentences about connecting to IM-SRG.
 
