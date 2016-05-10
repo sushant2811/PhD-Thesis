@@ -10,7 +10,7 @@
 	traditional playground for nuclear physics.  The questions historically
 	driving nuclear physics have been: how do protons and neutrons
 	make stable nuclei and rare isotopes?  What are the limits of nuclear
-	existence (also referred to as drip lines)?
+	existence?
 	What are the nuclear binding energies, excitation spectra, radii and so on?
 	We would also like to describe nuclear reactions, make predictions about
 	the shape of the nuclei and understand how the shape dictates the nuclear
@@ -77,7 +77,7 @@
 	already mentioned, it also has many real-life applications.  Our knowledge of
 	nuclei and ability to produce them has led to an increase in the quality of
 	life
-	for the humankind.  Applications of nuclear physics encompass a diverse
+	for humankind.  Applications of nuclear physics encompass a diverse
 	domain including but not limited to energy, security, medicine,
 	radioisotope dating, and material sciences.
 
@@ -120,7 +120,7 @@
 
 	This intense effort is well summarized by Hans Bethe's quote in his essay
 	`What Holds the Nucleus Together?' in Scientific American (1953):
-	``In past quarter century physicists have devoted a huge amount of
+	``In the past quarter century physicists have devoted a huge amount of
 	experimentation and mental labor to this problem -- probably more man-hours
 	than have been given to any other scientific question in the history of
 	mankind.''
@@ -186,7 +186,7 @@
 
 	Another aspect that makes low-energy nuclear physics difficult is that it is
 	a many-body problem.  It exhibits some emergent phenomena that are difficult
-	to capture in reductionist approach.  This issue has been well-summarized by
+	to capture in a reductionist approach.  This issue has been well-summarized by
 	the famous article `More is different' by Phillip Anderson
 	\cite{Anderson:1972pca} (albeit with a focus on many-body problem in
 	condensed matter).
@@ -208,7 +208,7 @@
 	particularly the last few years have seen an explosion in capabilities of
 	low-energy nuclear theory.  This phenomenal progress has been possible due
 	to combination of a few factors --- new insights about the nuclear force,
-	developments in the many-body technology, and the surge in computational
+	developments in the many-body technology, and a surge in computational
 	capabilities.  In the following sections, we look briefly at each of these
 	developments which will lead us to how author's PhD work fits into the
 	bigger picture.
@@ -223,10 +223,10 @@
 	phenomenological interactions are the meson exchange models (which we
 	touched upon during discussion of Fig.~\ref{fig:Nuclear_potentials}) and
 	local phenomenological potentials \footnote{The potential is local if
-	$V(r, r^\prime) = V(r) \delta(r - r^\prime)$}.
-	Examples of these include potentials
-	from Bonn interactions \cite{Machleidt:1989tm, Machleidt:1987hj,
-	Machleidt:2000ge} and the Argonne interactions \cite{Wiringa:1994wb}.
+	$V(\bm{r}, \bm{r^\prime}) = V(\bm{r}) \delta(\bm{r} - \bm{r^\prime})$.}.
+	Examples of these include
+	the Bonn potentials \cite{Machleidt:1989tm, Machleidt:1987hj,
+	Machleidt:2000ge} and the Argonne potential \cite{Wiringa:1994wb}.
 
 	The Argonne potential is probably the most widely used phenemenological
 	potential.  One of the reasons being that until recently, it was the only
@@ -254,9 +254,10 @@
 
 	The AV18 potential is written as
 	\beq
-	\wh{V}_{18}(r) = \sum_{i = 1}^{18} V_i(r) \, \wh{O}_i \;.
+	\wh{V}_{18}(r) = \sum_{i = 1}^{18} V_i(r) \, \wh{O}_i \;,
 	\eeq
-	$r$ is the inter-nucleon separation and $V_i (r) = V_{{\rm{EM}}} + V_{\pi}
+	where $r$ is the inter-nucleon separation and
+	$V_i (r) = V_{{\rm{EM}}} + V_{\pi}
 	+ V_{{\rm{short~range}}}$.  The coefficients in the potential are fit to
 	nucleon scattering up to $350$ MeV, and to deuteron bound state properties
 	such as binding energy, radii, and quadrupole moment.
@@ -265,7 +266,8 @@
 	get rid of model dependence.
 
 	Meson exchange models are formulated in terms of exchange of mesons taking
-	into account to the nature of mesons (scalar, vector, pseudo-scalar, so on).
+	into account to the quantum nature of mesons (scalar, vector, pseudo-scalar,
+	so on).
 	The masses are those of real mesons, but couplings are fit parameters.
 	In the simplest form, the interaction is a sum of Yukawa potentials,
 	\beq
@@ -280,7 +282,7 @@
 	Meson exchange potentials and the AV18 potential share the common shortcoming
 	that there is no scope for systematic	improvements.  It is also unclear
 	how to seek model independence and do robust uncertainty quantification.
-	These models also offer limited guidance on the strength and relevance of
+	Finally, these models offer limited guidance on the strength and relevance of
 	three- and higher-body forces.
 
 
@@ -328,10 +330,12 @@
 	Goldstone boson --- pion --- is light (compared to mass of nucleon), but not
 	massless.
 
-	Chiral EFT ($\chi$-EFT) uses nucleons and pions as degrees of freedom.
+	Chiral EFT ($\chi$-EFT) uses nucleons and pions as degrees of freedom
+	\footnote{Delta-full chiral EFTs also include
+	$\Delta$---a resonant state of nucleon---as a degree of freedom. }.
 	Heavy mesons are
 	integrated out.  The crucial difference that distinguishes $\chi$-EFTs from
-	meson theories of 1950s is that they are constrained by the chiral symmetry.
+	meson theories of 1950s is that they are constrained by chiral symmetry.
 	Broken chiral symmetry serves as a connection with the underlying theory of
 	QCD.
 	A major advantage of $\chi$-EFT is that it permits systematic improvements
@@ -348,14 +352,17 @@
 	\end{figure}
 	%
 	Diagrams in a $\chi$-EFT are shown in Fig.~\ref{fig:ch_EFT_diagrams}.  The
-	three- and higher-body forces appear naturally in $\chi$-EFT.  The coupling
+	three- and higher-body forces appear naturally in $\chi$-EFT with
+	expected hierarchy (higher-body forces are suppressed successively).  The
+	coupling
 	constants at the vertices in Fig.~\ref{fig:ch_EFT_diagrams} are called
 	low-energy coupling constants (LECs); they encode the QCD physics and
 	cannot be calculated in $\chi$-EFT.  LECs are fitted to experimental data.
-	Lattice QCD provides a promising method for extracting them in near
+	Lattice QCD provides a promising method for extracting them in the near
 	future (cf.~Subsec.~\ref{subsec:lattice_theories}).  Despite some concerns
 	over
-	power-counting (\emph{cite Bira here? and Delta incorporation work}), it is
+	power-counting (see Ref.~\cite{Griesshammer:2015osb} and references
+	therein), it is
 	fair to say that $\chi$-EFT has been a major breakthrough in low-energy
 	nuclear theory.  For more details and applications of $\chi$-EFT, please
 	see Refs.~\cite{Machleidt:2011zz} and \cite{Epelbaum:2005pn}.
@@ -373,7 +380,7 @@
 	% \end{figure}
 
 	We learned in kindergarten quantum mechanics that a two-body problem
-	can be solved by reducing it to one-body problem.  The many-body
+	can be solved by reducing it to a one-body problem.  The many-body
 	problem is far more relevant to the nuclear physics, and is more
 	challenging.
 	For the nuclear properties such as the bound state energies, the
@@ -392,23 +399,21 @@
 	where $\wh{T}$ is the kinetic energy and $\wh{V}^{(2)}, \, \wh{V}^{(3)}$ are
 	the nuclear potentials (e.g., from $\chi$-EFT or phenomenological potentials).
 
-	Over years various methods have been developed to tackle
-  this problem.  We we will list some of the broad categories below.
+	Over the years various methods have been developed to tackle
+  this problem.  We will list some of the broad categories below.
 	We only provide
-  a brief explanation for each of them and refer the reader to relevant
+  a brief explanation for each of them and refer the reader to the cited
   references for details.
 	\bi
 	\li
 	\emph{Direct diagonalization:}
 	This category involves expanding the many-body wave function $\ket{\Psi}$ in
 	an appropriate complete basis.  Very often this basis is chosen to be the
-	slater determinant of Harmonic oscillator (HO) wave functions.
-	HO has all the symmetries of nuclear many-body problem.  HO also allows
-	separation of center of mass motion from relative motion, ensuring that only
-	intrinsic properties are being calculated.
+	Slater determinant of harmonic oscillator (HO) wave functions.
+	HO has all the symmetries of nuclear many-body problem.
 
 	Finite computational power forces us to truncate the infinite sum of
-	slater determinants at some point.  One of the common truncation scheme is
+	Slater determinants at some point.  One of the common truncation scheme is
 	the $\Nmax$ truncation.  It keeps all $A$ particle states
 	$\ket{n_1 l_1 n_2 l_2 \ldots n_A l_A}$ such that
 	\beq
@@ -417,7 +422,10 @@
 	%
 	With $\Nmax$ truncation, solving the many-body Schr\"{o}dinger equation
 	(Eq.~\eqref{eq:Schrodinger_many_body}) becomes a matrix diagonalization
-	problem, and can be solved using standard algorithms.
+	problem, and can be solved using standard algorithms. The $\Nmax$
+	truncation in HO basis also allows
+	separation of center-of-mass motion from relative motion, ensuring that only
+	intrinsic properties are being calculated.
 
 	\begin{figure}[htbp]
 		\centering
@@ -456,13 +464,13 @@
 	 \label{fig:matrix_dimension_growth}
 	\end{figure}
 	%
-	A limitation of diagonalization method is that the size of the Hamiltonian
+	A limitation of the diagonalization method is that the size of the Hamiltonian
 	matrix that we need to diagonalize grows rapidly as we go to higher $A$ and
 	higher $\Nmax$ (cf.~Fig.~\ref{fig:matrix_dimension_growth}).  This often
-	forces us to truncate the basis before the convergence is reached
+	forces us to truncate the basis before convergence is reached
 	(cf.~Fig.~\ref{fig:Li6_vs_Nmax}), and necessitates development of
 	reliable extrapolation schemes.  Chapter~\ref{chap:Extrapolation}
-	describes author's original work devoted to the development of
+	describes the author's original work devoted to the development of
 	extrapolation schemes relevant to this problem.
 
 	Many different methods fall under the broad umbrella of diagonalization
@@ -470,7 +478,7 @@
 	the No Core Shell Model (NCSM)~\cite{Barrett:2013nh},
 	the No Core Full Configuration (NCFC)~\cite{Maris:2008ax}, and the Importance
 	Truncated No Core Shell Model (IT-NCSM)~\cite{Roth:2009cw}.
-	The last three methods primarily differ in the nature of truncation
+	The last three methods primarily differ in the nature of the truncation
 	they employ.
 
 	\li
@@ -483,7 +491,7 @@
 	\eeq
 	This equation can be solved by making an ansatz for
 	$\ket{\Psi(\tau = 0)} \equiv \ket{\Psi_{\rm trial}}$.
-	$\ket{\Psi_{\rm trial}}$ can be expanded in complete basis of eigenvectors
+	$\ket{\Psi_{\rm trial}}$ can be expanded in a complete basis of eigenvectors
 	of $\wh{H}$ as
 	\beq
 	\ket{\Psi_{\rm trial}} = c_0 \ket{\Psi_0} +
@@ -493,15 +501,15 @@
 	As long as the trial wave function is not orthogonal to the actual ground
 	state, i.e, $c_0 \neq 0$ in Eq.~\eqref{eq:Psi_trial_expansion}, it can
 	be shown that the imaginary time evolution (Eq.~\eqref{eq:imag_time_SE})
-	projects out the ground state in $\tau \to \infty$ limit.  There are many
+	projects out the ground state in the $\tau \to \infty$ limit.  There are many
 	different ways to do the stochastic time evolution of
 	Eq.~\eqref{eq:imag_time_SE} to project out the ground state.  The two
 	most popular in nuclear physics are the Green's function Monte Carlo (GFMC)
 	\cite{Pieper:2002ne, Pieper:2007ax}
 	and the Auxiliary Field Diffusion Monte Carlo (AFDMC)
-	\cite{Gandolfi:2007hs, Gezerlis:2014zia}.  Monte Carlo methods require that
-	the nuclear potential used be local.  AV18 potential has been the potential
-	of choice for these methods.  Recently, it has been possible to
+	\cite{Gandolfi:2007hs, Gezerlis:2014zia}.  Monte Carlo methods
+	work best with a local potential.  The AV18 potential has been the
+	potential	of choice for these methods.  Recently, it has been possible to
 	derive the low-order $\chi$-EFT in local form, making its use possible
 	for Monte Carlo methods \cite{Gezerlis:2014zia}.
 
@@ -534,7 +542,8 @@
 	\eeq
 	%
 	$T_n$ generates $n$-particles-$n$-holes excitations.  In practice,
-	Eq.~\eqref{eq:T_expansion} is truncated at $T_2$.  CC (truncated at $T_2$)
+	Eq.~\eqref{eq:T_expansion} is truncated at $T_2$
+	(more recently corrections from $T_3$ are included as well).  CC
 	scales much better than diagonalization or Monte Carlo methods discussed
 	above and is therefore possible to use it for medium-mass nuclei
 	\cite{Hagen:2013nca}.
@@ -574,7 +583,7 @@
 
 	\subsection[``It from the bit"---lattice theories]%
 	{``It from the bit"\footnote{The phrase ``It from the bit'' was originally
-	used by John Wheeler while elucidating his ideas on digital physics}
+	used by John Wheeler while elucidating his ideas on digital physics.}
 	---lattice theories}
 	\label{subsec:lattice_theories}
 
@@ -597,7 +606,7 @@
 	scales with the quark mass roughly as $m_q ^{-4}$
 	\cite{Detmold:2003rq}.  The simulations
 	are therefore often done at quark masses larger than the physical quark
-	masses.  From Gell-Mann-Oakes-Renner relation $m_\pi ^2 \sim m_q$,
+	masses.  From the Gell-Mann-Oakes-Renner relation $m_\pi ^2 \sim m_q$,
 	and therefore the pion mass
 	in the lattice calculations is larger than its physical value as well.
 	The results
@@ -608,7 +617,7 @@
 	\cite{Detmold:2001jb}.
 
 	Recent calculations have been able to use the physical pion
-	mass though only for very light systems \cite{Durr:2010aw}.  In near future,
+	mass though only for very light hadrons \cite{Durr:2010aw}.  In near future,
 	we hope to extract the low-energy constants in Fig.~\ref{fig:ch_EFT_diagrams}
 	from lattice QCD.
 
@@ -618,7 +627,9 @@
 	\subsubsection{Lattice EFT}
 
 	Quarks and gluons have many degrees of freedom in terms of spin, color
-	charge, and flavor, which makes getting nuclear physics from lattice QCD
+	charge, and flavor.  This along with strong nonlinearity and
+	non-perturbativeness of the problem makes getting nuclear physics from
+	lattice QCD
 	computationally difficult.  An alternative approach is to have nucleons
 	on the lattice site rather than the quarks.
 	%
@@ -680,7 +691,7 @@
 	AV18 potential in the $^1 S_0$ channel in momentum space.  We note that
 	for the AV18 potential, $V(k, k^{\prime}) \to 0$ only for $k, \, k^\prime
 	\gtrsim 25 {\rm{~fm}}^{-1}$.  However, the Fermi momentum of the nucleon
-	in heavy nucleus like $^{208}$Pb is only about $1.2 {\rm{~fm^{-1}}}$.
+	in a heavy nucleus like $^{208}$Pb is only about $1.2 {\rm{~fm^{-1}}}$.
 	The Fermi momentum sets the momentum scale of low-energy nuclear
 	processes we wish to study.  Thus, we have a mismatch of resolution scales;
 	the processes we wish to describe are $1 - 2 {\rm{~fm^{-1}}}$
@@ -774,7 +785,7 @@
 	straightforward application of a low-pass filter fails to reproduce
 	nuclear phase shifts even at low energies.
 
-	This failure of low-pass filter can be understood by recalling from
+	This failure of a low-pass filter can be understood by recalling from
 	Fig.~\ref{fig:momentum_space_AV18} that the high and low-momentum
 	modes are coupled.  For instance, consider (schematically) the expression
 	for the phase shift in perturbation theory
@@ -784,12 +795,12 @@
 	{(k^2 - {k^\prime}^2)/m} + \cdots \;.
 	\label{eq:phase_shift}
 	\eeq
-	The second term in Eq.~\eqref{eq:phase_shift} involves sum over off-diagonal
+	The second term in Eq.~\eqref{eq:phase_shift} involves a sum over off-diagonal
 	matrix elements of $\wh{V}$.  Therefore even phase shifts for small $k$
 	will have significant contributions from high $k^\prime$ if the coupling
 	matrix elements $\mbraket{k}{\wh{V}}{k^\prime}$ are large.
 
-	The correct way to get rid of the high-momentum components is to use the
+	A correct way to get rid of the high-momentum components is to use the
 	RG evolution and lower the momentum cutoff in small steps.
 	%
 	\begin{figure}[htbp]
@@ -820,7 +831,7 @@
 	Two common choices for RG running are shown in
 	Fig.~\ref{fig:V_lowk_V_srg_running}.  The RG running shown in
 	Fig.~\ref{fig:V_lowk_running} is referred to as ``$V_{{\rm{low~}} k}$'' was
-	historically developed first.  It attempts
+	historically developed first for LENP.  It attempts
 	to get the potential in the low-pass-filter form through successive RG
 	transformations \cite{Bogner:2009bt, Bogner:2003wn}.  Though successful
 	for two-nucleon forces, it has been difficult to systematically treat
@@ -841,7 +852,7 @@
 	R.\ Furnstahl, and R.\ Perry \cite{Bogner:2006pc}.  The basic idea in SRG
 	is to apply a series of unitary transformations $U_s$
 	to transform the Hamiltonian $\wh{H}$ into a band-diagonal form shown in
-	Fig.~\ref{fig:V_srg_running}.
+	Fig.~\ref{fig:V_srg_running}:
 	\beq
 	\wh{H}_s = \wh{U}_s \,\wh{H}\, \wh{U}^\dag_s \;,
 	\label{eq:SRG_H_transformation}
@@ -858,7 +869,7 @@
 	$\wh{G}_s$, though other choices for $\wh{G}_s$ have been explored
 	\cite{Li:2011sr}.
 
-	Note that since we just doing unitary transformations, eigenvalues such
+	Note that since we are just doing unitary transformations, eigenvalues such
 	as energies are unchanged under SRG
 	\beq
 	E_n = \mbraket{\Psi_n}{\wh{H}}{\Psi_n}
@@ -926,7 +937,7 @@
 	part is independent of the SRG $\lambda$.  The long-distance part of the
 	wave function is related to the asymptotic normalization coefficient (ANC),
 	which is an observable.  We will see later in
-	Chapter~\ref{chap:Extrapolation} that ANC being an observable plays an
+	Chapter~\ref{chap:Extrapolation} that the ANC being an observable plays an
 	important role in establishing the universality of the extrapolation formulas
 	derived in Chapter~\ref{chap:Extrapolation}.  The observables should be
 	independent of the resolution scale, which at the end of the day is a
@@ -971,7 +982,7 @@
 	low-pass filter problem in Fig.~\ref{fig:phase_shift_SRG_evolv}.
 	We see that when the low-pass filter is applied to the SRG evolved potential,
 	it reproduces the unevolved phase shifts up to the cut-off energy of the
-	filter.  This discussion also makes it clear that
+	filter.  This discussion also makes it clear that the
 	nuclear potential itself is not an observable and there is no ``correct''
 	nuclear potential.  In fact, there are more than one ``correct'' potential.
 	For instance, all the potentials in Fig.~\ref{fig:SRG_evolution_chiral_NN}
@@ -1002,7 +1013,7 @@
 		\label{fig:SRG_Nmax_convergence_He4_Li6}
 	\end{figure}
 	%
-	Since the SRG evolved potentials only have a low-momentum modes, they are
+	Since the SRG evolved potentials only have low-momentum modes, they are
 	amenable to numerical calculations.  As seen in
 	Fig.~\ref{fig:SRG_Nmax_convergence_He4_Li6}, SRG evolution greatly
 	accelerated the convergence in many-body calculations.
@@ -1021,21 +1032,22 @@
 	The second equality in Eq.~\eqref{eq:induced_forces_demonstration}
 	demonstrates how the commutators give rise to three- and higher-body
 	(up to $A$-body) forces.
-	To keep the invariance of energy with respect to the resolution scale
-	(as in Fig.~\ref{fig:energy_prob_eta_evolv_effect}), it is important
-	to keep the induced 3-body forces \cite{Jurgenson:2010wy}.
-	It has been demonstrated that 3-body forces are crucial in getting the
-	correct experimental values from theory \cite{Hammer:2012id}.
 	The initial
 	potential in Fig.~\ref{fig:SRG_Nmax_convergence_He4_Li6}
-	includes both two- and three-body forces.  A major development
+	includes both two- and three-body forces; it has been demonstrated that
+	3-body forces are crucial in getting the
+	correct experimental values from theory \cite{Hammer:2012id}.
+	To keep the invariance of energy with respect to the resolution scale
+	(as in Fig.~\ref{fig:energy_prob_eta_evolv_effect}), it is important
+	to keep also the induced 3-body forces \cite{Jurgenson:2010wy}.
+	A major development
 	in the SRG technology has been the ability to consistently evolve
 	three-body forces \cite{Hebeler:2012pr, Wendt:2013bla}.
 
 	A related important development is that of In-Medium SRG (IM-SRG)
 	\cite{Hergert:2015awm}.  IM-SRG uses a reference state $\ket{\Phi}$ which is
 	different from the particle vacuum $\ket{0}$ used in SRG.
-	For example, $\Phi$ can be a Slater determinant which is fair
+	For example, $\Phi$ can be a Slater determinant that is fair
 	approximation to nucleus' ground state.  Just like in SRG,
 	IM-SRG then uses a series of unitary transformations to decouple the
 	reference state from excitations.  IM-SRG also maintains the hierarchy of
@@ -1054,26 +1066,27 @@
 
 	\section{Path forward for LENP}
 
-	We have seen that nuclear theory has come a long way from pion theories
-	of $1940$'s.  The focus these days is on doing precision calculations and
+	We have seen that nuclear theory has come a long way from the pion theories
+	of the $1940$'s.  The focus these days is on doing precision calculations and
 	making reliable predictions.
 	The tool box of a nuclear theorist includes a wide variety of
 	techniques.  In most cases, different techniques have complimentary
-	strengths.  In other cases, alternate methods provide a means to
+	strengths.  In other cases, alternative methods provide a means to
 	cross-check answers.
-	Having made great strides in evaluation
+	Having made great strides in the evaluation
 	of the bound state properties, the push recently has been on
-	calculating resonant and scattering states, and use the improved
+	calculating resonant and scattering states, and using the improved
 	understanding of nuclear structure to study nuclear reactions.
 
 	To pick a particular example, let's focus on the neutrinoless double
 	beta decay ($0 \nu \beta \beta$) example.  $0 \nu \beta \beta$ is of
 	wide interest because of its potential to shed light on the nature of
-	neutrino (i.e, if neutrino is a Majorana or a Dirac fermion).
+	neutrinos (i.e, if neutrino is a Majorana or a Dirac fermion).
 	$0 \nu \beta \beta$ has not been observed yet and there are experiments
 	around the world looking for this decay \cite{Garfagnini:2014nla}.
-	These experiments need guidance from theory to look in the right
-	parameter space.  The theoretical calculation of $0 \nu \beta \beta$
+	The experiments need guidance from theory to help design the
+	experiment and to interpret the measurements.  The theoretical
+	calculation of $0 \nu \beta \beta$
 	cross section involves computing a nuclear matrix element for the
 	transition.
 	%
@@ -1095,7 +1108,7 @@
 	experiment.
 
 	We thus see that it is important that the theoretical calculations are
-	accompanied by reliable uncertainty estimate.  The source of uncertainty in
+	accompanied by a reliable uncertainty estimate.  The sources of uncertainty in
 	a theoretical calculation can broadly be classified into two
 	categories---uncertainty in the input (e.g., shortcomings in the
 	potential, limitations of the assumptions made, etc.) and
@@ -1107,10 +1120,10 @@
 
 	\section{Thesis organization}
 
-	The next two chapters in this thesis will present author's original work as a
-	PhD student.
+	The next two chapters in this thesis will present the author's
+	original work as a PhD student.
 	As demonstrated in Fig.~\ref{fig:Li6_vs_Nmax}, we often run out of
-	computational power before the convergence is reached necessitating a need
+	computational power before the convergence is reached, necessitating a need
 	for trustworthy extrapolation schemes.
 	Chapter~\ref{chap:Extrapolation} describes our published work in this
 	regard \cite{More:2013rma,Furnstahl:2013vda,Konig:2014hma}.
@@ -1124,20 +1137,20 @@
 	was secondary, and hence only the summary from that work will be
 	presented.
 
-	Theoretical calculations of nuclear cross section involves evaluating
-	nuclear structure (which involves description of initial and final state) and
-	nuclear reaction (which involves description of probe).  To make
+	Theoretical calculations of nuclear cross sections involve evaluating
+	nuclear structure (which involves description of the initial and final state)
+	and	nuclear reaction (which involves a description of the probe).  To make
 	accurate predictions, it is important to understand the uncertainty
 	stemming from the renormalization scale and scheme dependence of
 	nuclear structure and reaction components.  We address this problem in
-	Chapter~\ref{chap:factorization} by using SRG to look at the scale
+	Chapter~\ref{chap:factorization} by using the SRG to look at the scale
 	dependence of deuteron electro-disintegration.  This effort was led by the
 	author and has been published in Ref.~\cite{More:2015tpa}.
 
-	Both these projects were first of its kind, and are fertile grounds for
+	Both these projects were the first of its kind, and are fertile grounds for
 	further	development.  In fact, the work presented in
 	Chapter~\ref{chap:Extrapolation} has already had a lot of impact as testified
-	by the number of articles citing our publications.  We believe that
-	work in Chapter~\ref{chap:factorization} will also receive a wide
+	by the number of articles citing our publications.  We believe that the
+	work in Chapter~\ref{chap:factorization} will also receive wide
 	attention soon.  We present the details of our calculations in Appendix, which
 	would enable anyone interested to reproduce our results.
