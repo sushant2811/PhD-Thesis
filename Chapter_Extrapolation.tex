@@ -3,24 +3,39 @@
 \chapter{Extrapolation}
 \label{chap:Extrapolation}
 
-	As we have seen in the introduction, the Harmonic Oscillator (HO) basis is
-	routinely used in Low-energy Nuclear Physics (LENP) calculations.  We also saw
+	As we have seen in the introduction, the harmonic oscillator (HO) basis is
+	routinely used in low-energy nuclear physics (LENP) calculations.  We also saw
 	that
 	the size of Hamiltonian matrix that we need to diagonalize grows factorially
-	with the number of nucleons, severely restricting the number of terms that
-	can be kept in the basis expansion.  The maximum number of terms in the basis
-	expansion is often denoted by $\Nmax$, so the single particle nuclear wave
-	function is given by
+	with the number of nucleons (cf.~Fig.~\ref{fig:matrix_dimension_growth}),
+	severely restricting the number of terms that
+	can be kept in the basis expansion.
+	The single particle nuclear wave
+	function with the $\Nmax$ truncation introduced in
+	Chapter~\ref{chap:Intro} is given by
 	\beq
 	\psi_{N_{\rm max}}^{\Omega}(r) = \sum_{\alpha = 0}^{N_{\rm max}} c_{\alpha}
-	\phi_{\alpha}^{\Omega}(r) \;.
+	\varphi_{\alpha}^{\Omega}(r) \;.
 	\label{eq:single_particle_truncation}
 	\eeq
-	$\phi_{\alpha}^{\Omega}(r)$ in Eq.~\eqref{eq:single_particle_truncation} are
-	the HO wave functions; $\Omega$ is the frequency of the HO \footnote{
+	$\varphi_{\alpha}^{\Omega}(r)$ in Eq.~\eqref{eq:single_particle_truncation}
+	are
+	the HO wave functions;
+	$\Omega$ is the frequency of the HO \footnote{
 	In LENP, the oscillator frequency is often denoted by $\Omega$ rather
 	than $\omega$.}.
-	Thus the energy obtained in the HO basis -- $E(\Nmax, \Omega)$ -- is a
+	For reference, the $S$-wave HO wave function is given by
+	\beq
+	\varphi_{\alpha}^{\Omega}(r) =  \mathcal{N} \ee^{
+		\frac{- \mu \Omega}{2 \hbar} r^2} L_{\alpha}^{1/2}
+		(\frac{\mu \Omega}{\hbar} r^2) \;,
+	\label{eq:HO_S_wave_written_out}
+	\eeq
+	where $\mathcal{N}$ is the normalization constant, $\mu$ is the
+	reduced mass, and $L_{\alpha}^{1/2}$ denotes the generalized Laguerre
+	polynomial.
+
+	The energy obtained in the HO basis---$E(\Nmax, \Omega)$---is a
 	function of $\Nmax$ and $\Omega$.  This is illustrated in
 	Fig.~\ref{fig:H6_function_Omega}.
 	%
@@ -72,6 +87,9 @@
 	Moreover, the physical motivation for an exponential in $\Nmax$ extrapolation
 	is slim at best.  It has been claimed that for larger nuclei $\Nmax$ is a
 	logarithmic measure of the number of states \cite{Bogner:2007rx}.
+	This would account for the exponential behavior, but there is no
+	demonstration that it follows in general or with a specific
+	logarithmic dependence.
 
 	An alternative approach to extrapolations is motivated by effective field
 	theory (EFT) and based instead on explicitly considering the infrared (IR)
@@ -82,9 +100,9 @@
 	the classical turning points denoted by $L_0$ and $\Lambda_0$ respectively.
 	We have
 	\begin{align}
-	L_0 = \sqrt{2 (\Nmax + 3/2)} b \;, \nonumber \\
+	L_0 = \sqrt{2 (\Nmax + 3/2)} b \;,  \nonumber\\
 	\Lambda_0 = \sqrt{2 (\Nmax + 3/2)} \hbar/b \;.
-	\label{eq: L0_Lam0_cutoff}
+	\label{eq:L0_Lam0_cutoff}
 	\end{align}
 	$b$ is the oscillator length given by
 	$\displaystyle b = \sqrt{\hbar/ m \Omega}$.
@@ -99,8 +117,10 @@
 
 	This approach of thinking of the HO truncation in terms of IR and UV cutoffs
 	has led to lot of development in past three years.
+	Note that $b$ appears in the numerator for $L_0$ and in the denominator
+	for $\Lambda_0$, so it is not possible to make both cutoffs large.
 	We can choose the oscillator parameters such that one of the cutoffs in
-	Eqs.~\eqref{eq: L0_Lam0_cutoff} is large, making the errors due to that cutoff
+	Eqs.~\eqref{eq:L0_Lam0_cutoff} is large, making the errors due to that cutoff
 	small and focus on the errors due to the other cutoff.
 	The first attempt and
 	test for a theoretically motivated IR correction was made in
@@ -209,7 +229,8 @@
 	truncated at $\Nmax = 4$ determined by
 	diagonalization (solid).  The truncated basis cuts off the tail of the
 	exact wave function because the individual basis wave functions have a
-	radial extent that depends on \hw\ (from the Gaussian part) and on the
+	radial extent that depends on \hw\ (from the Gaussian part;
+	cf.~Eq.~\eqref{eq:HO_S_wave_written_out}) and on the
 	largest power of $r$ (from the polynomial part).  The latter is given
 	by $\Nmax = 2n + l$.  With $\Nmax = 4$ and $l=0$, this means that $n=2$ gives
 	the largest power.
@@ -371,7 +392,8 @@
 	L^{1\over 2}_n\left(r^2\right)
 	e^{-{r^2\over 2}} \nonumber\\
 	&=&\left(\pi^{1\over 2} 2^{2n} (2n+1)!\right)^{-1/2}H_{2n+1}(r)
-	e^{-{r^2\over 2}} \; , \nonumber
+	e^{-{r^2\over 2}} \; ,
+	%\label{eq:HO_S_wave_written_out}
 	\eea
 	%
 	with energy $E=(2n +3/2)\hbar\Omega$. Here, $L_n^{1/2}$ denotes the
@@ -2974,7 +2996,7 @@
 	\paragraph{Relation to L\"{u}scher-type formulas}
 
 	We saw in Subsec.~\ref{subsec:lattice_theories} that lattice theories
-	have an inherent IR and UV cutoff.  
+	have an inherent IR and UV cutoff.
 	Starting with the seminal work of L\"uscher~\cite{Luscher:1985dn}, a
 	wide variety of formulas have been derived for the energy shift of
 	bound states in finite-volume lattice calculations.  The usual
