@@ -1469,7 +1469,9 @@
 	function of the SRG $\lambda$.  To isolate the effect of operator evolution,
 	we only look at $\fL$ calculated in IA at a specific angle in
 	Fig.~\ref{fig:J0_evolution_vs_lambda}.  Investigating details of the
-	operator evolution forms the basis of ongoing work.
+	operator evolution forms the basis of ongoing work.  A few
+	preliminary results along those lines are
+	presented in Subsec.~\ref{subsec:operator_evolution}.
 
 	\subsubsection{Above the quasi-free ridge}
 
@@ -1604,6 +1606,177 @@
 	Our ongoing work examines more directly the behavior of the
 	current as it evolves to better understand how to carry over the results
 	observed here to other reactions.
+
+	\subsection{Operator evolution and momentum scaling}
+	\label{subsec:operator_evolution}
+
+	The first work on operator evolution via the SRG evolution was done
+	in Ref.~\cite{Anderson:2010aq}.  Among other things the
+	authors of Ref.~\cite{Anderson:2010aq} looked at the effect of evolution
+	on the momentum distribution in the deuteron
+	(cf.~Fig.~\ref{fig:Anderson_mom_evolution}).
+	%
+	\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.9\textwidth]
+	{Factorization/movie_vsrg_3S1_kvnn10_reg_0_3_0_Mg4p4_Deut_mom_dist_integrand_L3p01_k_cntr_straight_6p0_3p0_2p0_1p5_Re-3}
+	\caption{Integrand of $\mbraket{\psi_{\rm deut}^\lambda}
+	{(a^\dag_q a_q)^{\lambda}}{\psi_{\rm deut}^\lambda}$ in the $^3S_1$ channel
+	for $q = 3.02~{\rm fm^{-1}}$.
+	The initial potential is the chiral $\rm{N^3LO}$ (500 MeV)
+	potential \cite{Entem:2003ft}.  Figure from \cite{Anderson:2010aq}.}
+	\label{fig:Anderson_mom_evolution}
+	\end{figure}
+	%
+	As seen in Fig.~\ref{fig:Anderson_mom_evolution}, the unevolved momentum
+	operator which is peaked at large momentum develops strength at
+	low momentum on evolution.
+
+	We follow the approach of \cite{Anderson:2010aq}, but focus instead on
+	the current relevant to the deuteron disintegration.  The relevant current
+	matrix element is given by Eq.~\eqref{eq:J_0_minus_def_pw}.  The $\delta$
+	function in Eq.~\eqref{eq:J_0_minus_def_pw} can be done analytically
+	giving a condition over the allowed momenta.
+	%
+	\begin{align}
+	\mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S=1 \, T_1}{J_0^-}
+	{k_2\, J=1 \, \mJd \, L_2 \, S=1 \, T=0} = \frac{\pi^2}{2}
+	\big(G_E^p + (-1)^{T_1} G_E^n\big) \nonumber \\
+	\times \sum_{\mst=-1}^{1} \braket{J_1 \, \mJd}
+	{L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
+	P_{L_1}^{\mJd - \mst} \left(\frac{k_1^2 - k_2^2 + q^2/4}{k_1 q}
+	\right) \frac{2}{k_1 k_2 q} \nonumber \\
+	\times
+	P_{L_2}^{\mJd - \mst} \left(\frac{k_1^2 - k_2^2 - q^2/4}{k_2 q}
+	\right)
+	\CG{L_2}{\mJd - \mst}{S=1}{\mst}{J=1}{\mJd} \nonumber \\
+	\cdots {\rm for~} k_2 \in (|k_1 - q/2|, k_1 + q/2) \nonumber \\
+	= 0 {\rm ~otherwise~~~~~~~~~~}
+	\label{eq:J0_minus_analytical_delta}
+	\end{align}
+
+	Equation~\eqref{eq:J0_minus_analytical_delta} along with the
+	expressions in Appendix~\ref{Appendix:sec:evolution_current}
+	can be used to study the effects of evolution on the
+	deuteron disintegration current operator.  In what follows,
+	we will look at some representative graphs.
+	For convenience we set $G_E^p = 1$ and $G_E^n = 0$; it
+	shouldn't qualitatively affect the results.
+
+	\begin{figure}[htbp]
+		%\centering
+		\begin{subfigure}[c]{0.49\textwidth}
+			%\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/delta_J-av18_qcm_sq36_lam1p5_0_0_1_1_0_unevol_J_zoomed}
+			% \caption{SRG $\lambda = 4 {\rm{~fm}}^{-1}$}
+			% \label{fig:current_unevol}
+		\end{subfigure}
+		%\hspace{0.05\textwidth}
+		\begin{subfigure}[c]{0.49\textwidth}
+			%\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/delta_J-av18_qcm_sq36_lam4_0_0_1_1_0_evolv_J_zoomed}
+			% \caption{SRG $\lambda = 2 {\rm{~fm}}^{-1}$}
+			% \label{fig:current_evol_lam4}
+		\end{subfigure}
+		\caption{Contour plot for the matrix element
+		$\mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S=1 \, T_1}{J_0^{- \, \lambda}}
+		{k_2\, J=1 \, \mJd \, L_2 \, S=1 \, T=0}$ for the quantum numbers
+		indicated for $\lambda = \infty$ and $\lambda = 4 {\rm~fm^{-1}}$.  }
+		\label{fig:current_evolv_unevol}
+	\end{figure}
+	%
+	Figure~\ref{fig:current_evolv_unevol} looks at the strength distribution
+	of the unevolved and evolved current in a specific channel.  The unevolved
+	current is a one-body operator and is peaked at $(0, q/2)$ and $(q/2, 0)$.
+	With SRG evolution, the current develops two-body components.
+	As seen in Figs.~\ref{fig:current_evolv_unevol} and
+	\ref{fig:Delta_J_evolution}, the changes due to evolution are
+	predominantly concentrated in the region $k < q/2$.
+	In particular, the evolved current doesn't become pathologically large
+	at high momentum.  This is important because for practical calculations
+	the evolved current will be used in conjunction with the evolved
+	wave function.  The evolved wave functions have negligible strength
+	at high momentum and the absence of pathologies in the evolved current
+	make sure that the calculations with SRG in the reduced basis are possible.
+	To illustrate this we turn to Fig.~\ref{fig:fold_J0_wf_evolution}.
+	%
+	\begin{figure}[htbp]
+		%\centering
+		\begin{subfigure}[c]{0.49\textwidth}
+			%\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/delta_J-av18_qcm_sq36_lam4_0_0_1_1_0_delta_J_zoomed}
+		\end{subfigure}
+		\begin{subfigure}[c]{0.49\textwidth}
+			\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/delta_J-av18_qcm_sq36_lam1p5_0_0_1_1_0_delta_J_zoomed}
+		\end{subfigure}
+		\caption{Contour plot for the matrix element
+		$\mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S=1 \, T_1}{\Delta J^{- \, \lambda}}
+		{k_2\, J=1 \, \mJd \, L_2 \, S=1 \, T=0}$ for the quantum numbers
+		indicated for $\lambda = 4$ and $\lambda = 1.5 {\rm~fm^{-1}}$.
+		$\Delta J^{- \, \lambda} \equiv J_0^{- \, \lambda} - J_0$. }
+		\label{fig:Delta_J_evolution}
+	\end{figure}
+
+	Figure~\ref{fig:fold_J0_wf_evolution} shows the contour plot for the
+	integrand of $\mbraket{\pp; \, ^3S_1}{J_0^{\lambda}(q)}
+	{\psi_{\rm deut, \,^3S_1}^{\lambda}}$.  The ket is the
+	deuteron state and the bra state corresponds to the outgoing nucleons
+	(up to factors of Spherical Harmonics and Clebsch-Gordan coefficients)
+	without the final state interactions.
+	%
+	\begin{figure}[htbp]
+		%\centering
+		\begin{subfigure}[c]{0.49\textwidth}
+			%\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/fold_J_wf_sign-av18_qcm_sq36_lam1p5_0_0_1_1_0_unevol_J_fold_wf_zoomed_k_sq_sign_accouned}
+		\end{subfigure}
+		%\hspace{0.05\textwidth}
+		\begin{subfigure}[c]{0.49\textwidth}
+			\centering
+			\includegraphics[width=1.265\textwidth]
+			{Factorization/fold_J_wf_sign-av18_qcm_sq36_lam1p5_0_0_1_1_0_evol_J_fold_wf_zoomed_k_sq_sign_accouned}
+		\end{subfigure}
+		\caption{Contour plot for the integrand of
+		$\thickmuskip=0mu\mbraket{p^\prime J_1 = 1 \mJd = 1
+		L_1 = 0	S = 1	T_1 = 0}{J_0^{- \, \lambda}}
+		{\psi_{\rm deut, \,^3S_1}^{\lambda}(k)}$ for $\lambda = \infty$ and
+		$\lambda = 1.5 {\rm~fm^{-1}}$. }
+		\label{fig:fold_J0_wf_evolution}
+	\end{figure}
+	%
+	We find that as we evolve to lower SRG $\lambda$, the strength in the
+	integrand shifts to lower momenta in deuteron.  It is also possible to
+	qualitatively
+	explain the results in Subsec.~\ref{subsec:Results} on the basis of
+	Fig.~\ref{fig:fold_J0_wf_evolution}.  For a given $\pp = p_0$, the
+	value for $\mbraket{p_0; \, ^3S_1}{J_0^{\lambda}(q)}
+	{\psi_{\rm deut, \,^3S_1}^{\lambda}}$ is obtained by adding all the
+	points along the horizontal axis $\pp = p_0$ in
+	Fig.~\ref{fig:fold_J0_wf_evolution}.
+
+	The kinematics at the quasi-free ridge corresponds to
+	$\pp = q/2$ (can be derived from Eq.~\eqref{eq:quasi_free_condition}).
+	We see from Fig.~\ref{fig:fold_J0_wf_evolution} that for
+	$\pp = q/2$, the contribution to the matrix element
+	$\mbraket{\pp; \, ^3S_1}{J_0(q)}
+	{\psi_{\rm deut, \,^3S_1}}$ comes from the low momentum components in the
+	deuteron.  These low momentum components are unchanged under SRG evolution
+	and therefore we see hardly any scale dependence at the quasi-free ridge
+	in the results presented in Subsec.~\ref{subsec:Results}.
+	Next consider $\pp = 1 {\rm~fm^{-1}}$.
+
+	Add comment about contact interactions
+
+
+
+
+
 
 	\section{Summary and Outlook}
 	\label{sec:factorization_summary}
