@@ -1654,6 +1654,14 @@
 	= 0 {\rm ~otherwise~~~~~~~~~~}
 	\label{eq:J0_minus_analytical_delta}
 	\end{align}
+	%
+	In deriving Eq.~\eqref{eq:J0_minus_analytical_delta} from
+	Eq.~\eqref{eq:J_0_minus_def_pw} we have used the
+	property of the $\delta$ function that
+	\beq
+	\delta\left(f(x)\right) = \frac{\delta(x - x_0)}{|f^\prime(x_0)|}\;,
+	\eeq
+	where $x_0$ is the zero of $f(x)$.
 
 	Equation~\eqref{eq:J0_minus_analytical_delta} along with the
 	expressions in Appendix~\ref{Appendix:sec:evolution_current}
@@ -1766,14 +1774,38 @@
 	$\pp = q/2$, the contribution to the matrix element
 	$\mbraket{\pp; \, ^3S_1}{J_0(q)}
 	{\psi_{\rm deut, \,^3S_1}}$ comes from the low momentum components in the
-	deuteron.  These low momentum components are unchanged under SRG evolution
+	deuteron.  These low-momentum components are unchanged under SRG evolution
 	and therefore we see hardly any scale dependence at the quasi-free ridge
 	in the results presented in Subsec.~\ref{subsec:Results}.
-	Next consider $\pp = 1 {\rm~fm^{-1}}$.
+	Next consider $\pp = 1 {\rm~fm^{-1}}$.  For this case, the contribution
+	to $\mbraket{\pp; \, ^3S_1}{J_0(q)}
+	{\psi_{\rm deut, \,^3S_1}}$ comes from the high-momentum components in the
+	deuteron which change substantially under evolution.  Moreover, we see
+	from Fig.~\ref{fig:fold_J0_wf_evolution} that the changes due to evolution
+	are smooth low-momentum effects.  This indicates that the changes due to
+	evolution are of the form of contact terms as expected from an EFT approach
+	(cf.~Fig.~\ref{fig:replace_loop_contact}).
 
-	Add comment about contact interactions
+	\medskip
+	\subsubsection{Momentum scaling of $f_L$}
 
-
+	It was observed and explained in Refs.~\cite{Bogner:2007jb, Anderson:2010aq}
+	that for $k < \lambda$ and $q \gg \lambda$ the unitary evolution operator
+	factorizes: $U_{\lambda}(k, q) \rightarrow K_{\lambda}(k) Q_{\lambda}(q)$.
+	%
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.55 \textwidth]
+		{Factorization/ratio_b_0p10_3S1_kvnn_06_lam1p5}
+		\caption{Factorization of $U$ matrices demonstrated by plateaus at high $q$.
+		Figure from \cite{Anderson:2010aq}. }
+		\label{fig:U_matrices_factorization}
+	\end{figure}
+	This factorization was observed by looking at the ratio of $U(k_i, q)/
+	U(k_0, q)$ for small $k_i's$ and $k_0$, and noting that the ratio
+	plateaus at high $q$.
+	
+	Similar behavior for evolved current. Remark about unevolved 00, 02 channel
 
 
 

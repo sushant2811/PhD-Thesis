@@ -369,4 +369,124 @@
   \label{Appendix:sec:evolution_current}
 
   Here we document the equations used to obtain the results in
-  Subsec.~\ref{subsec:operator_evolution}. 
+  Subsec.~\ref{subsec:operator_evolution}.  The evolved current $J_0^{\lambda}$
+  is given by
+  \beq
+  J_0^{\lambda} = \underbrace{\wt{U} J_0 \wt{U}^\dag}_{J_1} +
+  \underbrace{\wt{U} J_0}_{J_2} + \underbrace{J_0 \wt{U}^\dag}_{J_3} + J_0\;.
+  \eeq
+
+  \begin{multline}
+    J_3 \equiv \mbraket{{\thickmuskip=0mu k_1 \, J_1 \, \mJd \,
+    L_1 \, S\!=\!1 \, T_1}}
+    {J_0^-(q) \, \wt{U}^\dag}{{\thickmuskip=0mu k_2 \, J\!=\!1 \,
+    \mJd \, L_2 \, S\!=\!1 \,
+    T\!=\!0}} = \frac{2}{\pi} \frac{\pi^2}{2} \big(G_E^p + (-1)^{T_1} G_E^n
+    \big) \\
+    \times
+    \sum_{L_p} \int_{|k_1 - q/2|}^{k_1 + q/2} \dd p \, p^2 \sum_{\mst = -1}^1
+    \braket{J_1 \, \mJd}{L_1 \, \mJd \!- \!\mst \, {S\!=\!1}
+    \, \mst} \, \frac{2}{k_1 \, p \, q} \\
+    \times
+    P_{L_1}^{\mJd - \mst}\left(\frac{k_1^2 - p^2 + q^2/4}{k_1 q}
+    \right)
+    P_{L_1}^{\mJd - \mst}\left(
+    \frac{k_1^2 - p^2 - q^2/4}{p q}
+    \right) \\
+    \times
+    \CG{L_p}{\mJd\!-\!\mst}{S\!=\!1}{\mst}{J\!=\!1}{\mJd} \,
+    \wt{U}^\dag({\thickmuskip=0mu p_1, k_2, L_p, L_2, J\!=\!1, S\!=\!1,
+    T = 0}) \;.
+  \end{multline}
+  %
+  Evaluation of $J_2$ requires writing the current $J_0$ such
+  that the integration over the bra state can be done.  We get the
+  same expression as in Eq.~\eqref{eq:J0_minus_analytical_delta},
+  but on a different domain.
+  \begin{align}
+  \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S=1 \, T_1}{J_0^-}
+  {k_2\, J=1 \, \mJd \, L_2 \, S=1 \, T=0} = \frac{\pi^2}{2}
+  \big(G_E^p + (-1)^{T_1} G_E^n\big) \nonumber \\
+  \times \sum_{\mst=-1}^{1} \braket{J_1 \, \mJd}
+  {L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \, \wt{m}_s}
+  P_{L_1}^{\mJd - \mst} \left(\frac{k_1^2 - k_2^2 + q^2/4}{k_1 q}
+  \right) \frac{2}{k_1 k_2 q} \nonumber \\
+  \times
+  P_{L_2}^{\mJd - \mst} \left(\frac{k_1^2 - k_2^2 - q^2/4}{k_2 q}
+  \right)
+  \CG{L_2}{\mJd - \mst}{S=1}{\mst}{J=1}{\mJd} \nonumber \\
+  \cdots {\rm for~} k_1 \in (|k_2 - q/2|, k_2 + q/2) \nonumber \\
+  = 0 {\rm ~otherwise~~~~~~~~~~}
+  \label{eq:J0_minus_analytical_delta2}
+  \end{align}
+
+  Equation~\eqref{eq:J0_minus_analytical_delta2} is gotten from the
+  following expression for the current:
+  \begin{align}
+   \mbraket{k_1 \, J_1 \, \mJd \, L_1 \, S\!=\!1 \, T_1}{J_0^{-}}
+ 	 {\,k_2 \, J\!=\!1 \, \mJd \, L_2 \, S\!=\!1 \, T\!=\!0}
+ 	 = \frac{\pi^2}{2} \, \big(G_E ^p + (-1)^{T_1} \, G_E^n\big) \\
+ 	 \null \times \sum_{\widetilde{m}_s = -1}^1 \int\!\dcostheta
+ 	 \, \braket{J_1 \, \mJd}{L_1 \, \mJd - \wt{m}_s \, S\!=\!1 \,\wt{m}_s}
+ 	 \,P_{L_2}^{\mJd - \widetilde{m}_s}\!(\cos\theta) \\
+ 	 \null \times
+ 	 \,P_{L_1}^{\mJd - \widetilde{m}_s}\!\big(\cos\thetacdoubleprime(k_1,
+   \theta, q)
+ 	 \big) \frac{\delta\big(k_1-\sqrt{k_2^2 + k_2 q \cos\theta + q^2/4}\big)}
+ 	 {k_1^2} \\
+ 	 \null \times
+ 	 \CG{L_2}{\mJd - \widetilde{m}_s}{S\!=\!1}{\widetilde{m}_s}{J\!=\!1}{\mJd} \,.
+ 	\label{eq:J_0_minus_def_pw2}
+  \end{align}
+  Note that Eq.~\eqref{eq:J_0_minus_def_pw2} differs from
+  Eq.~\eqref{eq:J_0_minus_def_pw} in terms of the arguments of the
+  $\delta$ function and the Legendre polynomials.
+
+  Using Eq.~\eqref{eq:J0_minus_analytical_delta2}, we can derive the expression
+  for $J_2$.
+  \begin{multline}
+    J_2 \equiv \mbraket{{\thickmuskip=0mu k_1 \, J_1 \, \mJd \,
+    L_1 \, S\!=\!1 \, T_1}}
+    {\wt{U} \, J_0^-(q)}{{\thickmuskip=0mu k_2 \, J\!=\!1 \,
+    \mJd \, L_2 \, S\!=\!1 \,
+    T\!=\!0}} = \frac{2}{\pi} \frac{\pi^2}{2} \big(G_E^p + (-1)^{T_1} G_E^n
+    \big) \\
+    \times
+    \sum_{L_p} \int_{|k_2 - q/2|}^{k_2 + q/2} \dd p \, p^2 \sum_{\mst = -1}^1
+    \braket{J_1 \, \mJd}{L_p \, \mJd \!- \!\mst \, {S\!=\!1}
+    \, \mst} \, \frac{2}{k_2 \, p \, q} \\
+    \times
+    P_{L_p}^{\mJd - \mst}\left(\frac{p^2 - k_2^2 + q^2/4}{p q}
+    \right)
+    P_{L_2}^{\mJd - \mst}\left(
+    \frac{p^2 -k_2^2 - q^2/4}{k_2 q}
+    \right) \\
+    \times
+    \CG{L_2}{\mJd\!-\!\mst}{S\!=\!1}{\mst}{J\!=\!1}{\mJd} \,
+    \wt{U}({\thickmuskip=0mu k_1, p, L_1, L_p, J\!=\!1, S\!=\!1,
+    T = 0}) \;.
+  \end{multline}
+
+  Finally, the expression for $J_1$ is
+  \begin{multline}
+    J_1 \equiv \mbraket{{\thickmuskip=0mu k_1 \, J_1 \, \mJd \,
+    L_1 \, S\!=\!1 \, T_1}}
+    {\wt{U} J_0^-(q) \wt{U}^\dag}{{\thickmuskip=0mu k_2 \, J\!=\!1 \,
+    \mJd \, L_2 \, S\!=\!1 \,
+    T\!=\!0}} = \big(\frac{2}{\pi}\big)^2 \frac{\pi^2}{2} \\
+    \times
+    \big(G_E^p + (-1)^{T_1} G_E^n \big)
+    \sum_{L_{p_1}, L_{p_2}, \mst}
+    \int \dd p_1 \int_{p_2 = |p_1 - q/2|}^{p_1 + q/2} \dd p_2 \, p_1^2
+    \, p_2^2 \, \frac{2}{p_1 p_2 q} \\
+    \times \wt{U}({\thickmuskip=0mu k_1, p_1, L_1, L_{p_1}, J_1, S\!=\!1,
+      T_1}) \, \wt{U}^\dag({\thickmuskip=0mu p_2, k_2, L_{p_2}, L_2, J\!=\!1,
+      S\!=\!1, T\!=\!0}) \\
+    \times \braket{J_1 \, \mJd}{L_{p_1} \, \mJd \!- \!\mst \, {S\!=\!1}
+      \, \mst} \, \CG{L_{p_2}}{\mJd\!-\!\mst}{S\!=\!1}{\mst}{J\!=\!1}{\mJd} \\
+    \times P_{L_{p_1}}^{\mJd - \mst}\left(\frac{p_1^2 - p_2^2 + q^2/4}{p_1 q}
+      \right) \,
+      P_{L_{p_2}}^{\mJd - \mst}\left(
+      \frac{p_1^2 -p_2^2 - q^2/4}{p_2 q}
+      \right)
+  \end{multline}
