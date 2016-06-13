@@ -1839,9 +1839,9 @@
 			\label{fig:q_factorization_fl}
 		\end{subfigure}~~
 		\begin{subfigure}[b]{0.37\textwidth}
-			%\centering
-			\begin{overpic}[width= 0.95\textwidth]{Factorization/More-1p5}
-			\put(68.65,11.2){\tikz\draw[red, thick] (0,0) rectangle (1.6,0.22);}
+			\centering
+			\begin{overpic}[width= \textwidth]{Factorization/More-1p5}
+			\put(68.45,11.2){\tikz\draw[red, thick] (0,0) rectangle (1.7,0.22);}
 			\put(77,2.6){\textcolor{red}{\scriptsize \emph{plateau region}}}
 			\end{overpic}
 			\caption{The region of $q$-factorization of $\fL$ in the phase space
@@ -1933,19 +1933,21 @@
 	An area of active investigation is the extension of the formalism presented
 	here to hard scattering processes.
 
-
 	SRG transformations are routinely used in nuclear structure calculations
 	because	they lead to accelerated convergence for observables like binding
 	energies.  We
 	demonstrated that SRG transformations can be used for nuclear knock-out
 	reactions as well as long as the operator involved is also consistently
-	evolved. 	The evolved operator appears to be complicated compared to the
-	unevolved one,
-	but the factorization might be cleaner with the evolved operator if one can
-	exploit an operator product expansion~\cite{Anderson:2010aq,Bogner:2012zm}.
-	This forms the basis of our ongoing work.
+	evolved. 	Naively, one would expect the evolved operator to be complicated
+	than the unevolved one.  However, as we saw in
+	Subsec.~\ref{subsec:operator_evolution}, the SRG evolution makes
+	interpretation of the high $q$-factorization of observables easy.
+	It sets the stage for exploiting the operator product expansion as in
+	Refs.~\cite{Anderson:2010aq,Bogner:2012zm}.  Moreover, we saw that the
+	changes due to evolution are regulated contact terms as expected from
+	an EFT perspective.
 
-	We also plan to use pionless EFT as a framework to quantitatively study the
+	We plan to use pionless EFT as a framework to quantitatively study the
 	effects of operator evolution.  It should be a good starting point to
 	understand in detail how a one-body operator develops strength in two- and
 	higher-body sectors upon evolution.  This can give insight on the issue of
