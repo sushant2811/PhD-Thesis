@@ -1607,7 +1607,7 @@
 	current as it evolves to better understand how to carry over the results
 	observed here to other reactions.
 
-	\subsection{Operator evolution and momentum scaling}
+	\subsection{Operator evolution and $q$-factorization}
 	\label{subsec:operator_evolution}
 
 	The first work on operator evolution via the SRG evolution was done
@@ -1787,7 +1787,7 @@
 	(cf.~Fig.~\ref{fig:replace_loop_contact}).
 
 	\medskip
-	\subsubsection{Momentum scaling of $f_L$}
+	\subsubsection{$q$-factorization of $f_L$}
 
 	It was observed and explained in Refs.~\cite{Bogner:2007jb, Anderson:2010aq}
 	that for $k < \lambda$ and $q \gg \lambda$ the unitary evolution operator
@@ -1804,9 +1804,87 @@
 	This factorization was observed by looking at the ratio of $U(k_i, q)/
 	U(k_0, q)$ for small $k_i's$ and $k_0$, and noting that the ratio
 	plateaus at high $q$.
-	
-	Similar behavior for evolved current. Remark about unevolved 00, 02 channel
 
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.55 \textwidth]
+		{Factorization/evolv_J0_q_scaling}
+		\caption{Factorization of the evolved current $J_0^\lambda$ demonstrated
+		by plateaus at high $q$.}
+		\label{fig:evolv_J0_factorization}
+	\end{figure}
+	%
+	Similar behavior is observed for the evolved current in
+	Fig.~\ref{fig:evolv_J0_factorization}.  Preliminary analysis indicates that
+	the scaling
+	\beq
+	J_0^{\lambda}(k, k^\prime; q) \rightarrow Z_{\lambda}(k, k^\prime) \, A(q)
+	\eeq
+	is a result of both the form of the unevolved current and
+	the momentum factorization of $U$ matrices.
+
+	Note that $\fL \sim \sum_{m_s, m_J} |\mbraket{\psi_f^\lambda}{J_0^\lambda}
+	{\psi_i^\lambda}|^2$.  The ``q-factorization'' of $J_0^\lambda$ and $U$
+	matrices indicates that the observable $f_L$ should scale with $q$ as well.
+	We see in Fig.~\ref{fig:q_factorization_fl} that this indeed is the case.
+	%
+	\begin{figure}[htbp]
+		\centering
+		\begin{subfigure}[b]{0.57\textwidth}
+			%\centering
+			\includegraphics[width=0.95\textwidth]
+			{Factorization/fl_q_scaling_k0_0p1}
+			\caption{Demonstration that for $\pp \ll q$, the $q$ dependence of $\fL$
+			factorizes.}
+			\label{fig:q_factorization_fl}
+		\end{subfigure}~~
+		\begin{subfigure}[b]{0.37\textwidth}
+			%\centering
+			\begin{overpic}[width= 0.95\textwidth]{Factorization/More-1p5}
+			\put(68.65,11.2){\tikz\draw[red, thick] (0,0) rectangle (1.6,0.22);}
+			\put(77,2.6){\textcolor{red}{\scriptsize \emph{plateau region}}}
+			\end{overpic}
+			\caption{The region of $q$-factorization of $\fL$ in the phase space
+			covers the red box and extends further out along the $q^2$ axis.}
+			\label{fig:q_factorization_fl_phase_space}
+		\end{subfigure}
+		\caption{$q$-factorization of $\fL$. }
+		\label{fig:q_factorization_fl_plus_phase_space}
+	\end{figure}
+	%
+	$\fL$ is a function of the outgoing nucleon momentum ($\pp$), the proton
+	emission angle ($\theta^\prime$), and the momentum transferred by the
+	photon ($q$).  For $\pp \ll q$, Fig.~\ref{fig:q_factorization_fl} tells us
+	that
+	\beq
+	\fL(\pp, \theta^\prime; q) \rightarrow g(\pp, \theta) \, B(q) \;.
+	\label{eq:fl_factorization}
+	\eeq
+	Figure~\ref{fig:q_factorization_fl_phase_space} shows the region in the
+	phase space where Eq.~\eqref{eq:fl_factorization} holds.
+
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[width=0.55 \textwidth]
+		{Factorization/fl_k0_0p1_fn_q}
+		\caption{$\fL$ is a strong function of $q$.  The box indicates the plateau
+		region in Fig.~\ref{fig:q_factorization_fl}.}
+		\label{fig:fl_strong_q_fn}
+	\end{figure}
+	%
+	Figure~\ref{fig:fl_strong_q_fn} indicates that $\fL$ by itself is a strong
+	function of $q$.  In the plateau region of Fig.~\ref{fig:q_factorization_fl},
+	the denominator of the ratio varies by over two orders of magnitude.
+	Given this and the complicated nature of $\fL$ calculations (results here
+	include the FSIs), the scaling observed in Fig.~\ref{fig:q_factorization_fl}
+	is non-trivial.
+
+	It seems that the observed $q$-factorization of $\fL$ can be explained from
+	the SRG perspective by invoking the factorization of $U$ matrices.
+	It remains to be seen how the $q$-factorization could be explained starting
+	from the unevolved matrix element.  This offers an interesting scenario,
+	where the observation in Eq.~\eqref{eq:fl_factorization} can be explained
+	by two different interpretations.
 
 
 
