@@ -196,6 +196,8 @@
     \else
       \renewcommand\thepage{\arabic{page}}
       \addcontentsline{toc}{part}{#1}%
+      %\addcontentsline{toc}{part}{\thepart\hspace{1em}#1}
+      %\addcontentsline{toc}{part}{\protect\numberline{\thepart}#1}%
     \fi
     \ifnum\value{part}=1
       \pagenumbering{arabic}
@@ -230,10 +232,11 @@
   \ifapp
     \ifnum\value{chapter}=1
 % ted - (2010) change how ``Appendices'' shows up in TOC
-      \addcontentsline{toc}{part}{\appendicesname}%
-      %\addtocontents{toc}{\vskip 1.0em plus 1pt 
-      %   \hskip -\parindent \appendicesname\hfill%
-	  %\vskip 0.25em\rm}
+      %\addcontentsline{toc}{part}{\appendicesname~ \textcolor{black}{$\ldots$}}%  
+      %\addcontentsline{toc}{part}{\protect\numberline{\appendicesname.}}%
+      \addtocontents{toc}{\vskip 2.0em plus 1pt 
+         \hskip -\parindent {\textcolor{blue}{\appendicesname}}\hfill%
+	  \vskip 0.25em\rm}
     \else
       {}
     \fi
@@ -257,6 +260,7 @@
     \addcontentsline{toc}{chapter}{\protect\numberline{\thechapter.}#1}%
   \else
     \addcontentsline{toc}{chapter}{#1}
+  
   \fi
 
   \chaptermark{#1}%
